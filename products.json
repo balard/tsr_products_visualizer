@@ -1,0 +1,3187 @@
+[
+  {
+    "title": "Dungeons & Dragons",
+    "year": 1974,
+    "authors": "Gary Gygax & Dave Arneson",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-3vs-box.jpg",
+    "cover_artist": "Greg Bell"
+  },
+  {
+    "title": "Supplement I: Greyhawk",
+    "year": 1975,
+    "authors": "Gary Gygax & Rob Kuntz",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup1-12th.jpg",
+    "cover_artist": "Greg Bell"
+  },
+  {
+    "title": "Supplement II: Blackmoor",
+    "year": 1975,
+    "authors": "Dave Arneson",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup2-5th.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Supplement III: Eldritch Wizardry",
+    "year": 1976,
+    "authors": "Gary Gygax & Brian Blume",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup3-5th.jpg",
+    "cover_artist": "Deborah Larson"
+  },
+  {
+    "title": "Dungeon Geomorphs Set One: Basic Dungeon",
+    "year": 1976,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-geo1-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Supplement IV: Gods, Demi-Gods & Heroes",
+    "year": 1976,
+    "authors": "Robert Kuntz & James Ward",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup4-1st.jpg",
+    "cover_artist": "NOT FOUND"
+  },
+  {
+    "title": "Swords & Spells",
+    "year": 1976,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup5-1st.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Dungeons & Dragons Basic Set",
+    "year": 1977,
+    "authors": "Eric Holmes",
+    "cover_url": "https://blogger.googleusercontent.com/img/a/AVvXsEgpBbG-hJeBCbkwZIHFzy3HF2FxM8Jwd97gTZwn5BLqLEvnWWOIp3LTR4CxV8aJ9q0UDt0UbkLaOkvAV8Bv85CRz8tMLHDrn2Fj6ff15v8HkaVFFM5F5720LrG-r2PlwkcAplc3vtnnKnXKbRo6dJ8UQyhvFnHM1Cx__sR3Wpm2KsG5zEAo1nW1ljDx=w500-h640",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Monster Manual",
+    "year": 1977,
+    "authors": "Gary Gyax",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-core-mm-1st.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Dungeon Geomorphs Set Two: Caves & Caverns",
+    "year": 1977,
+    "authors": "Gary & Ernie Gygax",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-geo2-3rd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Geomorphs Set Three: Lower Dungeons",
+    "year": 1977,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-geo3-3rd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Outdoor Geomorphs Set One: Walled City",
+    "year": 1977,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-geoout-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monster & Treasure Assortment Set One: Levels One-Three",
+    "year": 1977,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-mta1-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Character Record Sheets",
+    "year": 1977,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-crs-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monster & Treasure Assortment Set Two: Levels Four-Six",
+    "year": 1977,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-mta2-4th.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Players Handbook",
+    "year": 1978,
+    "authors": "Gary Gyax",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-core-phb-1st_3rd.jpg",
+    "cover_artist": "David A. Trampier"
+  },
+  {
+    "title": "Steading of the Hill Giant Chief",
+    "year": 1978,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-g1-3rd.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "The Glacial Rift of the Frost Giant Jarl",
+    "year": 1978,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-g2-2nd.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Hall of the Fire Giant King",
+    "year": 1978,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-g3-3rd.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Descent into the Depths of the Earth",
+    "year": 1978,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-d1-2nd.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "The Shrine of the Kuo-Toa",
+    "year": 1978,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-d2-3rd.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "In Search of the Unknown",
+    "year": 1978,
+    "authors": "Mike Carr",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b1-1st.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Vault of the Drow",
+    "year": 1978,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-d3-1st.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Tomb of Horrors",
+    "year": 1978,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-s1-1st.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Monster & Treasure Assortment Set Three: Levels Seven-Nine",
+    "year": 1978,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-mta1-3rd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Masters Guide",
+    "year": 1979,
+    "authors": "Gary Gyax",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-core-dmg-1st.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Village of Hommlet",
+    "year": 1979,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-t1-2nd.jpg",
+    "cover_artist": "David A. Trampier"
+  },
+  {
+    "title": "Keep on the Borderlands",
+    "year": 1979,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b2-1st.jpg",
+    "cover_artist": "Jim Roslof"
+  },
+  {
+    "title": "Dungeon Masters Screen",
+    "year": 1979,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-dmscreen-2nd.jpg",
+    "cover_artist": "David A. Trampier"
+  },
+  {
+    "title": "Non-Player Character Records",
+    "year": 1979,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-npc-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "White Plume Mountain",
+    "year": 1979,
+    "authors": "Lawrence Schick",
+    "cover_url": "https://www.tsrarchive.com/add/add-s2-1st.jpg",
+    "cover_artist": "Erol Otus"
+  },
+  {
+    "title": "Player Character Record Sheets",
+    "year": 1979,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-pcrs-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Permanent Character Folder and Adventure Records",
+    "year": 1979,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-perm-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons & Dragons Basic Set",
+    "year": 1979,
+    "authors": "Eric Holmes",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-box-holmes-4th.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "Hex Pad",
+    "year": 1979,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-hexpad-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Deities & Demigods",
+    "year": 1980,
+    "authors": "James M. Ward with Robert J. Kuntz",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-hb-ddg-1st_3rd.jpg",
+    "cover_artist": "Erol Otus"
+  },
+  {
+    "title": "World of Greyhawk",
+    "year": 1980,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-box-folio-4th.jpg",
+    "cover_artist": "David C. Sutherland III"
+  },
+  {
+    "title": "The Rogue's Gallery",
+    "year": 1980,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-dmrogue-1st.jpg",
+    "cover_artist": "Erol Otus"
+  },
+  {
+    "title": "The Hidden Shrine of Tomoachan",
+    "year": 1980,
+    "authors": "Harold Johnson & Jeff R. Leason",
+    "cover_url": "https://www.tsrarchive.com/add/add-c1-1st.jpg",
+    "cover_artist": "Erol Otus"
+  },
+  {
+    "title": "Expedition to the Barrier Peaks",
+    "year": 1980,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-s3-1st.jpg",
+    "cover_artist": "Erol Otus"
+  },
+  {
+    "title": "Queen of the Demonweb Pits",
+    "year": 1980,
+    "authors": "David C. Sutherland with Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-q1-1st.jpg",
+    "cover_artist": "Jim Roslof"
+  },
+  {
+    "title": "Dungeon Masters Adventure Log",
+    "year": 1980,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-dmlog-5th.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Ghost Tower of Inverness",
+    "year": 1980,
+    "authors": "Allen Hammack",
+    "cover_url": "https://www.tsrarchive.com/add/add-c2-3rd.jpg",
+    "cover_artist": "Jim Roslof"
+  },
+  {
+    "title": "Slave Pits of the Undercity",
+    "year": 1980,
+    "authors": "David Cook",
+    "cover_url": "https://www.tsrarchive.com/add/add-a1-1st_2nd.jpg",
+    "cover_artist": "Jim Roslof"
+  },
+  {
+    "title": "Monster & Treasure Assortment Set One-Three",
+    "year": 1980,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-mta-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Hexagonal Mapping Booklet",
+    "year": 1980,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-hexbook-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons & Dragons Expert Set",
+    "year": 1981,
+    "authors": "Dave Cook",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-box2-mold-3rd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Isle of Dread",
+    "year": 1981,
+    "authors": "David Cook & Tom Moldvay",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x1-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Keep on the Borderlands",
+    "year": 1981,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b2-4th.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Fiend Folio",
+    "year": 1981,
+    "authors": "Don Turnbull (editor)",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-hb-ff-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Player Character Record Sheets",
+    "year": 1981,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-pcrs-4th.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Geomorphs Set One-Three",
+    "year": 1981,
+    "authors": "Gary & Ernie Gygax",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-geos-3rd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Village of Hommlet",
+    "year": 1981,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-t1-4th.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "In Search of the Unknown",
+    "year": 1981,
+    "authors": "Mike Carr",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b1-4th.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons & Dragons Set 1: Basic Rules",
+    "year": 1981,
+    "authors": "Tom Moldvay",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-box-mold-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons & Dragons Set 2: Expert Rules",
+    "year": 1981,
+    "authors": "Dave Cook",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-box2-mold-3rd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Secret of the Slavers Stockade",
+    "year": 1981,
+    "authors": "Harold Johnson & Tom Moldvay",
+    "cover_url": "https://www.tsrarchive.com/add/add-a2-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Assault on the Aerie of the Slave Lords",
+    "year": 1981,
+    "authors": "Allen Hammack",
+    "cover_url": "https://www.tsrarchive.com/add/add-a3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "In the Dungeon of the Slave Lords",
+    "year": 1981,
+    "authors": "Lawrence Schick",
+    "cover_url": "https://www.tsrarchive.com/add/add-a4-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Palace of the Silver Princess",
+    "year": 1981,
+    "authors": "Jean Wells",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Palace of the Silver Princess",
+    "year": 1981,
+    "authors": "Tom Moldvay & Jean Wells",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b3-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Secret of Bone Hill",
+    "year": 1981,
+    "authors": "Lenard Lakofka",
+    "cover_url": "https://www.tsrarchive.com/add/add-l1-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dwellers of the Forbidden City",
+    "year": 1981,
+    "authors": "David Cook",
+    "cover_url": "https://www.tsrarchive.com/add/add-i1-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Castle Amber",
+    "year": 1981,
+    "authors": "Tom Moldvay",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x2-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Against the Giants",
+    "year": 1981,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-g1-2-3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Descent into the Depths of the Earth",
+    "year": 1981,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-d1-2-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Sinister Secret of Saltmarsh",
+    "year": 1981,
+    "authors": "Dave J. Browne with Don Turnbull",
+    "cover_url": "https://www.tsrarchive.com/add/add-u1-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Quadrille Graph Paper",
+    "year": 1982,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-graph-quad.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "To the Aid of Falx",
+    "year": 1982,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/add/add-r1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Investigation of Hydell",
+    "year": 1982,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/add/add-r2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Egg of the Phoenix",
+    "year": 1982,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/add/add-r3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Lost City",
+    "year": 1982,
+    "authors": "Tom Moldvay",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b4-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Pharaoh",
+    "year": 1982,
+    "authors": "Tracy & Laura Hickman",
+    "cover_url": "https://www.tsrarchive.com/add/add-i3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Tomb of the Lizard King",
+    "year": 1982,
+    "authors": "Mark Acres",
+    "cover_url": "https://www.tsrarchive.com/add/add-i2-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Curse of Xanathon",
+    "year": 1982,
+    "authors": "Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Lost Caverns of Tsojcanth",
+    "year": 1982,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-s4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Against the Cult of the Reptile God",
+    "year": 1982,
+    "authors": "Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/add/add-n1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Danger at Dunwater",
+    "year": 1982,
+    "authors": "Dave J. Browne with Don Turnbull",
+    "cover_url": "https://www.tsrarchive.com/add/add-u2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Forgotten Temple of Tharizdun",
+    "year": 1982,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wg4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons & Dragons Basic Set",
+    "year": 1983,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-box1-ment-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons & Dragons Expert Set",
+    "year": 1983,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-box2-ment-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Isle of Dread",
+    "year": 1983,
+    "authors": "David Cook & Tom Moldvay",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x1-4th.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monster Manual II",
+    "year": 1983,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-hb-mm2-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Ravenloft",
+    "year": 1983,
+    "authors": "Tracy & Laura Hickman",
+    "cover_url": "https://www.tsrarchive.com/add/add-i6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "World of Greyhawk",
+    "year": 1983,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-box-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Doc's Island",
+    "year": 1983,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/add/add-r4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Rahasia",
+    "year": 1983,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-rpga1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Black Opal Eye",
+    "year": 1983,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-rpga2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Forgotten King",
+    "year": 1983,
+    "authors": "Bob Blake",
+    "cover_url": "https://www.tsrarchive.com/add/add-rpga3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Elixir of Life",
+    "year": 1983,
+    "authors": "Bob Blake",
+    "cover_url": "https://www.tsrarchive.com/add/add-rpga4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Riddle of Dolmen Moor",
+    "year": 1983,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-rpga5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Incants of Ishcabeble",
+    "year": 1983,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-rpga6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Llywelyn's Tomb",
+    "year": 1983,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-rpga7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "And the Gods Will Have Their Way",
+    "year": 1983,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-rpga8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Gem and the Staff",
+    "year": 1983,
+    "authors": "John & Laurie Van De Graaf",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-o1-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Oasis of the White Palm",
+    "year": 1983,
+    "authors": "Philip Meyers & Tracy Hickman",
+    "cover_url": "https://www.tsrarchive.com/add/add-i4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Lost Tomb of Martek",
+    "year": 1983,
+    "authors": "Tracy Raye Hickman",
+    "cover_url": "https://www.tsrarchive.com/add/add-i5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Assassin's Knot",
+    "year": 1983,
+    "authors": "Len Lokofka",
+    "cover_url": "https://www.tsrarchive.com/add/add-l2-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Maze of the Riddling Minotaur",
+    "year": 1983,
+    "authors": "Jeff Grubb",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-msolo2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Beyond the Crystal Cave",
+    "year": 1983,
+    "authors": "Dave J. Browne & Tom Kirby & Graeme Morris",
+    "cover_url": "https://www.tsrarchive.com/add/add-uk1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Blizzard Pass",
+    "year": 1983,
+    "authors": "David Cook",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-msolo1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Master of the Desert Nomads",
+    "year": 1983,
+    "authors": "David Cook",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Temple of Death",
+    "year": 1983,
+    "authors": "David Cook",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeonland",
+    "year": 1983,
+    "authors": "E. Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-ex1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Land Beyond the Magic Mirror",
+    "year": 1983,
+    "authors": "E. Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-ex2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Final Enemy",
+    "year": 1983,
+    "authors": "Dave J. Browne with Don Turnbull",
+    "cover_url": "https://www.tsrarchive.com/add/add-u3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Horror on the Hill",
+    "year": 1983,
+    "authors": "Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Shady Dragon Inn",
+    "year": 1983,
+    "authors": "Carl Smith",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Sentinel",
+    "year": 1983,
+    "authors": "Graeme Morris",
+    "cover_url": "https://www.tsrarchive.com/add/add-uk2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Despair",
+    "year": 1984,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl1-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Flame",
+    "year": 1984,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Hope",
+    "year": 1984,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Desolation",
+    "year": 1984,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Mystery",
+    "year": 1984,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons & Dragons Set 3: Companion Rules",
+    "year": 1984,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-box3-ment-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Legends & Lore",
+    "year": 1984,
+    "authors": "James M. Ward with Robert J. Kuntz",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-hb-ll-5th.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Player Character Record Sheets",
+    "year": 1984,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The War Rafts of Kron",
+    "year": 1984,
+    "authors": "Bruce Nesmith",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Quagmire!",
+    "year": 1984,
+    "authors": "Merle M. Rasmussen",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Lathan's Gold",
+    "year": 1984,
+    "authors": "Merle M. Rasmussen",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-xsolo.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Forest Oracle",
+    "year": 1984,
+    "authors": "Carl Smith",
+    "cover_url": "https://www.tsrarchive.com/add/add-n2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Veiled Society",
+    "year": 1984,
+    "authors": "David Cook",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Ghost of Lion Castle",
+    "year": 1984,
+    "authors": "Merle M. Rasmussen",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-bsolo.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Combat Shield & Mini-adventure",
+    "year": 1984,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Midnight on Dagger Alley",
+    "year": 1984,
+    "authors": "Merle M. Rasmussen",
+    "cover_url": "https://www.tsrarchive.com/add/add-mv1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Journey to the Rock",
+    "year": 1984,
+    "authors": "Michael Malone",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "To Find a King",
+    "year": 1984,
+    "authors": "Bob Blake",
+    "cover_url": "https://www.tsrarchive.com/add/add-c4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Blade of Vengeance",
+    "year": 1984,
+    "authors": "Jim Bambra",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-o2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Lost Island of Castanamir",
+    "year": 1984,
+    "authors": "Ken Rolston",
+    "cover_url": "https://www.tsrarchive.com/add/add-c3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Gauntlet",
+    "year": 1984,
+    "authors": "Graeme Morris",
+    "cover_url": "https://www.tsrarchive.com/add/add-uk3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Mordenkainen's Fantastic Adventure",
+    "year": 1984,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wg5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Quest for the Heartstone",
+    "year": 1984,
+    "authors": "Michael L. Gray",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-xl1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Rahasia",
+    "year": 1984,
+    "authors": "Tracy & Laura Hickman",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Book of Marvelous Magic",
+    "year": 1984,
+    "authors": "Frank Mentzer & Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Test of the Warlords",
+    "year": 1984,
+    "authors": "Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-cm1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Death's Ride",
+    "year": 1984,
+    "authors": "Garry Spiegle",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-cm2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Sabre River",
+    "year": 1984,
+    "authors": "Douglas Niles & Bruce Nesmith",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-cm3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "When a Star Falls",
+    "year": 1984,
+    "authors": "Graeme Morris",
+    "cover_url": "https://www.tsrarchive.com/add/add-uk4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "3-D Dragon Tiles featuring The Kidnapping of Princess Arelina",
+    "year": 1984,
+    "authors": "Gary Spiegle",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Conan Unchained!",
+    "year": 1984,
+    "authors": "David Cook",
+    "cover_url": "https://www.tsrarchive.com/add/add-cb1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Conan Against Darkness!",
+    "year": 1984,
+    "authors": "Ken Rolston",
+    "cover_url": "https://www.tsrarchive.com/add/add-cb2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Eye of the Serpent",
+    "year": 1984,
+    "authors": "Graeme Morris",
+    "cover_url": "https://www.tsrarchive.com/add/add-uk5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "All that Glitters...",
+    "year": 1984,
+    "authors": "Jim Bambra",
+    "cover_url": "https://www.tsrarchive.com/add/add-uk6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Drums on Fire Mountain",
+    "year": 1984,
+    "authors": "Graeme Morris & Tom Kirby",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Glory",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl11.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Battlesystem",
+    "year": 1985,
+    "authors": "Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/add/add-bs-box.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Ice",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons & Dragons Set 4: Master Rules",
+    "year": 1985,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-box4-ment.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Unearthed Arcana",
+    "year": 1985,
+    "authors": "Gary Gygax",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-hb-ua-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Light",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of War",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Temple of Elemental Evil",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-t1-4-1st_2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Deceit",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Oriental Adventures",
+    "year": 1985,
+    "authors": "Gary Gygax with David Cook & Francois Marcela-Froideval",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-hb-oa-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Dreams",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl10.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Player Character Record Sheets",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Bane of Llywelyn",
+    "year": 1985,
+    "authors": "Bob Blake",
+    "cover_url": "https://www.tsrarchive.com/add/add-c5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Bloodstone Pass",
+    "year": 1985,
+    "authors": "Douglas Niles & Michael Dobson",
+    "cover_url": "https://www.tsrarchive.com/add/add-h1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Earthshaker!",
+    "year": 1985,
+    "authors": "David \"Zeb\" Cook",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-cm4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Savage Coast",
+    "year": 1985,
+    "authors": "Merle & Jackie Rasmussen & Anne C. Gray",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Castle Caldwell and Beyond",
+    "year": 1985,
+    "authors": "Harry Nuckols",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "3-D Dragon Tiles featuring The Revenge of Rusak",
+    "year": 1985,
+    "authors": "David \"Zeb\" Cook",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "DM Screen",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-ref1-1e-2nd-a.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Swords of the Undercity",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/lm/lm-ca1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dark Clouds Gather",
+    "year": 1985,
+    "authors": "Jim Bambra & Phil Gallagher",
+    "cover_url": "https://www.tsrarchive.com/add/add-uk7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Baltron's Beacon",
+    "year": 1985,
+    "authors": "Philip Meyers",
+    "cover_url": "https://www.tsrarchive.com/add/add-i7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Isle of the Ape",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wg6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Mystery of the Snow Pearls",
+    "year": 1985,
+    "authors": "Anne Gray McCready",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-cm5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Master Player Screen featuring The Spindle",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Thunderdelve Mountain",
+    "year": 1985,
+    "authors": "William Carlson",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-xs2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Where Chaos Reigns",
+    "year": 1985,
+    "authors": "Graeme Morris",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-cm6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Into the Maelstrom",
+    "year": 1985,
+    "authors": "Bruce & Beatrice Heard",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-m1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Red Arrow, Black Shield",
+    "year": 1985,
+    "authors": "Michael S. Dobson",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x10.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Lankhmar: City of Adventure",
+    "year": 1985,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/lm/lm-coa.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Faith",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl12.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons & Dragons Set 5: Immortal Rules",
+    "year": 1986,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-box5-ment.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeoneer's Survival Guide",
+    "year": 1986,
+    "authors": "Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-hb-dsg.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Truth",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl13.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Ravenloft II: The House on Griffon Hill",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-i10.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Wilderness Survival Guide",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-hb-ua2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragons of Triumph",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl14.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Character Record Sheets",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-ref2-1e.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Great Bugbear Hunt",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-r5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Vengeance of Alphaks",
+    "year": 1986,
+    "authors": "Skip Williams",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-m2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Night's Dark Terror",
+    "year": 1986,
+    "authors": "Jim Bambra, Graeme Morris & Phil Gallagher",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b10.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Destiny of Kings",
+    "year": 1986,
+    "authors": "Stephen Bourne",
+    "cover_url": "https://www.tsrarchive.com/add/add-n3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Swords of Daimyo",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/oa/oa-oa1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Saga of the Shadow Lord",
+    "year": 1986,
+    "authors": "Stephen Bourne",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x11.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Tree of Life",
+    "year": 1986,
+    "authors": "Bruce A. Heard",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-cm7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Scourge of the Slavelords",
+    "year": 1986,
+    "authors": "David Cook & Allen Hammack & Harold Johnson & Tom Moldvay",
+    "cover_url": "https://www.tsrarchive.com/add/add-a1-4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Mines of Bloodstone",
+    "year": 1986,
+    "authors": "Michael Dobson & Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/add/add-h2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Ravager of Time",
+    "year": 1986,
+    "authors": "Graeme Morris & Jim Bambra",
+    "cover_url": "https://www.tsrarchive.com/add/add-i8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Swords of Deceit",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/lm/lm-ca2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Immortal Storm",
+    "year": 1986,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-im1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Adventures in Blackmoor",
+    "year": 1986,
+    "authors": "Dave L. Arneson & David J. Ritchie",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-da1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Creature Catalogue",
+    "year": 1986,
+    "authors": "Jim Bambra, Phil Gallagher, Graeme Morris",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Twilight Calling",
+    "year": 1986,
+    "authors": "Tom Moldvay",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-m3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Temple of the Frog",
+    "year": 1986,
+    "authors": "Dave L. Arneson & David J. Ritchie",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-da2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Book of Lairs",
+    "year": 1986,
+    "authors": "James M. Ward & Mike Breault",
+    "cover_url": "https://www.tsrarchive.com/add/add-ref3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Day of Al'Akbar",
+    "year": 1986,
+    "authors": "Allen Hammack",
+    "cover_url": "https://www.tsrarchive.com/add/add-i9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Queen of the Spiders",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-gdq1-7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Red Sonya Unconquered",
+    "year": 1986,
+    "authors": "Anne Gray McCready",
+    "cover_url": "https://www.tsrarchive.com/add/add-rs1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Treasure Hunt",
+    "year": 1986,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/add/add-n4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Night of the Seven Swords",
+    "year": 1986,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/oa/oa-oa2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Kara Tur, the Eastern Lands",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-box-kara.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Kingdom of Ierendi",
+    "year": 1987,
+    "authors": "Anne Gray McCready",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Grand Duchy of Karameikos",
+    "year": 1987,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Forgotten Realms Campaign",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-camp1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Manual of the Planes",
+    "year": 1987,
+    "authors": "Jeff Grubb",
+    "cover_url": "https://www.tsrarchive.com/add/add-1e-hb-motp.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Emirates of Ylaruam",
+    "year": 1987,
+    "authors": "Ken Rolston",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Principalities of Glantri",
+    "year": 1987,
+    "authors": "Bruce Heard",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragonlance Adventures",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-box-hb.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Moonshae",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Realms of Horror",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-s1-4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Needle",
+    "year": 1987,
+    "authors": "Frank Mentzer",
+    "cover_url": "https://www.tsrarchive.com/add/add-i11.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Skarda's Mirror",
+    "year": 1987,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x12.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Wrath of Olympus",
+    "year": 1987,
+    "authors": "Robert J. Blake",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-im2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "In Search of Adventure",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b1-9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "City of the Gods",
+    "year": 1987,
+    "authors": "Dave L. Arneson & David J. Ritchie",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-da3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Endless Stair",
+    "year": 1987,
+    "authors": "Ed Greenwood",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-cm8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Ochimo: The Spirit Warrior",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/oa/oa-oa3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Book of Lairs II",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-ref4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Desert of Desolation",
+    "year": 1987,
+    "authors": "T. Hickman & L. Hickman & P. Meyers & P. Rice & J. Wheeler",
+    "cover_url": "https://www.tsrarchive.com/add/add-i3-5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Bloodstone Wars",
+    "year": 1987,
+    "authors": "Michael Dobson & Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/add/add-h3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Egg of the Phoenix",
+    "year": 1987,
+    "authors": "Frank Mentzer & Jennell Jaquays",
+    "cover_url": "https://www.tsrarchive.com/add/add-i12.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Adventure Pack I",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-i13.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Blood of the Yakuza",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/oa/oa-oa4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Five Coins for a Kingdom",
+    "year": 1987,
+    "authors": "Allen Varney",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-m4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Duchy of Ten",
+    "year": 1987,
+    "authors": "David J. Ritchie",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-da4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Official RPGA Tourney Handbook",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-c6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Best of Intentions",
+    "year": 1987,
+    "authors": "Ken Rolston",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-im3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Legacy of Blood",
+    "year": 1987,
+    "authors": "Steve Perrin & Katharine Kerr",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-cm9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Bestiary of Dragons and Giants",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac10.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Under Illefarn",
+    "year": 1987,
+    "authors": "Steve Perrin",
+    "cover_url": "https://www.tsrarchive.com/add/add-n5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Waterdeep and the North",
+    "year": 1987,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr1-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Talons of Night",
+    "year": 1987,
+    "authors": "Paul Jaquays",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-m5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Crown of Ancient Glory",
+    "year": 1987,
+    "authors": "Stephen Bourne",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-x13.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Book of Wondrous Inventions",
+    "year": 1987,
+    "authors": "Bruce A. Heard",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ac11.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Shattered Statue",
+    "year": 1987,
+    "authors": "Paul Jaquays",
+    "cover_url": "https://www.tsrarchive.com/add/add-dq1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Elves of Alfheim",
+    "year": 1988,
+    "authors": "Steven Perrin",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Dwarves of Rockhome",
+    "year": 1988,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Magister",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr4-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Northern Reaches",
+    "year": 1988,
+    "authors": "Ken Rolston",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Five Shires",
+    "year": 1988,
+    "authors": "Ed Greenwood",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "City System",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-box-city-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Greyhawk Adventures",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-box-hb.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Minrothad Guilds",
+    "year": 1988,
+    "authors": "Deborah Christian & Kim Eastland",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Castle Greyhawk",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wg7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Empires of the Sands",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Tales of the Outer Planes",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-op1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Swords of the Iron Legion",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-i14.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Throne of Bloodstone",
+    "year": 1988,
+    "authors": "Douglas Niles & Michael Dobson",
+    "cover_url": "https://www.tsrarchive.com/add/add-h4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Mists of Krynn",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl15.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Savage Frontier",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr5-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "DM's Design Kit",
+    "year": 1988,
+    "authors": "Harold Johnson & Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/add/add-dmkit.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dreams of the Red Wizards",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr6-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "World of Krynn",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dl16.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Ruins of Adventure",
+    "year": 1988,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-frc1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Player's Handbook",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-phb-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Republic of Darokin",
+    "year": 1989,
+    "authors": "Scott Haring",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz11.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Golden Khan of Ethengar",
+    "year": 1989,
+    "authors": "Jim Bambra",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz12.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Master's Guide",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-dmg-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Volume One",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dawn of the Emperors: Thyatis and Alphatia",
+    "year": 1989,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-box.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Volume Two",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Spelljammer: AD&D Adventures in Space",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/sj/sj-box.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Orcs of Thar",
+    "year": 1989,
+    "authors": "Bruce Heard",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz10.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The City of Greyhawk",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-box-city.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Time of the Dragon",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-box-time.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Volume Three: Forgotten Realms Appendix",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Fighter's Handbook",
+    "year": 1989,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr1-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Thief's Handbook",
+    "year": 1989,
+    "authors": "John Nephew & Carl Sargent & Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr2-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Waterdeep",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fre3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Curse of the Azure Bonds",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-frc2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Lords of Darkness",
+    "year": 1989,
+    "authors": "Ed Greenwood (introduction)",
+    "cover_url": "https://www.tsrarchive.com/add/add-ref5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Mad Monkey vs. the Dragon Claw",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/oa/oa-oa5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "In Search of Dragons",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dle1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragon Magic",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dle2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragon Keep",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dle3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Shadowdale",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fre1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Tantras",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fre2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Gargoyle",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wg9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Hall of Heroes",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr7-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Fate of Istus",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wg8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Tall Tales of the Wee Folk",
+    "year": 1989,
+    "authors": "John Nephew",
+    "cover_url": "https://www.tsrarchive.com/cc/cc-pc1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Top Ballista",
+    "year": 1989,
+    "authors": "Carl Sargent",
+    "cover_url": "https://www.tsrarchive.com/cc/cc-pc2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "King's Festival",
+    "year": 1989,
+    "authors": "Carl Sargent",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b11.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Queen's Harvest",
+    "year": 1989,
+    "authors": "Carl Sargent",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-b12.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Cities of Mystery",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Master's Screen",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-ref1-2e-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Character Record Sheets",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-ref2-2e-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Child's Play",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wg10.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Bloodstone Lands",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Puppets",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wg11.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Gateway to Ravens Bluff, the Living City",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/fr/fr-lc1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "World of Krynn Trail Map",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-tm3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "City of Waterdeep Trail Map",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-tm4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Kara-Tur Trail Map",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-tm5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Western Countries Trail Map",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/dd2-tm1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Eastern Countries Trail Map",
+    "year": 1989,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/dd2-tm2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Legends & Lore",
+    "year": 1990,
+    "authors": "James M. Ward & Troy Denning",
+    "cover_url": "https://www.tsrarchive.com/add/add-hc-lore-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Shadow Elves",
+    "year": 1990,
+    "authors": "Carl Sargent & Gary Thomas",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz13.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Hollow World Campaign Set",
+    "year": 1990,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/hw/hw-box.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Castles: A 3-Dimensional Game Accessory",
+    "year": 1990,
+    "authors": "Jeff Grubb & David \"Zeb\" Cook & Bruce Nesmith",
+    "cover_url": "https://www.tsrarchive.com/add/add-box-cast.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Dragonlance Appendix",
+    "year": 1990,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Greyhawk Appendix",
+    "year": 1990,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Spelljammer Appendix",
+    "year": 1990,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Campaign Sourcebook and Catacomb Guide",
+    "year": 1990,
+    "authors": "Paul Jaquays & William W. Connors",
+    "cover_url": "https://www.tsrarchive.com/add/add-dmgr1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Priest's Handbook",
+    "year": 1990,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Castle Guide",
+    "year": 1990,
+    "authors": "Grant Boucher & Troy Christensen & Arthur Collins & Nigel Findley",
+    "cover_url": "https://www.tsrarchive.com/add/add-dmgr2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Wizard's Handbook",
+    "year": 1990,
+    "authors": "Rick Swan",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr4-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Kara-Tur Appendix",
+    "year": 1990,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Sea People",
+    "year": 1990,
+    "authors": "Jim Bambra",
+    "cover_url": "https://www.tsrarchive.com/cc/cc-pc3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Arena of Thyatis",
+    "year": 1990,
+    "authors": "John Nephew",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-dda1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Legions of Thyatis",
+    "year": 1990,
+    "authors": "John Nephew",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-dda2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Nightwail",
+    "year": 1990,
+    "authors": "Allen Varney",
+    "cover_url": "https://www.tsrarchive.com/hw/hw-hwa1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Nightrage",
+    "year": 1990,
+    "authors": "Allen Varney",
+    "cover_url": "https://www.tsrarchive.com/hw/hw-hwa2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dark & Hidden Ways",
+    "year": 1990,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-hidden.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Wild Things",
+    "year": 1990,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-wild.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Ravenloft Appendix",
+    "year": 1991,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc10.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Tome of Magic",
+    "year": 1991,
+    "authors": "Cook & Findley & Herring & Kubasik & Sargent & Swan",
+    "cover_url": "https://www.tsrarchive.com/add/add-hc-tom-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Atruaghin Clans",
+    "year": 1991,
+    "authors": "William W. Connors",
+    "cover_url": "https://www.tsrarchive.com/gz/gz-gaz14.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Rules Cyclopedia",
+    "year": 1991,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-rules.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The New Easy to Master Dungeons & Dragons Game",
+    "year": 1991,
+    "authors": "Timothy Brown",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-new.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Psionics Handbook",
+    "year": 1991,
+    "authors": "Steve Winter",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr5-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Outer Planes Appendix",
+    "year": 1991,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Spelljammer Appendix II",
+    "year": 1991,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc9.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Arms and Equipment Guide",
+    "year": 1991,
+    "authors": "Grant Boucher & Troy Christensen & Jon Pickens & John Terra & Scott Davis",
+    "cover_url": "https://www.tsrarchive.com/add/add-dmgr3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Book of Dwarves",
+    "year": 1991,
+    "authors": "Jim Bambra",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr6-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Forgotten Realms Appendix",
+    "year": 1991,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc11.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Eye of Traldar",
+    "year": 1991,
+    "authors": "Carl Sargent",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-dda3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Dymrak Dread",
+    "year": 1991,
+    "authors": "John Nephew",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-dda4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Character Record Sheets",
+    "year": 1991,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-ddref1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Nightstorm",
+    "year": 1991,
+    "authors": "Allen Varney",
+    "cover_url": "https://www.tsrarchive.com/hw/hw-hwa3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Vikings Campaign Sourcebook",
+    "year": 1991,
+    "authors": "David \"Zeb\" Cook",
+    "cover_url": "https://www.tsrarchive.com/add/add-hr1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Sons of Azca",
+    "year": 1991,
+    "authors": "John Nephew",
+    "cover_url": "https://www.tsrarchive.com/hw/hw-hwr1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Kingdom of Nythia",
+    "year": 1991,
+    "authors": "Blake Mobley & Newton Ewell",
+    "cover_url": "https://www.tsrarchive.com/hw/hw-hwr2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Dark Sun Appendix: Terrors of the Desert",
+    "year": 1992,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc12.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Dragon's Den",
+    "year": 1992,
+    "authors": "Ken Rolston",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-ap-dd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Goblin's Lair",
+    "year": 1992,
+    "authors": "Graeme David",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-ap-gl.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Haunted Tower",
+    "year": 1992,
+    "authors": "Julia Martin",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-ap-ht.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Wrath of the Immortals",
+    "year": 1992,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-wrath.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragon Quest Game",
+    "year": 1992,
+    "authors": "William W. Connors & David Wise",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-dq.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Quest for the Silver Sword",
+    "year": 1992,
+    "authors": "William W. Connors",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Assault on Raven's Ruin",
+    "year": 1992,
+    "authors": "Tim Beach",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Thunder Rift",
+    "year": 1992,
+    "authors": "Colin McComb",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Character & Monster Assortment",
+    "year": 1992,
+    "authors": "Tim Beach",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Night Howlers",
+    "year": 1992,
+    "authors": "Ann Dupuis",
+    "cover_url": "https://www.tsrarchive.com/cc/cc-pc4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Poor Wizard's Almanac & Book of Facts",
+    "year": 1992,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-alm-pwa1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Milenian Scepter",
+    "year": 1992,
+    "authors": "Anthony Herring",
+    "cover_url": "https://www.tsrarchive.com/hw/hw-hwq1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Milenian Empire",
+    "year": 1992,
+    "authors": "Anthony Herring",
+    "cover_url": "https://www.tsrarchive.com/hw/hw-hwr3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Sword and Shield",
+    "year": 1992,
+    "authors": "John Terra",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Manual",
+    "year": 1993,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mm-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Gladiator's Handbook",
+    "year": 1993,
+    "authors": "Walter M. Baas & Colin McComb",
+    "cover_url": "https://www.tsrarchive.com/ds/ds-cgr2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragon Mountain",
+    "year": 1993,
+    "authors": "Colin McComb & Paul Lidberg",
+    "cover_url": "https://www.tsrarchive.com/add/add-box-dm.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Champions of Mystara: Heroes of the Princess Ark",
+    "year": 1993,
+    "authors": "Ann Dupuis",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-champ.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Creative Campaigning",
+    "year": 1993,
+    "authors": "Tony Pryor & Tony Herring & Jonathan Tweet & Norm Ritchie",
+    "cover_url": "https://www.tsrarchive.com/add/add-dmgr5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Book of Gnomes and Halflings",
+    "year": 1993,
+    "authors": "Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr9-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Book of Humanoids",
+    "year": 1993,
+    "authors": "Bill Slavicsek",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr10-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Ranger's Handbook",
+    "year": 1993,
+    "authors": "Rick Swan",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr11-1st_2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Magic Encyclopedia, Volume 2",
+    "year": 1993,
+    "authors": "Connie & Dale \"Slade\" Henson",
+    "cover_url": "https://www.tsrarchive.com/add/add-me2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Swamplight",
+    "year": 1993,
+    "authors": "Jean Rabe",
+    "cover_url": "https://www.tsrarchive.com/add/add-ga2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Cleric's Challenge",
+    "year": 1993,
+    "authors": "L. Richard Baker III",
+    "cover_url": "https://www.tsrarchive.com/add/add-hhq4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Knight of Newts",
+    "year": 1993,
+    "authors": "\"Slade\" Henson",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Rage of the Rakasta",
+    "year": 1993,
+    "authors": "William W. Connors",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "In the Phantom's Wake",
+    "year": 1993,
+    "authors": "Dale \"Slade\" Henson",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry8.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Master Screen",
+    "year": 1993,
+    "authors": "Teeuwynn Woodruff",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-dmr1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Creature Catalog",
+    "year": 1993,
+    "authors": "John Nephew",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-dmr2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Poor Wizard's Almanac II & Book of Facts",
+    "year": 1993,
+    "authors": "Ann Dupuis",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-alm-pwa2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Classic Dungeons & Dragons Game",
+    "year": 1994,
+    "authors": "Troy Denning, Timothy B. Brown, Doug Stewart",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-class-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Classic Dungeons & Dragons Game",
+    "year": 1994,
+    "authors": "Troy Denning, Timothy B. Brown, Doug Stewart",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-class-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Council of Wyrms",
+    "year": 1994,
+    "authors": "Bill Slavicsek",
+    "cover_url": "https://www.tsrarchive.com/add/add-box-wyrm.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Encyclopedia Magica, Volume I",
+    "year": 1994,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-em1-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Book of Villains",
+    "year": 1994,
+    "authors": "Kirk Botula",
+    "cover_url": "https://www.tsrarchive.com/add/add-dmgr6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Annual Volume One",
+    "year": 1994,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-mcann1-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Paladin's Handbook",
+    "year": 1994,
+    "authors": "Rick Swan",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr12-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Druid's Handbook",
+    "year": 1994,
+    "authors": "David L. Pulver",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr13-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Mystara Monstrous Compendium Appendix",
+    "year": 1994,
+    "authors": "John Nephew & John Terra & Skip Williams & Teeuwynn Woodruff",
+    "cover_url": "https://www.tsrarchive.com/add/add-mc-mystara.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Master's Survival Kit",
+    "year": 1994,
+    "authors": "Ann Dupuis",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-alm-pwa3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Age of Heroes Campaign Sourcebook",
+    "year": 1994,
+    "authors": "Nicky Rea",
+    "cover_url": "https://www.tsrarchive.com/add/add-hr6.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Treasure Chest",
+    "year": 1994,
+    "authors": "Laura Craig & Steve Winter",
+    "cover_url": "https://www.tsrarchive.com/add/add-adv-ttt.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Hour of the Knife",
+    "year": 1994,
+    "authors": "David \"Zeb\" Cook",
+    "cover_url": "https://www.tsrarchive.com/add/add-screen-fighter.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Book of Lairs (Dragonlance)",
+    "year": 1994,
+    "authors": "David \"Zeb\" Cook",
+    "cover_url": "https://www.tsrarchive.com/add/add-screen-priest.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Howls in the Night",
+    "year": 1994,
+    "authors": "Skip Williams",
+    "cover_url": "https://www.tsrarchive.com/add/add-screen-thief.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "City Sites",
+    "year": 1994,
+    "authors": "Skip Williams",
+    "cover_url": "https://www.tsrarchive.com/add/add-site-city.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Elminster's Ecologies",
+    "year": 1994,
+    "authors": "Julia Martin",
+    "cover_url": "https://www.tsrarchive.com/add/add-screen-wizard.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Crusades Campaign Sourcebook",
+    "year": 1994,
+    "authors": "Steve Kurtz",
+    "cover_url": "https://www.tsrarchive.com/add/add-hr7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Encyclopedia Magica, Volume II",
+    "year": 1995,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-em2-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dark Sun Monstrous Compendium Appendix II: Terrors Beyond Tyr",
+    "year": 1995,
+    "authors": "Jim Atkiss & Steve Brown & Timothy B. Brown & Andrew P. Morris & Bruce",
+    "cover_url": "https://www.tsrarchive.com/ds/ds-mc.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Player's Handbook (Revised)",
+    "year": 1995,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-phb-rev-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Master Guide (Revised)",
+    "year": 1995,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-dmg-rev-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Encyclopedia Magica, Volume III",
+    "year": 1995,
+    "authors": "Kirk Botulla & Shane Hensley & Nicky Rea & Teeuwynn Woodruff",
+    "cover_url": "https://www.tsrarchive.com/rv/rv-mc3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Player's Option: Combat & Tactics",
+    "year": 1995,
+    "authors": "L. Richard Baker III & Skip Williams",
+    "cover_url": "https://www.tsrarchive.com/add/add-opt-ct-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Player's Option: Skills & Powers",
+    "year": 1995,
+    "authors": "Douglas Niles & Dale A. Donovan",
+    "cover_url": "https://www.tsrarchive.com/add/add-opt-sp-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Master Option: High-Level Campaigns",
+    "year": 1995,
+    "authors": "Skip Williams",
+    "cover_url": "https://www.tsrarchive.com/add/add-opt-hlc.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Night Below: An Underdark Campaign",
+    "year": 1995,
+    "authors": "Carl Sargent",
+    "cover_url": "https://www.tsrarchive.com/add/add-box-below.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Encyclopedia Magica, Volume IV",
+    "year": 1995,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-em4-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Introduction to Advanced Dungeons & Dragons Game",
+    "year": 1995,
+    "authors": "L. Richard Baker III & David \"Zeb\" Cook & Kevin Melka & Bruce Nesmith",
+    "cover_url": "https://www.tsrarchive.com/add/add-box-fq.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Barbarian's Handbook",
+    "year": 1995,
+    "authors": "Rick Swan",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr14-2nd.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Book of Necromancers",
+    "year": 1995,
+    "authors": "Steve Kurtz",
+    "cover_url": "https://www.tsrarchive.com/add/add-dmgr7.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Complete Ninja's Handbook",
+    "year": 1995,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr15-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Annual Volume Two",
+    "year": 1995,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-mcann2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Joshuan's Almanac & Book of Facts",
+    "year": 1995,
+    "authors": "Ann Dupuis & Elizabeth Tornabene",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-alm-josh.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Castle Sites",
+    "year": 1995,
+    "authors": "Robin Jenkins",
+    "cover_url": "https://www.tsrarchive.com/add/add-site-country.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeon Master Screen & Master Index",
+    "year": 1995,
+    "authors": "Jim Butler",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-ind.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Chronomancer",
+    "year": 1995,
+    "authors": "Loren Coleman",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-chrono.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Shaman",
+    "year": 1995,
+    "authors": "Kevin Hassall & Steve Miller",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-shaman.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Player's Option: Spells & Magic",
+    "year": 1996,
+    "authors": "Richard Baker",
+    "cover_url": "https://www.tsrarchive.com/add/add-opt-sm.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Netheril: Empire of Magic",
+    "year": 1996,
+    "authors": "Skip Williams",
+    "cover_url": "https://www.tsrarchive.com/add/add-tome-rod.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Sages and Specialists",
+    "year": 1996,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-em3-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Ravenloft MC Appendices I & II",
+    "year": 1996,
+    "authors": "William W. Connors",
+    "cover_url": "https://www.tsrarchive.com/rv/rv-mc1-2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Annual Volume Three",
+    "year": 1996,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-mcann3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Player's Guide to the Living City Campaign",
+    "year": 1996,
+    "authors": "Ted James Thomas Zuvich",
+    "cover_url": "https://www.tsrarchive.com/add/add-adv-silver.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Undermountain: The Lost Level",
+    "year": 1996,
+    "authors": "Kirk Botula",
+    "cover_url": "https://www.tsrarchive.com/add/add-jakwar.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Undermountain: Stardock",
+    "year": 1996,
+    "authors": "Kirk Botula & Dale Donovan & Kim Mohan",
+    "cover_url": "https://www.tsrarchive.com/add/add-jakdes.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Den of Thieves",
+    "year": 1996,
+    "authors": "Wes Nicholson",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-den.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Treasure Tales",
+    "year": 1996,
+    "authors": "Loren Coleman",
+    "cover_url": "https://www.tsrarchive.com/add/add-gr5.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "I, Tyrant",
+    "year": 1996,
+    "authors": "Aaron Allston",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-eye.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Eye of Doom",
+    "year": 1996,
+    "authors": "Thomas M. Reid",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-eye1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Eye of Pain",
+    "year": 1996,
+    "authors": "Thomas M. Reid",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-eye2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Gates of Firestorm Peak",
+    "year": 1996,
+    "authors": "Bruce Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-adv-firestorm.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Death Ascendant",
+    "year": 1996,
+    "authors": "Monte Cook",
+    "cover_url": "https://www.tsrarchive.com/add/add-adv-hero.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Tale of the Comet",
+    "year": 1997,
+    "authors": "Skip Williams",
+    "cover_url": "https://www.tsrarchive.com/add/add-tome-rod.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Wizard's Spell Compendium, Volume Two",
+    "year": 1997,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-wsc1-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Sea Devils",
+    "year": 1997,
+    "authors": "Skip Williams",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-sea.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Night of the Shark",
+    "year": 1997,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-sea1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Children of the Night: Ghosts",
+    "year": 1997,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-college.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Forgotten Terror",
+    "year": 1997,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-dbg.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Sea of Blood",
+    "year": 1997,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-sea3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Of Ships and the Sea",
+    "year": 1997,
+    "authors": "Penny & Skip Williams",
+    "cover_url": "https://www.tsrarchive.com/add/add-adv-moon.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Return to the Tomb of Horrors",
+    "year": 1998,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-tome-tomb.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Monstrous Compendium Annual Volume Four",
+    "year": 1998,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-mcann4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Wizard's Spell Compendium, Volume Three",
+    "year": 1998,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-wsc3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Wizard's Spell Compendium, Volume Four",
+    "year": 1998,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-wsc4.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Seeds of Chaos",
+    "year": 1998,
+    "authors": "Richard Baker",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-wbg.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Moonlight Madness",
+    "year": 1998,
+    "authors": "Thomas M. Reid",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-eye3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "College of Wizardry",
+    "year": 1998,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-college.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Illithiad",
+    "year": 1998,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-mind.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Destiny of Kings",
+    "year": 1998,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-mind1.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "A Darkness Gathering",
+    "year": 1998,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-mind2.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dawn of the Overmind",
+    "year": 1998,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-ma-mind3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "A Paladin in Hell",
+    "year": 1998,
+    "authors": "Monte Cook",
+    "cover_url": "https://www.tsrarchive.com/add/add-adv-paladin.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Silver Anniversary Collector's Edition",
+    "year": 1999,
+    "authors": "John D. Rateliff",
+    "cover_url": "https://www.tsrarchive.com/add/gh-25-keep.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Guide to Hell",
+    "year": 1999,
+    "authors": "Chris Pramas",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-hell.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Accursed Tower",
+    "year": 1999,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-adv-circle.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "The Shattered Circle",
+    "year": 1999,
+    "authors": "Chris Pramas",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-vortex.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Return to the Keep on the Borderlands",
+    "year": 1999,
+    "authors": "John D. Rateliff",
+    "cover_url": "https://www.tsrarchive.com/add/gh-25-keep.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dragonlance Classics: 15th Anniversary Edition",
+    "year": 1999,
+    "authors": "Steve Miller & Stan!",
+    "cover_url": "https://www.tsrarchive.com/fa/fa-25-class.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Warriors of Heaven",
+    "year": 1999,
+    "authors": "Christopher Perkins",
+    "cover_url": "https://www.tsrarchive.com/add/add-acc-heaven.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Dungeons of Despair",
+    "year": 1999,
+    "authors": "John D. Rateliff & Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/add-adv-reverse.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Against the Giants: The Liberation of Geoff",
+    "year": 1999,
+    "authors": "Sean K. Reynolds",
+    "cover_url": "https://www.tsrarchive.com/add/gh-25-giants.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Return to White Plume Mountain",
+    "year": 1999,
+    "authors": "Bruce R. Cordell",
+    "cover_url": "https://www.tsrarchive.com/add/gh-25-plume.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "TSR Jam 1999",
+    "year": 1999,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-adv-jam.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Priest's Spell Compendium, Volume One",
+    "year": 1999,
+    "authors": null,
+    "cover_url": "https://www.tsrarchive.com/add/add-psc3.jpg",
+    "cover_artist": null
+  },
+  {
+    "title": "Original D&D Premium Reprint",
+    "year": 2013,
+    "authors": "Gygax, Arneson, Kuntz, Blume & Ward",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-3vs-rep.jpg",
+    "cover_artist": null
+  }
+]
