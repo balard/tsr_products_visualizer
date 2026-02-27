@@ -66,7 +66,7 @@
         .viewer {
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
-            grid-template-rows: 1fr auto auto;
+            grid-template-rows: 1fr auto auto auto;
             gap: 1.5rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -254,7 +254,7 @@
             background: #c9a227;
         }
 
-        #interval-select {
+        #interval-select, #year-select {
             background: #2a2a4a;
             color: #e8e8e8;
             border: 1px solid #3a3a5a;
@@ -263,6 +263,53 @@
             font-size: 0.85rem;
             cursor: pointer;
         }
+
+        /* Timeline scrubber */
+        .scrubber-row {
+            grid-column: 1 / -1;
+            grid-row: 4;
+            padding: 0 2rem 2rem;
+        }
+
+        #scrubber {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+        }
+        #scrubber::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #c9a227;
+            cursor: pointer;
+            border: 2px solid #1a1a2e;
+            box-shadow: 0 0 4px rgba(201, 162, 39, 0.5);
+        }
+        #scrubber::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #c9a227;
+            cursor: pointer;
+            border: 2px solid #1a1a2e;
+            box-shadow: 0 0 4px rgba(201, 162, 39, 0.5);
+        }
+        #scrubber::-moz-range-progress {
+            background: #c9a227;
+            height: 4px;
+            border-radius: 2px 0 0 2px;
+        }
+        #scrubber::-moz-range-track {
+            background: #2a2a4a;
+            height: 4px;
+            border-radius: 2px;
+        }
+
 
         /* Responsive */
         @media (max-width: 900px) {
@@ -282,6 +329,7 @@
             .nav-bar { grid-column: 1; grid-row: 5; }
             .meta-panel { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
             .meta-item { margin-bottom: 0; }
+            .scrubber-row { grid-column: 1; grid-row: 6; padding: 0 0 1.5rem; }
         }
     </style>
 </head>
@@ -334,6 +382,12 @@
             <span id="counter"></span>
             <button id="btn-next" title="Next (Right Arrow)">Next &#9654;</button>
             <div class="nav-divider"></div>
+            <button id="btn-random" title="Random (R)">&#9860; Random</button>
+            <div class="nav-divider"></div>
+            <select id="year-select">
+                <option value="">Year&hellip;</option>
+            </select>
+            <div class="nav-divider"></div>
             <label class="auto-toggle">
                 <input type="checkbox" id="auto-toggle">
                 <span class="toggle-slider"></span>
@@ -346,6 +400,10 @@
                 <option value="10000">10s</option>
             </select>
         </nav>
+
+        <div class="scrubber-row">
+            <input type="range" id="scrubber" min="0" step="1" value="0">
+        </div>
     </div>
 
     <script>
@@ -364,6 +422,11 @@
         const progressBar = document.getElementById('progress-bar');
         const viewer = document.getElementById('viewer');
         const errorOverlay = document.getElementById('error-overlay');
+        const btnRandom = document.getElementById('btn-random');
+        const yearSelect = document.getElementById('year-select');
+        const scrubber = document.getElementById('scrubber');
+
+        const yearToIndex = {};
 
         const valYear = document.getElementById('val-year');
         const valAuthors = document.getElementById('val-authors');
@@ -376,6 +439,8 @@
                 const resp = await fetch('products.json');
                 products = await resp.json();
                 viewer.style.display = '';
+                scrubber.max = products.length - 1;
+                buildNav();
                 const saved = parseInt(localStorage.getItem('tsr_viewer_index'));
                 if (!isNaN(saved) && saved >= 0 && saved < products.length) {
                     currentIndex = saved;
@@ -432,9 +497,31 @@
             counter.textContent = `${currentIndex + 1} / ${products.length}`;
             progressBar.style.width = `${((currentIndex + 1) / products.length) * 100}%`;
 
+            // Sync scrubber
+            const pct = products.length > 1 ? (currentIndex / (products.length - 1)) * 100 : 0;
+            scrubber.value = currentIndex;
+            scrubber.style.background = `linear-gradient(to right, #c9a227 ${pct}%, #2a2a4a ${pct}%)`;
+
+            // Sync year select
+            if (products[currentIndex].year) yearSelect.value = String(products[currentIndex].year);
+
             // Button states
             btnPrev.disabled = currentIndex === 0;
             btnNext.disabled = currentIndex === products.length - 1;
+        }
+
+        function buildNav() {
+            products.forEach((p, i) => {
+                if (p.year && !(p.year in yearToIndex)) yearToIndex[p.year] = i;
+            });
+
+            Object.keys(yearToIndex).sort().forEach(y => {
+                const opt = document.createElement('option');
+                opt.value = y;
+                opt.textContent = y;
+                yearSelect.appendChild(opt);
+            });
+
         }
 
         function preload(index) {
@@ -474,6 +561,14 @@
         // Event listeners
         btnPrev.addEventListener('click', goPrev);
         btnNext.addEventListener('click', goNext);
+        btnRandom.addEventListener('click', () => goTo(Math.floor(Math.random() * products.length)));
+
+        yearSelect.addEventListener('change', () => {
+            const y = parseInt(yearSelect.value);
+            if (!isNaN(y) && yearToIndex[y] !== undefined) goTo(yearToIndex[y]);
+        });
+
+        scrubber.addEventListener('input', () => goTo(parseInt(scrubber.value)));
 
         autoToggle.addEventListener('change', () => {
             if (autoToggle.checked) startAutoTimer();
@@ -487,6 +582,7 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') goPrev();
             else if (e.key === 'ArrowRight') goNext();
+            else if (e.key === 'r' || e.key === 'R') goTo(Math.floor(Math.random() * products.length));
             else if (e.key === ' ') {
                 e.preventDefault();
                 autoToggle.checked = !autoToggle.checked;
