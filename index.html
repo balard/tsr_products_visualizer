@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSR Product Archive — Cover Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #1a1a2e;
+            color: #e8e8e8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Progress bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #c9a227;
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        /* Error overlay */
+        #error-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 26, 46, 0.95);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        #error-overlay.visible { display: flex; }
+        #error-overlay .error-box {
+            max-width: 500px;
+            background: #16213e;
+            border: 1px solid #c9a227;
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        #error-overlay h2 {
+            font-family: 'Cinzel', Georgia, serif;
+            color: #c9a227;
+            margin-bottom: 1rem;
+        }
+        #error-overlay code {
+            display: block;
+            background: #0d0d1a;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+            color: #c9a227;
+        }
+
+        /* Main viewer grid */
+        .viewer {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr auto auto;
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        /* Metadata panels */
+        .meta-panel {
+            align-self: center;
+            padding: 1.5rem;
+        }
+        .meta-left { grid-column: 1; grid-row: 1; text-align: right; }
+        .meta-right { grid-column: 3; grid-row: 1; text-align: left; }
+
+        .meta-item {
+            margin-bottom: 2rem;
+        }
+        .meta-item:last-child { margin-bottom: 0; }
+        .meta-label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #c9a227;
+            margin-bottom: 0.3rem;
+        }
+        .meta-value {
+            display: block;
+            font-size: 1.1rem;
+            color: #e8e8e8;
+            line-height: 1.4;
+        }
+        .meta-item.hidden { display: none; }
+
+        /* Cover panel */
+        .cover-panel {
+            grid-column: 2;
+            grid-row: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cover-frame {
+            position: relative;
+            border: 1px solid #c9a227;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 10px rgba(201, 162, 39, 0.15);
+            background: #0d0d1a;
+            line-height: 0;
+        }
+
+        #cover-img {
+            display: block;
+            max-height: 75vh;
+            max-width: 100%;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+        #cover-img.loading { opacity: 0; }
+
+        .cover-loading {
+            position: absolute;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: #a0a0b0;
+            font-size: 0.9rem;
+            min-width: 300px;
+            min-height: 400px;
+        }
+        .cover-loading.visible { display: flex; }
+
+        /* Title bar */
+        .title-bar {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            text-align: center;
+            padding: 0.5rem 1rem;
+        }
+        .title-bar h1 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #e8e8e8;
+            margin-bottom: 0.2rem;
+        }
+        .title-bar .subtitle {
+            font-size: 0.85rem;
+            color: #a0a0b0;
+        }
+
+        /* Decorative divider */
+        .divider {
+            grid-column: 1 / -1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c9a227, transparent);
+            margin: 0;
+        }
+
+        /* Navigation bar */
+        .nav-bar {
+            grid-column: 1 / -1;
+            grid-row: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-bar button {
+            background: #2a2a4a;
+            color: #c9a227;
+            border: 1px solid #c9a227;
+            padding: 0.5rem 1.5rem;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 3px;
+        }
+        .nav-bar button:hover:not(:disabled) {
+            background: #c9a227;
+            color: #1a1a2e;
+        }
+        .nav-bar button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        #counter {
+            font-size: 0.9rem;
+            color: #a0a0b0;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .nav-divider {
+            width: 1px;
+            height: 24px;
+            background: #2a2a4a;
+            margin: 0 0.5rem;
+        }
+
+        /* Auto-advance toggle */
+        .auto-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: #a0a0b0;
+            user-select: none;
+        }
+        .auto-toggle input { display: none; }
+        .toggle-slider {
+            width: 40px;
+            height: 22px;
+            background: #2a2a4a;
+            border-radius: 11px;
+            position: relative;
+            transition: background 0.3s;
+            border: 1px solid #3a3a5a;
+        }
+        .toggle-slider::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #a0a0b0;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .auto-toggle input:checked + .toggle-slider {
+            background: rgba(201, 162, 39, 0.3);
+            border-color: #c9a227;
+        }
+        .auto-toggle input:checked + .toggle-slider::after {
+            transform: translateX(18px);
+            background: #c9a227;
+        }
+
+        #interval-select {
+            background: #2a2a4a;
+            color: #e8e8e8;
+            border: 1px solid #3a3a5a;
+            padding: 0.3rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .viewer {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto auto;
+                padding: 1rem;
+            }
+            .meta-left, .meta-right {
+                grid-column: 1;
+                text-align: center;
+            }
+            .meta-left { grid-row: 1; }
+            .cover-panel { grid-column: 1; grid-row: 2; }
+            .meta-right { grid-column: 1; grid-row: 3; }
+            .title-bar { grid-column: 1; grid-row: 4; }
+            .nav-bar { grid-column: 1; grid-row: 5; }
+            .meta-panel { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+            .meta-item { margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-bar"></div>
+
+    <div id="error-overlay">
+        <div class="error-box">
+            <h2>Could Not Load Data</h2>
+            <p>The product data file could not be loaded. This usually happens when opening the file directly (file:// protocol).</p>
+            <p style="margin-top:1rem;">Run a local server instead:</p>
+            <code>python -m http.server 8000</code>
+            <p style="margin-top:0.5rem;">Then open:</p>
+            <code>http://localhost:8000</code>
+        </div>
+    </div>
+
+    <div class="viewer" id="viewer" style="display:none;">
+        <aside class="meta-panel meta-left">
+            <div class="meta-item" id="meta-year">
+                <span class="meta-label">Year</span>
+                <span class="meta-value" id="val-year"></span>
+            </div>
+        </aside>
+
+        <main class="cover-panel">
+            <div class="cover-frame">
+                <img id="cover-img" src="" alt="">
+                <div class="cover-loading" id="cover-loading">Loading...</div>
+            </div>
+        </main>
+
+        <aside class="meta-panel meta-right">
+            <div class="meta-item" id="meta-authors">
+                <span class="meta-label">Author</span>
+                <span class="meta-value" id="val-authors"></span>
+            </div>
+            <div class="meta-item" id="meta-artist">
+                <span class="meta-label">Cover Artist</span>
+                <span class="meta-value" id="val-artist"></span>
+            </div>
+        </aside>
+
+        <div class="title-bar">
+            <h1 id="product-title"></h1>
+        </div>
+
+        <nav class="nav-bar">
+            <button id="btn-prev" title="Previous (Left Arrow)">&#9664; Prev</button>
+            <span id="counter"></span>
+            <button id="btn-next" title="Next (Right Arrow)">Next &#9654;</button>
+            <div class="nav-divider"></div>
+            <label class="auto-toggle">
+                <input type="checkbox" id="auto-toggle">
+                <span class="toggle-slider"></span>
+                Auto
+            </label>
+            <select id="interval-select">
+                <option value="1000">1s</option>
+                <option value="3000">3s</option>
+                <option value="5000" selected>5s</option>
+                <option value="10000">10s</option>
+            </select>
+        </nav>
+    </div>
+
+    <script>
+        let products = [];
+        let currentIndex = 0;
+        let autoTimer = null;
+
+        const img = document.getElementById('cover-img');
+        const loading = document.getElementById('cover-loading');
+        const title = document.getElementById('product-title');
+        const counter = document.getElementById('counter');
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+        const autoToggle = document.getElementById('auto-toggle');
+        const intervalSelect = document.getElementById('interval-select');
+        const progressBar = document.getElementById('progress-bar');
+        const viewer = document.getElementById('viewer');
+        const errorOverlay = document.getElementById('error-overlay');
+
+        const valYear = document.getElementById('val-year');
+        const valAuthors = document.getElementById('val-authors');
+        const valArtist = document.getElementById('val-artist');
+        const metaAuthors = document.getElementById('meta-authors');
+        const metaArtist = document.getElementById('meta-artist');
+
+        async function init() {
+            try {
+                const resp = await fetch('products.json');
+                products = await resp.json();
+                viewer.style.display = '';
+                const saved = parseInt(localStorage.getItem('tsr_viewer_index'));
+                if (!isNaN(saved) && saved >= 0 && saved < products.length) {
+                    currentIndex = saved;
+                }
+                render();
+                preload(currentIndex + 1);
+            } catch (e) {
+                errorOverlay.classList.add('visible');
+            }
+        }
+
+        function render() {
+            const p = products[currentIndex];
+
+            // Image
+            img.classList.add('loading');
+            loading.classList.add('visible');
+            const tempImg = new Image();
+            tempImg.onload = () => {
+                img.src = tempImg.src;
+                img.alt = p.title;
+                img.classList.remove('loading');
+                loading.classList.remove('visible');
+            };
+            tempImg.onerror = () => {
+                img.src = '';
+                img.alt = 'Cover not available';
+                img.classList.remove('loading');
+                loading.textContent = 'Cover not available';
+            };
+            tempImg.src = p.cover_url;
+
+            // Title
+            title.textContent = p.title;
+
+            // Metadata
+            valYear.textContent = p.year || '—';
+
+            if (p.authors) {
+                metaAuthors.classList.remove('hidden');
+                valAuthors.textContent = p.authors;
+            } else {
+                metaAuthors.classList.add('hidden');
+            }
+
+            if (p.cover_artist) {
+                metaArtist.classList.remove('hidden');
+                valArtist.textContent = p.cover_artist;
+            } else {
+                metaArtist.classList.add('hidden');
+            }
+
+            // Counter & progress
+            counter.textContent = `${currentIndex + 1} / ${products.length}`;
+            progressBar.style.width = `${((currentIndex + 1) / products.length) * 100}%`;
+
+            // Button states
+            btnPrev.disabled = currentIndex === 0;
+            btnNext.disabled = currentIndex === products.length - 1;
+        }
+
+        function preload(index) {
+            if (index >= 0 && index < products.length) {
+                new Image().src = products[index].cover_url;
+            }
+        }
+
+        function goTo(index) {
+            if (index < 0 || index >= products.length) return;
+            currentIndex = index;
+            localStorage.setItem('tsr_viewer_index', currentIndex);
+            render();
+            preload(index + 1);
+            preload(index - 1);
+        }
+
+        function goNext() {
+            if (currentIndex < products.length - 1) goTo(currentIndex + 1);
+            else if (autoToggle.checked) goTo(0); // wrap around in auto mode
+        }
+
+        function goPrev() {
+            if (currentIndex > 0) goTo(currentIndex - 1);
+        }
+
+        function startAutoTimer() {
+            stopAutoTimer();
+            const ms = parseInt(intervalSelect.value);
+            autoTimer = setInterval(goNext, ms);
+        }
+
+        function stopAutoTimer() {
+            if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+        }
+
+        // Event listeners
+        btnPrev.addEventListener('click', goPrev);
+        btnNext.addEventListener('click', goNext);
+
+        autoToggle.addEventListener('change', () => {
+            if (autoToggle.checked) startAutoTimer();
+            else stopAutoTimer();
+        });
+
+        intervalSelect.addEventListener('change', () => {
+            if (autoToggle.checked) startAutoTimer();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') goPrev();
+            else if (e.key === 'ArrowRight') goNext();
+            else if (e.key === ' ') {
+                e.preventDefault();
+                autoToggle.checked = !autoToggle.checked;
+                autoToggle.dispatchEvent(new Event('change'));
+            }
+        });
+
+        init();
+    </script>
+</body>
+</html>
