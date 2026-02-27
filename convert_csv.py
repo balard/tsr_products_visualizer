@@ -1,12 +1,31 @@
 import csv
+import io
 import json
+import urllib.request
+import urllib.error
 
-INPUT_FILE = 'TSR_products_corrected v4.4.csv'
+SOURCE_URL = 'https://raw.githubusercontent.com/balard/tsr_products/main/tsr_products.csv'
+LOCAL_FALLBACK = '../tsr_products/tsr_products.csv'
 OUTPUT_FILE = 'products.json'
 
+
+def load_csv_content():
+    try:
+        with urllib.request.urlopen(SOURCE_URL, timeout=10) as response:
+            content = response.read().decode('utf-8')
+        print(f'Loaded CSV from {SOURCE_URL}')
+        return io.StringIO(content)
+    except urllib.error.URLError as e:
+        print(f'Online fetch failed ({e}), falling back to local file...')
+        f = open(LOCAL_FALLBACK, newline='', encoding='utf-8')
+        print(f'Loaded CSV from {LOCAL_FALLBACK}')
+        return f
+
+
 products = []
-with open(INPUT_FILE, newline='', encoding='utf-8') as f:
-    reader = csv.DictReader(f)
+source = load_csv_content()
+try:
+    reader = csv.DictReader(source)
     for row in reader:
         cover_url = row['cover_url'].strip()
         if not cover_url:
@@ -28,6 +47,8 @@ with open(INPUT_FILE, newline='', encoding='utf-8') as f:
             'cover_url': cover_url,
             'cover_artist': artist,
         })
+finally:
+    source.close()
 
 with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
     json.dump(products, f, indent=2, ensure_ascii=False)
