@@ -311,6 +311,20 @@
         }
 
 
+        /* Footer disclaimer */
+        .site-footer {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            font-size: 0.7rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .site-footer a {
+            color: #888;
+            text-decoration: underline;
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
             .viewer {
@@ -404,6 +418,15 @@
         <div class="scrubber-row">
             <input type="range" id="scrubber" min="0" step="1" value="0">
         </div>
+
+        <footer class="site-footer">
+            All cover artwork is copyright of its respective rights holders
+            (Wizards of the Coast / Hasbro, original artists).
+            Images are displayed for educational and archival reference only.
+            No challenge to ownership is intended.
+            If you are a rights holder and wish to have content removed, please
+            <a href="https://github.com/balard/tsr_products_visualizer/issues">open an issue</a>.
+        </footer>
     </div>
 
     <script>
