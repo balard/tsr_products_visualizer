@@ -45,7 +45,9 @@ try:
         if year is None or year > MAX_YEAR:
             continue
 
+        row_id = row.get('id', '').strip()
         products.append({
+            'id': int(row_id) if row_id else None,
             'title': row['title'].strip(),
             'year': year,
             'authors': authors,
