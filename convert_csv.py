@@ -3,11 +3,13 @@ import io
 import json
 import urllib.request
 import urllib.error
+from pathlib import Path
 
 SOURCE_URL = 'https://raw.githubusercontent.com/balard/tsr_products/main/tsr_products.csv'
 LOCAL_FALLBACK = '../tsr_products/tsr_products.csv'
 OUTPUT_FILE = 'products.json'
 MAX_YEAR = 1993  # Only export products up to and including this year
+LOCAL_COVERS_DIR = Path('covers/full')
 
 
 def load_csv_content():
@@ -46,12 +48,17 @@ try:
             continue
 
         row_id = row.get('id', '').strip()
+        local_path = None
+        if row_id:
+            for f in LOCAL_COVERS_DIR.glob(f'{row_id}.*'):
+                local_path = f'covers/full/{f.name}'
+                break
         products.append({
             'id': int(row_id) if row_id else None,
             'title': row['title'].strip(),
             'year': year,
             'authors': authors,
-            'cover_url': cover_url,
+            'cover_url': local_path if local_path else cover_url,
             'cover_artist': artist,
         })
 finally:
