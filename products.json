@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "Dungeons & Dragons",
     "year": 1974,
     "authors": "Gary Gygax & Dave Arneson",
@@ -7,6 +8,7 @@
     "cover_artist": "Greg Bell"
   },
   {
+    "id": 24,
     "title": "Supplement I: Greyhawk",
     "year": 1975,
     "authors": "Gary Gygax & Rob Kuntz",
@@ -14,6 +16,7 @@
     "cover_artist": "Greg Bell"
   },
   {
+    "id": 23,
     "title": "Supplement II: Blackmoor",
     "year": 1975,
     "authors": "Dave Arneson",
@@ -21,6 +24,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 9,
     "title": "Supplement III: Eldritch Wizardry",
     "year": 1976,
     "authors": "Gary Gygax & Brian Blume",
@@ -28,6 +32,7 @@
     "cover_artist": "Deborah Larson"
   },
   {
+    "id": 2,
     "title": "Dungeon Geomorphs Set One: Basic Dungeon",
     "year": 1976,
     "authors": "Gary Gygax",
@@ -35,6 +40,7 @@
     "cover_artist": null
   },
   {
+    "id": 3,
     "title": "Supplement IV: Gods, Demi-Gods & Heroes",
     "year": 1976,
     "authors": "Robert Kuntz & James Ward",
@@ -42,6 +48,7 @@
     "cover_artist": "NOT FOUND"
   },
   {
+    "id": 4,
     "title": "Swords & Spells",
     "year": 1976,
     "authors": "Gary Gygax",
@@ -49,6 +56,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 5,
     "title": "Dungeons & Dragons Basic Set",
     "year": 1977,
     "authors": "Eric Holmes",
@@ -56,6 +64,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 6,
     "title": "Monster Manual",
     "year": 1977,
     "authors": "Gary Gyax",
@@ -63,6 +72,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 16,
     "title": "Dungeon Geomorphs Set Two: Caves & Caverns",
     "year": 1977,
     "authors": "Gary & Ernie Gygax",
@@ -70,6 +80,7 @@
     "cover_artist": null
   },
   {
+    "id": 18,
     "title": "Dungeon Geomorphs Set Three: Lower Dungeons",
     "year": 1977,
     "authors": "Gary Gygax",
@@ -77,6 +88,7 @@
     "cover_artist": null
   },
   {
+    "id": 19,
     "title": "Outdoor Geomorphs Set One: Walled City",
     "year": 1977,
     "authors": "Gary Gygax",
@@ -84,6 +96,7 @@
     "cover_artist": null
   },
   {
+    "id": 7,
     "title": "Monster & Treasure Assortment Set One: Levels One-Three",
     "year": 1977,
     "authors": "N/A",
@@ -91,6 +104,7 @@
     "cover_artist": null
   },
   {
+    "id": 21,
     "title": "Monster & Treasure Assortment Set Two: Levels Four-Six",
     "year": 1977,
     "authors": "N/A",
@@ -98,6 +112,7 @@
     "cover_artist": null
   },
   {
+    "id": 8,
     "title": "Character Record Sheets",
     "year": 1977,
     "authors": "N/A",
@@ -105,6 +120,7 @@
     "cover_artist": null
   },
   {
+    "id": 10,
     "title": "Players Handbook",
     "year": 1978,
     "authors": "Gary Gyax",
@@ -112,6 +128,7 @@
     "cover_artist": "David A. Trampier"
   },
   {
+    "id": 11,
     "title": "Steading of the Hill Giant Chief",
     "year": 1978,
     "authors": "Gary Gygax",
@@ -119,6 +136,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 12,
     "title": "The Glacial Rift of the Frost Giant Jarl",
     "year": 1978,
     "authors": "Gary Gygax",
@@ -126,6 +144,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 13,
     "title": "Hall of the Fire Giant King",
     "year": 1978,
     "authors": "Gary Gygax",
@@ -133,6 +152,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 14,
     "title": "Descent into the Depths of the Earth",
     "year": 1978,
     "authors": "Gary Gygax",
@@ -140,6 +160,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 15,
     "title": "The Shrine of the Kuo-Toa",
     "year": 1978,
     "authors": "Gary Gygax",
@@ -147,6 +168,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 788,
     "title": "In Search of the Unknown",
     "year": 1978,
     "authors": "Mike Carr",
@@ -154,6 +176,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 22,
     "title": "Monster & Treasure Assortment Set Three: Levels Seven-Nine",
     "year": 1978,
     "authors": "N/A",
@@ -161,6 +184,7 @@
     "cover_artist": null
   },
   {
+    "id": 17,
     "title": "Vault of the Drow",
     "year": 1978,
     "authors": "Gary Gygax",
@@ -168,6 +192,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 20,
     "title": "Tomb of Horrors",
     "year": 1978,
     "authors": "Gary Gygax",
@@ -175,6 +200,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 25,
     "title": "Dungeon Masters Guide",
     "year": 1979,
     "authors": "Gary Gyax",
@@ -182,6 +208,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 26,
     "title": "Village of Hommlet",
     "year": 1979,
     "authors": "Gary Gygax",
@@ -189,6 +216,7 @@
     "cover_artist": "David A. Trampier"
   },
   {
+    "id": 29,
     "title": "White Plume Mountain",
     "year": 1979,
     "authors": "Lawrence Schick",
@@ -196,6 +224,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 27,
     "title": "Dungeon Masters Screen",
     "year": 1979,
     "authors": "N/A",
@@ -203,6 +232,7 @@
     "cover_artist": "David A. Trampier"
   },
   {
+    "id": 30,
     "title": "Player Character Record Sheets",
     "year": 1979,
     "authors": "N/A",
@@ -210,6 +240,7 @@
     "cover_artist": null
   },
   {
+    "id": 31,
     "title": "Permanent Character Folder and Adventure Records",
     "year": 1979,
     "authors": "Harold Johnson",
@@ -217,6 +248,7 @@
     "cover_artist": null
   },
   {
+    "id": 28,
     "title": "Non-Player Character Records",
     "year": 1979,
     "authors": "Harold Johnson",
@@ -224,6 +256,7 @@
     "cover_artist": null
   },
   {
+    "id": 36,
     "title": "Keep on the Borderlands",
     "year": 1979,
     "authors": "Gary Gygax",
@@ -231,6 +264,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 34,
     "title": "Hex Pad",
     "year": 1979,
     "authors": "N/A",
@@ -238,6 +272,7 @@
     "cover_artist": null
   },
   {
+    "id": 35,
     "title": "Deities & Demigods",
     "year": 1980,
     "authors": "James M. Ward with Robert J. Kuntz",
@@ -245,6 +280,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 37,
     "title": "World of Greyhawk",
     "year": 1980,
     "authors": "Gary Gygax",
@@ -252,6 +288,7 @@
     "cover_artist": "David C. Sutherland III"
   },
   {
+    "id": 38,
     "title": "The Rogue's Gallery",
     "year": 1980,
     "authors": "Brian Blume & Dave Cook & Jean Wells",
@@ -259,6 +296,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 39,
     "title": "The Hidden Shrine of Tomoachan",
     "year": 1980,
     "authors": "Harold Johnson & Jeff R. Leason",
@@ -266,6 +304,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 40,
     "title": "Expedition to the Barrier Peaks",
     "year": 1980,
     "authors": "Gary Gygax",
@@ -273,6 +312,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 41,
     "title": "Queen of the Demonweb Pits",
     "year": 1980,
     "authors": "David C. Sutherland with Gary Gygax",
@@ -280,6 +320,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 42,
     "title": "Dungeon Masters Adventure Log",
     "year": 1980,
     "authors": "N/A",
@@ -287,6 +328,7 @@
     "cover_artist": null
   },
   {
+    "id": 44,
     "title": "Slave Pits of the Undercity",
     "year": 1980,
     "authors": "David Cook",
@@ -294,6 +336,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 43,
     "title": "Ghost Tower of Inverness",
     "year": 1980,
     "authors": "Allen Hammack",
@@ -301,6 +344,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 45,
     "title": "Monster & Treasure Assortment Set One-Three",
     "year": 1980,
     "authors": "N/A",
@@ -308,6 +352,7 @@
     "cover_artist": null
   },
   {
+    "id": 46,
     "title": "Hexagonal Mapping Booklet",
     "year": 1980,
     "authors": "N/A",
@@ -315,6 +360,7 @@
     "cover_artist": null
   },
   {
+    "id": 56,
     "title": "Dungeons & Dragons Set 1: Basic Rules",
     "year": 1981,
     "authors": "Tom Moldvay",
@@ -322,6 +368,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 57,
     "title": "Dungeons & Dragons Set 2: Expert Rules",
     "year": 1981,
     "authors": "Dave Cook",
@@ -329,6 +376,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 49,
     "title": "The Isle of Dread",
     "year": 1981,
     "authors": "David Cook & Tom Moldvay",
@@ -336,6 +384,7 @@
     "cover_artist": "Jeff Dee"
   },
   {
+    "id": 65,
     "title": "Castle Amber",
     "year": 1981,
     "authors": "Tom Moldvay",
@@ -343,6 +392,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 50,
     "title": "Keep on the Borderlands",
     "year": 1981,
     "authors": "Gary Gygax",
@@ -350,6 +400,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 58,
     "title": "Secret of the Slavers Stockade",
     "year": 1981,
     "authors": "Harold Johnson & Tom Moldvay",
@@ -357,6 +408,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 51,
     "title": "Fiend Folio",
     "year": 1981,
     "authors": "Don Turnbull (editor)",
@@ -364,6 +416,7 @@
     "cover_artist": "Emmanuel"
   },
   {
+    "id": 59,
     "title": "Assault on the Aerie of the Slave Lords",
     "year": 1981,
     "authors": "Allen Hammack",
@@ -371,6 +424,7 @@
     "cover_artist": "Bill Willingham"
   },
   {
+    "id": 68,
     "title": "The Sinister Secret of Saltmarsh",
     "year": 1981,
     "authors": "Dave J. Browne with Don Turnbull",
@@ -378,6 +432,7 @@
     "cover_artist": "Dave de Leuw"
   },
   {
+    "id": 53,
     "title": "Player Character Record Sheets",
     "year": 1981,
     "authors": "N/A",
@@ -385,6 +440,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 61,
     "title": "Palace of the Silver Princess",
     "year": 1981,
     "authors": "Jean Wells",
@@ -392,6 +448,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 54,
     "title": "Dungeon Geomorphs Set One-Three",
     "year": 1981,
     "authors": "Gary & Ernie Gygax",
@@ -399,6 +456,7 @@
     "cover_artist": "Bill Willingham"
   },
   {
+    "id": 792,
     "title": "Village of Hommlet",
     "year": 1981,
     "authors": "Gary Gygax",
@@ -406,6 +464,7 @@
     "cover_artist": "Jeff Dee"
   },
   {
+    "id": 55,
     "title": "In Search of the Unknown",
     "year": 1981,
     "authors": "Mike Carr",
@@ -413,6 +472,7 @@
     "cover_artist": "Darlene"
   },
   {
+    "id": 60,
     "title": "In the Dungeon of the Slave Lords",
     "year": 1981,
     "authors": "Lawrence Schick",
@@ -420,6 +480,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 62,
     "title": "Palace of the Silver Princess",
     "year": 1981,
     "authors": "Tom Moldvay & Jean Wells",
@@ -427,6 +488,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 63,
     "title": "The Secret of Bone Hill",
     "year": 1981,
     "authors": "Lenard Lakofka",
@@ -434,6 +496,7 @@
     "cover_artist": "Bill Willingham"
   },
   {
+    "id": 64,
     "title": "Dwellers of the Forbidden City",
     "year": 1981,
     "authors": "David Cook",
@@ -441,6 +504,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 66,
     "title": "Against the Giants",
     "year": 1981,
     "authors": "Gary Gygax",
@@ -448,6 +512,7 @@
     "cover_artist": "Bill Willingham"
   },
   {
+    "id": 67,
     "title": "Descent into the Depths of the Earth",
     "year": 1981,
     "authors": "Gary Gygax",
@@ -455,6 +520,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 79,
     "title": "Danger at Dunwater",
     "year": 1982,
     "authors": "Dave J. Browne with Don Turnbull",
@@ -462,6 +528,7 @@
     "cover_artist": "Dave De Leuw"
   },
   {
+    "id": 78,
     "title": "Against the Cult of the Reptile God",
     "year": 1982,
     "authors": "Douglas Niles",
@@ -469,6 +536,7 @@
     "cover_artist": "Tim Truman"
   },
   {
+    "id": 69,
     "title": "Quadrille Graph Paper",
     "year": 1982,
     "authors": "N/A",
@@ -476,6 +544,7 @@
     "cover_artist": "Alex Nuckols"
   },
   {
+    "id": 73,
     "title": "The Lost City",
     "year": 1982,
     "authors": "Tom Moldvay",
@@ -483,6 +552,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 75,
     "title": "Tomb of the Lizard King",
     "year": 1982,
     "authors": "Mark Acres",
@@ -490,6 +560,7 @@
     "cover_artist": "Harry Quinn"
   },
   {
+    "id": 74,
     "title": "Pharaoh",
     "year": 1982,
     "authors": "Tracy & Laura Hickman",
@@ -497,6 +568,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 76,
     "title": "Curse of Xanathon",
     "year": 1982,
     "authors": "Douglas Niles",
@@ -504,6 +576,7 @@
     "cover_artist": "Harry Quinn"
   },
   {
+    "id": 77,
     "title": "Lost Caverns of Tsojcanth",
     "year": 1982,
     "authors": "Gary Gygax",
@@ -511,6 +584,7 @@
     "cover_artist": "Erol Otus"
   },
   {
+    "id": 80,
     "title": "The Forgotten Temple of Tharizdun",
     "year": 1982,
     "authors": "Gary Gygax",
@@ -518,6 +592,7 @@
     "cover_artist": "Karen Nelson"
   },
   {
+    "id": 100,
     "title": "Blizzard Pass",
     "year": 1983,
     "authors": "David Cook",
@@ -525,6 +600,7 @@
     "cover_artist": "Tim Truman"
   },
   {
+    "id": 101,
     "title": "Master of the Desert Nomads",
     "year": 1983,
     "authors": "David Cook",
@@ -532,6 +608,7 @@
     "cover_artist": "Harry Quinn"
   },
   {
+    "id": 95,
     "title": "Oasis of the White Palm",
     "year": 1983,
     "authors": "Philip Meyers & Tracy Hickman",
@@ -539,6 +616,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 81,
     "title": "Dungeons & Dragons Basic Set",
     "year": 1983,
     "authors": "Frank Mentzer",
@@ -546,6 +624,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 82,
     "title": "Dungeons & Dragons Expert Set",
     "year": 1983,
     "authors": "Frank Mentzer",
@@ -553,6 +632,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 96,
     "title": "Lost Tomb of Martek",
     "year": 1983,
     "authors": "Tracy Raye Hickman",
@@ -560,6 +640,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 98,
     "title": "Maze of the Riddling Minotaur",
     "year": 1983,
     "authors": "Jeff Grubb",
@@ -567,6 +648,7 @@
     "cover_artist": "Tim Truman"
   },
   {
+    "id": 102,
     "title": "Temple of Death",
     "year": 1983,
     "authors": "David Cook",
@@ -574,6 +656,7 @@
     "cover_artist": "Tim Truman"
   },
   {
+    "id": 83,
     "title": "The Isle of Dread",
     "year": 1983,
     "authors": "David Cook & Tom Moldvay",
@@ -581,6 +664,7 @@
     "cover_artist": "Tim Truman"
   },
   {
+    "id": 86,
     "title": "World of Greyhawk",
     "year": 1983,
     "authors": "Gary Gygax",
@@ -588,6 +672,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 84,
     "title": "Monster Manual II",
     "year": 1983,
     "authors": "Gary Gygax",
@@ -595,6 +680,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 85,
     "title": "Ravenloft",
     "year": 1983,
     "authors": "Tracy & Laura Hickman",
@@ -602,6 +688,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 106,
     "title": "Horror on the Hill",
     "year": 1983,
     "authors": "Douglas Niles",
@@ -609,6 +696,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 94,
     "title": "The Gem and the Staff",
     "year": 1983,
     "authors": "John & Laurie Van De Graaf",
@@ -616,6 +704,7 @@
     "cover_artist": "Gregg DeCesare"
   },
   {
+    "id": 97,
     "title": "The Assassin's Knot",
     "year": 1983,
     "authors": "Len Lokofka",
@@ -623,6 +712,7 @@
     "cover_artist": "NOT FOUND"
   },
   {
+    "id": 99,
     "title": "Beyond the Crystal Cave",
     "year": 1983,
     "authors": "Dave J. Browne & Tom Kirby & Graeme Morris",
@@ -630,6 +720,7 @@
     "cover_artist": "Dave De Leuw"
   },
   {
+    "id": 103,
     "title": "Dungeonland",
     "year": 1983,
     "authors": "Gary Gygax",
@@ -637,6 +728,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 104,
     "title": "The Land Beyond the Magic Mirror",
     "year": 1983,
     "authors": "Gary Gygax",
@@ -644,6 +736,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 105,
     "title": "The Final Enemy",
     "year": 1983,
     "authors": "Dave J. Browne with Don Turnbull",
@@ -651,6 +744,7 @@
     "cover_artist": "Dave De Leuw"
   },
   {
+    "id": 107,
     "title": "The Shady Dragon Inn",
     "year": 1983,
     "authors": "Carl Smith",
@@ -658,6 +752,7 @@
     "cover_artist": "Larry Day"
   },
   {
+    "id": 108,
     "title": "The Sentinel",
     "year": 1983,
     "authors": "Graeme Morris",
@@ -665,6 +760,7 @@
     "cover_artist": "Pete Young"
   },
   {
+    "id": 123,
     "title": "Combat Shield & Mini-adventure",
     "year": 1984,
     "authors": "David Cook",
@@ -672,6 +768,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 126,
     "title": "To Find a King",
     "year": 1984,
     "authors": "Bob Blake",
@@ -679,6 +776,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 119,
     "title": "Lathan's Gold",
     "year": 1984,
     "authors": "Merle M. Rasmussen",
@@ -686,6 +784,7 @@
     "cover_artist": "Jim Roslof"
   },
   {
+    "id": 127,
     "title": "Blade of Vengeance",
     "year": 1984,
     "authors": "Jim Bambra",
@@ -693,6 +792,7 @@
     "cover_artist": "Jeremy Goodwin"
   },
   {
+    "id": 133,
     "title": "The Book of Marvelous Magic",
     "year": 1984,
     "authors": "Frank Mentzer & Gary Gygax",
@@ -700,6 +800,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 109,
     "title": "Dragons of Despair",
     "year": 1984,
     "authors": "Tracy Hickman",
@@ -707,6 +808,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 114,
     "title": "Dungeons & Dragons Set 3: Companion Rules",
     "year": 1984,
     "authors": "Frank Mentzer",
@@ -714,6 +816,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 118,
     "title": "Quagmire!",
     "year": 1984,
     "authors": "Merle M. Rasmussen",
@@ -721,6 +824,7 @@
     "cover_artist": "Steve Peregrine"
   },
   {
+    "id": 132,
     "title": "Rahasia",
     "year": 1984,
     "authors": "Tracy & Laura Hickman",
@@ -728,6 +832,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 122,
     "title": "Ghost of Lion Castle",
     "year": 1984,
     "authors": "Merle M. Rasmussen",
@@ -735,6 +840,7 @@
     "cover_artist": "Bob Maurus"
   },
   {
+    "id": 138,
     "title": "3-D Dragon Tiles featuring The Kidnapping of Princess Arelina",
     "year": 1984,
     "authors": "Gary Spiegle",
@@ -742,6 +848,7 @@
     "cover_artist": "Dennis Kauth"
   },
   {
+    "id": 130,
     "title": "Mordenkainen's Fantastic Adventure",
     "year": 1984,
     "authors": "Robert J. Kuntz & Gary Gygax",
@@ -749,6 +856,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 110,
     "title": "Dragons of Flame",
     "year": 1984,
     "authors": "Douglas Niles",
@@ -756,6 +864,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 117,
     "title": "The War Rafts of Kron",
     "year": 1984,
     "authors": "Bruce Nesmith",
@@ -763,6 +872,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 143,
     "title": "Drums on Fire Mountain",
     "year": 1984,
     "authors": "Graeme Morris & Tom Kirby",
@@ -770,6 +880,7 @@
     "cover_artist": "Brian Williams"
   },
   {
+    "id": 111,
     "title": "Dragons of Hope",
     "year": 1984,
     "authors": "Tracy Hickman",
@@ -777,6 +888,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 112,
     "title": "Dragons of Desolation",
     "year": 1984,
     "authors": "Tracy Hickman & Michael Dobson",
@@ -784,6 +896,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 125,
     "title": "Journey to the Rock",
     "year": 1984,
     "authors": "Michael Malone",
@@ -791,6 +904,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 128,
     "title": "The Lost Island of Castanamir",
     "year": 1984,
     "authors": "Ken Rolston",
@@ -798,6 +912,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 113,
     "title": "Dragons of Mystery",
     "year": 1984,
     "authors": "Michael Dobson",
@@ -805,6 +920,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 134,
     "title": "Test of the Warlords",
     "year": 1984,
     "authors": "Douglas Niles",
@@ -812,6 +928,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 142,
     "title": "All that Glitters...",
     "year": 1984,
     "authors": "Jim Bambra",
@@ -819,6 +936,7 @@
     "cover_artist": "Brian Williams"
   },
   {
+    "id": 115,
     "title": "Legends & Lore",
     "year": 1984,
     "authors": "James M. Ward with Robert J. Kuntz",
@@ -826,6 +944,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 793,
     "title": "Player Character Record Sheets",
     "year": 1984,
     "authors": "N/A",
@@ -833,6 +952,7 @@
     "cover_artist": "Jeff Dee"
   },
   {
+    "id": 116,
     "title": "Player Character Record Sheets",
     "year": 1984,
     "authors": "N/A",
@@ -840,6 +960,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 120,
     "title": "The Forest Oracle",
     "year": 1984,
     "authors": "Carl Smith",
@@ -847,6 +968,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 121,
     "title": "The Veiled Society",
     "year": 1984,
     "authors": "David Cook",
@@ -854,6 +976,7 @@
     "cover_artist": "Steve Chappell"
   },
   {
+    "id": 124,
     "title": "Midnight on Dagger Alley",
     "year": 1984,
     "authors": "Merle M. Rasmussen",
@@ -861,6 +984,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 129,
     "title": "The Gauntlet",
     "year": 1984,
     "authors": "Graeme Morris",
@@ -868,6 +992,7 @@
     "cover_artist": "NOT FOUND"
   },
   {
+    "id": 131,
     "title": "Quest for the Heartstone",
     "year": 1984,
     "authors": "Michael L. Gray",
@@ -875,6 +1000,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 135,
     "title": "Death's Ride",
     "year": 1984,
     "authors": "Garry Spiegle",
@@ -882,6 +1008,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 136,
     "title": "Sabre River",
     "year": 1984,
     "authors": "Douglas Niles & Bruce Nesmith",
@@ -889,6 +1016,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 137,
     "title": "When a Star Falls",
     "year": 1984,
     "authors": "Graeme Morris",
@@ -896,6 +1024,7 @@
     "cover_artist": "NOT FOUND"
   },
   {
+    "id": 139,
     "title": "Conan Unchained!",
     "year": 1984,
     "authors": "David Cook",
@@ -903,6 +1032,7 @@
     "cover_artist": "Jeff Butler"
   },
   {
+    "id": 140,
     "title": "Conan Against Darkness!",
     "year": 1984,
     "authors": "Ken Rolston",
@@ -910,6 +1040,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 141,
     "title": "Eye of the Serpent",
     "year": 1984,
     "authors": "Graeme Morris",
@@ -917,6 +1048,7 @@
     "cover_artist": "Tim Sell"
   },
   {
+    "id": 155,
     "title": "Player Character Record Sheets",
     "year": 1985,
     "authors": "N/A",
@@ -924,6 +1056,7 @@
     "cover_artist": null
   },
   {
+    "id": 144,
     "title": "Dragons of Glory",
     "year": 1985,
     "authors": "Douglas Niles & Tracy Hickman",
@@ -931,6 +1064,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 145,
     "title": "Battlesystem",
     "year": 1985,
     "authors": "Douglas Niles",
@@ -938,6 +1072,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 167,
     "title": "Mystery of the Snow Pearls",
     "year": 1985,
     "authors": "Anne Gray McCready",
@@ -945,6 +1080,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 146,
     "title": "Dragons of Ice",
     "year": 1985,
     "authors": "Douglas Niles",
@@ -952,6 +1088,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 170,
     "title": "Where Chaos Reigns",
     "year": 1985,
     "authors": "Graeme Morris",
@@ -959,6 +1096,7 @@
     "cover_artist": "Brian Williams"
   },
   {
+    "id": 147,
     "title": "Dungeons & Dragons Set 4: Master Rules",
     "year": 1985,
     "authors": "Frank Mentzer",
@@ -966,6 +1104,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 148,
     "title": "Unearthed Arcana",
     "year": 1985,
     "authors": "Gary Gygax",
@@ -973,6 +1112,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 158,
     "title": "Earthshaker!",
     "year": 1985,
     "authors": "David \"Zeb\" Cook",
@@ -980,6 +1120,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 159,
     "title": "The Savage Coast",
     "year": 1985,
     "authors": "Merle & Jackie Rasmussen & Anne C. Gray",
@@ -987,6 +1128,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 160,
     "title": "Castle Caldwell and Beyond",
     "year": 1985,
     "authors": "Harry Nuckols",
@@ -994,6 +1136,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 157,
     "title": "Bloodstone Pass",
     "year": 1985,
     "authors": "Douglas Niles & Michael Dobson",
@@ -1001,6 +1144,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 149,
     "title": "Dragons of Light",
     "year": 1985,
     "authors": "Jeff Grubb",
@@ -1008,6 +1152,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 150,
     "title": "Dragons of War",
     "year": 1985,
     "authors": "Tracy Hickman & Laura Hickman",
@@ -1015,6 +1160,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 151,
     "title": "The Temple of Elemental Evil",
     "year": 1985,
     "authors": "Gary Gygax & Frank Mentzer",
@@ -1022,6 +1168,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 161,
     "title": "3-D Dragon Tiles featuring The Revenge of Rusak",
     "year": 1985,
     "authors": "David \"Zeb\" Cook",
@@ -1029,6 +1176,7 @@
     "cover_artist": "Dennis & Martha Kauth"
   },
   {
+    "id": 152,
     "title": "Dragons of Deceit",
     "year": 1985,
     "authors": "Douglas Niles",
@@ -1036,6 +1184,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 169,
     "title": "Thunderdelve Mountain",
     "year": 1985,
     "authors": "William Carlson",
@@ -1043,6 +1192,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 153,
     "title": "Oriental Adventures",
     "year": 1985,
     "authors": "Gary Gygax with David Cook & Francois Marcela-Froideval",
@@ -1050,6 +1200,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 171,
     "title": "Into the Maelstrom",
     "year": 1985,
     "authors": "Bruce & Beatrice Heard",
@@ -1057,6 +1208,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 165,
     "title": "Baltron's Beacon",
     "year": 1985,
     "authors": "Philip Meyers",
@@ -1064,6 +1216,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 172,
     "title": "Red Arrow, Black Shield",
     "year": 1985,
     "authors": "Michael S. Dobson",
@@ -1071,6 +1224,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 154,
     "title": "Dragons of Dreams",
     "year": 1985,
     "authors": "Tracy Hickman",
@@ -1078,6 +1232,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 166,
     "title": "Isle of the Ape",
     "year": 1985,
     "authors": "Gary Gygax",
@@ -1085,6 +1240,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 156,
     "title": "The Bane of Llywelyn",
     "year": 1985,
     "authors": "Bob Blake",
@@ -1092,6 +1248,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 162,
     "title": "DM Screen",
     "year": 1985,
     "authors": "Bob Blake",
@@ -1099,6 +1256,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 163,
     "title": "Swords of the Undercity",
     "year": 1985,
     "authors": "Carl Smith & Bruce Nesmith & Douglas Niles",
@@ -1106,6 +1264,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 164,
     "title": "Dark Clouds Gather",
     "year": 1985,
     "authors": "Jim Bambra & Phil Gallagher",
@@ -1113,6 +1272,7 @@
     "cover_artist": "NOT FOUND"
   },
   {
+    "id": 168,
     "title": "Master Player Screen featuring The Spindle",
     "year": 1985,
     "authors": "Bruce Nesmith",
@@ -1120,6 +1280,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 173,
     "title": "Lankhmar: City of Adventure",
     "year": 1985,
     "authors": "Bruce Nesmith & Douglas Niles & Ken Rolston",
@@ -1127,6 +1288,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 202,
     "title": "Treasure Hunt",
     "year": 1986,
     "authors": "Aaron Allston",
@@ -1134,6 +1296,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 184,
     "title": "Night's Dark Terror",
     "year": 1986,
     "authors": "Jim Bambra, Graeme Morris & Phil Gallagher",
@@ -1141,6 +1304,7 @@
     "cover_artist": "Brian Williams"
   },
   {
+    "id": 185,
     "title": "Destiny of Kings",
     "year": 1986,
     "authors": "Stephen Bourne",
@@ -1148,6 +1312,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 186,
     "title": "Swords of Daimyo",
     "year": 1986,
     "authors": "David Cook",
@@ -1155,6 +1320,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 188,
     "title": "The Tree of Life",
     "year": 1986,
     "authors": "Bruce A. Heard",
@@ -1162,6 +1328,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 174,
     "title": "Dragons of Faith",
     "year": 1986,
     "authors": "Harold Johnson & Bruce Heard",
@@ -1169,6 +1336,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 183,
     "title": "Vengeance of Alphaks",
     "year": 1986,
     "authors": "Skip Williams",
@@ -1176,6 +1344,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 189,
     "title": "Scourge of the Slavelords",
     "year": 1986,
     "authors": "David Cook & Allen Hammack & Harold Johnson & Tom Moldvay",
@@ -1183,6 +1352,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 175,
     "title": "Dungeons & Dragons Set 5: Immortal Rules",
     "year": 1986,
     "authors": "Frank Mentzer",
@@ -1190,6 +1360,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 176,
     "title": "Dungeoneer's Survival Guide",
     "year": 1986,
     "authors": "Douglas Niles",
@@ -1197,6 +1368,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 191,
     "title": "Ravager of Time",
     "year": 1986,
     "authors": "Graeme Morris & Jim Bambra",
@@ -1204,6 +1376,7 @@
     "cover_artist": "Jeff Anderson"
   },
   {
+    "id": 192,
     "title": "Swords of Deceit",
     "year": 1986,
     "authors": "Stephen Bourne & Michael Dobson & Steve Mecca & Ken Rolston",
@@ -1211,6 +1384,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 181,
     "title": "Character Record Sheets",
     "year": 1986,
     "authors": "N/A",
@@ -1218,6 +1392,7 @@
     "cover_artist": null
   },
   {
+    "id": 187,
     "title": "Saga of the Shadow Lord",
     "year": 1986,
     "authors": "Stephen Bourne",
@@ -1225,6 +1400,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 193,
     "title": "Immortal Storm",
     "year": 1986,
     "authors": "Frank Mentzer",
@@ -1232,6 +1408,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 177,
     "title": "Dragons of Truth",
     "year": 1986,
     "authors": "Tracy Hickman",
@@ -1239,6 +1416,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 199,
     "title": "Day of Al'Akbar",
     "year": 1986,
     "authors": "Allen Hammack",
@@ -1246,6 +1424,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 194,
     "title": "Adventures in Blackmoor",
     "year": 1986,
     "authors": "Dave L. Arneson & David J. Ritchie",
@@ -1253,6 +1432,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 198,
     "title": "Book of Lairs",
     "year": 1986,
     "authors": "James M. Ward & Mike Breault",
@@ -1260,6 +1440,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 200,
     "title": "Queen of the Spiders",
     "year": 1986,
     "authors": "Gary Gygax",
@@ -1267,6 +1448,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 178,
     "title": "Ravenloft II: The House on Griffon Hill",
     "year": 1986,
     "authors": "Tracy Hickman & Laura Hickman",
@@ -1274,6 +1456,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 179,
     "title": "Wilderness Survival Guide",
     "year": 1986,
     "authors": "Kim Mohan",
@@ -1281,6 +1464,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 195,
     "title": "Creature Catalogue",
     "year": 1986,
     "authors": "Jim Bambra, Phil Gallagher, Graeme Morris",
@@ -1288,6 +1472,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 196,
     "title": "Twilight Calling",
     "year": 1986,
     "authors": "Tom Moldvay",
@@ -1295,6 +1480,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 190,
     "title": "The Mines of Bloodstone",
     "year": 1986,
     "authors": "Michael Dobson & Douglas Niles",
@@ -1302,6 +1488,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 197,
     "title": "Temple of the Frog",
     "year": 1986,
     "authors": "Dave L. Arneson & David J. Ritchie",
@@ -1309,6 +1496,7 @@
     "cover_artist": "Denis Beauvais"
   },
   {
+    "id": 180,
     "title": "Dragons of Triumph",
     "year": 1986,
     "authors": "Douglas Niles",
@@ -1316,6 +1504,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 201,
     "title": "Red Sonya Unconquered",
     "year": 1986,
     "authors": "Anne Gray McCready",
@@ -1323,6 +1512,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 203,
     "title": "Night of the Seven Swords",
     "year": 1986,
     "authors": "Jon Pickens & David Cook & Harold Johnson & Rick Swan & Ed Carmien & David James Ritchie",
@@ -1330,6 +1520,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 214,
     "title": "Skarda's Mirror",
     "year": 1987,
     "authors": "Aaron Allston",
@@ -1337,6 +1528,7 @@
     "cover_artist": "Tim Hildebrandt"
   },
   {
+    "id": 213,
     "title": "Needle",
     "year": 1987,
     "authors": "Frank Mentzer",
@@ -1344,6 +1536,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 215,
     "title": "The Wrath of Olympus",
     "year": 1987,
     "authors": "Robert J. Blake",
@@ -1351,6 +1544,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 228,
     "title": "Official RPGA Tourney Handbook",
     "year": 1987,
     "authors": "Daniel Kramarsky & Jean Rabe & Bruce Rabe",
@@ -1358,6 +1552,7 @@
     "cover_artist": "NOT FOUND"
   },
   {
+    "id": 204,
     "title": "The Kingdom of Ierendi",
     "year": 1987,
     "authors": "Anne Gray McCready",
@@ -1365,6 +1560,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 217,
     "title": "City of the Gods",
     "year": 1987,
     "authors": "Dave L. Arneson & David J. Ritchie",
@@ -1372,6 +1568,7 @@
     "cover_artist": "Doug Chaffee"
   },
   {
+    "id": 218,
     "title": "The Endless Stair",
     "year": 1987,
     "authors": "Ed Greenwood",
@@ -1379,6 +1576,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 205,
     "title": "The Grand Duchy of Karameikos",
     "year": 1987,
     "authors": "Aaron Allston",
@@ -1386,6 +1584,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 220,
     "title": "Book of Lairs II",
     "year": 1987,
     "authors": "Bruce Heard & Karen S. Martin",
@@ -1393,6 +1592,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 223,
     "title": "Egg of the Phoenix",
     "year": 1987,
     "authors": "Frank Mentzer & Jennell Jaquays",
@@ -1400,6 +1600,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 219,
     "title": "Ochimo: The Spirit Warrior",
     "year": 1987,
     "authors": "Jeff Grubb",
@@ -1407,6 +1608,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 221,
     "title": "Desert of Desolation",
     "year": 1987,
     "authors": "T. Hickman & L. Hickman & P. Meyers & P. Rice & J. Wheeler",
@@ -1414,6 +1616,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 226,
     "title": "Five Coins for a Kingdom",
     "year": 1987,
     "authors": "Allen Varney",
@@ -1421,6 +1624,7 @@
     "cover_artist": "John and Laura Lakey"
   },
   {
+    "id": 216,
     "title": "In Search of Adventure",
     "year": 1987,
     "authors": "Various",
@@ -1428,6 +1632,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 224,
     "title": "Adventure Pack I",
     "year": 1987,
     "authors": "Various",
@@ -1435,6 +1640,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 227,
     "title": "Duchy of Ten",
     "year": 1987,
     "authors": "David J. Ritchie",
@@ -1442,6 +1648,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 206,
     "title": "Forgotten Realms Campaign",
     "year": 1987,
     "authors": "Ed Greenwood & Jeff Grubb",
@@ -1449,6 +1656,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 207,
     "title": "Manual of the Planes",
     "year": 1987,
     "authors": "Jeff Grubb",
@@ -1456,6 +1664,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 208,
     "title": "The Emirates of Ylaruam",
     "year": 1987,
     "authors": "Ken Rolston",
@@ -1463,6 +1672,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 222,
     "title": "The Bloodstone Wars",
     "year": 1987,
     "authors": "Michael Dobson & Douglas Niles",
@@ -1470,6 +1680,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 225,
     "title": "Blood of the Yakuza",
     "year": 1987,
     "authors": "David Cook",
@@ -1477,6 +1688,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 209,
     "title": "The Principalities of Glantri",
     "year": 1987,
     "authors": "Bruce Heard",
@@ -1484,6 +1696,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 212,
     "title": "Realms of Horror",
     "year": 1987,
     "authors": "Gary Gygax & Lawrence Schick",
@@ -1491,6 +1704,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 229,
     "title": "The Best of Intentions",
     "year": 1987,
     "authors": "Ken Rolston",
@@ -1498,6 +1712,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 232,
     "title": "Under Illefarn",
     "year": 1987,
     "authors": "Steve Perrin",
@@ -1505,6 +1720,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 210,
     "title": "Dragonlance Adventures",
     "year": 1987,
     "authors": "Tracy Hickman & Margaret Weis",
@@ -1512,6 +1728,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 231,
     "title": "Bestiary of Dragons and Giants",
     "year": 1987,
     "authors": "Deborah Christian (editor)",
@@ -1519,6 +1736,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 233,
     "title": "Waterdeep and the North",
     "year": 1987,
     "authors": "Ed Greenwood",
@@ -1526,6 +1744,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 234,
     "title": "Talons of Night",
     "year": 1987,
     "authors": "Paul Jaquays",
@@ -1533,6 +1752,7 @@
     "cover_artist": "Daniel Horne"
   },
   {
+    "id": 211,
     "title": "Moonshae",
     "year": 1987,
     "authors": "Douglas Niles",
@@ -1540,6 +1760,7 @@
     "cover_artist": "Tim Hildebrandt"
   },
   {
+    "id": 236,
     "title": "The Book of Wondrous Inventions",
     "year": 1987,
     "authors": "Bruce A. Heard",
@@ -1547,6 +1768,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 235,
     "title": "Crown of Ancient Glory",
     "year": 1987,
     "authors": "Stephen Bourne",
@@ -1554,6 +1776,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 230,
     "title": "Legacy of Blood",
     "year": 1987,
     "authors": "Steve Perrin & Katharine Kerr",
@@ -1561,6 +1784,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 237,
     "title": "The Shattered Statue",
     "year": 1987,
     "authors": "Paul Jaquays",
@@ -1568,6 +1792,7 @@
     "cover_artist": "Daniel Horne"
   },
   {
+    "id": 238,
     "title": "Kara Tur, the Eastern Lands",
     "year": 1988,
     "authors": "Various",
@@ -1575,6 +1800,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 248,
     "title": "Castle Greyhawk",
     "year": 1988,
     "authors": "Various",
@@ -1582,6 +1808,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 239,
     "title": "The Elves of Alfheim",
     "year": 1988,
     "authors": "Steven Perrin",
@@ -1589,6 +1816,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 249,
     "title": "Empires of the Sands",
     "year": 1988,
     "authors": "Scott Haring",
@@ -1596,6 +1824,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 250,
     "title": "Tales of the Outer Planes",
     "year": 1988,
     "authors": "Various",
@@ -1603,6 +1832,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 251,
     "title": "Swords of the Iron Legion",
     "year": 1988,
     "authors": "Various",
@@ -1610,6 +1840,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 240,
     "title": "The Dwarves of Rockhome",
     "year": 1988,
     "authors": "Aaron Allston",
@@ -1617,6 +1848,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 252,
     "title": "Throne of Bloodstone",
     "year": 1988,
     "authors": "Douglas Niles & Michael Dobson",
@@ -1624,6 +1856,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 241,
     "title": "The Magister",
     "year": 1988,
     "authors": "Ed Greenwood & Steve Perrin",
@@ -1631,6 +1864,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 242,
     "title": "The Northern Reaches",
     "year": 1988,
     "authors": "Ken Rolston",
@@ -1638,6 +1872,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 253,
     "title": "Mists of Krynn",
     "year": 1988,
     "authors": "Various",
@@ -1645,6 +1880,7 @@
     "cover_artist": "Denis Beauvais"
   },
   {
+    "id": 243,
     "title": "The Five Shires",
     "year": 1988,
     "authors": "Ed Greenwood",
@@ -1652,6 +1888,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 254,
     "title": "The Savage Frontier",
     "year": 1988,
     "authors": "Paul Jaquays",
@@ -1659,6 +1896,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 258,
     "title": "Ruins of Adventure",
     "year": 1988,
     "authors": "Mike Breault & David Cook & Jim Ward & Steve Winter",
@@ -1666,6 +1904,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 244,
     "title": "City System",
     "year": 1988,
     "authors": "Jeff Grubb & Ed Greenwood",
@@ -1673,6 +1912,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 245,
     "title": "Greyhawk Adventures",
     "year": 1988,
     "authors": "James M. Ward",
@@ -1680,6 +1920,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 255,
     "title": "DM's Design Kit",
     "year": 1988,
     "authors": "Harold Johnson & Aaron Allston",
@@ -1687,6 +1928,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 246,
     "title": "The Minrothad Guilds",
     "year": 1988,
     "authors": "Deborah Christian & Kim E1astland",
@@ -1694,6 +1936,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 256,
     "title": "Dreams of the Red Wizards",
     "year": 1988,
     "authors": "Steve Perrin",
@@ -1701,6 +1944,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 257,
     "title": "World of Krynn",
     "year": 1988,
     "authors": "Harold Johnson & Douglas Niles & Michael Gray",
@@ -1708,6 +1952,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 274,
     "title": "Lords of Darkness",
     "year": 1988,
     "authors": "Ed Greenwood (introduction)",
@@ -1715,6 +1960,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 247,
     "title": "The Orcs of Thar",
     "year": 1989,
     "authors": "Bruce Heard",
@@ -1722,6 +1968,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 275,
     "title": "Mad Monkey vs. the Dragon Claw",
     "year": 1989,
     "authors": "Jeff Grubb",
@@ -1729,6 +1976,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 271,
     "title": "The Complete Thief's Handbook",
     "year": 1989,
     "authors": "John Nephew & Carl Sargent & Douglas Niles",
@@ -1736,6 +1984,7 @@
     "cover_artist": null
   },
   {
+    "id": 259,
     "title": "Player's Handbook",
     "year": 1989,
     "authors": "David \"Zeb\" Cook",
@@ -1743,6 +1992,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 276,
     "title": "In Search of Dragons",
     "year": 1989,
     "authors": "Rick Swan",
@@ -1750,6 +2000,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 260,
     "title": "The Republic of Darokin",
     "year": 1989,
     "authors": "Scott Haring",
@@ -1757,6 +2008,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 282,
     "title": "Hall of Heroes",
     "year": 1989,
     "authors": "Various",
@@ -1764,6 +2016,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 283,
     "title": "Fate of Istus",
     "year": 1989,
     "authors": "Nigel Findley & Dan Salas & Stephen Inniss & Robert J. Kuntz",
@@ -1771,6 +2024,7 @@
     "cover_artist": "Daniel Horne"
   },
   {
+    "id": 281,
     "title": "Gargoyle",
     "year": 1989,
     "authors": "Dave Collins & Skip Williams",
@@ -1778,6 +2032,7 @@
     "cover_artist": "Dave Dorman"
   },
   {
+    "id": 273,
     "title": "Curse of the Azure Bonds",
     "year": 1989,
     "authors": "Jeff Grubb & George MacDonald",
@@ -1785,6 +2040,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 261,
     "title": "The Golden Khan of Ethengar",
     "year": 1989,
     "authors": "Jim Bambra",
@@ -1792,6 +2048,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 262,
     "title": "Dungeon Master's Guide",
     "year": 1989,
     "authors": "David \"Zeb\" Cook",
@@ -1799,6 +2056,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 263,
     "title": "Monstrous Compendium Volume One",
     "year": 1989,
     "authors": "Various",
@@ -1806,6 +2064,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 279,
     "title": "Shadowdale",
     "year": 1989,
     "authors": "Ed Greenwood",
@@ -1813,6 +2072,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 280,
     "title": "Tantras",
     "year": 1989,
     "authors": "Ed Greenwood",
@@ -1820,6 +2080,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 288,
     "title": "Cities of Mystery",
     "year": 1989,
     "authors": "Jean Rabe",
@@ -1827,6 +2088,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 264,
     "title": "Dawn of the Emperors: Thyatis and Alphatia",
     "year": 1989,
     "authors": "Aaron Allston",
@@ -1834,6 +2096,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 277,
     "title": "Dragon Magic",
     "year": 1989,
     "authors": "Rick Swan",
@@ -1841,6 +2104,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 286,
     "title": "King's Festival",
     "year": 1989,
     "authors": "Carl Sargent",
@@ -1848,6 +2112,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 267,
     "title": "The City of Greyhawk",
     "year": 1989,
     "authors": "Doug Niles & Carl Sargent",
@@ -1855,6 +2120,7 @@
     "cover_artist": "Erik Olson"
   },
   {
+    "id": 265,
     "title": "Monstrous Compendium Volume Two",
     "year": 1989,
     "authors": "Various",
@@ -1862,6 +2128,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 289,
     "title": "Dungeon Master's Screen",
     "year": 1989,
     "authors": "Jean Rabe & Bruce Rabe",
@@ -1869,6 +2136,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 291,
     "title": "Child's Play",
     "year": 1989,
     "authors": "Jean Rabe & Skip Williams",
@@ -1876,6 +2144,7 @@
     "cover_artist": "John Lakey & Laura Lakey"
   },
   {
+    "id": 294,
     "title": "Gateway to Ravens Bluff, the Living City",
     "year": 1989,
     "authors": "Jean Rabe",
@@ -1883,6 +2152,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 298,
     "title": "Western Countries Trail Map",
     "year": 1989,
     "authors": "N/A",
@@ -1890,6 +2160,7 @@
     "cover_artist": null
   },
   {
+    "id": 284,
     "title": "Tall Tales of the Wee Folk",
     "year": 1989,
     "authors": "John Nephew",
@@ -1897,6 +2168,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 290,
     "title": "Character Record Sheets",
     "year": 1989,
     "authors": "N/A",
@@ -1904,6 +2176,7 @@
     "cover_artist": "NOT FOUND"
   },
   {
+    "id": 299,
     "title": "Eastern Countries Trail Map",
     "year": 1989,
     "authors": "N/A",
@@ -1911,6 +2184,7 @@
     "cover_artist": null
   },
   {
+    "id": 266,
     "title": "Spelljammer: AD&D Adventures in Space",
     "year": 1989,
     "authors": "Jeff Grubb",
@@ -1918,6 +2192,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 272,
     "title": "Waterdeep",
     "year": 1989,
     "authors": "Ed Greenwood",
@@ -1925,6 +2200,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 268,
     "title": "Time of the Dragon",
     "year": 1989,
     "authors": "David \"Zeb\" Cook",
@@ -1932,6 +2208,7 @@
     "cover_artist": "Robin Wood"
   },
   {
+    "id": 269,
     "title": "Monstrous Compendium Volume Three: Forgotten Realms Appendix",
     "year": 1989,
     "authors": "Various",
@@ -1939,6 +2216,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 278,
     "title": "Dragon Keep",
     "year": 1989,
     "authors": "Rick Swan",
@@ -1946,6 +2224,7 @@
     "cover_artist": "Jack Pennington"
   },
   {
+    "id": 287,
     "title": "Queen's Harvest",
     "year": 1989,
     "authors": "Carl Sargent",
@@ -1953,6 +2232,7 @@
     "cover_artist": "John and Laura Lakey"
   },
   {
+    "id": 292,
     "title": "The Bloodstone Lands",
     "year": 1989,
     "authors": "R.A. Salvatore",
@@ -1960,6 +2240,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 295,
     "title": "World of Krynn Trail Map",
     "year": 1989,
     "authors": "N/A",
@@ -1967,6 +2248,7 @@
     "cover_artist": null
   },
   {
+    "id": 285,
     "title": "Top Ballista",
     "year": 1989,
     "authors": "Carl Sargent",
@@ -1974,6 +2256,7 @@
     "cover_artist": "John Lakey"
   },
   {
+    "id": 293,
     "title": "Puppets",
     "year": 1989,
     "authors": "Vince Garcia & Bruce Rabe",
@@ -1981,6 +2264,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 296,
     "title": "City of Waterdeep Trail Map",
     "year": 1989,
     "authors": "N/A",
@@ -1988,6 +2272,7 @@
     "cover_artist": null
   },
   {
+    "id": 270,
     "title": "The Complete Fighter's Handbook",
     "year": 1989,
     "authors": "Aaron Allston",
@@ -1995,6 +2280,7 @@
     "cover_artist": null
   },
   {
+    "id": 319,
     "title": "Vale of the Mage",
     "year": 1990,
     "authors": "Jean Rabe",
@@ -2002,6 +2288,7 @@
     "cover_artist": "Roger Loveless"
   },
   {
+    "id": 307,
     "title": "Monstrous Compendium Dragonlance Appendix",
     "year": 1990,
     "authors": "Rick Swan",
@@ -2009,6 +2296,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 320,
     "title": "Wildspace",
     "year": 1990,
     "authors": "Allen Varney",
@@ -2016,6 +2304,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 321,
     "title": "Old Empires",
     "year": 1990,
     "authors": "Scott Bennie",
@@ -2023,6 +2312,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 322,
     "title": "Dragon Dawn",
     "year": 1990,
     "authors": "Deborah Christian",
@@ -2030,6 +2320,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 324,
     "title": "The Sea People",
     "year": 1990,
     "authors": "Jim Bambra",
@@ -2037,6 +2328,7 @@
     "cover_artist": "John and Laura Lakey"
   },
   {
+    "id": 297,
     "title": "Kara-Tur Trail Map",
     "year": 1990,
     "authors": "N/A",
@@ -2044,6 +2336,7 @@
     "cover_artist": null
   },
   {
+    "id": 308,
     "title": "Forgotten Realms Adventures",
     "year": 1990,
     "authors": "Ed Greenwood & Jeff Grubb",
@@ -2051,6 +2344,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 311,
     "title": "Campaign Sourcebook and Catacomb Guide",
     "year": 1990,
     "authors": "Paul Jaquays & William W. Connors",
@@ -2058,6 +2352,7 @@
     "cover_artist": null
   },
   {
+    "id": 323,
     "title": "Thieves of Lankhmar",
     "year": 1990,
     "authors": "Nigel Findley",
@@ -2065,6 +2360,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 325,
     "title": "Otherlands",
     "year": 1990,
     "authors": "Scott Bennie, Scott Haring, John Terra",
@@ -2072,6 +2368,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 326,
     "title": "Falcon's Revenge",
     "year": 1990,
     "authors": "Richard W. and Anne Brown",
@@ -2079,6 +2376,7 @@
     "cover_artist": "Ken Frank"
   },
   {
+    "id": 309,
     "title": "Monstrous Compendium Greyhawk Appendix",
     "year": 1990,
     "authors": "Mike Breault (editor)",
@@ -2086,6 +2384,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 327,
     "title": "Lost Ships",
     "year": 1990,
     "authors": "Ed Greenwood",
@@ -2093,6 +2392,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 328,
     "title": "Storm Riders",
     "year": 1990,
     "authors": "Troy Denning",
@@ -2100,6 +2400,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 330,
     "title": "Arena of Thyatis",
     "year": 1990,
     "authors": "John Nephew",
@@ -2107,6 +2408,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 312,
     "title": "The Complete Priest's Handbook",
     "year": 1990,
     "authors": "Aaron Allston",
@@ -2114,6 +2416,7 @@
     "cover_artist": null
   },
   {
+    "id": 313,
     "title": "The Castle Guide",
     "year": 1990,
     "authors": "Grant Boucher & Troy Christensen & Arthur Collins & Nigel Findley",
@@ -2121,6 +2424,7 @@
     "cover_artist": null
   },
   {
+    "id": 317,
     "title": "Ronin Challenge",
     "year": 1990,
     "authors": "Curtis Smith & Rick Swan",
@@ -2128,6 +2432,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 301,
     "title": "The Shadow Elves",
     "year": 1990,
     "authors": "Carl Sargent & Gary Thomas",
@@ -2135,6 +2440,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 302,
     "title": "Ravenloft: Realm of Terror",
     "year": 1990,
     "authors": "Bruce Nesmith & Andria Hayday",
@@ -2142,6 +2448,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 315,
     "title": "Monstrous Compendium Kara-Tur Appendix",
     "year": 1990,
     "authors": "Rick Swan",
@@ -2149,6 +2456,7 @@
     "cover_artist": "Thomas Baxa"
   },
   {
+    "id": 332,
     "title": "Skull & Crossbow",
     "year": 1990,
     "authors": "Nigel Findley",
@@ -2156,6 +2464,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 333,
     "title": "Falconmaster",
     "year": 1990,
     "authors": "Richard W. and Anne Brown",
@@ -2163,6 +2472,7 @@
     "cover_artist": "Ken Frank"
   },
   {
+    "id": 329,
     "title": "Inside Ravens Bluff, the Living City",
     "year": 1990,
     "authors": "Skip Williams and Jean Rabe (editors)",
@@ -2170,6 +2480,7 @@
     "cover_artist": "Kevin Ward"
   },
   {
+    "id": 334,
     "title": "Black Courser",
     "year": 1990,
     "authors": "Troy Denning",
@@ -2177,6 +2488,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 336,
     "title": "Greyhawk Ruins",
     "year": 1990,
     "authors": "Timothy B. Brown & Blake Mobley",
@@ -2184,6 +2496,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 303,
     "title": "Hollow World Campaign Set",
     "year": 1990,
     "authors": "Aaron Allston",
@@ -2191,6 +2504,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 310,
     "title": "Monstrous Compendium Spelljammer Appendix",
     "year": 1990,
     "authors": "Jeff Grubb (editor)",
@@ -2198,6 +2512,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 316,
     "title": "The Forgotten Realms Atlas",
     "year": 1990,
     "authors": "Karen Wynn Fonstad",
@@ -2205,6 +2520,7 @@
     "cover_artist": null
   },
   {
+    "id": 318,
     "title": "Test of the Samurai",
     "year": 1990,
     "authors": "Rick Swan",
@@ -2212,6 +2528,7 @@
     "cover_artist": "Jim Holloway"
   },
   {
+    "id": 338,
     "title": "Wonders of Lankhmar",
     "year": 1990,
     "authors": "Dale \"Slade\" Henson",
@@ -2219,6 +2536,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 314,
     "title": "The Complete Wizard's Handbook",
     "year": 1990,
     "authors": "Rick Swan",
@@ -2226,6 +2544,7 @@
     "cover_artist": null
   },
   {
+    "id": 305,
     "title": "The Horde Barbarian Campaign Setting",
     "year": 1990,
     "authors": "David \"Zeb\" Cook",
@@ -2233,6 +2552,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 335,
     "title": "Dragonlance Classics: Volume I",
     "year": 1990,
     "authors": "Hickman, Niles, and Dobson",
@@ -2240,6 +2560,7 @@
     "cover_artist": "Various"
   },
   {
+    "id": 339,
     "title": "Legions of Thyatis",
     "year": 1990,
     "authors": "John Nephew",
@@ -2247,6 +2568,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 304,
     "title": "Feast of Goblyns",
     "year": 1990,
     "authors": "Blake Mobley",
@@ -2254,6 +2576,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 306,
     "title": "Castles",
     "year": 1990,
     "authors": "Jeff Grubb & David \"Zeb\" Cook & Bruce Nesmith",
@@ -2261,6 +2584,7 @@
     "cover_artist": "Carol Heyer"
   },
   {
+    "id": 331,
     "title": "Dragon Knight",
     "year": 1990,
     "authors": "Rick Swan",
@@ -2268,6 +2592,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 340,
     "title": "Draconomicon",
     "year": 1990,
     "authors": "Nigel Findley",
@@ -2275,6 +2600,7 @@
     "cover_artist": "Brom, David Dorman, Keith Parkinson"
   },
   {
+    "id": 341,
     "title": "Crystal Spheres",
     "year": 1990,
     "authors": "J. Paul LaFountain",
@@ -2282,6 +2608,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 342,
     "title": "Dwarves Deep",
     "year": 1990,
     "authors": "Ed Greenwood",
@@ -2289,6 +2616,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 343,
     "title": "Halls of the High King",
     "year": 1990,
     "authors": "Ed Greenwood",
@@ -2296,6 +2624,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 344,
     "title": "Flames of the Falcon",
     "year": 1990,
     "authors": "Richard and Anne Brown",
@@ -2303,6 +2632,7 @@
     "cover_artist": "Ken Frank"
   },
   {
+    "id": 345,
     "title": "Nightwail",
     "year": 1990,
     "authors": "Allen Varney",
@@ -2310,6 +2640,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 346,
     "title": "Blood Charge",
     "year": 1990,
     "authors": "Troy Denning",
@@ -2317,6 +2648,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 347,
     "title": "Nehwon",
     "year": 1990,
     "authors": "Blake Mobley",
@@ -2324,6 +2656,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 337,
     "title": "Dragon's Rest",
     "year": 1990,
     "authors": "Rick Swan",
@@ -2331,6 +2664,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 348,
     "title": "Ninja Wars",
     "year": 1990,
     "authors": "Nigel Findley",
@@ -2338,6 +2672,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 350,
     "title": "Nightrage",
     "year": 1990,
     "authors": "Allen Varney",
@@ -2345,6 +2680,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 351,
     "title": "Dark & Hidden Ways",
     "year": 1990,
     "authors": "Various",
@@ -2352,6 +2688,7 @@
     "cover_artist": "Daniel Horne"
   },
   {
+    "id": 352,
     "title": "Wild Things",
     "year": 1990,
     "authors": "Various",
@@ -2359,6 +2696,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 349,
     "title": "Vecna Lives!",
     "year": 1990,
     "authors": "David \"Zeb\" Cook",
@@ -2366,6 +2704,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 363,
     "title": "The Complete Psionics Handbook",
     "year": 1991,
     "authors": "Steve Winter",
@@ -2373,6 +2712,7 @@
     "cover_artist": null
   },
   {
+    "id": 364,
     "title": "Monstrous Compendium Outer Planes Appendix",
     "year": 1991,
     "authors": "J. Paul LaFountain",
@@ -2380,6 +2720,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 374,
     "title": "Dungeon Master's Screen",
     "year": 1991,
     "authors": "J. Paul LaFountain",
@@ -2387,6 +2728,7 @@
     "cover_artist": "NO INFO"
   },
   {
+    "id": 360,
     "title": "Ruins of Undermountain",
     "year": 1991,
     "authors": "Ed Greenwood",
@@ -2394,6 +2736,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 372,
     "title": "Nightstorm",
     "year": 1991,
     "authors": "Allen Varney",
@@ -2401,6 +2744,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 373,
     "title": "Realmspace",
     "year": 1991,
     "authors": "Dale \"Slade\" Henson",
@@ -2408,6 +2752,7 @@
     "cover_artist": "Thomas Baxa"
   },
   {
+    "id": 375,
     "title": "New Beginnings",
     "year": 1991,
     "authors": "Mark Acres",
@@ -2415,6 +2760,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 378,
     "title": "Five Shall Be One",
     "year": 1991,
     "authors": "Carl Sargent",
@@ -2422,6 +2768,7 @@
     "cover_artist": "Jeff Starlind"
   },
   {
+    "id": 382,
     "title": "Ship of Horror",
     "year": 1991,
     "authors": "Anne Brown",
@@ -2429,6 +2776,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 377,
     "title": "Nightwatch in the Living City",
     "year": 1991,
     "authors": "Walter M. Baas & Kira Glass",
@@ -2436,6 +2784,7 @@
     "cover_artist": "Robin Wood"
   },
   {
+    "id": 379,
     "title": "Prince of Lankhmar",
     "year": 1991,
     "authors": "Dale \"Slade\" Henson",
@@ -2443,6 +2792,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 365,
     "title": "Monstrous Compendium Spelljammer Appendix II",
     "year": 1991,
     "authors": "Scott Davis, Newton Ewell, John Terra",
@@ -2450,6 +2800,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 353,
     "title": "Monstrous Compendium Ravenloft Appendix",
     "year": 1991,
     "authors": "William W. Connors",
@@ -2457,6 +2808,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 380,
     "title": "Tree Lords",
     "year": 1991,
     "authors": "John Terra",
@@ -2464,6 +2816,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 399,
     "title": "Nightmare Keep",
     "year": 1991,
     "authors": "Rick Swan",
@@ -2471,6 +2824,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 383,
     "title": "Vikings Campaign Sourcebook",
     "year": 1991,
     "authors": "David \"Zeb\" Cook",
@@ -2478,6 +2832,7 @@
     "cover_artist": null
   },
   {
+    "id": 384,
     "title": "Horde Campaign",
     "year": 1991,
     "authors": "Curtis M. Scott",
@@ -2485,6 +2840,7 @@
     "cover_artist": "Doug Chaffee"
   },
   {
+    "id": 354,
     "title": "Maztica Campaign Set",
     "year": 1991,
     "authors": "Douglas Niles",
@@ -2492,6 +2848,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 355,
     "title": "Tome of Magic",
     "year": 1991,
     "authors": "Cook & Findley & Herring & Kubasik & Sargent & Swan",
@@ -2499,6 +2856,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 369,
     "title": "Eye of Traldar",
     "year": 1991,
     "authors": "Carl Sargent",
@@ -2506,6 +2864,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 385,
     "title": "Under the Dark Fist",
     "year": 1991,
     "authors": "Grant Boucher",
@@ -2513,6 +2872,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 389,
     "title": "Tales of Lankhmar",
     "year": 1991,
     "authors": "Anthony Pryor",
@@ -2520,6 +2880,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 376,
     "title": "Port of Ravens Bluff",
     "year": 1991,
     "authors": "Jean Rabe and Skip Williams",
@@ -2527,6 +2888,7 @@
     "cover_artist": "Kevin Ward"
   },
   {
+    "id": 386,
     "title": "Drow of the Underdark",
     "year": 1991,
     "authors": "Ed Greenwood",
@@ -2534,6 +2896,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 387,
     "title": "Oak Lords",
     "year": 1991,
     "authors": "Blake Mobley",
@@ -2541,6 +2904,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 388,
     "title": "Practical Planetology",
     "year": 1991,
     "authors": "Nigel D. Findley",
@@ -2548,6 +2912,7 @@
     "cover_artist": "Paul Jaquays"
   },
   {
+    "id": 390,
     "title": "Darklords",
     "year": 1991,
     "authors": "Andria Hayday & William W. Connors",
@@ -2555,6 +2920,7 @@
     "cover_artist": "Tim Hildebrandt"
   },
   {
+    "id": 391,
     "title": "Sons of Azca",
     "year": 1991,
     "authors": "John Nephew",
@@ -2562,6 +2928,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 361,
     "title": "The Legend of Spelljammer",
     "year": 1991,
     "authors": "Jeff Grubb",
@@ -2569,6 +2936,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 366,
     "title": "Arms and Equipment Guide",
     "year": 1991,
     "authors": "Grant Boucher & Troy Christensen & Jon Pickens & John Terra & Scott Davis",
@@ -2576,6 +2944,7 @@
     "cover_artist": null
   },
   {
+    "id": 356,
     "title": "Atruaghin Clans",
     "year": 1991,
     "authors": "William W. Connors",
@@ -2583,6 +2952,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 392,
     "title": "Fires of Zatal",
     "year": 1991,
     "authors": "Jeff Grubb & Tim Beach",
@@ -2590,6 +2960,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 357,
     "title": "Dark Sun Boxed Set",
     "year": 1991,
     "authors": "Troy Denning & Timothy B. Brown",
@@ -2597,6 +2968,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 394,
     "title": "Book of Crypts",
     "year": 1991,
     "authors": "Dale \"Slade\" Henson",
@@ -2604,6 +2976,7 @@
     "cover_artist": "David Dorman"
   },
   {
+    "id": 395,
     "title": "Howl from the North",
     "year": 1991,
     "authors": "Dale \"Slade\" Henson",
@@ -2611,6 +2984,7 @@
     "cover_artist": "Jeff Starlind"
   },
   {
+    "id": 398,
     "title": "Endless Armies",
     "year": 1991,
     "authors": "Jeff Grubb",
@@ -2618,6 +2992,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 367,
     "title": "The Complete Book of Dwarves",
     "year": 1991,
     "authors": "Jim Bambra",
@@ -2625,6 +3000,7 @@
     "cover_artist": null
   },
   {
+    "id": 396,
     "title": "Touch of Death",
     "year": 1991,
     "authors": "Bruce Nesmith",
@@ -2632,6 +3008,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 397,
     "title": "Kingdom of Nithia",
     "year": 1991,
     "authors": "Blake Mobley & Newton Ewell",
@@ -2639,6 +3016,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 362,
     "title": "The New Easy to Master Dungeons & Dragons Game",
     "year": 1991,
     "authors": "Timothy Brown",
@@ -2646,6 +3024,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 358,
     "title": "Rules Cyclopedia",
     "year": 1991,
     "authors": "Aaron Allston",
@@ -2653,6 +3032,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 370,
     "title": "The Dymrak Dread",
     "year": 1991,
     "authors": "John Nephew",
@@ -2660,6 +3040,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 381,
     "title": "Anauroch",
     "year": 1991,
     "authors": "Ed Greenwood",
@@ -2667,6 +3048,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 393,
     "title": "Wild Elves",
     "year": 1991,
     "authors": "Scott Bennie",
@@ -2674,6 +3056,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 400,
     "title": "Goblin's Return",
     "year": 1991,
     "authors": "Bruce Nesmith",
@@ -2681,6 +3064,7 @@
     "cover_artist": "Kelly Freas"
   },
   {
+    "id": 359,
     "title": "Greyhawk Wars",
     "year": 1991,
     "authors": "David \"Zeb\" Cook",
@@ -2688,6 +3072,7 @@
     "cover_artist": "Roger Raupp"
   },
   {
+    "id": 368,
     "title": "Monstrous Compendium Forgotten Realms Appendix",
     "year": 1991,
     "authors": "Various",
@@ -2695,6 +3080,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 371,
     "title": "Character Record Sheets",
     "year": 1991,
     "authors": "N/A",
@@ -2702,6 +3088,7 @@
     "cover_artist": "NO INFO"
   },
   {
+    "id": 401,
     "title": "Van Richten's Guide to Vampires",
     "year": 1991,
     "authors": "Nigel D. Findley",
@@ -2709,6 +3096,7 @@
     "cover_artist": "Den Beauvai"
   },
   {
+    "id": 402,
     "title": "Slave Tribes",
     "year": 1992,
     "authors": "Bill Slavicsek",
@@ -2716,6 +3104,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 421,
     "title": "Quest for the Silver Sword",
     "year": 1992,
     "authors": "William W. Connors",
@@ -2723,6 +3112,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 403,
     "title": "Monstrous Compendium Dark Sun Appendix: Terrors of the Desert",
     "year": 1992,
     "authors": "Tom Prusa & Louis J. Prosperi & Walter M. Bass",
@@ -2730,6 +3120,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 404,
     "title": "Night of the Walking Dead",
     "year": 1992,
     "authors": "Bill Slavicsek",
@@ -2737,6 +3128,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 413,
     "title": "War Captain's Companion",
     "year": 1992,
     "authors": "Dale \"Slade\" Henson",
@@ -2744,6 +3136,7 @@
     "cover_artist": "Erik Olson"
   },
   {
+    "id": 414,
     "title": "The Dragon's Den",
     "year": 1992,
     "authors": "Ken Rolston",
@@ -2751,6 +3144,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 405,
     "title": "Dune Trader",
     "year": 1992,
     "authors": "Anthony Pryor",
@@ -2758,6 +3152,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 422,
     "title": "Assault on Raven's Ruin",
     "year": 1992,
     "authors": "Tim Beach",
@@ -2765,6 +3160,7 @@
     "cover_artist": "Rakeland"
   },
   {
+    "id": 406,
     "title": "Dragon Kings",
     "year": 1992,
     "authors": "Timothy B. Brown",
@@ -2772,6 +3168,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 423,
     "title": "Thunder Rift",
     "year": 1992,
     "authors": "Colin McComb",
@@ -2779,6 +3176,7 @@
     "cover_artist": "Roger Loveless"
   },
   {
+    "id": 415,
     "title": "The Goblin's Lair",
     "year": 1992,
     "authors": "Graeme David",
@@ -2786,6 +3184,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 407,
     "title": "Tales of the Lance",
     "year": 1992,
     "authors": "J. Robert King (editor)",
@@ -2793,6 +3192,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 417,
     "title": "Wrath of the Immortals",
     "year": 1992,
     "authors": "Aaron Allston",
@@ -2800,6 +3200,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 425,
     "title": "Night Howlers",
     "year": 1992,
     "authors": "Ann Dupuis",
@@ -2807,6 +3208,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 408,
     "title": "Land of Fate",
     "year": 1992,
     "authors": "Jeff Grubb & Andria Hayday",
@@ -2814,6 +3216,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 428,
     "title": "The Milenian Empire",
     "year": 1992,
     "authors": "Anthony Herring",
@@ -2821,6 +3224,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 416,
     "title": "The Haunted Tower",
     "year": 1992,
     "authors": "Julia Martin",
@@ -2828,6 +3232,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 418,
     "title": "Menzoberranzan",
     "year": 1992,
     "authors": "Ed Greenwood & Douglas Niles & R.A. Salvatore",
@@ -2835,6 +3240,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 409,
     "title": "Veiled Alliance",
     "year": 1992,
     "authors": "Allen Varney",
@@ -2842,6 +3248,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 420,
     "title": "The Jade Hare",
     "year": 1992,
     "authors": "John Nephew",
@@ -2849,6 +3256,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 429,
     "title": "Sword and Shield",
     "year": 1992,
     "authors": "John Terra",
@@ -2856,6 +3264,7 @@
     "cover_artist": "Glen Orbik"
   },
   {
+    "id": 410,
     "title": "From the Ashes",
     "year": 1992,
     "authors": "Carl Sargent",
@@ -2863,6 +3272,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 411,
     "title": "Forbidden Lore",
     "year": 1992,
     "authors": "William W. Connors & Bruce Nesmith",
@@ -2870,6 +3280,7 @@
     "cover_artist": "Clyde Caldwell"
   },
   {
+    "id": 426,
     "title": "Poor Wizard's Almanac & Book of Facts",
     "year": 1992,
     "authors": "Aaron Allston",
@@ -2877,6 +3288,7 @@
     "cover_artist": "Dee Barnett"
   },
   {
+    "id": 412,
     "title": "Valley of Dust and Fire",
     "year": 1992,
     "authors": "L. Richard Baker III",
@@ -2884,6 +3296,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 427,
     "title": "The Milenian Scepter",
     "year": 1992,
     "authors": "Anthony Herring",
@@ -2891,6 +3304,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 794,
     "title": "Magic Encyclopedia, Volume 1",
     "year": 1992,
     "authors": "Connie & Dale \"Slade\" Henson",
@@ -2898,6 +3312,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 419,
     "title": "Dragon Quest Game",
     "year": 1992,
     "authors": "William W. Connors & David Wise",
@@ -2905,6 +3320,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 424,
     "title": "Character & Monster Assortment",
     "year": 1992,
     "authors": "Tim Beach",
@@ -2912,6 +3328,7 @@
     "cover_artist": null
   },
   {
+    "id": 447,
     "title": "Creative Campaigning",
     "year": 1993,
     "authors": "Tony Pryor & Tony Herring & Jonathan Tweet & Norm Ritchie",
@@ -2919,6 +3336,7 @@
     "cover_artist": null
   },
   {
+    "id": 463,
     "title": "The Marklands",
     "year": 1993,
     "authors": "Carl Sargent",
@@ -2926,6 +3344,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 475,
     "title": "Magic Encyclopedia, Volume 2",
     "year": 1993,
     "authors": "Connie & Dale \"Slade\" Henson",
@@ -2933,6 +3352,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 486,
     "title": "Dungeon Master Screen",
     "year": 1993,
     "authors": "Teeuwynn Woodruff",
@@ -2940,6 +3360,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 448,
     "title": "The Complete Book of Gnomes and Halflings",
     "year": 1993,
     "authors": "Douglas Niles",
@@ -2947,6 +3368,7 @@
     "cover_artist": null
   },
   {
+    "id": 430,
     "title": "Dragon's Crown",
     "year": 1993,
     "authors": "L. Richard Baker III & Lisa Smedman & Kirk Botula",
@@ -2954,6 +3376,7 @@
     "cover_artist": null
   },
   {
+    "id": 467,
     "title": "Krynnspace",
     "year": 1993,
     "authors": "Jean Rabe",
@@ -2961,6 +3384,7 @@
     "cover_artist": "David O. Miller"
   },
   {
+    "id": 471,
     "title": "Van Richten's Guide to the Lich",
     "year": 1993,
     "authors": "Eric W. Haddock",
@@ -2968,6 +3392,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 479,
     "title": "Thief's Challenge",
     "year": 1993,
     "authors": "Troy Christensen",
@@ -2975,6 +3400,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 476,
     "title": "The Murky Deep",
     "year": 1993,
     "authors": "Norman B. Ritchie",
@@ -2982,6 +3408,7 @@
     "cover_artist": "John and Laura Lakey"
   },
   {
+    "id": 490,
     "title": "Assassin Mountain",
     "year": 1993,
     "authors": "Wolfgang Baur",
@@ -2989,6 +3416,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 483,
     "title": "The Knight of Newts",
     "year": 1993,
     "authors": "\"Slade\" Henson",
@@ -2996,6 +3424,7 @@
     "cover_artist": "David Dorman"
   },
   {
+    "id": 461,
     "title": "Dragonlance Classics: Volume II",
     "year": 1993,
     "authors": "Jeff Grubb & Douglas Niles",
@@ -3003,6 +3432,7 @@
     "cover_artist": "Larry Elmore and Keith Parkinson"
   },
   {
+    "id": 464,
     "title": "Iuz the Evil",
     "year": 1993,
     "authors": "Carl Sargent",
@@ -3010,6 +3440,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 477,
     "title": "Swamplight",
     "year": 1993,
     "authors": "Jean Rabe",
@@ -3017,6 +3448,7 @@
     "cover_artist": "Paul Jaquays"
   },
   {
+    "id": 487,
     "title": "Creature Catalog",
     "year": 1993,
     "authors": "John Nephew",
@@ -3024,6 +3456,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 442,
     "title": "Dragon Mountain",
     "year": 1993,
     "authors": "Colin McComb & Paul Lidberg",
@@ -3031,6 +3464,7 @@
     "cover_artist": "Paul Jaquays"
   },
   {
+    "id": 449,
     "title": "The Complete Book of Humanoids",
     "year": 1993,
     "authors": "Bill Slavicsek",
@@ -3038,6 +3472,7 @@
     "cover_artist": null
   },
   {
+    "id": 454,
     "title": "The Shining South",
     "year": 1993,
     "authors": "Tom Prusa",
@@ -3045,6 +3480,7 @@
     "cover_artist": "Jeff Buttler"
   },
   {
+    "id": 469,
     "title": "Roots of Evil",
     "year": 1993,
     "authors": "Eric Haddock & David Wise",
@@ -3052,6 +3488,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 481,
     "title": "A Dozen and One Adventures",
     "year": 1993,
     "authors": "Steven Kurtz",
@@ -3059,6 +3496,7 @@
     "cover_artist": "Karl Waller"
   },
   {
+    "id": 484,
     "title": "Rage of the Rakasta",
     "year": 1993,
     "authors": "William W. Connors",
@@ -3066,6 +3504,7 @@
     "cover_artist": "Roger Loveless"
   },
   {
+    "id": 431,
     "title": "The Ivory Triangle",
     "year": 1993,
     "authors": "Curtis M. Scott & Kirk Botula",
@@ -3073,6 +3512,7 @@
     "cover_artist": null
   },
   {
+    "id": 455,
     "title": "Jungles of Chult",
     "year": 1993,
     "authors": "James Lowder & Jean Rabe",
@@ -3080,6 +3520,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 465,
     "title": "The City of Skulls",
     "year": 1993,
     "authors": "Carl Sargent",
@@ -3087,6 +3528,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 468,
     "title": "Space Lairs",
     "year": 1993,
     "authors": "Nicky Rea & Wes Nicholson",
@@ -3094,6 +3536,7 @@
     "cover_artist": "David O. Miller"
   },
   {
+    "id": 470,
     "title": "The Created",
     "year": 1993,
     "authors": "Bruce Nesmith",
@@ -3101,6 +3544,7 @@
     "cover_artist": "Brom"
   },
   {
+    "id": 439,
     "title": "Forgotten Realms Campaign Setting",
     "year": 1993,
     "authors": "Ed Greenwood & Jeff Grubb & Don Bingle",
@@ -3108,6 +3552,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 432,
     "title": "Monstrous Manual",
     "year": 1993,
     "authors": "David Zeb Cook",
@@ -3115,6 +3560,7 @@
     "cover_artist": null
   },
   {
+    "id": 433,
     "title": "The Complete Gladiator's Handbook",
     "year": 1993,
     "authors": "Walter M. Baas & Colin McComb",
@@ -3122,6 +3568,7 @@
     "cover_artist": null
   },
   {
+    "id": 473,
     "title": "Web of Illusion",
     "year": 1993,
     "authors": "William W. Connors",
@@ -3129,6 +3576,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 485,
     "title": "In the Phantom's Wake",
     "year": 1993,
     "authors": "Dale \"Slade\" Henson",
@@ -3136,6 +3584,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 441,
     "title": "The Astromundi Cluster",
     "year": 1993,
     "authors": "Sam Witt",
@@ -3143,6 +3592,7 @@
     "cover_artist": "David O. Miller"
   },
   {
+    "id": 443,
     "title": "City of Delights",
     "year": 1993,
     "authors": "Tim Beach & Tom Prusa & Steve Kurtz",
@@ -3150,6 +3600,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 460,
     "title": "Player's Guide to the Dragonlance Campaign",
     "year": 1993,
     "authors": "Jonatha Ariadne Caspian",
@@ -3157,6 +3608,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 434,
     "title": "City State of Tyr",
     "year": 1993,
     "authors": "Walter M. Baas",
@@ -3164,6 +3616,7 @@
     "cover_artist": null
   },
   {
+    "id": 462,
     "title": "New Tales: The Land Reborn",
     "year": 1993,
     "authors": "John Terra",
@@ -3171,6 +3624,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 472,
     "title": "Van Richten's Guide to Werebeasts",
     "year": 1993,
     "authors": "Nigel Findley",
@@ -3178,6 +3632,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 466,
     "title": "Border Watch",
     "year": 1993,
     "authors": "Paul T. Riegel",
@@ -3185,6 +3640,7 @@
     "cover_artist": "Paul Jaquays"
   },
   {
+    "id": 435,
     "title": "House of Strahd",
     "year": 1993,
     "authors": "Tracy & Laura Hickman",
@@ -3192,6 +3648,7 @@
     "cover_artist": null
   },
   {
+    "id": 478,
     "title": "Tales of Enchantment",
     "year": 1993,
     "authors": "Jim Musser",
@@ -3199,6 +3656,7 @@
     "cover_artist": "Glen Orbik"
   },
   {
+    "id": 436,
     "title": "Castles Forlorn",
     "year": 1993,
     "authors": "Lisa Smedman",
@@ -3206,6 +3664,7 @@
     "cover_artist": null
   },
   {
+    "id": 444,
     "title": "Champions of Mystara: Heroes of the Princess Ark",
     "year": 1993,
     "authors": "Ann Dupuis",
@@ -3213,6 +3672,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 437,
     "title": "Earth, Air, Fire and Water",
     "year": 1993,
     "authors": "Shane Lacy Hensley",
@@ -3220,6 +3680,7 @@
     "cover_artist": null
   },
   {
+    "id": 456,
     "title": "The Code of the Harpers",
     "year": 1993,
     "authors": "Ed Greenwood",
@@ -3227,6 +3688,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 457,
     "title": "Doom of Daggerdale",
     "year": 1993,
     "authors": "Wolfgang Baur",
@@ -3234,6 +3696,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 440,
     "title": "Dwarven Kingdoms of Krynn",
     "year": 1993,
     "authors": "Douglas Niles",
@@ -3241,6 +3704,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 445,
     "title": "Book of Artifacts",
     "year": 1993,
     "authors": "Jeff Grubb & Andria Hayday",
@@ -3248,6 +3712,7 @@
     "cover_artist": "Fred Fields"
   },
   {
+    "id": 451,
     "title": "Lankhmar: City of Adventure (2nd Edition)",
     "year": 1993,
     "authors": "Anthony Pryor",
@@ -3255,6 +3720,7 @@
     "cover_artist": "Keith Parkinson"
   },
   {
+    "id": 438,
     "title": "Elves of Athas",
     "year": 1993,
     "authors": "Bill Slavicsek",
@@ -3262,6 +3728,7 @@
     "cover_artist": null
   },
   {
+    "id": 458,
     "title": "Dalelands",
     "year": 1993,
     "authors": "Ed Greenwood",
@@ -3269,6 +3736,7 @@
     "cover_artist": "John and Laura Lakey"
   },
   {
+    "id": 480,
     "title": "Cleric's Challenge",
     "year": 1993,
     "authors": "L. Richard Baker III",
@@ -3276,6 +3744,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 446,
     "title": "Monstrous Compendium Ravenloft Appendix II: Children of the Night",
     "year": 1993,
     "authors": "William W. Connors",
@@ -3283,6 +3752,7 @@
     "cover_artist": "Jeff Easley"
   },
   {
+    "id": 489,
     "title": "Player's Guide to the Forgotten Realms",
     "year": 1993,
     "authors": "Anthony Herring",
@@ -3290,6 +3760,7 @@
     "cover_artist": "Larry Elmore"
   },
   {
+    "id": 452,
     "title": "The Glory of Rome Campaign Sourcebook",
     "year": 1993,
     "authors": "David Pulver",
@@ -3297,6 +3768,7 @@
     "cover_artist": null
   },
   {
+    "id": 482,
     "title": "Secrets of the Lamp",
     "year": 1993,
     "authors": "Wolfgang Baur",
@@ -3304,6 +3776,7 @@
     "cover_artist": "Carol Heyer"
   },
   {
+    "id": 488,
     "title": "Poor Wizard's Almanac II & Book of Facts",
     "year": 1993,
     "authors": "Ann Dupuis",
@@ -3311,6 +3784,7 @@
     "cover_artist": "Dee Barnett"
   },
   {
+    "id": 459,
     "title": "Unsung Heroes",
     "year": 1993,
     "authors": "Tim Beach",
@@ -3318,6 +3792,7 @@
     "cover_artist": "Robh Ruppel"
   },
   {
+    "id": 453,
     "title": "Volo's Guide to the North",
     "year": 1993,
     "authors": "Ed Greenwood",
@@ -3325,6 +3800,7 @@
     "cover_artist": "John and Laura Lakey"
   },
   {
+    "id": 450,
     "title": "The Complete Ranger's Handbook",
     "year": 1993,
     "authors": "Rick Swan",
@@ -3332,6 +3808,7 @@
     "cover_artist": null
   },
   {
+    "id": 474,
     "title": "Dark of the Moon",
     "year": 1993,
     "authors": "L. Richard Baker III",
