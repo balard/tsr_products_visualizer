@@ -58,7 +58,7 @@ def main():
         sys.exit(0)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    print(f'Downloading {len(targets)} cover(s) for year {year} → {OUTPUT_DIR}/')
+    print(f'Downloading {len(targets)} cover(s) for year {year} -> {OUTPUT_DIR}/')
 
     ok = 0
     skipped = 0
@@ -72,15 +72,15 @@ def main():
 
         prefix = f'[{i}/{len(targets)}]'
 
-        if dest.exists():
+        if dest.exists() or not url.startswith('http'):
             print(f'{prefix} Skip id={pid} (already exists)')
             skipped += 1
             continue
 
         try:
-            print(f'{prefix} Downloading id={pid} → {dest}', end='', flush=True)
+            print(f'{prefix} Downloading id={pid} -> {dest}', end='', flush=True)
             download_image(url, dest)
-            print(' ✓')
+            print(' OK')
             ok += 1
             time.sleep(DELAY_SECONDS)
         except (urllib.error.URLError, OSError) as e:

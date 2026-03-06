@@ -4,7 +4,7 @@
     "title": "Dungeons & Dragons",
     "year": 1974,
     "authors": "Gary Gygax & Dave Arneson",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-3vs-box.jpg",
+    "cover_url": "covers/full/1.jpg",
     "cover_artist": "Greg Bell"
   },
   {
@@ -12,7 +12,7 @@
     "title": "Supplement I: Greyhawk",
     "year": 1975,
     "authors": "Gary Gygax & Rob Kuntz",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup1-12th.jpg",
+    "cover_url": "covers/full/24.jpg",
     "cover_artist": "Greg Bell"
   },
   {
@@ -20,7 +20,7 @@
     "title": "Supplement II: Blackmoor",
     "year": 1975,
     "authors": "Dave Arneson",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup2-5th.jpg",
+    "cover_url": "covers/full/23.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -28,7 +28,7 @@
     "title": "Supplement III: Eldritch Wizardry",
     "year": 1976,
     "authors": "Gary Gygax & Brian Blume",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup3-5th.jpg",
+    "cover_url": "covers/full/9.jpg",
     "cover_artist": "Deborah Larson"
   },
   {
@@ -36,7 +36,7 @@
     "title": "Dungeon Geomorphs Set One: Basic Dungeon",
     "year": 1976,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-geo1-2nd.jpg",
+    "cover_url": "covers/full/2.jpg",
     "cover_artist": null
   },
   {
@@ -44,7 +44,7 @@
     "title": "Supplement IV: Gods, Demi-Gods & Heroes",
     "year": 1976,
     "authors": "Robert Kuntz & James Ward",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup4-1st.jpg",
+    "cover_url": "covers/full/3.jpg",
     "cover_artist": "NOT FOUND"
   },
   {
@@ -52,7 +52,7 @@
     "title": "Swords & Spells",
     "year": 1976,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-sup5-1st.jpg",
+    "cover_url": "covers/full/4.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -60,7 +60,7 @@
     "title": "Dungeons & Dragons Basic Set",
     "year": 1977,
     "authors": "Eric Holmes",
-    "cover_url": "https://www.acaeum.com/indexes/rulebooks/scans/basic1st.jpg",
+    "cover_url": "covers/full/5.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -68,7 +68,7 @@
     "title": "Monster Manual",
     "year": 1977,
     "authors": "Gary Gyax",
-    "cover_url": "https://www.tsrarchive.com/add/add-1e-core-mm-1st.jpg",
+    "cover_url": "covers/full/6.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -76,7 +76,7 @@
     "title": "Dungeon Geomorphs Set Two: Caves & Caverns",
     "year": 1977,
     "authors": "Gary & Ernie Gygax",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-geo2-3rd.jpg",
+    "cover_url": "covers/full/16.jpg",
     "cover_artist": null
   },
   {
@@ -84,7 +84,7 @@
     "title": "Dungeon Geomorphs Set Three: Lower Dungeons",
     "year": 1977,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-geo3-3rd.jpg",
+    "cover_url": "covers/full/18.jpg",
     "cover_artist": null
   },
   {
@@ -92,7 +92,7 @@
     "title": "Outdoor Geomorphs Set One: Walled City",
     "year": 1977,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-geoout-2nd.jpg",
+    "cover_url": "covers/full/19.jpg",
     "cover_artist": null
   },
   {
@@ -100,7 +100,7 @@
     "title": "Monster & Treasure Assortment Set One: Levels One-Three",
     "year": 1977,
     "authors": "N/A",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-mta1-2nd.jpg",
+    "cover_url": "covers/full/7.jpg",
     "cover_artist": null
   },
   {
@@ -108,7 +108,7 @@
     "title": "Monster & Treasure Assortment Set Two: Levels Four-Six",
     "year": 1977,
     "authors": "N/A",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-mta2-4th.gif",
+    "cover_url": "covers/full/21.jpg",
     "cover_artist": null
   },
   {
@@ -116,7 +116,7 @@
     "title": "Character Record Sheets",
     "year": 1977,
     "authors": "N/A",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-crs-2nd.jpg",
+    "cover_url": "covers/full/8.jpg",
     "cover_artist": null
   },
   {
@@ -124,7 +124,7 @@
     "title": "Players Handbook",
     "year": 1978,
     "authors": "Gary Gyax",
-    "cover_url": "https://www.tsrarchive.com/add/add-1e-core-phb-1st_3rd.jpg",
+    "cover_url": "covers/full/10.jpg",
     "cover_artist": "David A. Trampier"
   },
   {
@@ -132,7 +132,7 @@
     "title": "Steading of the Hill Giant Chief",
     "year": 1978,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/add/add-g1-3rd.jpg",
+    "cover_url": "covers/full/11.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -140,7 +140,7 @@
     "title": "The Glacial Rift of the Frost Giant Jarl",
     "year": 1978,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/add/add-g2-2nd.jpg",
+    "cover_url": "covers/full/12.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -148,7 +148,7 @@
     "title": "Hall of the Fire Giant King",
     "year": 1978,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/add/add-g3-3rd.jpg",
+    "cover_url": "covers/full/13.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -156,7 +156,7 @@
     "title": "Descent into the Depths of the Earth",
     "year": 1978,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/add/add-d1-2nd.jpg",
+    "cover_url": "covers/full/14.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -164,7 +164,7 @@
     "title": "The Shrine of the Kuo-Toa",
     "year": 1978,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/add/add-d2-3rd.jpg",
+    "cover_url": "covers/full/15.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -172,7 +172,7 @@
     "title": "In Search of the Unknown",
     "year": 1978,
     "authors": "Mike Carr",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-b1-1st.jpg",
+    "cover_url": "covers/full/788.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -180,7 +180,7 @@
     "title": "Monster & Treasure Assortment Set Three: Levels Seven-Nine",
     "year": 1978,
     "authors": "N/A",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-mta1-3rd.jpg",
+    "cover_url": "covers/full/22.jpg",
     "cover_artist": null
   },
   {
@@ -188,7 +188,7 @@
     "title": "Vault of the Drow",
     "year": 1978,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/add/add-d3-1st.jpg",
+    "cover_url": "covers/full/17.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -196,7 +196,7 @@
     "title": "Tomb of Horrors",
     "year": 1978,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/add/add-s1-1st.jpg",
+    "cover_url": "covers/full/20.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -204,7 +204,7 @@
     "title": "Dungeon Masters Guide",
     "year": 1979,
     "authors": "Gary Gyax",
-    "cover_url": "https://www.tsrarchive.com/add/add-1e-core-dmg-1st.jpg",
+    "cover_url": "covers/full/25.jpg",
     "cover_artist": "David C. Sutherland III"
   },
   {
@@ -212,7 +212,7 @@
     "title": "Village of Hommlet",
     "year": 1979,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/add/add-t1-2nd.jpg",
+    "cover_url": "covers/full/26.jpg",
     "cover_artist": "David A. Trampier"
   },
   {
@@ -220,7 +220,7 @@
     "title": "White Plume Mountain",
     "year": 1979,
     "authors": "Lawrence Schick",
-    "cover_url": "https://www.tsrarchive.com/add/add-s2-1st.jpg",
+    "cover_url": "covers/full/29.jpg",
     "cover_artist": "Erol Otus"
   },
   {
@@ -228,7 +228,7 @@
     "title": "Dungeon Masters Screen",
     "year": 1979,
     "authors": "N/A",
-    "cover_url": "https://www.tsrarchive.com/add/add-dmscreen-1st.jpg",
+    "cover_url": "covers/full/27.jpg",
     "cover_artist": "David A. Trampier"
   },
   {
@@ -236,7 +236,7 @@
     "title": "Player Character Record Sheets",
     "year": 1979,
     "authors": "N/A",
-    "cover_url": "https://www.tsrarchive.com/add/add-pcrs-2nd.jpg",
+    "cover_url": "covers/full/30.jpg",
     "cover_artist": null
   },
   {
@@ -244,7 +244,7 @@
     "title": "Permanent Character Folder and Adventure Records",
     "year": 1979,
     "authors": "Harold Johnson",
-    "cover_url": "https://www.tsrarchive.com/add/add-perm-1st.jpg",
+    "cover_url": "covers/full/31.jpg",
     "cover_artist": null
   },
   {
@@ -252,7 +252,7 @@
     "title": "Non-Player Character Records",
     "year": 1979,
     "authors": "Harold Johnson",
-    "cover_url": "https://www.tsrarchive.com/add/add-npc-1st.jpg",
+    "cover_url": "covers/full/28.jpg",
     "cover_artist": null
   },
   {
@@ -260,7 +260,7 @@
     "title": "Keep on the Borderlands",
     "year": 1979,
     "authors": "Gary Gygax",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-b2-1st.jpg",
+    "cover_url": "covers/full/36.jpg",
     "cover_artist": "Jim Roslof"
   },
   {
@@ -268,7 +268,7 @@
     "title": "Hex Pad",
     "year": 1979,
     "authors": "N/A",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-hexpad-2nd.jpg",
+    "cover_url": "covers/full/34.jpg",
     "cover_artist": null
   },
   {
@@ -3304,14 +3304,6 @@
     "cover_artist": "Robh Ruppel"
   },
   {
-    "id": 794,
-    "title": "Magic Encyclopedia, Volume 1",
-    "year": 1992,
-    "authors": "Connie & Dale \"Slade\" Henson",
-    "cover_url": "https://www.tsrarchive.com/add/add-me1.jpg",
-    "cover_artist": "Fred Fields"
-  },
-  {
     "id": 419,
     "title": "Dragon Quest Game",
     "year": 1992,
@@ -3328,46 +3320,6 @@
     "cover_artist": null
   },
   {
-    "id": 447,
-    "title": "Creative Campaigning",
-    "year": 1993,
-    "authors": "Tony Pryor & Tony Herring & Jonathan Tweet & Norm Ritchie",
-    "cover_url": "https://www.tsrarchive.com/add/add-dmgr5.jpg",
-    "cover_artist": null
-  },
-  {
-    "id": 463,
-    "title": "The Marklands",
-    "year": 1993,
-    "authors": "Carl Sargent",
-    "cover_url": "https://www.tsrarchive.com/gh/gh-wgr4.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 475,
-    "title": "Magic Encyclopedia, Volume 2",
-    "year": 1993,
-    "authors": "Connie & Dale \"Slade\" Henson",
-    "cover_url": "https://www.tsrarchive.com/add/add-me2.jpg",
-    "cover_artist": "Fred Fields"
-  },
-  {
-    "id": 486,
-    "title": "Dungeon Master Screen",
-    "year": 1993,
-    "authors": "Teeuwynn Woodruff",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-dmr1.jpg",
-    "cover_artist": "Larry Elmore"
-  },
-  {
-    "id": 448,
-    "title": "The Complete Book of Gnomes and Halflings",
-    "year": 1993,
-    "authors": "Douglas Niles",
-    "cover_url": "https://www.tsrarchive.com/add/add-phbr9-1st.jpg",
-    "cover_artist": null
-  },
-  {
     "id": 430,
     "title": "Dragon's Crown",
     "year": 1993,
@@ -3376,180 +3328,12 @@
     "cover_artist": null
   },
   {
-    "id": 467,
-    "title": "Krynnspace",
-    "year": 1993,
-    "authors": "Jean Rabe",
-    "cover_url": "https://www.tsrarchive.com/sj/sj-sjr7.jpg",
-    "cover_artist": "David O. Miller"
-  },
-  {
-    "id": 471,
-    "title": "Van Richten's Guide to the Lich",
-    "year": 1993,
-    "authors": "Eric W. Haddock",
-    "cover_url": "https://www.tsrarchive.com/rv/rv-rr6.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 479,
-    "title": "Thief's Challenge",
-    "year": 1993,
-    "authors": "Troy Christensen",
-    "cover_url": "https://www.tsrarchive.com/add/add-hhq3.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 476,
-    "title": "The Murky Deep",
-    "year": 1993,
-    "authors": "Norman B. Ritchie",
-    "cover_url": "https://www.tsrarchive.com/add/add-ga1.jpg",
-    "cover_artist": "John and Laura Lakey"
-  },
-  {
-    "id": 490,
-    "title": "Assassin Mountain",
-    "year": 1993,
-    "authors": "Wolfgang Baur",
-    "cover_url": "https://www.tsrarchive.com/aq/aq-alq2.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 483,
-    "title": "The Knight of Newts",
-    "year": 1993,
-    "authors": "\"Slade\" Henson",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry6.jpg",
-    "cover_artist": "David Dorman"
-  },
-  {
-    "id": 461,
-    "title": "Dragonlance Classics: Volume II",
-    "year": 1993,
-    "authors": "Jeff Grubb & Douglas Niles",
-    "cover_url": "https://www.tsrarchive.com/dl/dl-dlc2.jpg",
-    "cover_artist": "Larry Elmore and Keith Parkinson"
-  },
-  {
-    "id": 464,
-    "title": "Iuz the Evil",
-    "year": 1993,
-    "authors": "Carl Sargent",
-    "cover_url": "https://www.tsrarchive.com/gh/gh-wgr5.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 477,
-    "title": "Swamplight",
-    "year": 1993,
-    "authors": "Jean Rabe",
-    "cover_url": "https://www.tsrarchive.com/add/add-ga2.jpg",
-    "cover_artist": "Paul Jaquays"
-  },
-  {
-    "id": 487,
-    "title": "Creature Catalog",
-    "year": 1993,
-    "authors": "John Nephew",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-dmr2.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 442,
-    "title": "Dragon Mountain",
-    "year": 1993,
-    "authors": "Colin McComb & Paul Lidberg",
-    "cover_url": "https://www.tsrarchive.com/add/add-box-dm.jpg",
-    "cover_artist": "Paul Jaquays"
-  },
-  {
-    "id": 449,
-    "title": "The Complete Book of Humanoids",
-    "year": 1993,
-    "authors": "Bill Slavicsek",
-    "cover_url": "https://www.tsrarchive.com/add/add-phbr10-1st.jpg",
-    "cover_artist": null
-  },
-  {
-    "id": 454,
-    "title": "The Shining South",
-    "year": 1993,
-    "authors": "Tom Prusa",
-    "cover_url": "https://www.tsrarchive.com/fr/fr-fr16.jpg",
-    "cover_artist": "Jeff Buttler"
-  },
-  {
-    "id": 469,
-    "title": "Roots of Evil",
-    "year": 1993,
-    "authors": "Eric Haddock & David Wise",
-    "cover_url": "https://www.tsrarchive.com/rv/rv-rm1.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 481,
-    "title": "A Dozen and One Adventures",
-    "year": 1993,
-    "authors": "Steven Kurtz",
-    "cover_url": "https://www.tsrarchive.com/aq/aq-alq3.jpg",
-    "cover_artist": "Karl Waller"
-  },
-  {
-    "id": 484,
-    "title": "Rage of the Rakasta",
-    "year": 1993,
-    "authors": "William W. Connors",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry7.jpg",
-    "cover_artist": "Roger Loveless"
-  },
-  {
     "id": 431,
     "title": "The Ivory Triangle",
     "year": 1993,
     "authors": "Curtis M. Scott & Kirk Botula",
     "cover_url": "https://www.tsrarchive.com/ds/ds-box-ivory.jpg",
     "cover_artist": null
-  },
-  {
-    "id": 455,
-    "title": "Jungles of Chult",
-    "year": 1993,
-    "authors": "James Lowder & Jean Rabe",
-    "cover_url": "https://www.tsrarchive.com/fr/fr-frm1.jpg",
-    "cover_artist": "Robh Ruppel"
-  },
-  {
-    "id": 465,
-    "title": "The City of Skulls",
-    "year": 1993,
-    "authors": "Carl Sargent",
-    "cover_url": "https://www.tsrarchive.com/gh/gh-wgr6.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 468,
-    "title": "Space Lairs",
-    "year": 1993,
-    "authors": "Nicky Rea & Wes Nicholson",
-    "cover_url": "https://www.tsrarchive.com/sj/sj-sjr8.jpg",
-    "cover_artist": "David O. Miller"
-  },
-  {
-    "id": 470,
-    "title": "The Created",
-    "year": 1993,
-    "authors": "Bruce Nesmith",
-    "cover_url": "https://www.tsrarchive.com/rv/rv-rm2.jpg",
-    "cover_artist": "Brom"
-  },
-  {
-    "id": 439,
-    "title": "Forgotten Realms Campaign Setting",
-    "year": 1993,
-    "authors": "Ed Greenwood & Jeff Grubb & Don Bingle",
-    "cover_url": "https://www.tsrarchive.com/fr/fr-camp2-2nd.jpg",
-    "cover_artist": "Keith Parkinson"
   },
   {
     "id": 432,
@@ -3568,76 +3352,12 @@
     "cover_artist": null
   },
   {
-    "id": 473,
-    "title": "Web of Illusion",
-    "year": 1993,
-    "authors": "William W. Connors",
-    "cover_url": "https://www.tsrarchive.com/rv/rv-rm3.jpg",
-    "cover_artist": "Robh Ruppel"
-  },
-  {
-    "id": 485,
-    "title": "In the Phantom's Wake",
-    "year": 1993,
-    "authors": "Dale \"Slade\" Henson",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry8.jpg",
-    "cover_artist": "Robh Ruppel"
-  },
-  {
-    "id": 441,
-    "title": "The Astromundi Cluster",
-    "year": 1993,
-    "authors": "Sam Witt",
-    "cover_url": "https://www.tsrarchive.com/sj/sj-box-astro.jpg",
-    "cover_artist": "David O. Miller"
-  },
-  {
-    "id": 443,
-    "title": "City of Delights",
-    "year": 1993,
-    "authors": "Tim Beach & Tom Prusa & Steve Kurtz",
-    "cover_url": "https://www.tsrarchive.com/aq/aq-box-city.jpg",
-    "cover_artist": "Robh Ruppel"
-  },
-  {
-    "id": 460,
-    "title": "Player's Guide to the Dragonlance Campaign",
-    "year": 1993,
-    "authors": "Jonatha Ariadne Caspian",
-    "cover_url": "https://www.tsrarchive.com/dl/dl-pg1.jpg",
-    "cover_artist": "Larry Elmore"
-  },
-  {
     "id": 434,
     "title": "City State of Tyr",
     "year": 1993,
     "authors": "Walter M. Baas",
     "cover_url": "https://www.tsrarchive.com/ds/ds-dss1.jpg",
     "cover_artist": null
-  },
-  {
-    "id": 462,
-    "title": "New Tales: The Land Reborn",
-    "year": 1993,
-    "authors": "John Terra",
-    "cover_url": "https://www.tsrarchive.com/dl/dl-dlt1.jpg",
-    "cover_artist": "Larry Elmore"
-  },
-  {
-    "id": 472,
-    "title": "Van Richten's Guide to Werebeasts",
-    "year": 1993,
-    "authors": "Nigel Findley",
-    "cover_url": "https://www.tsrarchive.com/rv/rv-rr7.jpg",
-    "cover_artist": "Robh Ruppel"
-  },
-  {
-    "id": 466,
-    "title": "Border Watch",
-    "year": 1993,
-    "authors": "Paul T. Riegel",
-    "cover_url": "https://www.tsrarchive.com/gh/gh-wgm1.jpg",
-    "cover_artist": "Paul Jaquays"
   },
   {
     "id": 435,
@@ -3648,28 +3368,12 @@
     "cover_artist": null
   },
   {
-    "id": 478,
-    "title": "Tales of Enchantment",
-    "year": 1993,
-    "authors": "Jim Musser",
-    "cover_url": "https://www.tsrarchive.com/add/add-ga3.jpg",
-    "cover_artist": "Glen Orbik"
-  },
-  {
     "id": 436,
     "title": "Castles Forlorn",
     "year": 1993,
     "authors": "Lisa Smedman",
     "cover_url": "https://www.tsrarchive.com/rv/rv-box-castle.jpg",
     "cover_artist": null
-  },
-  {
-    "id": 444,
-    "title": "Champions of Mystara: Heroes of the Princess Ark",
-    "year": 1993,
-    "authors": "Ann Dupuis",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-champ.jpg",
-    "cover_artist": "Robh Ruppel"
   },
   {
     "id": 437,
@@ -3680,46 +3384,6 @@
     "cover_artist": null
   },
   {
-    "id": 456,
-    "title": "The Code of the Harpers",
-    "year": 1993,
-    "authors": "Ed Greenwood",
-    "cover_url": "https://www.tsrarchive.com/fr/fr-for4.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 457,
-    "title": "Doom of Daggerdale",
-    "year": 1993,
-    "authors": "Wolfgang Baur",
-    "cover_url": "https://www.tsrarchive.com/fr/fr-frq3.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 440,
-    "title": "Dwarven Kingdoms of Krynn",
-    "year": 1993,
-    "authors": "Douglas Niles",
-    "cover_url": "https://www.tsrarchive.com/dl/dl-box-dwarf.jpg",
-    "cover_artist": "Larry Elmore"
-  },
-  {
-    "id": 445,
-    "title": "Book of Artifacts",
-    "year": 1993,
-    "authors": "Jeff Grubb & Andria Hayday",
-    "cover_url": "https://www.tsrarchive.com/aq/aq-box-aa.jpg",
-    "cover_artist": "Fred Fields"
-  },
-  {
-    "id": 451,
-    "title": "Lankhmar: City of Adventure (2nd Edition)",
-    "year": 1993,
-    "authors": "Anthony Pryor",
-    "cover_url": "https://www.tsrarchive.com/lm/lm-coa2.jpg",
-    "cover_artist": "Keith Parkinson"
-  },
-  {
     "id": 438,
     "title": "Elves of Athas",
     "year": 1993,
@@ -3728,76 +3392,84 @@
     "cover_artist": null
   },
   {
-    "id": 458,
-    "title": "Dalelands",
+    "id": 439,
+    "title": "Forgotten Realms Campaign Setting",
     "year": 1993,
-    "authors": "Ed Greenwood",
-    "cover_url": "https://www.tsrarchive.com/fr/fr-volo-north.jpg",
-    "cover_artist": "John and Laura Lakey"
-  },
-  {
-    "id": 480,
-    "title": "Cleric's Challenge",
-    "year": 1993,
-    "authors": "L. Richard Baker III",
-    "cover_url": "https://www.tsrarchive.com/add/add-hhq4.jpg",
-    "cover_artist": "Larry Elmore"
-  },
-  {
-    "id": 446,
-    "title": "Monstrous Compendium Ravenloft Appendix II: Children of the Night",
-    "year": 1993,
-    "authors": "William W. Connors",
-    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc15.jpg",
-    "cover_artist": "Jeff Easley"
-  },
-  {
-    "id": 489,
-    "title": "Player's Guide to the Forgotten Realms",
-    "year": 1993,
-    "authors": "Anthony Herring",
-    "cover_url": "https://www.tsrarchive.com/add/add-pg2.jpg",
-    "cover_artist": "Larry Elmore"
-  },
-  {
-    "id": 452,
-    "title": "The Glory of Rome Campaign Sourcebook",
-    "year": 1993,
-    "authors": "David Pulver",
-    "cover_url": "https://www.tsrarchive.com/add/add-hr5.jpg",
+    "authors": "Ed Greenwood & Jeff Grubb & Don Bingle",
+    "cover_url": "https://www.tsrarchive.com/fr/fr-camp2-2nd.jpg",
     "cover_artist": null
   },
   {
-    "id": 482,
-    "title": "Secrets of the Lamp",
+    "id": 440,
+    "title": "Dwarven Kingdoms of Krynn",
     "year": 1993,
-    "authors": "Wolfgang Baur",
-    "cover_url": "https://www.tsrarchive.com/aq/aq-alq4.jpg",
-    "cover_artist": "Carol Heyer"
+    "authors": "Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/dl/dl-box-dwarf.jpg",
+    "cover_artist": null
   },
   {
-    "id": 488,
-    "title": "Poor Wizard's Almanac II & Book of Facts",
+    "id": 441,
+    "title": "The Astromundi Cluster",
+    "year": 1993,
+    "authors": "Sam Witt",
+    "cover_url": "https://www.tsrarchive.com/sj/sj-box-astro.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 442,
+    "title": "Dragon Mountain",
+    "year": 1993,
+    "authors": "Colin McComb & Paul Lidberg",
+    "cover_url": "https://www.tsrarchive.com/add/add-box-dm.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 443,
+    "title": "City of Delights",
+    "year": 1993,
+    "authors": "Tim Beach & Tom Prusa & Steve Kurtz",
+    "cover_url": "https://www.tsrarchive.com/aq/aq-box-city.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 444,
+    "title": "Champions of Mystara: Heroes of the Princess Ark",
     "year": 1993,
     "authors": "Ann Dupuis",
-    "cover_url": "https://www.tsrarchive.com/dd/dd2-alm-pwa2.jpg",
-    "cover_artist": "Dee Barnett"
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-chall-champ.jpg",
+    "cover_artist": null
   },
   {
-    "id": 459,
-    "title": "Unsung Heroes",
+    "id": 445,
+    "title": "Book of Artifacts",
     "year": 1993,
-    "authors": "Tim Beach",
-    "cover_url": "https://www.tsrarchive.com/dl/dl-dlr3.jpg",
-    "cover_artist": "Robh Ruppel"
+    "authors": "Jeff Grubb & Andria Hayday",
+    "cover_url": "https://www.tsrarchive.com/aq/aq-box-aa.jpg",
+    "cover_artist": null
   },
   {
-    "id": 453,
-    "title": "Volo's Guide to the North",
+    "id": 447,
+    "title": "Creative Campaigning",
     "year": 1993,
-    "authors": "Ed Greenwood",
-    "cover_url": "https://www.tsrarchive.com/fr/fr-volo-north.jpg",
-    "cover_artist": "John and Laura Lakey"
+    "authors": "Tony Pryor & Tony Herring & Jonathan Tweet & Norm Ritchie",
+    "cover_url": "https://www.tsrarchive.com/add/add-dmgr5.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 448,
+    "title": "The Complete Book of Gnomes and Halflings",
+    "year": 1993,
+    "authors": "Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr9-1st.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 449,
+    "title": "The Complete Book of Humanoids",
+    "year": 1993,
+    "authors": "Bill Slavicsek",
+    "cover_url": "https://www.tsrarchive.com/add/add-phbr10-1st.jpg",
+    "cover_artist": null
   },
   {
     "id": 450,
@@ -3808,11 +3480,331 @@
     "cover_artist": null
   },
   {
+    "id": 451,
+    "title": "Lankhmar: City of Adventure (2nd Edition)",
+    "year": 1993,
+    "authors": "Anthony Pryor",
+    "cover_url": "https://www.tsrarchive.com/lm/lm-coa2.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 446,
+    "title": "Monstrous Compendium Ravenloft Appendix II: Children of the Night",
+    "year": 1993,
+    "authors": "William W. Connors",
+    "cover_url": "https://www.tsrarchive.com/add/add-2e-core-mc15.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 489,
+    "title": "Player's Guide to the Forgotten Realms",
+    "year": 1993,
+    "authors": "Anthony Herring",
+    "cover_url": "https://www.tsrarchive.com/add/add-pg2.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 460,
+    "title": "Player's Guide to the Dragonlance Campaign",
+    "year": 1993,
+    "authors": "Jonatha Ariadne Caspian",
+    "cover_url": "https://www.tsrarchive.com/dl/dl-pg1.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 459,
+    "title": "Unsung Heroes",
+    "year": 1993,
+    "authors": "Tim Beach",
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dlr3.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 454,
+    "title": "The Shining South",
+    "year": 1993,
+    "authors": "Tom Prusa",
+    "cover_url": "https://www.tsrarchive.com/fr/fr-fr16.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 455,
+    "title": "Jungles of Chult",
+    "year": 1993,
+    "authors": "James Lowder & Jean Rabe",
+    "cover_url": "https://www.tsrarchive.com/fr/fr-frm1.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 456,
+    "title": "The Code of the Harpers",
+    "year": 1993,
+    "authors": "Ed Greenwood",
+    "cover_url": "https://www.tsrarchive.com/fr/fr-for4.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 457,
+    "title": "Doom of Daggerdale",
+    "year": 1993,
+    "authors": "Wolfgang Baur",
+    "cover_url": "https://www.tsrarchive.com/fr/fr-frq3.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 458,
+    "title": "Dalelands",
+    "year": 1993,
+    "authors": "Ed Greenwood",
+    "cover_url": "https://www.tsrarchive.com/fr/fr-volo-north.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 453,
+    "title": "Volo's Guide to the North",
+    "year": 1993,
+    "authors": "Ed Greenwood",
+    "cover_url": "https://www.tsrarchive.com/fr/fr-volo-north.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 461,
+    "title": "Dragonlance Classics: Volume II",
+    "year": 1993,
+    "authors": "Jeff Grubb & Douglas Niles",
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dlc2.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 462,
+    "title": "New Tales: The Land Reborn",
+    "year": 1993,
+    "authors": "John Terra",
+    "cover_url": "https://www.tsrarchive.com/dl/dl-dlt1.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 463,
+    "title": "The Marklands",
+    "year": 1993,
+    "authors": "Carl Sargent",
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wgr4.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 464,
+    "title": "Iuz the Evil",
+    "year": 1993,
+    "authors": "Carl Sargent",
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wgr5.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 465,
+    "title": "The City of Skulls",
+    "year": 1993,
+    "authors": "Carl Sargent",
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wgr6.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 466,
+    "title": "Border Watch",
+    "year": 1993,
+    "authors": "Paul T. Riegel",
+    "cover_url": "https://www.tsrarchive.com/gh/gh-wgm1.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 467,
+    "title": "Krynnspace",
+    "year": 1993,
+    "authors": "Jean Rabe",
+    "cover_url": "https://www.tsrarchive.com/sj/sj-sjr7.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 468,
+    "title": "Space Lairs",
+    "year": 1993,
+    "authors": "Nicky Rea & Wes Nicholson",
+    "cover_url": "https://www.tsrarchive.com/sj/sj-sjr8.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 471,
+    "title": "Van Richten's Guide to the Lich",
+    "year": 1993,
+    "authors": "Eric W. Haddock",
+    "cover_url": "https://www.tsrarchive.com/rv/rv-rr6.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 469,
+    "title": "Roots of Evil",
+    "year": 1993,
+    "authors": "Eric Haddock & David Wise",
+    "cover_url": "https://www.tsrarchive.com/rv/rv-rm1.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 470,
+    "title": "The Created",
+    "year": 1993,
+    "authors": "Bruce Nesmith",
+    "cover_url": "https://www.tsrarchive.com/rv/rv-rm2.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 473,
+    "title": "Web of Illusion",
+    "year": 1993,
+    "authors": "William W. Connors",
+    "cover_url": "https://www.tsrarchive.com/rv/rv-rm3.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 472,
+    "title": "Van Richten's Guide to Werebeasts",
+    "year": 1993,
+    "authors": "Nigel Findley",
+    "cover_url": "https://www.tsrarchive.com/rv/rv-rr7.jpg",
+    "cover_artist": null
+  },
+  {
     "id": 474,
     "title": "Dark of the Moon",
     "year": 1993,
     "authors": "L. Richard Baker III",
     "cover_url": "https://www.tsrarchive.com/rv/rv-rm5.jpg",
-    "cover_artist": "Robh Ruppel"
+    "cover_artist": null
+  },
+  {
+    "id": 479,
+    "title": "Thief's Challenge",
+    "year": 1993,
+    "authors": "Troy Christensen",
+    "cover_url": "https://www.tsrarchive.com/add/add-hhq3.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 475,
+    "title": "The Magic Encyclopedia, Volume 2",
+    "year": 1993,
+    "authors": "Connie & Dale \"Slade\" Henson",
+    "cover_url": "https://www.tsrarchive.com/add/add-me2.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 476,
+    "title": "The Murky Deep",
+    "year": 1993,
+    "authors": "Norman B. Ritchie",
+    "cover_url": "https://www.tsrarchive.com/add/add-ga1.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 477,
+    "title": "Swamplight",
+    "year": 1993,
+    "authors": "Jean Rabe",
+    "cover_url": "https://www.tsrarchive.com/add/add-ga2.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 452,
+    "title": "The Glory of Rome Campaign Sourcebook",
+    "year": 1993,
+    "authors": "David Pulver",
+    "cover_url": "https://www.tsrarchive.com/add/add-hr5.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 478,
+    "title": "Tales of Enchantment",
+    "year": 1993,
+    "authors": "Jim Musser",
+    "cover_url": "https://www.tsrarchive.com/add/add-ga3.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 480,
+    "title": "Cleric's Challenge",
+    "year": 1993,
+    "authors": "L. Richard Baker III",
+    "cover_url": "https://www.tsrarchive.com/add/add-hhq4.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 490,
+    "title": "Assassin Mountain",
+    "year": 1993,
+    "authors": "Wolfgang Baur",
+    "cover_url": "https://www.tsrarchive.com/aq/aq-alq2.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 481,
+    "title": "A Dozen and One Adventures",
+    "year": 1993,
+    "authors": "Steven Kurtz",
+    "cover_url": "https://www.tsrarchive.com/aq/aq-alq3.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 482,
+    "title": "Secrets of the Lamp",
+    "year": 1993,
+    "authors": "Wolfgang Baur",
+    "cover_url": "https://www.tsrarchive.com/aq/aq-alq4.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 483,
+    "title": "The Knight of Newts",
+    "year": 1993,
+    "authors": "\"Slade\" Henson",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry6.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 484,
+    "title": "Rage of the Rakasta",
+    "year": 1993,
+    "authors": "William W. Connors",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry7.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 485,
+    "title": "In the Phantom's Wake",
+    "year": 1993,
+    "authors": "Dale \"Slade\" Henson",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-entry8.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 486,
+    "title": "Dungeon Master Screen",
+    "year": 1993,
+    "authors": "Teeuwynn Woodruff",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-dmr1.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 487,
+    "title": "Creature Catalog",
+    "year": 1993,
+    "authors": "John Nephew",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-dmr2.jpg",
+    "cover_artist": null
+  },
+  {
+    "id": 488,
+    "title": "Poor Wizard's Almanac II & Book of Facts",
+    "year": 1993,
+    "authors": "Ann Dupuis",
+    "cover_url": "https://www.tsrarchive.com/dd/dd2-alm-pwa2.jpg",
+    "cover_artist": null
   }
 ]
