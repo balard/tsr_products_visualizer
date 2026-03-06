@@ -34,7 +34,7 @@ Product data is stored in `products.json`, generated from the master CSV:
 python convert_csv.py
 ```
 
-Edit `TSR_products_corrected v4.4.csv` → run the script → commit the updated `products.json`.
+Edit `../tsr_products/tsr_products.csv` → run the script → commit the updated `products.json`.
 
 ## Project Structure
 
@@ -43,7 +43,7 @@ tsr_products_visualizer/
 ├── index.html                        # SPA — all UI, CSS, and JS
 ├── products.json                     # Generated product data (do not hand-edit)
 ├── convert_csv.py                    # CSV → JSON data pipeline
-├── TSR_products_corrected v4.4.csv   # Master source data
+├── ../tsr_products/tsr_products.csv  # Master source data (sister folder)
 ├── CLAUDE.md                         # AI assistant instructions
 └── .gitignore
 ```
