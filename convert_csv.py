@@ -7,6 +7,7 @@ import urllib.error
 SOURCE_URL = 'https://raw.githubusercontent.com/balard/tsr_products/main/tsr_products.csv'
 LOCAL_FALLBACK = '../tsr_products/tsr_products.csv'
 OUTPUT_FILE = 'products.json'
+MAX_YEAR = 1993  # Only export products up to and including this year
 
 
 def load_csv_content():
@@ -38,11 +39,15 @@ try:
             artist = artist[len('LIKELY:'):].strip()
 
         authors = row.get('authors', '').strip() or None
-        year = row.get('year', '').strip()
+        year_raw = row.get('year', '').strip()
+        year = int(year_raw) if year_raw else None
+
+        if year is None or year > MAX_YEAR:
+            continue
 
         products.append({
             'title': row['title'].strip(),
-            'year': int(year) if year else None,
+            'year': year,
             'authors': authors,
             'cover_url': cover_url,
             'cover_artist': artist,
