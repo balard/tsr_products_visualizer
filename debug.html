@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TSR Debug View</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1a2e;
+    color: #e8e8e8;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    min-height: 100vh;
+  }
+
+  #error-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: #1a1a2e;
+    color: #c9a227;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2rem;
+    z-index: 999;
+  }
+
+  /* NAV BAR */
+  #nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #12122a;
+    border-bottom: 1px solid #c9a227;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    flex-wrap: wrap;
+  }
+
+  #nav h1 {
+    font-size: 14px;
+    color: #c9a227;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-right: 8px;
+  }
+
+  .nav-btn {
+    background: #2a2a4a;
+    color: #e8e8e8;
+    border: 1px solid #c9a227;
+    padding: 4px 14px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.15s;
+  }
+  .nav-btn:hover { background: #3a3a5a; }
+  .nav-btn:active { background: #c9a227; color: #1a1a2e; }
+
+  #counter-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #888;
+    font-size: 11px;
+  }
+
+  #idx-input {
+    width: 52px;
+    background: #2a2a4a;
+    border: 1px solid #555;
+    color: #e8e8e8;
+    font-family: inherit;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 3px;
+    text-align: right;
+  }
+  #idx-input:focus { outline: none; border-color: #c9a227; }
+
+  #total-label { color: #888; }
+
+  /* STRIP */
+  #strip-wrap {
+    overflow-x: auto;
+    padding: 16px;
+  }
+
+  #strip {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(190px, 1fr));
+    gap: 10px;
+    min-width: 1340px;
+  }
+
+  /* CARDS */
+  .card {
+    background: #22223a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 0.65;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card.current {
+    border-color: #c9a227;
+    border-width: 2px;
+    opacity: 1;
+  }
+
+  .card.placeholder {
+    background: #1a1a2e;
+    border-color: #2a2a3a;
+    opacity: 0.3;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    color: #444;
+    font-size: 11px;
+  }
+
+  .card-label {
+    font-size: 10px;
+    text-align: center;
+    padding: 3px 0;
+    background: #12122a;
+    color: #888;
+    letter-spacing: 0.1em;
+  }
+  .card.current .card-label {
+    background: #c9a227;
+    color: #1a1a2e;
+    font-weight: bold;
+  }
+
+  .card-cover {
+    width: 100%;
+    height: 160px;
+    background: #111128;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .card-cover img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .card-cover .no-cover {
+    color: #444;
+    font-size: 10px;
+    text-align: center;
+    padding: 8px;
+  }
+
+  /* FIELD LIST */
+  .field-list {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 4px;
+    line-height: 1.4;
+  }
+
+  .field-key {
+    color: #c9a227;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 1px;
+  }
+
+  .field-val {
+    color: #e8e8e8;
+    font-size: 11px;
+    word-break: break-word;
+  }
+
+  .field-val.null {
+    color: #444;
+  }
+
+  .field-val a {
+    color: #7ab3e8;
+    word-break: break-all;
+    font-size: 10px;
+  }
+
+  .seq-offset {
+    font-size: 9px;
+    color: #888;
+    text-align: center;
+    padding: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div id="error-overlay">
+  <div>
+    <p style="font-size:1.4rem; margin-bottom:1rem;">Cannot load products.json</p>
+    <p>Open via a local server:<br><code>python -m http.server 8000</code><br>then visit <code>http://localhost:8000/debug.html</code></p>
+  </div>
+</div>
+
+<div id="app" style="display:none">
+  <div id="nav">
+    <h1>TSR Debug</h1>
+    <button class="nav-btn" id="btn-first" title="Home">&#x23EE;</button>
+    <button class="nav-btn" id="btn-prev" title="Previous (&#x2190;)">&larr; Prev</button>
+    <button class="nav-btn" id="btn-next" title="Next (&#x2192;)">Next &rarr;</button>
+    <button class="nav-btn" id="btn-last" title="End">&#x23ED;</button>
+    <div id="counter-wrap">
+      <input type="number" id="idx-input" min="1" title="Jump to product #">
+      <span id="total-label">/ —</span>
+    </div>
+    <span style="color:#555; font-size:11px; margin-left:4px;">&#x2190;&#x2192; arrow keys &nbsp;|&nbsp; Home / End</span>
+  </div>
+
+  <div id="strip-wrap">
+    <div id="strip"></div>
+  </div>
+</div>
+
+<script>
+  const FIELDS = [
+    ['id',           'ID'],
+    ['order',        'Order'],
+    ['year',         'Year'],
+    ['month',        'Month'],
+    ['day',          'Day'],
+    ['product_code', 'Product Code'],
+    ['title',        'Title'],
+    ['module_code',  'Module Code'],
+    ['type',         'Type'],
+    ['system',       'System'],
+    ['setting',      'Setting'],
+    ['confidence',   'Confidence'],
+    ['edition',      'Edition'],
+    ['authors',      'Authors'],
+    ['cover_url',    'Cover URL'],
+    ['cover_artist', 'Cover Artist'],
+    ['semester',     'Semester'],
+    ['season',       'Season'],
+  ];
+
+  let products = [];
+  let currentIndex = 0;
+
+  function navigate(delta) {
+    currentIndex = Math.max(0, Math.min(products.length - 1, currentIndex + delta));
+    render();
+  }
+
+  function jumpTo(n) {
+    currentIndex = Math.max(0, Math.min(products.length - 1, n));
+    render();
+  }
+
+  function buildCard(product, offset) {
+    const card = document.createElement('div');
+    card.className = 'card' + (offset === 0 ? ' current' : '');
+
+    // offset label
+    const label = document.createElement('div');
+    label.className = 'card-label';
+    label.textContent = offset === 0 ? '► CURRENT ◄' : (offset > 0 ? `+${offset}` : `${offset}`);
+    card.appendChild(label);
+
+    // cover
+    const coverDiv = document.createElement('div');
+    coverDiv.className = 'card-cover';
+    if (product.cover_url) {
+      const img = document.createElement('img');
+      img.src = product.cover_url;
+      img.alt = product.title || '';
+      img.onerror = () => {
+        coverDiv.innerHTML = '<div class="no-cover">image not found</div>';
+      };
+      coverDiv.appendChild(img);
+    } else {
+      coverDiv.innerHTML = '<div class="no-cover">no cover url</div>';
+    }
+    card.appendChild(coverDiv);
+
+    // fields
+    const list = document.createElement('div');
+    list.className = 'field-list';
+    for (const [key, label_] of FIELDS) {
+      const row = document.createElement('div');
+      row.className = 'field-row';
+
+      const k = document.createElement('div');
+      k.className = 'field-key';
+      k.textContent = label_;
+
+      const v = document.createElement('div');
+      const val = product[key];
+      if (val === null || val === undefined) {
+        v.className = 'field-val null';
+        v.textContent = '—';
+      } else if (key === 'cover_url') {
+        v.className = 'field-val';
+        const a = document.createElement('a');
+        a.href = val;
+        a.target = '_blank';
+        a.textContent = val;
+        v.appendChild(a);
+      } else {
+        v.className = 'field-val';
+        v.textContent = String(val);
+      }
+
+      row.appendChild(k);
+      row.appendChild(v);
+      list.appendChild(row);
+    }
+    card.appendChild(list);
+
+    return card;
+  }
+
+  function buildPlaceholder(offset) {
+    const card = document.createElement('div');
+    card.className = 'card placeholder';
+    card.textContent = offset > 0 ? `+${offset} (end)` : `${offset} (start)`;
+    return card;
+  }
+
+  function render() {
+    const strip = document.getElementById('strip');
+    strip.innerHTML = '';
+
+    const offsets = [-3, -2, -1, 0, 1, 2, 3];
+    for (const offset of offsets) {
+      const idx = currentIndex + offset;
+      if (idx < 0 || idx >= products.length) {
+        strip.appendChild(buildPlaceholder(offset));
+      } else {
+        strip.appendChild(buildCard(products[idx], offset));
+      }
+    }
+
+    const input = document.getElementById('idx-input');
+    input.value = currentIndex + 1;
+    document.getElementById('total-label').textContent = `/ ${products.length}`;
+  }
+
+  // Navigation bindings
+  document.getElementById('btn-prev').addEventListener('click', () => navigate(-1));
+  document.getElementById('btn-next').addEventListener('click', () => navigate(1));
+  document.getElementById('btn-first').addEventListener('click', () => jumpTo(0));
+  document.getElementById('btn-last').addEventListener('click', () => jumpTo(products.length - 1));
+
+  document.getElementById('idx-input').addEventListener('change', e => {
+    const n = parseInt(e.target.value, 10);
+    if (!isNaN(n)) jumpTo(n - 1);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (document.activeElement === document.getElementById('idx-input')) return;
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); navigate(-1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); navigate(1); }
+    if (e.key === 'Home')       { e.preventDefault(); jumpTo(0); }
+    if (e.key === 'End')        { e.preventDefault(); jumpTo(products.length - 1); }
+  });
+
+  // Load data
+  fetch('products.json')
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    })
+    .then(data => {
+      products = data;
+      document.getElementById('app').style.display = '';
+      render();
+    })
+    .catch(err => {
+      if (location.protocol === 'file:') {
+        document.getElementById('error-overlay').style.display = 'flex';
+      } else {
+        document.getElementById('error-overlay').style.display = 'flex';
+        document.getElementById('error-overlay').querySelector('p').textContent = `Failed to load products.json: ${err.message}`;
+      }
+    });
+</script>
+</body>
+</html>

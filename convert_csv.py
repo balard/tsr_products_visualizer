@@ -25,6 +25,21 @@ def load_csv_content():
         return f
 
 
+def str_or_none(val):
+    v = val.strip()
+    return v if v else None
+
+
+def int_or_none(val):
+    v = val.strip()
+    if not v:
+        return None
+    try:
+        return int(v)
+    except ValueError:
+        return None
+
+
 products = []
 source = load_csv_content()
 try:
@@ -54,12 +69,24 @@ try:
                 local_path = f'covers/full/{f.name}'
                 break
         products.append({
-            'id': int(row_id) if row_id else None,
-            'title': row['title'].strip(),
-            'year': year,
-            'authors': authors,
-            'cover_url': local_path if local_path else cover_url,
+            'id':           int(row_id) if row_id else None,
+            'order':        int_or_none(row.get('order', '')),
+            'year':         year,
+            'month':        int_or_none(row.get('month', '')),
+            'day':          int_or_none(row.get('day', '')),
+            'product_code': str_or_none(row.get('product code', '')),
+            'title':        row['title'].strip(),
+            'module_code':  str_or_none(row.get('module code', '')),
+            'type':         str_or_none(row.get('type', '')),
+            'system':       str_or_none(row.get('system', '')),
+            'setting':      str_or_none(row.get('setting', '')),
+            'confidence':   str_or_none(row.get('confidence', '')),
+            'edition':      str_or_none(row.get('edition', '')),
+            'authors':      authors,
+            'cover_url':    local_path if local_path else cover_url,
             'cover_artist': artist,
+            'semester':     int_or_none(row.get('semester', '')),
+            'season':       str_or_none(row.get('season', '')),
         })
 finally:
     source.close()
