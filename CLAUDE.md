@@ -6,6 +6,7 @@ spanning publications from 1974 onward (D&D, AD&D, and related products).
 
 ## Architecture
 - **index.html** — Self-contained SPA: all HTML, CSS, and JavaScript in one file (no build step)
+- **debug.html** — Self-contained developer tool: shows all 18 fields per product in a 7-product context window (±3 around current); same dark theme; keyboard nav (←/→/Home/End)
 - **products.json** — Product data consumed by the viewer at runtime via `fetch()`
 - **convert_csv.py** — Python 3 script that regenerates `products.json` from the CSV source
 - **download_covers.py** — Downloads cover images by year into `covers/full/`
@@ -20,7 +21,7 @@ spanning publications from 1974 onward (D&D, AD&D, and related products).
 ## Key Conventions
 - All app logic lives in `index.html`; keep it self-contained
 - `products.json` is generated — never hand-edit it; run `convert_csv.py` instead
-- `products.json` entries include an `id` field (integer, from CSV); `cover_url` points to a local path (`covers/full/{id}.jpg`) if the image has been downloaded, otherwise the remote URL from the CSV
+- `products.json` entries include all 18 CSV fields; CSV columns with spaces are normalized to underscores (`product_code`, `module_code`); `cover_url` points to a local path (`covers/full/{id}.jpg`) if the image has been downloaded, otherwise the remote URL from the CSV
 - Dark theme: background `#1a1a2e`, accent `#c9a227`, text `#e8e8e8`
 - Responsive breakpoint at 900px (3-column → 1-column layout)
 
