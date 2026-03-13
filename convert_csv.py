@@ -8,7 +8,7 @@ from pathlib import Path
 SOURCE_URL = 'https://raw.githubusercontent.com/balard/tsr_products/main/tsr_products.csv'
 LOCAL_FALLBACK = '../tsr_products/tsr_products.csv'
 OUTPUT_FILE = 'products.json'
-MAX_YEAR = 1996  # Only export products up to and including this year
+MAX_YEAR = 2013  # Only export products up to and including this year
 LOCAL_COVERS_DIR = Path('covers/full')
 
 
