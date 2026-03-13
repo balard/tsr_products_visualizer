@@ -57,9 +57,9 @@ Output: `covers/full/{id}.{ext}` — files are named by the product's CSV `id` f
 
 ## Image Download Progress
 Years fully downloaded to `covers/full/` (run `download_covers.py` then regenerate JSON):
-- 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓ (id=57 timed out — retry pending), 1982 ✓, 1983 ✓
-- Next year to download: **1984**
-- Current MAX_YEAR in convert_csv.py: **1996**
+- 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓ (id=57 timed out — retry pending), 1982 ✓, 1983 ✓, 1984 ✓
+- Next year to download: **1985**
+- Current MAX_YEAR in convert_csv.py: **2013**
 
 ## Running Locally
 Open `index.html` via a local server (required — `fetch()` won't work over `file://`):
