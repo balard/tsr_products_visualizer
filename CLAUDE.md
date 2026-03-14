@@ -66,9 +66,9 @@ Output:
 
 ## Image Download Progress
 Years fully downloaded to `covers/full/` (run `download_covers.py` then regenerate JSON):
-- Front covers: 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓, 1982 ✓, 1983 ✓, 1984 ✓
-- Back covers: 1974–1984 ✓ (id=5 [1977] and id=115 [1984] returned 404 — no back cover exists on source)
-- Next year to download: **1985**
+- Front covers: 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓, 1982 ✓, 1983 ✓, 1984 ✓, 1985 ✓, 1986 ✓, 1987 ✓, 1988 ✓, 1989 ✓, 1990 ✓, 1991 ✓, 1992 ✓, 1993 ✓, 1994 ✓, 1995 ✓
+- Back covers: 1974–1995 ✓ (id=5 [1977], id=115 [1984], id=179 [1986], id=298 [1989], id=299 [1989], id=460 [1993], id=474 [1993] returned 404 — no image exists on source; id=420 [1992] back added manually)
+- Next year to download: **1996**
 
 ## Running Locally
 Open `index.html` via a local server (required — `fetch()` won't work over `file://`):
