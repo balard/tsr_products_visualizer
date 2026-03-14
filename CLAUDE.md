@@ -10,7 +10,7 @@ spanning publications from 1974 onward (D&D, AD&D, and related products).
 - **products.json** — Product data consumed by the viewer at runtime via `fetch()`
 - **convert_csv.py** — Python 3 script that regenerates `products.json` from the CSV source
 - **download_covers.py** — Downloads cover images by year into `covers/full/`
-- **covers/full/** — Local image files named `{id}.jpg` (or `.gif`); served via GitHub Pages
+- **covers/full/** — Local image files: front covers named `{id}.{ext}`, back covers named `{id}-back.{ext}`; served via GitHub Pages
 - **../tsr_products/tsr_products.csv** — Master source data (30+ columns of bibliographic info)
 
 ## Tech Stack
@@ -40,13 +40,23 @@ To download covers for a specific year (run *before* regenerating JSON):
 ```bash
 python download_covers.py <year>
 ```
-Output: `covers/full/{id}.{ext}` — files are named by the product's CSV `id` field.
+Output:
+- `covers/full/{id}.{ext}` — front cover, named by the product's CSV `id` field
+- `covers/full/{id}-back.{ext}` — back cover (URL assumed to be front URL with `-back` before the extension)
+
 - Already-downloaded files are skipped automatically (idempotent).
-- If `cover_url` in `products.json` is already a local path, the script skips it.
+- The script reads `../tsr_products/tsr_products.csv` directly to get the original remote URL for back-cover derivation, since `products.json` stores local paths for already-downloaded front covers.
+- 404s on back covers are expected — not all products have back cover images on tsrarchive.com.
 
 **Workflow when adding a new year of images:**
 1. `python download_covers.py <year>`
 2. `python convert_csv.py` ← regenerate JSON; local paths are picked up automatically
+
+## download_covers.py internals
+- Reads `products.json` to filter products by year
+- Reads `../tsr_products/tsr_products.csv` to get original remote `cover_url` for each product (needed to derive back cover URLs, since `products.json` stores local paths once a front cover is downloaded)
+- Back cover URL = front cover URL with `-back` inserted before the file extension (e.g. `foo.jpg` → `foo-back.jpg`)
+- Both front and back downloads are idempotent — existing files are skipped
 
 ## convert_csv.py internals
 - Exports 18 fields per product (id, order, year, month, day, product_code, title, module_code, type, system, setting, confidence, edition, authors, cover_url, cover_artist, semester, season)
@@ -56,7 +66,8 @@ Output: `covers/full/{id}.{ext}` — files are named by the product's CSV `id` f
 
 ## Image Download Progress
 Years fully downloaded to `covers/full/` (run `download_covers.py` then regenerate JSON):
-- 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓ (id=57 timed out — retry pending), 1982 ✓, 1983 ✓, 1984 ✓
+- Front covers: 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓, 1982 ✓, 1983 ✓, 1984 ✓
+- Back covers: 1974–1984 ✓ (id=5 [1977] and id=115 [1984] returned 404 — no back cover exists on source)
 - Next year to download: **1985**
 
 ## Running Locally
