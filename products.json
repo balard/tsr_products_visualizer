@@ -8371,7 +8371,7 @@
     "type": "Flip-book",
     "system": "AD&D",
     "setting": "Dark Sun",
-    "confidence": "likely",
+    "confidence": "verified",
     "edition": null,
     "authors": "Anthony Pryor",
     "cover_url": "covers/full/808.jpg",
@@ -9214,7 +9214,7 @@
     "confidence": "verified",
     "edition": null,
     "authors": "Jonatha Ariadne Caspian",
-    "cover_url": "https://www.tsrarchive.com/dl/dl-pg1.jpg",
+    "cover_url": "covers/full/460.jpg",
     "cover_artist": "Larry Elmore",
     "semester": 2,
     "season": null
