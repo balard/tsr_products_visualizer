@@ -92,6 +92,11 @@ with open(MAIN_CSV, newline='', encoding='utf-8') as f:
             local_path = f'covers/full/{f_path.name}'
             break
 
+        local_back_path = None
+        for f_path in LOCAL_COVERS_DIR.glob(f'{pid}-back.*'):
+            local_back_path = f'covers/full/{f_path.name}'
+            break
+
         artist = row.get('cover_artist', '').strip()
         if artist.upper() == 'N/A' or not artist:
             artist = None
@@ -120,7 +125,7 @@ with open(MAIN_CSV, newline='', encoding='utf-8') as f:
             'cover_url':     local_path if local_path else cover_url,
             'cover_artist':  artist,
             'semester':      int_or_none(row.get('semester', '')),
-            'backcover_url': cover_data.get('backcover_url'),
+            'backcover_url': local_back_path if local_back_path else cover_data.get('backcover_url'),
             'blurb':         blurbs.get(pid),
             'dtrpg_url':     dtrpg_data['dtrpg_url']   if dtrpg_data else None,
             'dtrpg_title':   dtrpg_data['dtrpg_title'] if dtrpg_data else None,
@@ -130,3 +135,16 @@ with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
     json.dump(products, f, indent=2, ensure_ascii=False)
 
 print(f'Exported {len(products)} products to {OUTPUT_FILE}')
+
+hotlink_front = [(p['id'], p['title'], p['cover_url'])     for p in products if p['cover_url'].startswith('http')]
+hotlink_back  = [(p['id'], p['title'], p['backcover_url']) for p in products if p.get('backcover_url') and p['backcover_url'].startswith('http')]
+
+if hotlink_front:
+    print(f'\nWARNING: {len(hotlink_front)} product(s) using remote front cover URL (no local file):')
+    for pid, ptitle, url in hotlink_front:
+        print(f'  id={pid:>4}  {ptitle[:50]:<50}  {url}')
+
+if hotlink_back:
+    print(f'\nWARNING: {len(hotlink_back)} product(s) using remote back cover URL (no local file):')
+    for pid, ptitle, url in hotlink_back:
+        print(f'  id={pid:>4}  {ptitle[:50]:<50}  {url}')
