@@ -72,7 +72,7 @@ Output:
 ## Image Download Progress
 Years fully downloaded to `covers/full/` (run `download_covers.py` then regenerate JSON):
 - Front covers: 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓, 1982 ✓, 1983 ✓, 1984 ✓, 1985 ✓, 1986 ✓, 1987 ✓, 1988 ✓, 1989 ✓, 1990 ✓, 1991 ✓, 1992 ✓, 1993 ✓, 1994 ✓, 1995 ✓, 1996 ✓, 1997 ✓, 1998 ✓, 1999 ✓, 2013 ✓
-- Back covers: 1974–1999 ✓, 2013 ✓ (id=5 [1977], id=115 [1984], id=754 [1999] returned 404 — no image exists on source; id=420 [1992] back added manually)
+- Back covers: 1974–1999 ✓, 2013 ✓ (id=420 [1992] back added manually)
 - Years with no products (skip): 2000–2012
 - All years complete — no further downloads needed
 
