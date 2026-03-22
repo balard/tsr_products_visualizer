@@ -151,9 +151,32 @@
         }
         .ctrl-auto { justify-content: space-between; }
         .ctrl-auto select { width: auto; }
-        .ctrl-scrubber { padding: 0.2rem 0; }
-        .ctrl-scrubber input[type=range] {
-            width: 100%;
+        .ctrl-scrubber { padding: 0.2rem 0; position: relative; padding-top: 1.5rem; }
+        .scrubber-track-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .scrubber-track-row input[type=range] {
+            flex: 1;
+            min-width: 0;
+        }
+        .scrubber-end-label {
+            font-size: 0.65rem;
+            color: #888;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .scrubber-year-label {
+            position: absolute;
+            top: 0;
+            font-size: 0.65rem;
+            color: #c9a227;
+            background: #1a1a2e;
+            padding: 0 3px;
+            pointer-events: none;
+            transform: translateX(-50%);
+            white-space: nowrap;
         }
 
         .meta-item {
@@ -608,7 +631,12 @@
                 </select>
             </div>
             <div class="ctrl-scrubber">
-                <input type="range" id="scrubber" min="0" step="1" value="0">
+                <div class="scrubber-year-label" id="scrubber-year-bubble"></div>
+                <div class="scrubber-track-row">
+                    <span class="scrubber-end-label" id="scrubber-year-start"></span>
+                    <input type="range" id="scrubber" min="0" step="1" value="0">
+                    <span class="scrubber-end-label" id="scrubber-year-end"></span>
+                </div>
             </div>
         </aside>
 
@@ -684,6 +712,8 @@
                 products = await resp.json();
                 viewer.style.display = '';
                 scrubber.max = products.length - 1;
+                document.getElementById('scrubber-year-start').textContent = products[0].year ?? '';
+                document.getElementById('scrubber-year-end').textContent = products[products.length - 1].year ?? '';
                 buildNav();
 
                 // localStorage restore
@@ -773,6 +803,11 @@
             const pct = products.length > 1 ? (currentIndex / (products.length - 1)) * 100 : 0;
             scrubber.value = currentIndex;
             scrubber.style.background = `linear-gradient(to right, #c9a227 ${pct}%, #2a2a4a ${pct}%)`;
+            const bubble = document.getElementById('scrubber-year-bubble');
+            bubble.textContent = p.year ?? '';
+            const thumbR = 7;
+            const trackW = scrubber.offsetWidth - thumbR * 2;
+            bubble.style.left = (thumbR + (pct / 100) * trackW) + 'px';
 
             // Sync year select
             if (products[currentIndex].year) yearSelect.value = String(products[currentIndex].year);
