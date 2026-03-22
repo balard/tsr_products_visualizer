@@ -65,22 +65,96 @@
         /* Main viewer grid */
         .viewer {
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            grid-template-rows: 1fr auto auto auto auto;
-            gap: 1.5rem;
-            max-width: 1400px;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0.75rem;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 2rem 2rem 1rem;
+            padding: 1.5rem 1rem 0.5rem;
             min-height: 100vh;
         }
 
         /* Metadata panels */
         .meta-panel {
             align-self: center;
-            padding: 1.5rem;
+            padding: 1rem;
         }
-        .meta-left { grid-column: 1; grid-row: 1; text-align: right; }
-        .meta-right { grid-column: 3; grid-row: 1; text-align: left; }
+        .meta-left { grid-column: 1; grid-row: 1; text-align: left; align-self: start; max-height: 95vh; overflow-y: auto; }
+
+        /* Controls panel (right column) */
+        .controls-panel {
+            grid-column: 3;
+            grid-row: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 1rem 0.75rem;
+        }
+        .ctrl-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            flex-wrap: nowrap;
+        }
+        .ctrl-nav button {
+            background: #2a2a4a;
+            color: #c9a227;
+            border: 1px solid #c9a227;
+            padding: 0.4rem 0.8rem;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .ctrl-nav button:hover:not(:disabled) { background: #c9a227; color: #1a1a2e; }
+        .ctrl-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
+        .ctrl-nav #counter {
+            font-size: 0.8rem;
+            color: #a0a0b0;
+            min-width: 60px;
+            text-align: center;
+        }
+        .ctrl-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        .ctrl-row button {
+            background: #2a2a4a;
+            color: #c9a227;
+            border: 1px solid #c9a227;
+            padding: 0.4rem 0.8rem;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 3px;
+        }
+        .ctrl-row button:hover:not(:disabled) { background: #c9a227; color: #1a1a2e; }
+        .ctrl-row button:disabled { opacity: 0.3; cursor: not-allowed; }
+        .ctrl-row button.active { background: #c9a227; color: #1a1a2e; }
+        .ctrl-row select {
+            background: #2a2a4a;
+            color: #e8e8e8;
+            border: 1px solid #3a3a5a;
+            padding: 0.3rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        .ctrl-auto { justify-content: space-between; }
+        .ctrl-auto select { width: auto; }
+        .ctrl-scrubber { padding: 0.2rem 0; }
+        .ctrl-scrubber input[type=range] {
+            width: 100%;
+        }
 
         .meta-item {
             margin-bottom: 2rem;
@@ -109,6 +183,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 70vh;
         }
 
         .cover-frame {
@@ -121,32 +196,49 @@
 
         #cover-img {
             display: block;
-            max-height: 75vh;
-            max-width: 100%;
-            width: auto;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
             transition: opacity 0.3s ease;
         }
         #cover-img.loading { opacity: 0; }
+        .cover-fit #cover-img {
+            max-height: 90vh;
+            max-width: 100%;
+        }
 
         /* Back cover image */
         #back-img {
             display: none;
-            max-height: 75vh;
-            max-width: 100%;
-            width: auto;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
             transition: opacity 0.3s ease;
         }
         #back-img.loading { opacity: 0; }
+        .cover-fit #back-img {
+            max-height: 90vh;
+            max-width: 100%;
+        }
 
         /* Two-pages (side-by-side) layout */
         .cover-frame.two-pages {
             display: flex;
-            gap: 6px;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            border: none;
+            box-shadow: none;
+            background: transparent;
         }
         .cover-frame.two-pages img {
-            max-height: 75vh;
-            max-width: 48%;
+            max-height: 90vh;
             width: auto;
+            height: auto;
+            object-fit: contain;
+            border: 1px solid #c9a227;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 10px rgba(201, 162, 39, 0.15);
         }
 
         /* Cover side badge (Front / Back) */
@@ -176,9 +268,9 @@
             grid-template-columns: 1fr 1fr 1fr;
             z-index: 10;
         }
-        #overlay-left  { cursor: w-resize; }
+        #overlay-left  { cursor: pointer; }
         #overlay-mid   { cursor: default; }
-        #overlay-right { cursor: e-resize; }
+        #overlay-right { cursor: pointer; }
 
         .cover-loading {
             position: absolute;
@@ -193,23 +285,17 @@
         }
         .cover-loading.visible { display: flex; }
 
-        /* Title bar */
-        .title-bar {
-            grid-column: 1 / -1;
-            grid-row: 2;
-            text-align: center;
-            padding: 0.5rem 1rem;
-        }
-        .title-bar h1 {
+        /* Product title in left column */
+        .left-title {
             font-family: 'Cinzel', Georgia, serif;
-            font-size: 1.6rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #e8e8e8;
-            margin-bottom: 0.2rem;
-        }
-        .title-bar .subtitle {
-            font-size: 0.85rem;
-            color: #a0a0b0;
+            line-height: 1.3;
+            text-align: right;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #2a2a4a;
         }
 
         /* Decorative divider */
@@ -220,31 +306,30 @@
             margin: 0;
         }
 
-        /* Expandable details panel */
+        /* Expandable details panel (inside left column) */
         .details-panel {
-            grid-column: 1 / -1;
-            grid-row: 3;
-            padding: 0 1rem;
+            margin-top: 1.5rem;
+            padding: 0;
         }
         .details-toggle {
             background: none;
             border: none;
             color: #a0a0b0;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             cursor: pointer;
-            padding: 0.4rem 0;
+            padding: 0.3rem 0;
             letter-spacing: 0.05em;
             width: 100%;
-            text-align: center;
+            text-align: right;
             font-family: inherit;
         }
         .details-toggle:hover { color: #c9a227; }
         .details-body {
             padding: 0.75rem 0 0.5rem;
             border-top: 1px solid #2a2a4a;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 0.75rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
         .details-body.collapsed { display: none; }
         .details-item .meta-label {
@@ -272,55 +357,6 @@
         }
         .details-item a:hover { text-decoration: underline; }
 
-        /* Navigation bar */
-        .nav-bar {
-            grid-column: 1 / -1;
-            grid-row: 4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-bar button {
-            background: #2a2a4a;
-            color: #c9a227;
-            border: 1px solid #c9a227;
-            padding: 0.5rem 1.5rem;
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-            border-radius: 3px;
-        }
-        .nav-bar button:hover:not(:disabled) {
-            background: #c9a227;
-            color: #1a1a2e;
-        }
-        .nav-bar button:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-        .nav-bar button.active {
-            background: #c9a227;
-            color: #1a1a2e;
-        }
-
-        #counter {
-            font-size: 0.9rem;
-            color: #a0a0b0;
-            min-width: 80px;
-            text-align: center;
-        }
-
-        .nav-divider {
-            width: 1px;
-            height: 24px;
-            background: #2a2a4a;
-            margin: 0 0.5rem;
-        }
 
         /* Auto-advance toggle */
         .auto-toggle {
@@ -362,22 +398,7 @@
             background: #c9a227;
         }
 
-        #interval-select, #year-select {
-            background: #2a2a4a;
-            color: #e8e8e8;
-            border: 1px solid #3a3a5a;
-            padding: 0.3rem 0.5rem;
-            border-radius: 3px;
-            font-size: 0.85rem;
-            cursor: pointer;
-        }
-
         /* Timeline scrubber */
-        .scrubber-row {
-            grid-column: 1 / -1;
-            grid-row: 5;
-            padding: 0 2rem 2rem;
-        }
 
         #scrubber {
             -webkit-appearance: none;
@@ -437,22 +458,31 @@
         @media (max-width: 900px) {
             .viewer {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto auto auto auto auto;
+                grid-template-rows: auto auto auto;
                 padding: 1rem;
             }
-            .meta-left, .meta-right {
+            .meta-left {
                 grid-column: 1;
+                grid-row: 1;
                 text-align: center;
+                max-height: none;
+                overflow-y: visible;
             }
-            .meta-left { grid-row: 1; }
+            .left-title { text-align: center; }
+            .meta-left .details-toggle { text-align: center; }
             .cover-panel { grid-column: 1; grid-row: 2; }
-            .meta-right { grid-column: 1; grid-row: 3; }
-            .title-bar { grid-column: 1; grid-row: 4; }
-            .details-panel { grid-column: 1; grid-row: 5; padding: 0; }
-            .nav-bar { grid-column: 1; grid-row: 6; }
+            .controls-panel {
+                grid-column: 1;
+                grid-row: 3;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 0.5rem;
+            }
             .meta-panel { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
             .meta-item { margin-bottom: 0; }
-            .scrubber-row { grid-column: 1; grid-row: 7; padding: 0 0 1.5rem; }
+            .ctrl-scrubber { width: 100%; }
         }
     </style>
 </head>
@@ -472,9 +502,59 @@
 
     <div class="viewer" id="viewer" style="display:none;">
         <aside class="meta-panel meta-left">
+            <h1 class="left-title" id="product-title"></h1>
             <div class="meta-item" id="meta-year">
                 <span class="meta-label">Year</span>
                 <span class="meta-value" id="val-year"></span>
+            </div>
+            <div class="meta-item" id="meta-authors">
+                <span class="meta-label">Author</span>
+                <span class="meta-value" id="val-authors"></span>
+            </div>
+            <div class="meta-item" id="meta-artist">
+                <span class="meta-label">Cover Artist</span>
+                <span class="meta-value" id="val-artist"></span>
+            </div>
+            <div class="details-panel" id="details-panel">
+                <button class="details-toggle" id="details-toggle">Details &#9660;</button>
+                <div class="details-body collapsed" id="details-body">
+                    <div class="details-item" id="det-date" style="display:none">
+                        <span class="meta-label">Published</span>
+                        <span class="meta-value" id="det-val-date"></span>
+                    </div>
+                    <div class="details-item" id="det-system" style="display:none">
+                        <span class="meta-label">System</span>
+                        <span class="meta-value" id="det-val-system"></span>
+                    </div>
+                    <div class="details-item" id="det-setting" style="display:none">
+                        <span class="meta-label">Setting</span>
+                        <span class="meta-value" id="det-val-setting"></span>
+                    </div>
+                    <div class="details-item" id="det-type" style="display:none">
+                        <span class="meta-label">Type</span>
+                        <span class="meta-value" id="det-val-type"></span>
+                    </div>
+                    <div class="details-item" id="det-edition" style="display:none">
+                        <span class="meta-label">Edition</span>
+                        <span class="meta-value" id="det-val-edition"></span>
+                    </div>
+                    <div class="details-item" id="det-product-code" style="display:none">
+                        <span class="meta-label">Product Code</span>
+                        <span class="meta-value" id="det-val-product-code"></span>
+                    </div>
+                    <div class="details-item" id="det-module-code" style="display:none">
+                        <span class="meta-label">Module Code</span>
+                        <span class="meta-value" id="det-val-module-code"></span>
+                    </div>
+                    <div class="details-item" id="det-dtrpg" style="display:none">
+                        <span class="meta-label">Buy / Download</span>
+                        <span class="meta-value" id="det-val-dtrpg"></span>
+                    </div>
+                    <div class="details-item blurb-item" id="det-blurb" style="display:none">
+                        <span class="meta-label">Description</span>
+                        <span class="meta-value" id="det-val-blurb"></span>
+                    </div>
+                </div>
             </div>
         </aside>
 
@@ -492,93 +572,44 @@
             </div>
         </main>
 
-        <aside class="meta-panel meta-right">
-            <div class="meta-item" id="meta-authors">
-                <span class="meta-label">Author</span>
-                <span class="meta-value" id="val-authors"></span>
+        <aside class="controls-panel">
+            <nav class="ctrl-nav">
+                <button id="btn-prev" title="Previous (Left Arrow)">&#9664; Prev</button>
+                <span id="counter"></span>
+                <button id="btn-next" title="Next (Right Arrow)">Next &#9654;</button>
+            </nav>
+            <div class="ctrl-row">
+                <button id="btn-random" title="Random (R)">&#9860; Random</button>
             </div>
-            <div class="meta-item" id="meta-artist">
-                <span class="meta-label">Cover Artist</span>
-                <span class="meta-value" id="val-artist"></span>
+            <div class="ctrl-row">
+                <button id="btn-flip" title="Flip cover (F)" disabled>&#8635; Flip</button>
+                <button id="btn-both" title="Both covers (B)" disabled>&#9707; Both</button>
+                <button id="btn-size" title="Toggle image size">Big</button>
+            </div>
+            <div class="ctrl-row">
+                <select id="year-select">
+                    <option value="">Year&hellip;</option>
+                </select>
+            </div>
+            <div class="ctrl-row ctrl-auto">
+                <label class="auto-toggle">
+                    <input type="checkbox" id="auto-toggle">
+                    <span class="toggle-slider"></span>
+                    Auto
+                </label>
+                <select id="interval-select">
+                    <option value="1000">1s</option>
+                    <option value="3000">3s</option>
+                    <option value="5000" selected>5s</option>
+                    <option value="10000">10s</option>
+                </select>
+            </div>
+            <div class="ctrl-scrubber">
+                <input type="range" id="scrubber" min="0" step="1" value="0">
             </div>
         </aside>
 
-        <div class="title-bar">
-            <h1 id="product-title"></h1>
-        </div>
 
-        <div class="details-panel" id="details-panel">
-            <button class="details-toggle" id="details-toggle">&#9660; Details</button>
-            <div class="details-body collapsed" id="details-body">
-                <div class="details-item" id="det-date" style="display:none">
-                    <span class="meta-label">Published</span>
-                    <span class="meta-value" id="det-val-date"></span>
-                </div>
-                <div class="details-item" id="det-system" style="display:none">
-                    <span class="meta-label">System</span>
-                    <span class="meta-value" id="det-val-system"></span>
-                </div>
-                <div class="details-item" id="det-setting" style="display:none">
-                    <span class="meta-label">Setting</span>
-                    <span class="meta-value" id="det-val-setting"></span>
-                </div>
-                <div class="details-item" id="det-type" style="display:none">
-                    <span class="meta-label">Type</span>
-                    <span class="meta-value" id="det-val-type"></span>
-                </div>
-                <div class="details-item" id="det-edition" style="display:none">
-                    <span class="meta-label">Edition</span>
-                    <span class="meta-value" id="det-val-edition"></span>
-                </div>
-                <div class="details-item" id="det-product-code" style="display:none">
-                    <span class="meta-label">Product Code</span>
-                    <span class="meta-value" id="det-val-product-code"></span>
-                </div>
-                <div class="details-item" id="det-module-code" style="display:none">
-                    <span class="meta-label">Module Code</span>
-                    <span class="meta-value" id="det-val-module-code"></span>
-                </div>
-                <div class="details-item" id="det-dtrpg" style="display:none">
-                    <span class="meta-label">Buy / Download</span>
-                    <span class="meta-value" id="det-val-dtrpg"></span>
-                </div>
-                <div class="details-item blurb-item" id="det-blurb" style="display:none">
-                    <span class="meta-label">Description</span>
-                    <span class="meta-value" id="det-val-blurb"></span>
-                </div>
-            </div>
-        </div>
-
-        <nav class="nav-bar">
-            <button id="btn-prev" title="Previous (Left Arrow)">&#9664; Prev</button>
-            <span id="counter"></span>
-            <button id="btn-next" title="Next (Right Arrow)">Next &#9654;</button>
-            <div class="nav-divider"></div>
-            <button id="btn-random" title="Random (R)">&#9860; Random</button>
-            <div class="nav-divider"></div>
-            <button id="btn-flip" title="Flip cover (F)" disabled>&#8635; Flip</button>
-            <button id="btn-both" title="Both covers (B)" disabled>&#9707; Both</button>
-            <div class="nav-divider"></div>
-            <select id="year-select">
-                <option value="">Year&hellip;</option>
-            </select>
-            <div class="nav-divider"></div>
-            <label class="auto-toggle">
-                <input type="checkbox" id="auto-toggle">
-                <span class="toggle-slider"></span>
-                Auto
-            </label>
-            <select id="interval-select">
-                <option value="1000">1s</option>
-                <option value="3000">3s</option>
-                <option value="5000" selected>5s</option>
-                <option value="10000">10s</option>
-            </select>
-        </nav>
-
-        <div class="scrubber-row">
-            <input type="range" id="scrubber" min="0" step="1" value="0">
-        </div>
 
         <footer class="site-footer">
             All cover artwork is copyright of its respective rights holders
@@ -596,6 +627,7 @@
         let autoTimer = null;
         let coverSide = 'front'; // 'front' | 'back' | 'both'
         let detailsOpen = false;
+        let coverFit = false; // false = Big, true = Fit
 
         const img = document.getElementById('cover-img');
         const backImg = document.getElementById('back-img');
@@ -612,6 +644,7 @@
         const viewer = document.getElementById('viewer');
         const errorOverlay = document.getElementById('error-overlay');
         const btnRandom = document.getElementById('btn-random');
+        const btnSize = document.getElementById('btn-size');
         const yearSelect = document.getElementById('year-select');
         const scrubber = document.getElementById('scrubber');
         const coverFrame = document.getElementById('cover-frame');
@@ -661,6 +694,18 @@
                 if (hashId !== null) {
                     const hashIdx = products.findIndex(p => p.id === hashId);
                     if (hashIdx !== -1) currentIndex = hashIdx;
+                }
+
+                // Restore both-mode preference
+                const savedSide = localStorage.getItem('tsr_viewer_side');
+                if (savedSide === 'both') coverSide = 'both';
+
+                // Restore size preference
+                if (localStorage.getItem('tsr_viewer_fit') === 'true') {
+                    coverFit = true;
+                    coverFrame.classList.add('cover-fit');
+                    btnSize.textContent = 'Fit';
+                    btnSize.classList.add('active');
                 }
 
                 render();
@@ -875,7 +920,7 @@
         function goTo(index) {
             if (index < 0 || index >= products.length) return;
             currentIndex = index;
-            coverSide = 'front';
+            if (coverSide !== 'both') coverSide = 'front';
             localStorage.setItem('tsr_viewer_index', currentIndex);
             updateHash();
             render();
@@ -920,7 +965,16 @@
             const p = products[currentIndex];
             if (!p.backcover_url) return;
             coverSide = (coverSide === 'both') ? 'front' : 'both';
+            localStorage.setItem('tsr_viewer_side', coverSide);
             applyCoverSide(p);
+        });
+
+        btnSize.addEventListener('click', () => {
+            coverFit = !coverFit;
+            coverFrame.classList.toggle('cover-fit', coverFit);
+            btnSize.textContent = coverFit ? 'Fit' : 'Big';
+            btnSize.classList.toggle('active', coverFit);
+            localStorage.setItem('tsr_viewer_fit', coverFit);
         });
 
         document.getElementById('details-toggle').addEventListener('click', toggleDetails);
