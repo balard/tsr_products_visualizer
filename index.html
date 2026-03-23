@@ -65,22 +65,119 @@
         /* Main viewer grid */
         .viewer {
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            grid-template-rows: 1fr auto auto auto;
-            gap: 1.5rem;
-            max-width: 1400px;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0.75rem;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 2rem 2rem 1rem;
+            padding: 1.5rem 1rem 0.5rem;
             min-height: 100vh;
         }
 
         /* Metadata panels */
         .meta-panel {
             align-self: center;
-            padding: 1.5rem;
+            padding: 1rem;
         }
-        .meta-left { grid-column: 1; grid-row: 1; text-align: right; }
-        .meta-right { grid-column: 3; grid-row: 1; text-align: left; }
+        .meta-left { grid-column: 1; grid-row: 1; text-align: left; align-self: start; max-height: 95vh; overflow-y: auto; }
+
+        /* Controls panel (right column) */
+        .controls-panel {
+            grid-column: 3;
+            grid-row: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 1rem 0.75rem;
+        }
+        .ctrl-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            flex-wrap: nowrap;
+        }
+        .ctrl-nav button {
+            background: #2a2a4a;
+            color: #c9a227;
+            border: 1px solid #c9a227;
+            padding: 0.4rem 0.8rem;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .ctrl-nav button:hover:not(:disabled) { background: #c9a227; color: #1a1a2e; }
+        .ctrl-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
+        .ctrl-nav #counter {
+            font-size: 0.8rem;
+            color: #a0a0b0;
+            min-width: 60px;
+            text-align: center;
+        }
+        .ctrl-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        .ctrl-row button {
+            background: #2a2a4a;
+            color: #c9a227;
+            border: 1px solid #c9a227;
+            padding: 0.4rem 0.8rem;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 3px;
+        }
+        .ctrl-row button:hover:not(:disabled) { background: #c9a227; color: #1a1a2e; }
+        .ctrl-row button:disabled { opacity: 0.3; cursor: not-allowed; }
+        .ctrl-row button.active { background: #c9a227; color: #1a1a2e; }
+        .ctrl-row select {
+            background: #2a2a4a;
+            color: #e8e8e8;
+            border: 1px solid #3a3a5a;
+            padding: 0.3rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        .ctrl-auto { justify-content: space-between; }
+        .ctrl-auto select { width: auto; }
+        .ctrl-scrubber { padding: 0.2rem 0; position: relative; padding-top: 1.5rem; }
+        .scrubber-track-row {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .scrubber-track-row input[type=range] {
+            flex: 1;
+            min-width: 0;
+        }
+        .scrubber-end-label {
+            font-size: 0.65rem;
+            color: #888;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .scrubber-year-label {
+            position: absolute;
+            top: 0;
+            font-size: 0.65rem;
+            color: #c9a227;
+            background: #1a1a2e;
+            padding: 0 3px;
+            pointer-events: none;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
 
         .meta-item {
             margin-bottom: 2rem;
@@ -109,6 +206,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 70vh;
         }
 
         .cover-frame {
@@ -121,12 +219,81 @@
 
         #cover-img {
             display: block;
-            max-height: 75vh;
-            max-width: 100%;
-            width: auto;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
             transition: opacity 0.3s ease;
         }
         #cover-img.loading { opacity: 0; }
+        .cover-fit #cover-img {
+            max-height: 90vh;
+            max-width: 100%;
+        }
+
+        /* Back cover image */
+        #back-img {
+            display: none;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+        #back-img.loading { opacity: 0; }
+        .cover-fit #back-img {
+            max-height: 90vh;
+            max-width: 100%;
+        }
+
+        /* Two-pages (side-by-side) layout */
+        .cover-frame.two-pages {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            border: none;
+            box-shadow: none;
+            background: transparent;
+        }
+        .cover-frame.two-pages img {
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border: 1px solid #c9a227;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 10px rgba(201, 162, 39, 0.15);
+        }
+
+        /* Cover side badge (Front / Back) */
+        #cover-side-badge {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            background: rgba(26, 26, 46, 0.82);
+            color: #c9a227;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 2px 7px;
+            border-radius: 2px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.25s;
+            z-index: 5;
+        }
+        #cover-side-badge.visible { opacity: 1; }
+
+        /* Click overlay for image navigation */
+        #cover-overlay {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            z-index: 10;
+        }
+        #overlay-left  { cursor: pointer; }
+        #overlay-mid   { cursor: default; }
+        #overlay-right { cursor: pointer; }
 
         .cover-loading {
             position: absolute;
@@ -141,23 +308,17 @@
         }
         .cover-loading.visible { display: flex; }
 
-        /* Title bar */
-        .title-bar {
-            grid-column: 1 / -1;
-            grid-row: 2;
-            text-align: center;
-            padding: 0.5rem 1rem;
-        }
-        .title-bar h1 {
+        /* Product title in left column */
+        .left-title {
             font-family: 'Cinzel', Georgia, serif;
-            font-size: 1.6rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #e8e8e8;
-            margin-bottom: 0.2rem;
-        }
-        .title-bar .subtitle {
-            font-size: 0.85rem;
-            color: #a0a0b0;
+            line-height: 1.3;
+            text-align: right;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #2a2a4a;
         }
 
         /* Decorative divider */
@@ -168,51 +329,60 @@
             margin: 0;
         }
 
-        /* Navigation bar */
-        .nav-bar {
-            grid-column: 1 / -1;
-            grid-row: 3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1rem;
-            flex-wrap: wrap;
+        /* Expandable details panel (inside left column) */
+        .details-panel {
+            margin-top: 1.5rem;
+            padding: 0;
         }
-
-        .nav-bar button {
-            background: #2a2a4a;
-            color: #c9a227;
-            border: 1px solid #c9a227;
-            padding: 0.5rem 1.5rem;
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-            border-radius: 3px;
-        }
-        .nav-bar button:hover:not(:disabled) {
-            background: #c9a227;
-            color: #1a1a2e;
-        }
-        .nav-bar button:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-
-        #counter {
-            font-size: 0.9rem;
+        .details-toggle {
+            background: none;
+            border: none;
             color: #a0a0b0;
-            min-width: 80px;
-            text-align: center;
+            font-size: 0.75rem;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            letter-spacing: 0.05em;
+            width: 100%;
+            text-align: right;
+            font-family: inherit;
         }
+        .details-toggle:hover { color: #c9a227; }
+        .details-body {
+            padding: 0.75rem 0 0.5rem;
+            border-top: 1px solid #2a2a4a;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .details-body.collapsed { display: none; }
+        .details-item .meta-label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #c9a227;
+            margin-bottom: 0.2rem;
+        }
+        .details-item .meta-value {
+            font-size: 0.9rem;
+            color: #e8e8e8;
+            line-height: 1.5;
+        }
+        .details-item.blurb-item {
+            grid-column: 1 / -1;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: #c8c8d8;
+        }
+        .details-item.blurb-item .meta-value {
+            white-space: pre-wrap;
+        }
+        .details-item a {
+            color: #c9a227;
+            text-decoration: none;
+        }
+        .details-item a:hover { text-decoration: underline; }
 
-        .nav-divider {
-            width: 1px;
-            height: 24px;
-            background: #2a2a4a;
-            margin: 0 0.5rem;
-        }
 
         /* Auto-advance toggle */
         .auto-toggle {
@@ -254,22 +424,7 @@
             background: #c9a227;
         }
 
-        #interval-select, #year-select {
-            background: #2a2a4a;
-            color: #e8e8e8;
-            border: 1px solid #3a3a5a;
-            padding: 0.3rem 0.5rem;
-            border-radius: 3px;
-            font-size: 0.85rem;
-            cursor: pointer;
-        }
-
         /* Timeline scrubber */
-        .scrubber-row {
-            grid-column: 1 / -1;
-            grid-row: 4;
-            padding: 0 2rem 2rem;
-        }
 
         #scrubber {
             -webkit-appearance: none;
@@ -329,21 +484,31 @@
         @media (max-width: 900px) {
             .viewer {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto auto auto;
+                grid-template-rows: auto auto auto;
                 padding: 1rem;
             }
-            .meta-left, .meta-right {
+            .meta-left {
                 grid-column: 1;
+                grid-row: 2;
                 text-align: center;
+                max-height: none;
+                overflow-y: visible;
             }
-            .meta-left { grid-row: 1; }
-            .cover-panel { grid-column: 1; grid-row: 2; }
-            .meta-right { grid-column: 1; grid-row: 3; }
-            .title-bar { grid-column: 1; grid-row: 4; }
-            .nav-bar { grid-column: 1; grid-row: 5; }
+            .left-title { text-align: center; }
+            .meta-left .details-toggle { text-align: center; }
+            .cover-panel { grid-column: 1; grid-row: 1; }
+            .controls-panel {
+                grid-column: 1;
+                grid-row: 3;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 0.5rem;
+            }
             .meta-panel { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
             .meta-item { margin-bottom: 0; }
-            .scrubber-row { grid-column: 1; grid-row: 6; padding: 0 0 1.5rem; }
+            .ctrl-scrubber { width: 100%; }
         }
     </style>
 </head>
@@ -363,20 +528,11 @@
 
     <div class="viewer" id="viewer" style="display:none;">
         <aside class="meta-panel meta-left">
+            <h1 class="left-title" id="product-title"></h1>
             <div class="meta-item" id="meta-year">
                 <span class="meta-label">Year</span>
                 <span class="meta-value" id="val-year"></span>
             </div>
-        </aside>
-
-        <main class="cover-panel">
-            <div class="cover-frame">
-                <img id="cover-img" src="" alt="">
-                <div class="cover-loading" id="cover-loading">Loading...</div>
-            </div>
-        </main>
-
-        <aside class="meta-panel meta-right">
             <div class="meta-item" id="meta-authors">
                 <span class="meta-label">Author</span>
                 <span class="meta-value" id="val-authors"></span>
@@ -385,39 +541,106 @@
                 <span class="meta-label">Cover Artist</span>
                 <span class="meta-value" id="val-artist"></span>
             </div>
+            <div class="details-panel" id="details-panel">
+                <button class="details-toggle" id="details-toggle">Details &#9660;</button>
+                <div class="details-body collapsed" id="details-body">
+                    <div class="details-item" id="det-date" style="display:none">
+                        <span class="meta-label">Published</span>
+                        <span class="meta-value" id="det-val-date"></span>
+                    </div>
+                    <div class="details-item" id="det-system" style="display:none">
+                        <span class="meta-label">System</span>
+                        <span class="meta-value" id="det-val-system"></span>
+                    </div>
+                    <div class="details-item" id="det-setting" style="display:none">
+                        <span class="meta-label">Setting</span>
+                        <span class="meta-value" id="det-val-setting"></span>
+                    </div>
+                    <div class="details-item" id="det-type" style="display:none">
+                        <span class="meta-label">Type</span>
+                        <span class="meta-value" id="det-val-type"></span>
+                    </div>
+                    <div class="details-item" id="det-edition" style="display:none">
+                        <span class="meta-label">Edition</span>
+                        <span class="meta-value" id="det-val-edition"></span>
+                    </div>
+                    <div class="details-item" id="det-product-code" style="display:none">
+                        <span class="meta-label">Product Code</span>
+                        <span class="meta-value" id="det-val-product-code"></span>
+                    </div>
+                    <div class="details-item" id="det-module-code" style="display:none">
+                        <span class="meta-label">Module Code</span>
+                        <span class="meta-value" id="det-val-module-code"></span>
+                    </div>
+                    <div class="details-item" id="det-dtrpg" style="display:none">
+                        <span class="meta-label">Buy / Download</span>
+                        <span class="meta-value" id="det-val-dtrpg"></span>
+                    </div>
+                    <div class="details-item blurb-item" id="det-blurb" style="display:none">
+                        <span class="meta-label">Description</span>
+                        <span class="meta-value" id="det-val-blurb"></span>
+                    </div>
+                </div>
+            </div>
         </aside>
 
-        <div class="title-bar">
-            <h1 id="product-title"></h1>
-        </div>
+        <main class="cover-panel">
+            <div class="cover-frame" id="cover-frame">
+                <img id="cover-img" src="" alt="">
+                <img id="back-img" src="" alt="">
+                <div class="cover-loading" id="cover-loading">Loading...</div>
+                <div id="cover-side-badge"></div>
+                <div id="cover-overlay">
+                    <div id="overlay-left"></div>
+                    <div id="overlay-mid"></div>
+                    <div id="overlay-right"></div>
+                </div>
+            </div>
+        </main>
 
-        <nav class="nav-bar">
-            <button id="btn-prev" title="Previous (Left Arrow)">&#9664; Prev</button>
-            <span id="counter"></span>
-            <button id="btn-next" title="Next (Right Arrow)">Next &#9654;</button>
-            <div class="nav-divider"></div>
-            <button id="btn-random" title="Random (R)">&#9860; Random</button>
-            <div class="nav-divider"></div>
-            <select id="year-select">
-                <option value="">Year&hellip;</option>
-            </select>
-            <div class="nav-divider"></div>
-            <label class="auto-toggle">
-                <input type="checkbox" id="auto-toggle">
-                <span class="toggle-slider"></span>
-                Auto
-            </label>
-            <select id="interval-select">
-                <option value="1000">1s</option>
-                <option value="3000">3s</option>
-                <option value="5000" selected>5s</option>
-                <option value="10000">10s</option>
-            </select>
-        </nav>
+        <aside class="controls-panel">
+            <nav class="ctrl-nav">
+                <button id="btn-prev" title="Previous (Left Arrow)">&#9664; Prev</button>
+                <span id="counter"></span>
+                <button id="btn-next" title="Next (Right Arrow)">Next &#9654;</button>
+            </nav>
+            <div class="ctrl-row">
+                <button id="btn-random" title="Random (R)">&#9860; Random</button>
+            </div>
+            <div class="ctrl-row">
+                <button id="btn-flip" title="Flip cover (F)" disabled>&#8635; Flip</button>
+                <button id="btn-both" title="Both covers (B)" disabled>&#9707; Both</button>
+                <button id="btn-size" title="Toggle image size">Big</button>
+            </div>
+            <div class="ctrl-row">
+                <select id="year-select">
+                    <option value="">Year&hellip;</option>
+                </select>
+            </div>
+            <div class="ctrl-row ctrl-auto">
+                <label class="auto-toggle">
+                    <input type="checkbox" id="auto-toggle">
+                    <span class="toggle-slider"></span>
+                    Auto
+                </label>
+                <select id="interval-select">
+                    <option value="1000">1s</option>
+                    <option value="3000">3s</option>
+                    <option value="5000" selected>5s</option>
+                    <option value="10000">10s</option>
+                </select>
+            </div>
+            <div class="ctrl-scrubber">
+                <div class="scrubber-year-label" id="scrubber-year-bubble"></div>
+                <div class="scrubber-track-row">
+                    <span class="scrubber-end-label" id="scrubber-year-start"></span>
+                    <input type="range" id="scrubber" min="0" step="1" value="0">
+                    <span class="scrubber-end-label" id="scrubber-year-end"></span>
+                </div>
+            </div>
+        </aside>
 
-        <div class="scrubber-row">
-            <input type="range" id="scrubber" min="0" step="1" value="0">
-        </div>
+
 
         <footer class="site-footer">
             All cover artwork is copyright of its respective rights holders
@@ -433,21 +656,30 @@
         let products = [];
         let currentIndex = 0;
         let autoTimer = null;
+        let coverSide = 'front'; // 'front' | 'back' | 'both'
+        let detailsOpen = false;
+        let coverFit = false; // false = Big, true = Fit
 
         const img = document.getElementById('cover-img');
+        const backImg = document.getElementById('back-img');
         const loading = document.getElementById('cover-loading');
         const title = document.getElementById('product-title');
         const counter = document.getElementById('counter');
         const btnPrev = document.getElementById('btn-prev');
         const btnNext = document.getElementById('btn-next');
+        const btnFlip = document.getElementById('btn-flip');
+        const btnBoth = document.getElementById('btn-both');
         const autoToggle = document.getElementById('auto-toggle');
         const intervalSelect = document.getElementById('interval-select');
         const progressBar = document.getElementById('progress-bar');
         const viewer = document.getElementById('viewer');
         const errorOverlay = document.getElementById('error-overlay');
         const btnRandom = document.getElementById('btn-random');
+        const btnSize = document.getElementById('btn-size');
         const yearSelect = document.getElementById('year-select');
         const scrubber = document.getElementById('scrubber');
+        const coverFrame = document.getElementById('cover-frame');
+        const badge = document.getElementById('cover-side-badge');
 
         const yearToIndex = {};
 
@@ -457,28 +689,75 @@
         const metaAuthors = document.getElementById('meta-authors');
         const metaArtist = document.getElementById('meta-artist');
 
+        const MONTH_NAMES = ['January','February','March','April','May','June',
+                             'July','August','September','October','November','December'];
+
+        // ── URL hash routing ──────────────────────────────────────────────────
+
+        function getHashId() {
+            const m = window.location.hash.match(/^#id=(\d+)$/);
+            return m ? parseInt(m[1]) : null;
+        }
+
+        function updateHash() {
+            const p = products[currentIndex];
+            if (p) history.replaceState(null, '', '#id=' + p.id);
+        }
+
+        // ── Init ──────────────────────────────────────────────────────────────
+
         async function init() {
             try {
                 const resp = await fetch('products.json');
                 products = await resp.json();
                 viewer.style.display = '';
                 scrubber.max = products.length - 1;
+                document.getElementById('scrubber-year-start').textContent = products[0].year ?? '';
+                document.getElementById('scrubber-year-end').textContent = products[products.length - 1].year ?? '';
                 buildNav();
+
+                // localStorage restore
                 const saved = parseInt(localStorage.getItem('tsr_viewer_index'));
                 if (!isNaN(saved) && saved >= 0 && saved < products.length) {
                     currentIndex = saved;
                 }
+
+                // Hash takes priority over localStorage
+                const hashId = getHashId();
+                if (hashId !== null) {
+                    const hashIdx = products.findIndex(p => p.id === hashId);
+                    if (hashIdx !== -1) currentIndex = hashIdx;
+                }
+
+                // Restore both-mode preference
+                const savedSide = localStorage.getItem('tsr_viewer_side');
+                if (savedSide === 'both') coverSide = 'both';
+
+                // Restore size preference
+                if (localStorage.getItem('tsr_viewer_fit') === 'true') {
+                    coverFit = true;
+                    coverFrame.classList.add('cover-fit');
+                    btnSize.textContent = 'Fit';
+                    btnSize.classList.add('active');
+                }
+
                 render();
+                updateHash();
                 preload(currentIndex + 1);
             } catch (e) {
                 errorOverlay.classList.add('visible');
             }
         }
 
+        // ── Render ────────────────────────────────────────────────────────────
+
         function render() {
             const p = products[currentIndex];
 
-            // Image
+            // Apply cover side state (manages back-img visibility)
+            applyCoverSide(p);
+
+            // Front cover image (fade-in loader)
             img.classList.add('loading');
             loading.classList.add('visible');
             const tempImg = new Image();
@@ -524,14 +803,135 @@
             const pct = products.length > 1 ? (currentIndex / (products.length - 1)) * 100 : 0;
             scrubber.value = currentIndex;
             scrubber.style.background = `linear-gradient(to right, #c9a227 ${pct}%, #2a2a4a ${pct}%)`;
+            const bubble = document.getElementById('scrubber-year-bubble');
+            bubble.textContent = p.year ?? '';
+            const thumbR = 7;
+            const trackW = scrubber.offsetWidth - thumbR * 2;
+            bubble.style.left = (thumbR + (pct / 100) * trackW) + 'px';
 
             // Sync year select
             if (products[currentIndex].year) yearSelect.value = String(products[currentIndex].year);
 
+            // Flip/Both button states
+            const hasBack = !!p.backcover_url;
+            btnFlip.disabled = !hasBack;
+            btnBoth.disabled = !hasBack;
+            if (!hasBack) {
+                btnFlip.classList.remove('active');
+                btnBoth.classList.remove('active');
+            }
+
             // Button states
             btnPrev.disabled = currentIndex === 0;
             btnNext.disabled = currentIndex === products.length - 1;
+
+            // Details panel
+            renderDetails(p);
         }
+
+        // ── Cover side management ─────────────────────────────────────────────
+
+        function applyCoverSide(p) {
+            if (coverSide === 'both' && p.backcover_url) {
+                coverFrame.classList.add('two-pages');
+                img.style.display = 'block';
+                backImg.style.display = 'block';
+                loadBackCover(p);
+                badge.classList.remove('visible');
+                btnFlip.classList.remove('active');
+                btnBoth.classList.add('active');
+            } else if (coverSide === 'back' && p.backcover_url) {
+                coverFrame.classList.remove('two-pages');
+                img.style.display = 'none';
+                backImg.style.display = 'block';
+                loadBackCover(p);
+                badge.textContent = 'Back';
+                badge.classList.add('visible');
+                btnFlip.classList.add('active');
+                btnBoth.classList.remove('active');
+            } else {
+                // front (default or fallback)
+                coverSide = 'front';
+                coverFrame.classList.remove('two-pages');
+                img.style.display = 'block';
+                backImg.style.display = 'none';
+                badge.textContent = 'Front';
+                badge.classList.toggle('visible', !!p.backcover_url);
+                btnFlip.classList.remove('active');
+                btnBoth.classList.remove('active');
+            }
+        }
+
+        function loadBackCover(p) {
+            if (!p.backcover_url) return;
+            if (backImg.dataset.loadedFor === String(p.id)) return; // already cached
+            backImg.classList.add('loading');
+            const t = new Image();
+            t.onload = () => {
+                backImg.src = t.src;
+                backImg.alt = p.title + ' (back cover)';
+                backImg.classList.remove('loading');
+                backImg.dataset.loadedFor = String(p.id);
+            };
+            t.onerror = () => {
+                backImg.src = '';
+                backImg.classList.remove('loading');
+            };
+            t.src = p.backcover_url;
+        }
+
+        // ── Details panel ─────────────────────────────────────────────────────
+
+        function renderDetails(p) {
+            function setField(itemId, valId, value) {
+                const item = document.getElementById(itemId);
+                const val  = document.getElementById(valId);
+                if (value) {
+                    val.textContent = value;
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+
+            const monthStr = p.month ? MONTH_NAMES[p.month - 1] : null;
+            const dateStr  = monthStr ? `${monthStr} ${p.year}` : (p.year ? String(p.year) : null);
+
+            setField('det-date',         'det-val-date',         dateStr);
+            setField('det-system',       'det-val-system',       p.system);
+            setField('det-setting',      'det-val-setting',      p.setting);
+            setField('det-type',         'det-val-type',         p.type);
+            setField('det-edition',      'det-val-edition',      p.edition);
+            setField('det-product-code', 'det-val-product-code', p.product_code);
+            setField('det-module-code',  'det-val-module-code',  p.module_code);
+            setField('det-blurb',        'det-val-blurb',        p.blurb);
+
+            // DriveThruRPG link — built safely with createElement
+            const dtrpgItem = document.getElementById('det-dtrpg');
+            const dtrpgVal  = document.getElementById('det-val-dtrpg');
+            if (p.dtrpg_url) {
+                dtrpgVal.textContent = '';
+                const a = document.createElement('a');
+                a.href = p.dtrpg_url;
+                a.target = '_blank';
+                a.rel = 'noopener';
+                a.textContent = p.dtrpg_title || 'DriveThruRPG';
+                dtrpgVal.appendChild(a);
+                dtrpgItem.style.display = '';
+            } else {
+                dtrpgItem.style.display = 'none';
+            }
+        }
+
+        function toggleDetails() {
+            detailsOpen = !detailsOpen;
+            const body   = document.getElementById('details-body');
+            const toggle = document.getElementById('details-toggle');
+            body.classList.toggle('collapsed', !detailsOpen);
+            toggle.textContent = detailsOpen ? '\u25b2 Details' : '\u25bc Details';
+        }
+
+        // ── Navigation ────────────────────────────────────────────────────────
 
         function buildNav() {
             products.forEach((p, i) => {
@@ -544,19 +944,23 @@
                 opt.textContent = y;
                 yearSelect.appendChild(opt);
             });
-
         }
 
         function preload(index) {
             if (index >= 0 && index < products.length) {
                 new Image().src = products[index].cover_url;
+                if (products[index].backcover_url) {
+                    new Image().src = products[index].backcover_url;
+                }
             }
         }
 
         function goTo(index) {
             if (index < 0 || index >= products.length) return;
             currentIndex = index;
+            if (coverSide !== 'both') coverSide = 'front';
             localStorage.setItem('tsr_viewer_index', currentIndex);
+            updateHash();
             render();
             preload(index + 1);
             preload(index - 1);
@@ -581,10 +985,51 @@
             if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
         }
 
-        // Event listeners
+        // ── Event listeners ───────────────────────────────────────────────────
+
         btnPrev.addEventListener('click', goPrev);
         btnNext.addEventListener('click', goNext);
         btnRandom.addEventListener('click', () => goTo(Math.floor(Math.random() * products.length)));
+
+        btnFlip.addEventListener('click', () => {
+            const p = products[currentIndex];
+            if (!p.backcover_url) return;
+            coverSide = (coverSide === 'back') ? 'front' : 'back';
+            if (coverSide === 'front') btnBoth.classList.remove('active');
+            applyCoverSide(p);
+        });
+
+        btnBoth.addEventListener('click', () => {
+            const p = products[currentIndex];
+            if (!p.backcover_url) return;
+            coverSide = (coverSide === 'both') ? 'front' : 'both';
+            localStorage.setItem('tsr_viewer_side', coverSide);
+            applyCoverSide(p);
+        });
+
+        btnSize.addEventListener('click', () => {
+            coverFit = !coverFit;
+            coverFrame.classList.toggle('cover-fit', coverFit);
+            btnSize.textContent = coverFit ? 'Fit' : 'Big';
+            btnSize.classList.toggle('active', coverFit);
+            localStorage.setItem('tsr_viewer_fit', coverFit);
+        });
+
+        document.getElementById('details-toggle').addEventListener('click', toggleDetails);
+
+        // Click overlay navigation
+        document.getElementById('overlay-left').addEventListener('click', goPrev);
+        document.getElementById('overlay-right').addEventListener('click', () => {
+            const p = products[currentIndex];
+            if (coverSide === 'front' && p.backcover_url) {
+                coverSide = 'back';
+                applyCoverSide(p);
+                btnFlip.classList.add('active');
+                btnBoth.classList.remove('active');
+            } else {
+                goNext();
+            }
+        });
 
         yearSelect.addEventListener('change', () => {
             const y = parseInt(yearSelect.value);
@@ -602,10 +1047,21 @@
             if (autoToggle.checked) startAutoTimer();
         });
 
+        // Hash change (browser back/forward)
+        window.addEventListener('hashchange', () => {
+            const id = getHashId();
+            if (id === null) return;
+            const idx = products.findIndex(p => p.id === id);
+            if (idx !== -1 && idx !== currentIndex) goTo(idx);
+        });
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') goPrev();
             else if (e.key === 'ArrowRight') goNext();
             else if (e.key === 'r' || e.key === 'R') goTo(Math.floor(Math.random() * products.length));
+            else if (e.key === 'f' || e.key === 'F') btnFlip.click();
+            else if (e.key === 'b' || e.key === 'B') btnBoth.click();
+            else if (e.key === 'd' || e.key === 'D') toggleDetails();
             else if (e.key === ' ') {
                 e.preventDefault();
                 autoToggle.checked = !autoToggle.checked;
