@@ -62,6 +62,99 @@
             color: #c9a227;
         }
 
+        /* Welcome splash */
+        #splash-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(13, 13, 26, 0.88);
+            z-index: 150;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .splash-box {
+            max-width: 520px;
+            width: 100%;
+            background: #2a2a4a;
+            border: 1px solid #c9a227;
+            border-radius: 8px;
+            padding: 2rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .splash-box h2 {
+            font-family: 'Cinzel', Georgia, serif;
+            color: #c9a227;
+            margin: 0 0 0.4rem;
+            font-size: 1.3rem;
+        }
+        .splash-sub {
+            color: #a0a0b0;
+            margin: 0 0 1.4rem;
+            font-size: 0.9rem;
+        }
+        .splash-controls {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .splash-controls li {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            color: #e8e8e8;
+        }
+        .splash-controls .key {
+            display: inline-block;
+            background: #16213e;
+            border: 1px solid #c9a227;
+            border-radius: 4px;
+            padding: 0.1rem 0.45rem;
+            font-family: monospace;
+            font-size: 0.82rem;
+            color: #c9a227;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 5.5rem;
+            text-align: center;
+        }
+        #splash-dismiss {
+            display: block;
+            margin: 0 auto;
+            background: transparent;
+            border: 1px solid #c9a227;
+            color: #c9a227;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 0.9rem;
+            padding: 0.5rem 1.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        #splash-dismiss:hover {
+            background: #c9a227;
+            color: #1a1a2e;
+        }
+        #btn-help {
+            background: transparent;
+            border: 1px solid #3a3a5a;
+            color: #a0a0b0;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        #btn-help:hover {
+            border-color: #c9a227;
+            color: #c9a227;
+        }
+
         /* Main viewer grid */
         .viewer {
             display: grid;
@@ -526,6 +619,23 @@
         </div>
     </div>
 
+    <div id="splash-overlay">
+        <div class="splash-box">
+            <h2>TSR Products Virtual Exhibit </h2>
+            <p class="splash-sub">Browse 900+ cover images from D&amp;D, AD&amp;D, &mdash; 1974 to 1999</p>
+            <ul class="splash-controls">
+                <li><span class="key">&#8592; &#8594;</span> Browse products</li>
+                <li><span class="key">Click cover</span> Left / right halves also navigate</li>
+                <li><span class="key">R</span> Random product</li>
+                <li><span class="key">Year / Scrubber</span> Jump to a year or drag the timeline</li>
+                <li><span class="key">F / B</span> Flip front &harr; back &nbsp;&middot;&nbsp; Both side-by-side</li>
+                <li><span class="key">Space</span> Toggle auto-play</li>
+                <li><span class="key">D</span> Expand product details</li>
+            </ul>
+            <button id="splash-dismiss">Got it</button>
+        </div>
+    </div>
+
     <div class="viewer" id="viewer" style="display:none;">
         <aside class="meta-panel meta-left">
             <h1 class="left-title" id="product-title"></h1>
@@ -606,6 +716,7 @@
             </nav>
             <div class="ctrl-row">
                 <button id="btn-random" title="Random (R)">&#9860; Random</button>
+                <button id="btn-help" title="Help / Controls">?</button>
             </div>
             <div class="ctrl-row">
                 <button id="btn-flip" title="Flip cover (F)" disabled>&#8635; Flip</button>
@@ -674,6 +785,7 @@
         const progressBar = document.getElementById('progress-bar');
         const viewer = document.getElementById('viewer');
         const errorOverlay = document.getElementById('error-overlay');
+        const splashOverlay = document.getElementById('splash-overlay');
         const btnRandom = document.getElementById('btn-random');
         const btnSize = document.getElementById('btn-size');
         const yearSelect = document.getElementById('year-select');
@@ -741,6 +853,11 @@
                     btnSize.classList.add('active');
                 }
 
+                // Welcome splash — always show when no URL hash (direct/bare load)
+                if (!location.hash) {
+                    splashOverlay.style.display = 'flex';
+                }
+
                 render();
                 updateHash();
                 preload(currentIndex + 1);
@@ -748,6 +865,14 @@
                 errorOverlay.classList.add('visible');
             }
         }
+
+        function dismissSplash() {
+            splashOverlay.style.display = 'none';
+        }
+
+        document.getElementById('splash-dismiss').addEventListener('click', dismissSplash);
+        splashOverlay.addEventListener('click', e => { if (e.target === splashOverlay) dismissSplash(); });
+        document.getElementById('btn-help').addEventListener('click', () => { splashOverlay.style.display = 'flex'; });
 
         // ── Render ────────────────────────────────────────────────────────────
 
