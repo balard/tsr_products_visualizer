@@ -6,6 +6,7 @@ spanning publications from 1974 onward (D&D, AD&D, and related products).
 
 ## Architecture
 - **index.html** — Self-contained SPA: all HTML, CSS, and JavaScript in one file (no build step)
+- **search.html** — Self-contained search/filter page: pill toggles for type/system/setting, live text search across title/code/authors/artist/blurb, thumbnail grid; clicking a result opens `index.html#id=<N>`
 - **spread.html** — Self-contained spread viewer: shows front + back covers side by side for a single product; toolbar with Back, Random, and collapsible Details; navigates all products; syncs position with `index.html` via localStorage and `#id=` hash; designed for wide/desktop displays
 - **debug.html** — Self-contained developer tool: shows all 23 fields per product in a 7-product context window (±3 around current); same dark theme; keyboard nav (←/→/Home/End)
 - **products.json** — Product data consumed by the viewer at runtime via `fetch()`
@@ -21,6 +22,18 @@ spanning publications from 1974 onward (D&D, AD&D, and related products).
 - Vanilla HTML5 / CSS3 / JavaScript (no frameworks, no bundler)
 - Google Fonts: Cinzel (serif headings)
 - Python 3 (data pipeline only)
+
+## search.html internals
+- Loads `products.json` via `fetch()` on init (same requirement: must run via local server)
+- **Structured filters** — pill toggle buttons, multi-select, OR-logic within a category, AND-logic across categories:
+  - **Type** (6 values): `adventure`, `accessory`, `boxed set`, `hardcover`, `Flip-book`, `boardgame`
+  - **System** (5 values): `AD&D 2e`, `AD&D 1e`, `Basic D&D`, `OD&D`, `Dragon Quest`
+  - **Setting** (17 values + null): Forgotten Realms, Greyhawk, Mystara, Ravenloft, Dragonlance, Planescape, Dark Sun, Birthright, Spelljammer, Al-Qadim, Lankhmar, Thunder Rift, Kara-Tur, Mystara (2E), Blackmoor, Conan, Celtic — plus `(no setting)` for products where `setting` is null
+- **Text search** — live, debounced 200ms, case-insensitive, searches: `title`, `dtrpg_title`, `module_code`, `product_code`, `authors`, `cover_artist`, `blurb`
+- Pill counts show total products per value (not filtered count) — they are built once on load
+- Results render as a thumbnail grid (`aspect-ratio: 3/4`, lazy-loaded); clicking a card → `index.html#id=<N>`
+- Filter state is saved to `localStorage` key `tsr_active_filters` (JSON) on every change and restored on load; a "Clear Filters" button removes it
+- `index.html` and `spread.html` read `tsr_active_filters` on load and navigate only within the filtered product set; position is tracked by product id (`tsr_current_id`) rather than array index
 
 ## Key Conventions
 - All app logic lives in `index.html`; keep it self-contained (`spread.html` is a separate self-contained page)
