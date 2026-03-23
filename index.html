@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSR Product Archive — Cover Gallery</title>
+    <title>TSR Virtual Exhibt — Cover Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -337,25 +337,6 @@
             max-width: 100%;
         }
 
-        /* Two-pages (side-by-side) layout */
-        .cover-frame.two-pages {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            border: none;
-            box-shadow: none;
-            background: transparent;
-        }
-        .cover-frame.two-pages img {
-            max-height: 90vh;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border: 1px solid #c9a227;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 10px rgba(201, 162, 39, 0.15);
-        }
 
         /* Cover side badge (Front / Back) */
         #cover-side-badge {
@@ -622,13 +603,13 @@
     <div id="splash-overlay">
         <div class="splash-box">
             <h2>TSR Products Virtual Exhibit </h2>
-            <p class="splash-sub">Browse 900+ cover images from D&amp;D, AD&amp;D, &mdash; 1974 to 1999</p>
+            <p class="splash-sub">Browse 900+ cover in chronological order of release, images from D&amp;D, AD&amp;D, &mdash; 1974 to 1999</p>
             <ul class="splash-controls">
                 <li><span class="key">&#8592; &#8594;</span> Browse products</li>
-                <li><span class="key">Click cover</span> Left / right halves also navigate</li>
+                <li><span class="key">Click cover</span> Left / right halves also navigate and flips</li>
                 <li><span class="key">R</span> Random product</li>
                 <li><span class="key">Year / Scrubber</span> Jump to a year or drag the timeline</li>
-                <li><span class="key">F / B</span> Flip front &harr; back &nbsp;&middot;&nbsp; Both side-by-side</li>
+                <li><span class="key">F</span> Flip front &harr; back &nbsp;&middot;&nbsp; <span class="key">B</span> Open spread view</li>
                 <li><span class="key">Space</span> Toggle auto-play</li>
                 <li><span class="key">D</span> Expand product details</li>
             </ul>
@@ -720,7 +701,7 @@
             </div>
             <div class="ctrl-row">
                 <button id="btn-flip" title="Flip cover (F)" disabled>&#8635; Flip</button>
-                <button id="btn-both" title="Both covers (B)" disabled>&#9707; Both</button>
+                <button id="btn-spread" title="Spread view (B)" disabled>&#9707; Spread</button>
                 <button id="btn-size" title="Toggle image size">Big</button>
             </div>
             <div class="ctrl-row">
@@ -767,7 +748,7 @@
         let products = [];
         let currentIndex = 0;
         let autoTimer = null;
-        let coverSide = 'front'; // 'front' | 'back' | 'both'
+        let coverSide = 'front'; // 'front' | 'back'
         let detailsOpen = false;
         let coverFit = false; // false = Big, true = Fit
 
@@ -779,7 +760,7 @@
         const btnPrev = document.getElementById('btn-prev');
         const btnNext = document.getElementById('btn-next');
         const btnFlip = document.getElementById('btn-flip');
-        const btnBoth = document.getElementById('btn-both');
+        const btnSpread = document.getElementById('btn-spread');
         const autoToggle = document.getElementById('auto-toggle');
         const intervalSelect = document.getElementById('interval-select');
         const progressBar = document.getElementById('progress-bar');
@@ -840,10 +821,6 @@
                     const hashIdx = products.findIndex(p => p.id === hashId);
                     if (hashIdx !== -1) currentIndex = hashIdx;
                 }
-
-                // Restore both-mode preference
-                const savedSide = localStorage.getItem('tsr_viewer_side');
-                if (savedSide === 'both') coverSide = 'both';
 
                 // Restore size preference
                 if (localStorage.getItem('tsr_viewer_fit') === 'true') {
@@ -937,15 +914,6 @@
             // Sync year select
             if (products[currentIndex].year) yearSelect.value = String(products[currentIndex].year);
 
-            // Flip/Both button states
-            const hasBack = !!p.backcover_url;
-            btnFlip.disabled = !hasBack;
-            btnBoth.disabled = !hasBack;
-            if (!hasBack) {
-                btnFlip.classList.remove('active');
-                btnBoth.classList.remove('active');
-            }
-
             // Button states
             btnPrev.disabled = currentIndex === 0;
             btnNext.disabled = currentIndex === products.length - 1;
@@ -957,34 +925,24 @@
         // ── Cover side management ─────────────────────────────────────────────
 
         function applyCoverSide(p) {
-            if (coverSide === 'both' && p.backcover_url) {
-                coverFrame.classList.add('two-pages');
-                img.style.display = 'block';
-                backImg.style.display = 'block';
-                loadBackCover(p);
-                badge.classList.remove('visible');
-                btnFlip.classList.remove('active');
-                btnBoth.classList.add('active');
-            } else if (coverSide === 'back' && p.backcover_url) {
-                coverFrame.classList.remove('two-pages');
+            if (coverSide === 'back' && p.backcover_url) {
                 img.style.display = 'none';
                 backImg.style.display = 'block';
                 loadBackCover(p);
                 badge.textContent = 'Back';
                 badge.classList.add('visible');
                 btnFlip.classList.add('active');
-                btnBoth.classList.remove('active');
             } else {
                 // front (default or fallback)
                 coverSide = 'front';
-                coverFrame.classList.remove('two-pages');
                 img.style.display = 'block';
                 backImg.style.display = 'none';
                 badge.textContent = 'Front';
                 badge.classList.toggle('visible', !!p.backcover_url);
                 btnFlip.classList.remove('active');
-                btnBoth.classList.remove('active');
             }
+            btnFlip.disabled = !p.backcover_url;
+            btnSpread.disabled = !p.backcover_url;
         }
 
         function loadBackCover(p) {
@@ -1083,7 +1041,7 @@
         function goTo(index) {
             if (index < 0 || index >= products.length) return;
             currentIndex = index;
-            if (coverSide !== 'both') coverSide = 'front';
+            coverSide = 'front';
             localStorage.setItem('tsr_viewer_index', currentIndex);
             updateHash();
             render();
@@ -1120,16 +1078,13 @@
             const p = products[currentIndex];
             if (!p.backcover_url) return;
             coverSide = (coverSide === 'back') ? 'front' : 'back';
-            if (coverSide === 'front') btnBoth.classList.remove('active');
             applyCoverSide(p);
         });
 
-        btnBoth.addEventListener('click', () => {
+        btnSpread.addEventListener('click', () => {
             const p = products[currentIndex];
             if (!p.backcover_url) return;
-            coverSide = (coverSide === 'both') ? 'front' : 'both';
-            localStorage.setItem('tsr_viewer_side', coverSide);
-            applyCoverSide(p);
+            window.location.href = 'spread.html#id=' + p.id;
         });
 
         btnSize.addEventListener('click', () => {
@@ -1149,8 +1104,6 @@
             if (coverSide === 'front' && p.backcover_url) {
                 coverSide = 'back';
                 applyCoverSide(p);
-                btnFlip.classList.add('active');
-                btnBoth.classList.remove('active');
             } else {
                 goNext();
             }
@@ -1185,7 +1138,7 @@
             else if (e.key === 'ArrowRight') goNext();
             else if (e.key === 'r' || e.key === 'R') goTo(Math.floor(Math.random() * products.length));
             else if (e.key === 'f' || e.key === 'F') btnFlip.click();
-            else if (e.key === 'b' || e.key === 'B') btnBoth.click();
+            else if (e.key === 'b' || e.key === 'B') btnSpread.click();
             else if (e.key === 'd' || e.key === 'D') toggleDetails();
             else if (e.key === ' ') {
                 e.preventDefault();
