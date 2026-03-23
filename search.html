@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSR Cover Search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #1a1a2e;
+            color: #e8e8e8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* ── Header ──────────────────────────────────────────────── */
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #2a2a4a;
+            background: #16213e;
+        }
+
+        .page-header h1 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #c9a227;
+            letter-spacing: 0.05em;
+            flex: 1;
+        }
+
+        .btn-back {
+            background: #2a2a4a;
+            color: #c9a227;
+            border: 1px solid #c9a227;
+            padding: 0.35rem 0.85rem;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 0.75rem;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-back:hover { background: #c9a227; color: #1a1a2e; }
+
+        /* ── Filter bar ──────────────────────────────────────────── */
+
+        .filter-bar {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #2a2a4a;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .search-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-wrap {
+            position: relative;
+            flex: 1;
+            max-width: 480px;
+        }
+        .search-wrap svg {
+            position: absolute;
+            left: 0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        #search-input {
+            width: 100%;
+            background: #2a2a4a;
+            color: #e8e8e8;
+            border: 1px solid #3a3a5a;
+            border-radius: 3px;
+            padding: 0.4rem 0.6rem 0.4rem 2rem;
+            font-size: 0.88rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        #search-input:focus { border-color: #c9a227; }
+        #search-input::placeholder { color: #666; }
+
+        #result-count {
+            font-size: 0.8rem;
+            color: #a0a0b0;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #c9a227;
+            padding-top: 0.45rem;
+            white-space: nowrap;
+            min-width: 52px;
+        }
+
+        .pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .pill {
+            background: #2a2a4a;
+            color: #c9a227;
+            border: 1px solid #3a3a5a;
+            border-radius: 20px;
+            padding: 0.25rem 0.65rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s, border-color 0.15s;
+            user-select: none;
+            white-space: nowrap;
+        }
+        .pill:hover { border-color: #c9a227; }
+        .pill.active {
+            background: #c9a227;
+            color: #1a1a2e;
+            border-color: #c9a227;
+            font-weight: 600;
+        }
+
+        .pill-count {
+            opacity: 0.6;
+            font-size: 0.68rem;
+            margin-left: 0.2rem;
+        }
+
+        /* ── Results grid ────────────────────────────────────────── */
+
+        .results-area {
+            padding: 1.25rem 1.5rem;
+        }
+
+        #results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .result-card {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .card-img-wrap {
+            position: relative;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: #0d0d1a;
+            border: 1px solid #2a2a4a;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .result-card:hover .card-img-wrap {
+            border-color: #c9a227;
+            box-shadow: 0 0 12px rgba(201,162,39,0.3);
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.3s;
+        }
+        .card-img-wrap img.loading { opacity: 0; }
+
+        .card-title {
+            font-size: 0.72rem;
+            color: #e8e8e8;
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            font-size: 0.65rem;
+            color: #666;
+        }
+
+        /* Empty state */
+        .empty-state {
+            display: none;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        .empty-state.visible { display: block; }
+
+        /* Error overlay */
+        #error-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(26,26,46,0.95);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        #error-overlay.visible { display: flex; }
+        .error-box {
+            max-width: 500px;
+            background: #16213e;
+            border: 1px solid #c9a227;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .error-box h2 {
+            font-family: 'Cinzel', Georgia, serif;
+            color: #c9a227;
+            margin-bottom: 1rem;
+        }
+        .error-box p { color: #a0a0b0; font-size: 0.9rem; line-height: 1.6; }
+        .error-box a { color: #c9a227; }
+    </style>
+</head>
+<body>
+
+    <div id="error-overlay">
+        <div class="error-box">
+            <h2>TSR Cover Search</h2>
+            <p id="error-msg">Could not load products.json. Run via a local server.</p>
+            <p style="margin-top:1rem"><a href="index.html">← Return to gallery</a></p>
+        </div>
+    </div>
+
+    <header class="page-header">
+        <h1>TSR Cover Search</h1>
+        <button id="btn-back-gallery" class="btn-back">&#8592; Gallery</button>
+        <button id="btn-clear-filters" class="btn-back" style="display:none;">&#215; Clear Filters</button>
+    </header>
+
+    <div class="filter-bar">
+        <div class="search-row">
+            <div class="search-wrap">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="#e8e8e8">
+                    <circle cx="6.5" cy="6.5" r="5" stroke="#e8e8e8" stroke-width="1.5" fill="none"/>
+                    <line x1="10.5" y1="10.5" x2="14.5" y2="14.5" stroke="#e8e8e8" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <input type="search" id="search-input" placeholder="Title, code, author, artist, description&hellip;" autocomplete="off">
+            </div>
+            <span id="result-count"></span>
+        </div>
+
+        <div class="filter-row">
+            <span class="filter-label">Type</span>
+            <div class="pill-group" id="pills-type"></div>
+        </div>
+        <div class="filter-row">
+            <span class="filter-label">System</span>
+            <div class="pill-group" id="pills-system"></div>
+        </div>
+        <div class="filter-row">
+            <span class="filter-label">Setting</span>
+            <div class="pill-group" id="pills-setting"></div>
+        </div>
+    </div>
+
+    <div class="results-area">
+        <div id="results-grid"></div>
+        <div class="empty-state" id="empty-state">No products match your filters.</div>
+    </div>
+
+    <script>
+        const FILTERS_KEY = 'tsr_active_filters';
+
+        let products = [];
+
+        const activeFilters = {
+            type:    new Set(),
+            system:  new Set(),
+            setting: new Set()
+        };
+        let searchText = '';
+        let debounceTimer = null;
+
+        const btnClearFilters = document.getElementById('btn-clear-filters');
+        const searchInput  = document.getElementById('search-input');
+        const resultCount  = document.getElementById('result-count');
+        const resultsGrid  = document.getElementById('results-grid');
+        const emptyState   = document.getElementById('empty-state');
+        const errorOverlay = document.getElementById('error-overlay');
+        const errorMsg     = document.getElementById('error-msg');
+
+        const TEXT_FIELDS = ['title', 'dtrpg_title', 'module_code', 'product_code',
+                             'authors', 'cover_artist', 'blurb'];
+
+        // ── Filter persistence ────────────────────────────────────
+
+        function updateClearButton() {
+            const hasFilters = activeFilters.type.size > 0
+                || activeFilters.system.size > 0
+                || activeFilters.setting.size > 0
+                || searchText.length > 0;
+            btnClearFilters.style.display = hasFilters ? '' : 'none';
+        }
+
+        function saveFilters() {
+            localStorage.setItem(FILTERS_KEY, JSON.stringify({
+                type:    [...activeFilters.type],
+                system:  [...activeFilters.system],
+                setting: [...activeFilters.setting],
+                text:    searchText
+            }));
+            updateClearButton();
+        }
+
+        function restoreFilters() {
+            let saved;
+            try { saved = JSON.parse(localStorage.getItem(FILTERS_KEY)); } catch(e) {}
+            if (!saved) return;
+            for (const val of (saved.type    || [])) activeFilters.type.add(val);
+            for (const val of (saved.system  || [])) activeFilters.system.add(val);
+            for (const val of (saved.setting || [])) activeFilters.setting.add(val);
+            searchText = saved.text || '';
+            searchInput.value = searchText;
+        }
+
+        btnClearFilters.addEventListener('click', () => {
+            activeFilters.type.clear();
+            activeFilters.system.clear();
+            activeFilters.setting.clear();
+            searchText = '';
+            searchInput.value = '';
+            document.querySelectorAll('.pill.active').forEach(p => p.classList.remove('active'));
+            localStorage.removeItem(FILTERS_KEY);
+            updateClearButton();
+            renderResults();
+        });
+
+        // ── Filter logic ──────────────────────────────────────────
+
+        function matchesText(p, q) {
+            if (!q) return true;
+            for (const f of TEXT_FIELDS) {
+                if (p[f] && p[f].toLowerCase().includes(q)) return true;
+            }
+            return false;
+        }
+
+        function applyFilters() {
+            const q = searchText.toLowerCase();
+            return products.filter(p =>
+                matchesText(p, q) &&
+                (activeFilters.type.size === 0    || activeFilters.type.has(p.type)) &&
+                (activeFilters.system.size === 0  || activeFilters.system.has(p.system)) &&
+                (activeFilters.setting.size === 0 || activeFilters.setting.has(p.setting ?? '__none__'))
+            );
+        }
+
+        // ── Render results ────────────────────────────────────────
+
+        function renderResults() {
+            const filtered = applyFilters();
+            resultsGrid.innerHTML = '';
+
+            resultCount.textContent = filtered.length === products.length
+                ? `${products.length} products`
+                : `${filtered.length} of ${products.length}`;
+
+            if (filtered.length === 0) {
+                emptyState.classList.add('visible');
+                return;
+            }
+            emptyState.classList.remove('visible');
+
+            const frag = document.createDocumentFragment();
+            for (const p of filtered) {
+                const card = document.createElement('div');
+                card.className = 'result-card';
+                card.addEventListener('click', () => {
+                    localStorage.setItem('tsr_current_id', p.id);
+                    window.location.href = 'index.html#id=' + p.id;
+                });
+
+                const imgWrap = document.createElement('div');
+                imgWrap.className = 'card-img-wrap';
+
+                const img = document.createElement('img');
+                img.loading = 'lazy';
+                img.alt = p.title;
+                img.className = 'loading';
+                img.src = p.cover_url;
+                img.onload  = () => img.classList.remove('loading');
+                img.onerror = () => img.classList.remove('loading');
+                imgWrap.appendChild(img);
+
+                const titleEl = document.createElement('div');
+                titleEl.className = 'card-title';
+                titleEl.textContent = p.title;
+
+                const metaEl = document.createElement('div');
+                metaEl.className = 'card-meta';
+                const parts = [p.year, p.type].filter(Boolean);
+                metaEl.textContent = parts.join(' · ');
+
+                card.appendChild(imgWrap);
+                card.appendChild(titleEl);
+                card.appendChild(metaEl);
+                frag.appendChild(card);
+            }
+            resultsGrid.appendChild(frag);
+        }
+
+        // ── Build pill groups ─────────────────────────────────────
+
+        function buildPills(containerId, category, values) {
+            const container = document.getElementById(containerId);
+            for (const { value, count } of values) {
+                const pill = document.createElement('button');
+                pill.className = 'pill';
+                pill.dataset.value = value;
+
+                const label = document.createTextNode(value === '__none__' ? '(no setting)' : value);
+                pill.appendChild(label);
+
+                const badge = document.createElement('span');
+                badge.className = 'pill-count';
+                badge.textContent = count;
+                pill.appendChild(badge);
+
+                pill.addEventListener('click', () => {
+                    if (activeFilters[category].has(value)) {
+                        activeFilters[category].delete(value);
+                        pill.classList.remove('active');
+                    } else {
+                        activeFilters[category].add(value);
+                        pill.classList.add('active');
+                    }
+                    saveFilters();
+                    renderResults();
+                });
+
+                container.appendChild(pill);
+            }
+        }
+
+        function buildAllPills() {
+            // Count occurrences
+            const counts = { type: {}, system: {}, setting: {} };
+            for (const p of products) {
+                const t = p.type    ?? null;
+                const s = p.system  ?? null;
+                const g = p.setting ?? '__none__';
+                if (t) counts.type[t]   = (counts.type[t]   || 0) + 1;
+                if (s) counts.system[s] = (counts.system[s] || 0) + 1;
+                counts.setting[g]       = (counts.setting[g] || 0) + 1;
+            }
+
+            // Sort type and system alphabetically; setting by count desc, (none) last
+            const sortedType = Object.entries(counts.type)
+                .sort((a, b) => a[0].localeCompare(b[0]))
+                .map(([v, c]) => ({ value: v, count: c }));
+
+            const sortedSystem = Object.entries(counts.system)
+                .sort((a, b) => a[0].localeCompare(b[0]))
+                .map(([v, c]) => ({ value: v, count: c }));
+
+            const sortedSetting = Object.entries(counts.setting)
+                .filter(([v]) => v !== '__none__')
+                .sort((a, b) => b[1] - a[1])
+                .map(([v, c]) => ({ value: v, count: c }));
+            if (counts.setting['__none__']) {
+                sortedSetting.push({ value: '__none__', count: counts.setting['__none__'] });
+            }
+
+            buildPills('pills-type',    'type',    sortedType);
+            buildPills('pills-system',  'system',  sortedSystem);
+            buildPills('pills-setting', 'setting', sortedSetting);
+        }
+
+        // ── Search input ──────────────────────────────────────────
+
+        searchInput.addEventListener('input', () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                searchText = searchInput.value.trim();
+                saveFilters();
+                renderResults();
+            }, 200);
+        });
+
+        document.getElementById('btn-back-gallery').addEventListener('click', () => {
+            const savedId = localStorage.getItem('tsr_current_id');
+            window.location.href = savedId ? 'index.html#id=' + savedId : 'index.html';
+        });
+
+        // ── Init ──────────────────────────────────────────────────
+
+        async function init() {
+            try {
+                const resp = await fetch('products.json');
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                products = await resp.json();
+            } catch (e) {
+                errorOverlay.classList.add('visible');
+                return;
+            }
+
+            buildAllPills();
+            restoreFilters();
+            // Mark pills active from restored filter state
+            document.querySelectorAll('#pills-type .pill').forEach(pill => {
+                if (activeFilters.type.has(pill.dataset.value)) pill.classList.add('active');
+            });
+            document.querySelectorAll('#pills-system .pill').forEach(pill => {
+                if (activeFilters.system.has(pill.dataset.value)) pill.classList.add('active');
+            });
+            document.querySelectorAll('#pills-setting .pill').forEach(pill => {
+                if (activeFilters.setting.has(pill.dataset.value)) pill.classList.add('active');
+            });
+            updateClearButton();
+            renderResults();
+        }
+
+        init();
+    </script>
+</body>
+</html>

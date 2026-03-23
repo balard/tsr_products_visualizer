@@ -242,6 +242,7 @@
         <button id="btn-back">&#8592; Back</button>
         <div class="tool-sep"></div>
         <span class="tool-year" id="tool-year"></span>
+        <span id="filter-badge" style="display:none; font-size:0.72rem; color:#c9a227; flex-shrink:0;"></span>
         <span class="tool-credits" id="tool-credits"></span>
         <button id="btn-random">&#9860; Random</button>
         <button id="btn-details">Details &#9660;</button>
@@ -291,6 +292,8 @@
     </div>
 
     <script>
+        const FILTERS_KEY = 'tsr_active_filters';
+        let allProducts = [];
         let products = [];
         let currentIndex = 0;
 
@@ -310,6 +313,33 @@
 
         const MONTH_NAMES = ['January','February','March','April','May','June',
                              'July','August','September','October','November','December'];
+
+        // ── Filter helpers ────────────────────────────────────────
+
+        function loadActiveFilters() {
+            try {
+                const raw = localStorage.getItem(FILTERS_KEY);
+                return raw ? JSON.parse(raw) : null;
+            } catch(e) { return null; }
+        }
+
+        function applyFiltersToProducts(all, filters) {
+            if (!filters) return all;
+            const { type, system, setting, text } = filters;
+            const q = (text || '').toLowerCase();
+            const TEXT_FIELDS = ['title','dtrpg_title','module_code','product_code',
+                                 'authors','cover_artist','blurb'];
+            return all.filter(p => {
+                if (type    && type.length    && !type.includes(p.type))                    return false;
+                if (system  && system.length  && !system.includes(p.system))                return false;
+                if (setting && setting.length && !setting.includes(p.setting ?? '__none__')) return false;
+                if (q) {
+                    const matches = TEXT_FIELDS.some(f => p[f] && p[f].toLowerCase().includes(q));
+                    if (!matches) return false;
+                }
+                return true;
+            });
+        }
 
         // ── Hash routing ──────────────────────────────────────────
 
@@ -376,6 +406,7 @@
             renderDetails(p);
 
             // Sync localStorage
+            localStorage.setItem('tsr_current_id', products[currentIndex].id);
             localStorage.setItem('tsr_viewer_index', currentIndex);
             updateHash();
         }
@@ -477,24 +508,47 @@
             try {
                 const resp = await fetch('products.json');
                 if (!resp.ok) throw new Error('HTTP ' + resp.status);
-                products = await resp.json();
+                allProducts = await resp.json();
             } catch (e) {
                 errorMsg.textContent = 'Could not load products.json. Run via a local server.';
                 errorOverlay.classList.add('visible');
                 return;
             }
 
-            // Restore from localStorage
-            const saved = parseInt(localStorage.getItem('tsr_viewer_index'));
-            if (!isNaN(saved) && saved >= 0 && saved < products.length) {
-                currentIndex = saved;
+            // Apply saved filters
+            const savedFilters = loadActiveFilters();
+            products = applyFiltersToProducts(allProducts, savedFilters);
+            if (products.length === 0) {
+                products = allProducts;
+                localStorage.removeItem(FILTERS_KEY);
+            }
+
+            // Show filter badge if filters are active
+            const filterBadge = document.getElementById('filter-badge');
+            if (filterBadge && products.length < allProducts.length) {
+                filterBadge.textContent = products.length + ' filtered';
+                filterBadge.style.display = '';
+            }
+
+            // Restore position by product id
+            const savedId = parseInt(localStorage.getItem('tsr_current_id'));
+            if (!isNaN(savedId)) {
+                const idx = products.findIndex(p => p.id === savedId);
+                if (idx !== -1) currentIndex = idx;
             }
 
             // Hash takes priority
             const hashId = getHashId();
             if (hashId !== null) {
-                const idx = products.findIndex(p => p.id === hashId);
-                if (idx !== -1) currentIndex = idx;
+                let hashIdx = products.findIndex(p => p.id === hashId);
+                if (hashIdx === -1) {
+                    // Product not in filtered set — use full array
+                    products = allProducts;
+                    localStorage.removeItem(FILTERS_KEY);
+                    if (filterBadge) filterBadge.style.display = 'none';
+                    hashIdx = allProducts.findIndex(p => p.id === hashId);
+                }
+                if (hashIdx !== -1) currentIndex = hashIdx;
             }
 
             render();
