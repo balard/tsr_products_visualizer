@@ -273,7 +273,7 @@
         }
 
         .meta-item {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
         .meta-item:last-child { margin-bottom: 0; }
         .meta-label {
@@ -907,17 +907,8 @@
             if (hashId !== null) {
                 let hashIdx = products.findIndex(p => p.id === hashId);
                 if (hashIdx === -1) {
-                    // Product not in filtered set — clear filter and show it
-                    products = allProducts;
-                    localStorage.removeItem(FILTERS_KEY);
-                    updateFilterIndicator(null);
-                    scrubber.max = products.length - 1;
-                    document.getElementById('scrubber-year-start').textContent = products[0].year ?? '';
-                    document.getElementById('scrubber-year-end').textContent = products[products.length - 1].year ?? '';
-                    yearSelect.innerHTML = '<option value="">Year&hellip;</option>';
-                    Object.keys(yearToIndex).forEach(k => delete yearToIndex[k]);
-                    buildNav();
-                    hashIdx = allProducts.findIndex(p => p.id === hashId);
+                    // Product not in filtered set — keep filter, go to first filtered product
+                    hashIdx = 0;
                 }
                 if (hashIdx !== -1) currentIndex = hashIdx;
             }
