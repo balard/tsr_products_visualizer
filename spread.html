@@ -281,6 +281,14 @@
             <span class="meta-label">Module Code</span>
             <span class="meta-value" id="det-val-module-code"></span>
         </div>
+        <div class="details-item" id="det-pages">
+            <span class="meta-label">Pages</span>
+            <span class="meta-value" id="det-val-pages"></span>
+        </div>
+        <div class="details-item" id="det-isbn">
+            <span class="meta-label">ISBN</span>
+            <span class="meta-value" id="det-val-isbn"></span>
+        </div>
         <div class="details-item" id="det-dtrpg">
             <span class="meta-label">Buy / Download</span>
             <span class="meta-value" id="det-val-dtrpg"></span>
@@ -435,6 +443,8 @@
             setField('det-edition',      'det-val-edition',      p.edition);
             setField('det-product-code', 'det-val-product-code', p.product_code);
             setField('det-module-code',  'det-val-module-code',  p.module_code);
+            setField('det-pages',        'det-val-pages',        p.pages ? String(p.pages) : null);
+            setField('det-isbn',         'det-val-isbn',         p.isbn);
             setField('det-blurb',        'det-val-blurb',        p.blurb);
 
             // DriveThruRPG link
