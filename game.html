@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrono Covers — TSR Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a1a2e;
+      color: #e8e8e8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Error overlay ─────────────────────────────────────────────────── */
+    #error-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 400;
+      align-items: center;
+      justify-content: center;
+    }
+    #error-overlay.visible { display: flex; }
+    .error-box {
+      background: #2a2a4a;
+      border: 1px solid #c9a227;
+      border-radius: 6px;
+      padding: 2rem 2.5rem;
+      max-width: 420px;
+      text-align: center;
+    }
+    .error-box h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      color: #c9a227;
+      margin-bottom: 0.75rem;
+    }
+    .error-box p { color: #a0a0b0; font-size: 0.9rem; line-height: 1.5; }
+
+    /* ── Loading screen ────────────────────────────────────────────────── */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: #1a1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 300;
+      font-family: 'Cinzel', Georgia, serif;
+      color: #a0a0b0;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+    #loading-screen.hidden { display: none; }
+
+    /* ── Page header ───────────────────────────────────────────────────── */
+    .page-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid #2a2a4a;
+      background: #16213e;
+      flex-shrink: 0;
+    }
+    .page-header h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #c9a227;
+      letter-spacing: 0.05em;
+      flex: 1;
+    }
+    .streak-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.1rem;
+      min-width: 60px;
+    }
+    .streak-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #a0a0b0;
+    }
+    #streak-value {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #c9a227;
+      line-height: 1;
+    }
+
+    /* ── Instructions bar ──────────────────────────────────────────────── */
+    .instructions {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.82rem;
+      color: #a0a0b0;
+      border-bottom: 1px solid #2a2a4a;
+      flex-shrink: 0;
+    }
+
+    /* ── Game area ─────────────────────────────────────────────────────── */
+    .game-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .cards-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cover-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: transform 0.15s;
+      user-select: none;
+      outline: none;
+      border-radius: 4px;
+    }
+    .cover-card:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
+
+    .card-img-wrap {
+      position: relative;
+      width: 273px;
+      aspect-ratio: 3 / 4;
+      background: #0d0d1a;
+      border: 2px solid #2a2a4a;
+      border-radius: 3px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .cover-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .cover-card img.loaded { opacity: 1; }
+
+    .card-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #a0a0b0;
+      letter-spacing: 0.05em;
+      pointer-events: none;
+    }
+
+    .cover-card.selected .card-img-wrap {
+      border-color: #c9a227;
+      box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.35), 0 0 16px rgba(201, 162, 39, 0.2);
+    }
+
+    .cover-card.won { cursor: default; }
+
+    .card-year-reveal {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.85rem;
+      color: #c9a227;
+      height: 1.2rem;
+      visibility: hidden;
+      text-decoration: underline;
+    }
+    .card-year-reveal.visible { visibility: visible; }
+
+    /* ── Action row & buttons ──────────────────────────────────────────── */
+    .action-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    #btn-check {
+      background: #2a2a4a;
+      color: #c9a227;
+      border: 1px solid #c9a227;
+      padding: 0.55rem 2rem;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s;
+      letter-spacing: 0.04em;
+    }
+    #btn-check:hover:not(:disabled) { background: #c9a227; color: #1a1a2e; }
+    #btn-check:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* ── Feedback area ─────────────────────────────────────────────────── */
+    .feedback-area {
+      min-height: 3rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #e8e8e8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .feedback-area .result-msg {
+      font-family: 'Cinzel', Georgia, serif;
+      color: #c9a227;
+      font-size: 1rem;
+    }
+    #btn-play-again {
+      background: #2a2a4a;
+      color: #c9a227;
+      border: 1px solid #c9a227;
+      padding: 0.5rem 1.8rem;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.88rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s;
+    }
+    #btn-play-again:hover { background: #c9a227; color: #1a1a2e; }
+
+    /* ── Difficulty picker ─────────────────────────────────────────────── */
+    .difficulty-picker {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .diff-btn {
+      background: #2a2a4a;
+      color: #c9a227;
+      border: 1px solid #3a3a5a;
+      padding: 0.3rem 0.75rem;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.72rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .diff-btn:hover { border-color: #c9a227; }
+    .diff-btn.active {
+      background: #c9a227;
+      color: #1a1a2e;
+      border-color: #c9a227;
+    }
+
+    /* ── Responsive ────────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .card-img-wrap { width: 100px; }
+      .cards-row { gap: 0.6rem; }
+    }
+    @media (max-width: 560px) {
+      .card-img-wrap { width: 72px; }
+      .cards-row { gap: 0.4rem; }
+      .page-header h1 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Error overlay -->
+  <div id="error-overlay">
+    <div class="error-box">
+      <h2>Chrono Covers</h2>
+      <p id="error-msg">Could not load products.json. Run via a local server:<br><code>python -m http.server 8000</code></p>
+    </div>
+  </div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen">Loading products…</div>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <h1>Chrono Covers</h1>
+    <div class="difficulty-picker">
+      <button class="diff-btn active" data-diff="easy">Easy</button>
+      <button class="diff-btn" data-diff="medium">Medium</button>
+      <button class="diff-btn" data-diff="hard">Hard</button>
+    </div>
+    <div class="streak-display">
+      <span class="streak-label">Streak</span>
+      <span id="streak-value">0</span>
+    </div>
+  </header>
+
+  <!-- Instructions -->
+  <p class="instructions">Arrange the five covers in chronological order — earliest on the left. Click a cover to select it, then click another to swap them.</p>
+
+  <!-- Game area -->
+  <main class="game-area" id="game-area">
+    <div class="cards-row" id="cards-row"></div>
+    <div class="action-row">
+      <button id="btn-check">Check Order</button>
+    </div>
+    <div class="feedback-area" id="feedback-area"></div>
+  </main>
+
+  <script>
+    const STREAK_KEY = 'tsr_game_streak';
+    const CARDS_COUNT = 5;
+
+    let allProducts = [];
+    let round = [];
+    let displayOrder = [];
+    let selectedSlot = null;
+    let attemptCount = 0;
+    let streak = 0;
+    let gameOver = false;
+    let difficulty = 'easy';
+    const usedProductIds = new Set();
+
+    // ── Utilities ──────────────────────────────────────────────────────────
+
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function buildByYear(products) {
+      const byYear = new Map();
+      for (const p of products) {
+        if (!p.cover_url) continue;
+        if (usedProductIds.has(p.id)) continue;
+        if (!byYear.has(p.year)) byYear.set(p.year, []);
+        byYear.get(p.year).push(p);
+      }
+      return byYear;
+    }
+
+    function pickDistinctYears(yearsArr, count) {
+      // Partial Fisher-Yates — returns `count` randomly chosen years (unsorted)
+      const pool = [...yearsArr];
+      for (let i = pool.length - 1; i > pool.length - 1 - count; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+      return pool.slice(pool.length - count);
+    }
+
+    function pickRoundEasy(products) {
+      const byYear = buildByYear(products);
+      const years = [...byYear.keys()];
+      if (years.length < CARDS_COUNT) return null;
+
+      // Try up to 30 times to get ≥3 different decades
+      let chosen = null;
+      for (let attempt = 0; attempt < 30; attempt++) {
+        const candidate = pickDistinctYears(years, CARDS_COUNT);
+        const decades = new Set(candidate.map(y => Math.floor(y / 10)));
+        if (decades.size >= 3) { chosen = candidate; break; }
+      }
+      // Fallback: any 5 years
+      if (!chosen) chosen = pickDistinctYears(years, CARDS_COUNT);
+
+      chosen.sort((a, b) => a - b);
+      return chosen.map((year, i) => {
+        const pool = byYear.get(year);
+        return { product: pool[Math.floor(Math.random() * pool.length)], correctSlot: i };
+      });
+    }
+
+    function pickRoundMedium(products) {
+      const byYear = buildByYear(products);
+
+      // Group years by decade
+      const byDecade = new Map();
+      for (const year of byYear.keys()) {
+        const dec = Math.floor(year / 10);
+        if (!byDecade.has(dec)) byDecade.set(dec, []);
+        byDecade.get(dec).push(year);
+      }
+
+      // Only decades with ≥5 distinct years
+      const validDecades = [...byDecade.entries()]
+        .filter(([, yrs]) => yrs.length >= CARDS_COUNT)
+        .map(([dec]) => dec);
+      if (validDecades.length === 0) return null;
+
+      const decade = validDecades[Math.floor(Math.random() * validDecades.length)];
+      const decadeYears = byDecade.get(decade);
+      const chosen = pickDistinctYears(decadeYears, CARDS_COUNT).sort((a, b) => a - b);
+
+      return chosen.map((year, i) => {
+        const pool = byYear.get(year);
+        return { product: pool[Math.floor(Math.random() * pool.length)], correctSlot: i };
+      });
+    }
+
+    function pickRoundHard(products) {
+      // Build pool: unused products with cover_url
+      const pool = products.filter(p => p.cover_url && !usedProductIds.has(p.id));
+      if (pool.length < CARDS_COUNT) return null;
+
+      // Collect all distinct years present
+      const yearSet = new Set(pool.map(p => p.year));
+      const years = [...yearSet].sort((a, b) => a - b);
+
+      // Enumerate all valid 3-year windows (windows where at least 2 years in data exist)
+      const windows = [];
+      for (let i = 0; i < years.length; i++) {
+        const base = years[i];
+        // Window is [base, base+2]; collect years within it
+        const windowYears = years.filter(y => y >= base && y <= base + 2);
+        if (windowYears.length >= 2) windows.push(windowYears);
+      }
+      if (windows.length === 0) return null;
+
+      shuffle(windows);
+
+      for (const windowYears of windows) {
+        const windowPool = shuffle(pool.filter(p => windowYears.includes(p.year)));
+
+        // Greedy pick respecting month constraints
+        const picked = [];
+        // Track: year → months used; if a null-month product is picked for a year, that year is locked
+        const yearMonthsUsed = new Map(); // year → Set of months (null-month uses symbol)
+        const yearHasNullMonth = new Set();
+
+        for (const p of windowPool) {
+          if (picked.length === CARDS_COUNT) break;
+
+          const usedForYear = yearMonthsUsed.get(p.year) || new Set();
+
+          if (p.month === null) {
+            // Null-month: only allowed if this year has no other products picked yet
+            if (usedForYear.size > 0) continue;
+            // And no other product of this year was picked
+            yearHasNullMonth.add(p.year);
+          } else {
+            // Has a month: skip if this year already has a null-month product
+            if (yearHasNullMonth.has(p.year)) continue;
+            // Skip duplicate month in same year
+            if (usedForYear.has(p.month)) continue;
+          }
+
+          picked.push(p);
+          if (!yearMonthsUsed.has(p.year)) yearMonthsUsed.set(p.year, new Set());
+          yearMonthsUsed.get(p.year).add(p.month ?? '__null__');
+        }
+
+        if (picked.length < CARDS_COUNT) continue;
+
+        // Sort chronologically by (year, month) — null month treated as 0 for ordering
+        picked.sort((a, b) => a.year !== b.year ? a.year - b.year : (a.month ?? 0) - (b.month ?? 0));
+        return picked.map((product, i) => ({ product, correctSlot: i }));
+      }
+
+      return null; // no valid window found
+    }
+
+    function pickRound(products) {
+      if (difficulty === 'medium') return pickRoundMedium(products);
+      if (difficulty === 'hard')   return pickRoundHard(products);
+      return pickRoundEasy(products);
+    }
+
+    // ── Streak persistence ─────────────────────────────────────────────────
+
+    function loadStreak() {
+      const n = parseInt(localStorage.getItem(STREAK_KEY), 10);
+      return isNaN(n) ? 0 : n;
+    }
+
+    function saveStreak() {
+      localStorage.setItem(STREAK_KEY, String(streak));
+    }
+
+    function renderStreakDisplay() {
+      document.getElementById('streak-value').textContent = streak;
+    }
+
+    // ── DOM building ───────────────────────────────────────────────────────
+
+    function buildCards() {
+      const row = document.getElementById('cards-row');
+      row.innerHTML = '';
+
+      for (let slotIdx = 0; slotIdx < CARDS_COUNT; slotIdx++) {
+        const card = document.createElement('div');
+        card.className = 'cover-card';
+        card.dataset.slot = slotIdx;
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+
+        const wrap = document.createElement('div');
+        wrap.className = 'card-img-wrap';
+
+        const img = document.createElement('img');
+        img.alt = '';
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+          wrap.querySelector('.card-loading').style.display = 'none';
+        });
+        img.addEventListener('error', () => {
+          img.classList.add('loaded'); // prevent stuck opacity
+          wrap.querySelector('.card-loading').textContent = '—';
+        });
+
+        const loadingEl = document.createElement('div');
+        loadingEl.className = 'card-loading';
+        loadingEl.textContent = 'Loading\u2026';
+
+        const yearEl = document.createElement('a');
+        yearEl.className = 'card-year-reveal';
+        yearEl.target = '_blank';
+        yearEl.rel = 'noopener';
+
+        wrap.appendChild(img);
+        wrap.appendChild(loadingEl);
+        card.appendChild(wrap);
+        card.appendChild(yearEl);
+
+        card.addEventListener('click', e => {
+          // Don't trigger card swap when clicking the year link
+          if (e.target === yearEl) return;
+          onCardClick(slotIdx);
+        });
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onCardClick(slotIdx); }
+        });
+
+        row.appendChild(card);
+      }
+    }
+
+    function renderRound() {
+      const cards = document.querySelectorAll('.cover-card');
+      cards.forEach((card, slotIdx) => {
+        const { product } = round[displayOrder[slotIdx]];
+        const img = card.querySelector('img');
+        const loadingEl = card.querySelector('.card-loading');
+        const yearEl = card.querySelector('.card-year-reveal');
+
+        img.classList.remove('loaded');
+        img.style.opacity = '';
+        loadingEl.style.display = '';
+        loadingEl.textContent = 'Loading\u2026';
+        img.src = product.cover_url;
+        img.alt = product.title;
+
+        yearEl.textContent = product.year;
+        yearEl.href = 'index.html#id=' + product.id;
+        yearEl.classList.remove('visible');
+        card.classList.remove('selected', 'won');
+        card.setAttribute('aria-label', 'Cover card ' + (slotIdx + 1));
+      });
+
+      selectedSlot = null;
+      gameOver = false;
+      attemptCount = 0;
+      document.getElementById('feedback-area').innerHTML = '';
+      const btnCheck = document.getElementById('btn-check');
+      btnCheck.disabled = false;
+      btnCheck.textContent = 'Check Order';
+    }
+
+    function renderSlot(slotIdx) {
+      const cards = document.querySelectorAll('.cover-card');
+      const card = cards[slotIdx];
+      const { product } = round[displayOrder[slotIdx]];
+      const img = card.querySelector('img');
+      const loadingEl = card.querySelector('.card-loading');
+      const yearEl = card.querySelector('.card-year-reveal');
+
+      img.classList.remove('loaded');
+      loadingEl.style.display = '';
+      loadingEl.textContent = 'Loading\u2026';
+      img.src = product.cover_url;
+      img.alt = product.title;
+      yearEl.textContent = product.year;
+      yearEl.href = 'index.html#id=' + product.id;
+
+      if (gameOver) yearEl.classList.add('visible');
+      else yearEl.classList.remove('visible');
+    }
+
+    // ── Interaction ────────────────────────────────────────────────────────
+
+    function onCardClick(slotIdx) {
+      if (gameOver) return;
+
+      if (selectedSlot === null) {
+        selectedSlot = slotIdx;
+        document.querySelectorAll('.cover-card')[slotIdx].classList.add('selected');
+      } else if (selectedSlot === slotIdx) {
+        document.querySelectorAll('.cover-card')[slotIdx].classList.remove('selected');
+        selectedSlot = null;
+      } else {
+        performSwap(selectedSlot, slotIdx);
+        selectedSlot = null;
+      }
+    }
+
+    function performSwap(slotA, slotB) {
+      [displayOrder[slotA], displayOrder[slotB]] = [displayOrder[slotB], displayOrder[slotA]];
+      document.querySelectorAll('.cover-card')[slotA].classList.remove('selected');
+      renderSlot(slotA);
+      renderSlot(slotB);
+    }
+
+    function checkOrder() {
+      if (gameOver) return;
+      attemptCount++;
+
+      const correctCount = displayOrder.filter((roundIdx, slotIdx) => roundIdx === slotIdx).length;
+      const feedbackArea = document.getElementById('feedback-area');
+
+      if (correctCount === CARDS_COUNT) {
+        gameOver = true;
+
+        if (attemptCount === 1) streak++;
+        else streak = 0;
+        saveStreak();
+        renderStreakDisplay();
+
+        document.querySelectorAll('.cover-card').forEach(card => {
+          card.classList.add('won');
+          card.querySelector('.card-year-reveal').classList.add('visible');
+        });
+        document.getElementById('btn-check').disabled = true;
+
+        feedbackArea.innerHTML = '';
+
+        const msg = document.createElement('p');
+        msg.className = 'result-msg';
+        msg.textContent = attemptCount === 1
+          ? 'Perfect! All 5 in correct order on the first try!'
+          : `All 5 correct! (${attemptCount} attempt${attemptCount !== 1 ? 's' : ''})`;
+        feedbackArea.appendChild(msg);
+
+        if (streak > 1) {
+          const streakMsg = document.createElement('p');
+          streakMsg.style.fontSize = '0.82rem';
+          streakMsg.style.color = '#a0a0b0';
+          streakMsg.textContent = `Perfect streak: ${streak} in a row!`;
+          feedbackArea.appendChild(streakMsg);
+        }
+
+        const btnPlayAgain = document.createElement('button');
+        btnPlayAgain.id = 'btn-play-again';
+        btnPlayAgain.textContent = 'Play Again';
+        btnPlayAgain.addEventListener('click', startNewRound);
+        feedbackArea.appendChild(btnPlayAgain);
+
+      } else {
+        feedbackArea.innerHTML = '';
+        const msg = document.createElement('p');
+        msg.className = 'result-msg';
+        msg.textContent = `${correctCount} out of ${CARDS_COUNT} correct — keep trying!`;
+        feedbackArea.appendChild(msg);
+      }
+    }
+
+    // ── Round lifecycle ────────────────────────────────────────────────────
+
+    function startNewRound() {
+      let newRound = pickRound(allProducts);
+      if (!newRound) {
+        // All products exhausted — reset and try again
+        usedProductIds.clear();
+        newRound = pickRound(allProducts);
+      }
+      if (!newRound) {
+        document.getElementById('feedback-area').textContent = 'Not enough data to start a round.';
+        return;
+      }
+      round = newRound;
+      for (const { product } of round) usedProductIds.add(product.id);
+      displayOrder = shuffle([0, 1, 2, 3, 4]);
+      // Guard: if accidentally identity permutation, re-shuffle
+      if (displayOrder.every((v, i) => v === i)) shuffle(displayOrder);
+      renderRound();
+    }
+
+    // ── Init ───────────────────────────────────────────────────────────────
+
+    async function init() {
+      streak = loadStreak();
+      renderStreakDisplay();
+
+      try {
+        const resp = await fetch('products.json');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        allProducts = await resp.json();
+      } catch (e) {
+        document.getElementById('error-msg').textContent =
+          'Could not load products.json. Run via a local server: python -m http.server 8000';
+        document.getElementById('error-overlay').classList.add('visible');
+        document.getElementById('loading-screen').classList.add('hidden');
+        return;
+      }
+
+      document.getElementById('loading-screen').classList.add('hidden');
+      buildCards();
+      startNewRound();
+      document.getElementById('btn-check').addEventListener('click', checkOrder);
+
+      document.querySelectorAll('.diff-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (btn.dataset.diff === difficulty) return;
+          difficulty = btn.dataset.diff;
+          document.querySelectorAll('.diff-btn').forEach(b => b.classList.toggle('active', b === btn));
+          usedProductIds.clear();
+          startNewRound();
+        });
+      });
+    }
+
+    init();
+  </script>
+</body>
+</html>
