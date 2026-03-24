@@ -13,6 +13,8 @@ spanning publications from 1974 onward (D&D, AD&D, and related products).
 - **convert_csv.py** — Python 3 script that regenerates `products.json` from the CSV source
 - **download_covers.py** — Downloads cover images by year into `covers/full/`
 - **covers/full/** — Local image files: front covers named `{id}.{ext}`, back covers named `{id}-back.{ext}`; served via GitHub Pages
+- **covers/thumb/** — 300px-wide JPEG thumbnails generated from `covers/full/`; used by `search.html` and `game.html`
+- **generate_thumbs.py** — Python 3 script that generates `covers/thumb/` from `covers/full/` (requires Pillow)
 - **../tsr_products/tsr_products.csv** — Master product table (18 cols: id through semester; no cover_url)
 - **../tsr_products/covers.csv** — Cover URLs (3 cols: id, cover_url, backcover_url)
 - **../tsr_products/blurbs.csv** — Product blurb text (2 cols: id, blurb; QUOTE_ALL)
@@ -69,6 +71,14 @@ Output:
 **Workflow when adding a new year of images:**
 1. `python download_covers.py <year>`
 2. `python convert_csv.py` ← regenerate JSON; local paths are picked up automatically
+3. `python generate_thumbs.py <start_id> <end_id>` ← generate thumbnails for the new products
+
+## generate_thumbs.py internals
+- Reads `covers/full/*.jpg` and writes 300px-wide JPEGs to `covers/thumb/`
+- Maintains aspect ratio; JPEG quality 75; uses Pillow (`pip install Pillow`)
+- Idempotent — existing files are skipped
+- Optional ID range: `python generate_thumbs.py <start_id> <end_id>`
+- `search.html` and `game.html` derive thumb URLs via `cover_url.replace('/full/', '/thumb/')`
 
 ## download_covers.py internals
 - Reads `products.json` to filter products by year
