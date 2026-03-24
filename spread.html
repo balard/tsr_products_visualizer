@@ -180,6 +180,19 @@
         .details-item a { color: #c9a227; text-decoration: none; }
         .details-item a:hover { text-decoration: underline; }
 
+        /* ── Auto-play indicator ────────────────────────────────── */
+
+        .autoplay-indicator {
+            display: none;
+            font-size: 0.72rem;
+            color: #c9a227;
+            letter-spacing: 0.08em;
+            flex-shrink: 0;
+            animation: blink 1s step-start infinite;
+        }
+        body.autoplay-on .autoplay-indicator { display: inline; }
+        @keyframes blink { 50% { opacity: 0.3; } }
+
         /* ── Error overlay ───────────────────────────────────────── */
 
         #error-overlay {
@@ -244,6 +257,7 @@
         <span class="tool-year" id="tool-year"></span>
         <span id="filter-badge" style="display:none; font-size:0.72rem; color:#c9a227; flex-shrink:0;"></span>
         <span class="tool-credits" id="tool-credits"></span>
+        <span class="autoplay-indicator">&#9654; AUTO</span>
         <button id="btn-random">&#9860; Random</button>
         <button id="btn-details">Details &#9660;</button>
     </div>
@@ -318,6 +332,30 @@
         const detPanel    = document.getElementById('details-panel');
         const errorOverlay = document.getElementById('error-overlay');
         const errorMsg    = document.getElementById('error-msg');
+
+        // ── Auto-play ─────────────────────────────────────────────
+        let autoPlayTimer = null;
+        const AUTOPLAY_INTERVAL = 4000; // ms
+
+        function startAutoPlay() {
+            if (autoPlayTimer) return;
+            autoPlayTimer = setInterval(() => {
+                if (currentIndex < products.length - 1) goTo(currentIndex + 1);
+                else goTo(0);
+            }, AUTOPLAY_INTERVAL);
+            document.body.classList.add('autoplay-on');
+        }
+
+        function stopAutoPlay() {
+            if (!autoPlayTimer) return;
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+            document.body.classList.remove('autoplay-on');
+        }
+
+        function toggleAutoPlay() {
+            if (autoPlayTimer) stopAutoPlay(); else startAutoPlay();
+        }
 
         const MONTH_NAMES = ['January','February','March','April','May','June',
                              'July','August','September','October','November','December'];
@@ -498,9 +536,12 @@
         btnDetails.addEventListener('click', toggleDetails);
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft')                    goPrev();
-            else if (e.key === 'ArrowRight')              goNext();
-            else if (e.key === 'r' || e.key === 'R')      goTo(Math.floor(Math.random() * products.length));
+            if (e.key === ' ') {
+                e.preventDefault();
+                toggleAutoPlay();
+            } else if (e.key === 'ArrowLeft')             { stopAutoPlay(); goPrev(); }
+            else if (e.key === 'ArrowRight')              { stopAutoPlay(); goNext(); }
+            else if (e.key === 'r' || e.key === 'R')      { stopAutoPlay(); goTo(Math.floor(Math.random() * products.length)); }
             else if (e.key === 'd' || e.key === 'D')      toggleDetails();
             else if (e.key === 'Escape' || e.key === 'Backspace') btnBack.click();
         });
