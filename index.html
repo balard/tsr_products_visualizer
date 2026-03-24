@@ -338,26 +338,7 @@
         }
 
 
-        /* Cover side badge (Front / Back) */
-        #cover-side-badge {
-            position: absolute;
-            bottom: 8px;
-            left: 8px;
-            background: rgba(26, 26, 46, 0.82);
-            color: #c9a227;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            padding: 2px 7px;
-            border-radius: 2px;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.25s;
-            z-index: 5;
-        }
-        #cover-side-badge.visible { opacity: 1; }
-
-        /* Click overlay for image navigation */
+/* Click overlay for image navigation */
         #cover-overlay {
             position: absolute;
             inset: 0;
@@ -688,7 +669,6 @@
                 <img id="cover-img" src="" alt="">
                 <img id="back-img" src="" alt="">
                 <div class="cover-loading" id="cover-loading">Loading...</div>
-                <div id="cover-side-badge"></div>
                 <div id="cover-overlay">
                     <div id="overlay-left"></div>
                     <div id="overlay-mid"></div>
@@ -788,7 +768,6 @@
         const yearSelect = document.getElementById('year-select');
         const scrubber = document.getElementById('scrubber');
         const coverFrame = document.getElementById('cover-frame');
-        const badge = document.getElementById('cover-side-badge');
 
         const yearToIndex = {};
 
@@ -1025,16 +1004,12 @@
                 img.style.display = 'none';
                 backImg.style.display = 'block';
                 loadBackCover(p);
-                badge.textContent = 'Back';
-                badge.classList.add('visible');
                 btnFlip.classList.add('active');
             } else {
                 // front (default or fallback)
                 coverSide = 'front';
                 img.style.display = 'block';
                 backImg.style.display = 'none';
-                badge.textContent = 'Front';
-                badge.classList.toggle('visible', !!p.backcover_url);
                 btnFlip.classList.remove('active');
             }
             btnFlip.disabled = !p.backcover_url;
