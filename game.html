@@ -130,11 +130,23 @@
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      cursor: pointer;
+      cursor: grab;
       transition: transform 0.15s;
       user-select: none;
       outline: none;
       border-radius: 4px;
+    }
+    .cover-card.dragging {
+      opacity: 0.4;
+      cursor: grabbing;
+    }
+    .cover-card.insert-before .card-img-wrap {
+      border-left: 3px solid #c9a227;
+      box-shadow: -4px 0 8px rgba(201, 162, 39, 0.4);
+    }
+    .cover-card.insert-after .card-img-wrap {
+      border-right: 3px solid #c9a227;
+      box-shadow: 4px 0 8px rgba(201, 162, 39, 0.4);
     }
     .cover-card:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
 
@@ -302,7 +314,7 @@
   </header>
 
   <!-- Instructions -->
-  <p class="instructions">Arrange the five covers in chronological order — earliest on the left. Click a cover to select it, then click another to swap them.</p>
+  <p class="instructions">Arrange the five covers in chronological order — earliest on the left. Drag to reorder, or click a cover to select it then click another to swap.</p>
 
   <!-- Game area -->
   <main class="game-area" id="game-area">
@@ -321,6 +333,7 @@
     let round = [];
     let displayOrder = [];
     let selectedSlot = null;
+    let dragSourceSlot = null;
     let attemptCount = 0;
     let streak = 0;
     let gameOver = false;
@@ -531,6 +544,13 @@
         card.appendChild(wrap);
         card.appendChild(yearEl);
 
+        card.setAttribute('draggable', 'true');
+        card.addEventListener('dragstart', onDragStart);
+        card.addEventListener('dragover',  onDragOver);
+        card.addEventListener('dragleave', onDragLeave);
+        card.addEventListener('drop',      onDrop);
+        card.addEventListener('dragend',   onDragEnd);
+
         card.addEventListener('click', e => {
           // Don't trigger card swap when clicking the year link
           if (e.target === yearEl) return;
@@ -562,7 +582,7 @@
         yearEl.textContent = product.year;
         yearEl.href = 'index.html#id=' + product.id;
         yearEl.classList.remove('visible');
-        card.classList.remove('selected', 'won');
+        card.classList.remove('selected', 'won', 'dragging', 'insert-before', 'insert-after');
         card.setAttribute('aria-label', 'Cover card ' + (slotIdx + 1));
       });
 
@@ -595,6 +615,45 @@
       else yearEl.classList.remove('visible');
     }
 
+    // ── Drag-and-drop ──────────────────────────────────────────────────────
+
+    function onDragStart(e) {
+      if (gameOver) { e.preventDefault(); return; }
+      dragSourceSlot = parseInt(this.dataset.slot);
+      this.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function onDragOver(e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      const rect = this.getBoundingClientRect();
+      const isLeftHalf = e.clientX < rect.left + rect.width / 2;
+      this.classList.toggle('insert-before', isLeftHalf);
+      this.classList.toggle('insert-after', !isLeftHalf);
+    }
+
+    function onDragLeave() {
+      this.classList.remove('insert-before', 'insert-after');
+    }
+
+    function onDrop(e) {
+      e.preventDefault();
+      this.classList.remove('insert-before', 'insert-after');
+      const targetSlot = parseInt(this.dataset.slot);
+      const rect = this.getBoundingClientRect();
+      const isLeftHalf = e.clientX < rect.left + rect.width / 2;
+      const insertPos = isLeftHalf ? targetSlot : targetSlot + 1;
+      if (dragSourceSlot !== null) moveCard(dragSourceSlot, insertPos);
+    }
+
+    function onDragEnd() {
+      document.querySelectorAll('.cover-card').forEach(c =>
+        c.classList.remove('dragging', 'insert-before', 'insert-after')
+      );
+      dragSourceSlot = null;
+    }
+
     // ── Interaction ────────────────────────────────────────────────────────
 
     function onCardClick(slotIdx) {
@@ -610,6 +669,14 @@
         performSwap(selectedSlot, slotIdx);
         selectedSlot = null;
       }
+    }
+
+    function moveCard(fromSlot, insertPos) {
+      if (insertPos === fromSlot || insertPos === fromSlot + 1) return;
+      const item = displayOrder.splice(fromSlot, 1)[0];
+      const adjustedPos = fromSlot < insertPos ? insertPos - 1 : insertPos;
+      displayOrder.splice(adjustedPos, 0, item);
+      document.querySelectorAll('.cover-card').forEach((_, i) => renderSlot(i));
     }
 
     function performSwap(slotA, slotB) {
