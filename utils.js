@@ -1,0 +1,46 @@
+/**
+ * utils.js — Shared utilities for TSR Products Visualizer
+ * Provides filter helpers and shared constants used across index.html,
+ * search.html, and spread.html.
+ */
+
+const FILTERS_KEY = 'tsr_active_filters';
+
+const MONTH_NAMES = ['January','February','March','April','May','June',
+                     'July','August','September','October','November','December'];
+
+const TEXT_FIELDS = ['title','dtrpg_title','module_code','product_code',
+                     'authors','cover_artist','blurb'];
+
+/**
+ * Read the saved filter state from localStorage.
+ * Returns parsed object, or null if nothing is saved / parse fails.
+ */
+function loadActiveFilters() {
+    try {
+        const raw = localStorage.getItem(FILTERS_KEY);
+        return raw ? JSON.parse(raw) : null;
+    } catch(e) { return null; }
+}
+
+/**
+ * Filter a products array using the persisted filter object (arrays, not Sets).
+ * @param {Array}  all     - Full products array
+ * @param {Object} filters - Saved filter state from localStorage (or null for no filter)
+ * @returns {Array} Filtered products
+ */
+function applyFiltersToProducts(all, filters) {
+    if (!filters) return all;
+    const { type, system, setting, text } = filters;
+    const q = (text || '').toLowerCase();
+    return all.filter(p => {
+        if (type    && type.length    && !type.includes(p.type))                    return false;
+        if (system  && system.length  && !system.includes(p.system))                return false;
+        if (setting && setting.length && !setting.includes(p.setting ?? '__none__')) return false;
+        if (q) {
+            const matches = TEXT_FIELDS.some(f => p[f] && p[f].toLowerCase().includes(q));
+            if (!matches) return false;
+        }
+        return true;
+    });
+}

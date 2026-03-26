@@ -1,0 +1,54 @@
+/**
+ * common.css — Shared styles for TSR Products Visualizer
+ * Provides CSS variables and the error overlay used on every page.
+ */
+
+/* ── Design tokens ───────────────────────────────────────────────────────── */
+
+:root {
+    --bg:     #1a1a2e;   /* page background */
+    --bg2:    #16213e;   /* panel / header background */
+    --card:   #2a2a4a;   /* card / button background */
+    --border: #3a3a5a;   /* inactive border */
+    --accent: #c9a227;   /* gold accent */
+    --text:   #e8e8e8;   /* primary text */
+    --muted:  #a0a0b0;   /* secondary / de-emphasised text */
+}
+
+/* ── Error overlay ───────────────────────────────────────────────────────── */
+
+#error-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 46, 0.95);
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+#error-overlay.visible { display: flex; }
+
+.error-box {
+    max-width: 500px;
+    background: var(--bg2);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 2rem;
+}
+.error-box h2 {
+    font-family: 'Cinzel', Georgia, serif;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.error-box p  { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+.error-box a  { color: var(--accent); }
+.error-box code {
+    display: block;
+    background: #0d0d1a;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    color: var(--accent);
+}

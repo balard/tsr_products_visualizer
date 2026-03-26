@@ -26,7 +26,7 @@ JPEG_QUALITY = 75
 
 def extract_id(filename: str) -> int | None:
     """Extract numeric product id from filename like '123.jpg' or '123-back.jpg'."""
-    m = re.match(r"^(\d+)(?:-back)?\.jpg$", filename)
+    m = re.match(r"^(\d+)(?:-back)?\.jpe?g$", filename.lower())
     return int(m.group(1)) if m else None
 
 
@@ -45,7 +45,7 @@ def main():
         print(f"Source directory not found: {SOURCE_DIR}")
         sys.exit(1)
 
-    all_files = sorted(SOURCE_DIR.glob("*.jpg"))
+    all_files = sorted(f for ext in ("*.jpg", "*.jpeg", "*.JPG", "*.JPEG") for f in SOURCE_DIR.glob(ext))
 
     if id_range:
         start, end = id_range

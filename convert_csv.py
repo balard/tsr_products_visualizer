@@ -83,7 +83,7 @@ with open(MAIN_CSV, newline='', encoding='utf-8') as f:
             continue  # skip products with no cover
 
         year_raw = row.get('year', '').strip()
-        year = int(year_raw) if year_raw else None
+        year = int_or_none(year_raw)
         if year is None or year > MAX_YEAR:
             continue
 
