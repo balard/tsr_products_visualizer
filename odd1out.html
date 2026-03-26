@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="fav_icon.png">
+  <title>Odd One Out — TSR Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a1a2e;
+      color: #e8e8e8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Error overlay ─────────────────────────────────────────────────── */
+    #error-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 400;
+      align-items: center;
+      justify-content: center;
+    }
+    #error-overlay.visible { display: flex; }
+    .error-box {
+      background: #2a2a4a;
+      border: 1px solid #c9a227;
+      border-radius: 6px;
+      padding: 2rem 2.5rem;
+      max-width: 420px;
+      text-align: center;
+    }
+    .error-box h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      color: #c9a227;
+      margin-bottom: 0.75rem;
+    }
+    .error-box p { color: #a0a0b0; font-size: 0.9rem; line-height: 1.5; }
+
+    /* ── Loading screen ────────────────────────────────────────────────── */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: #1a1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 300;
+      font-family: 'Cinzel', Georgia, serif;
+      color: #a0a0b0;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+    #loading-screen.hidden { display: none; }
+
+    /* ── Page header ───────────────────────────────────────────────────── */
+    .page-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid #2a2a4a;
+      background: #16213e;
+      flex-shrink: 0;
+    }
+    .page-header h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #c9a227;
+      letter-spacing: 0.05em;
+      flex: 1;
+    }
+    .streak-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.1rem;
+      min-width: 60px;
+    }
+    .streak-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #a0a0b0;
+    }
+    #streak-value {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #c9a227;
+      line-height: 1;
+    }
+    .btn-nav {
+      background: #2a2a4a;
+      color: #c9a227;
+      border: 1px solid #3a3a5a;
+      padding: 0.3rem 0.75rem;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.72rem;
+      cursor: pointer;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .btn-nav:hover { background: #c9a227; color: #1a1a2e; border-color: #c9a227; }
+
+    /* ── Instructions bar ──────────────────────────────────────────────── */
+    .instructions {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.82rem;
+      color: #a0a0b0;
+      border-bottom: 1px solid #2a2a4a;
+      flex-shrink: 0;
+    }
+    .cat-highlight {
+      color: #c9a227;
+      font-weight: 700;
+    }
+
+    /* ── Game area ─────────────────────────────────────────────────────── */
+    .game-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .cards-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cover-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: transform 0.15s;
+      user-select: none;
+      outline: none;
+      border-radius: 4px;
+    }
+    .cover-card:focus-visible { outline: 2px solid #c9a227; outline-offset: 3px; }
+
+    .card-img-wrap {
+      position: relative;
+      width: 273px;
+      aspect-ratio: 3 / 4;
+      background: #0d0d1a;
+      border: 2px solid #2a2a4a;
+      border-radius: 3px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s, opacity 0.2s;
+    }
+
+    .cover-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .cover-card img.loaded { opacity: 1; }
+
+    .card-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #a0a0b0;
+      letter-spacing: 0.05em;
+      pointer-events: none;
+    }
+
+    /* Wrong guess flash */
+    @keyframes flash-wrong {
+      0%   { border-color: #cc3333; box-shadow: 0 0 0 3px rgba(204,51,51,0.55); }
+      60%  { border-color: #cc3333; box-shadow: 0 0 0 3px rgba(204,51,51,0.55); }
+      100% { border-color: #2a2a4a; box-shadow: none; }
+    }
+    .cover-card.wrong .card-img-wrap {
+      animation: flash-wrong 0.6s ease-out forwards;
+    }
+
+    /* Previously-tried wrong card */
+    .cover-card.tried .card-img-wrap {
+      border-color: #4a2a2a;
+      opacity: 0.65;
+    }
+    .cover-card.tried { cursor: default; }
+
+    /* Correct answer */
+    .cover-card.correct .card-img-wrap {
+      border-color: #3a7a3a;
+      box-shadow: 0 0 0 3px rgba(58,122,58,0.45), 0 0 18px rgba(58,122,58,0.2);
+    }
+    .cover-card.done { cursor: default; }
+
+    /* Value label under card */
+    .card-value-reveal {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.78rem;
+      color: #c9a227;
+      height: 1.2rem;
+      visibility: hidden;
+      text-decoration: none;
+      text-align: center;
+      max-width: 273px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .card-value-reveal:hover { text-decoration: underline; }
+    .card-value-reveal.visible { visibility: visible; }
+    .card-value-reveal.odd-value { color: #e8c04a; }
+
+    /* ── Feedback area ─────────────────────────────────────────────────── */
+    .feedback-area {
+      min-height: 3rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #e8e8e8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .feedback-area .result-msg {
+      font-family: 'Cinzel', Georgia, serif;
+      color: #c9a227;
+      font-size: 1rem;
+    }
+    .wrong-msg {
+      color: #cc5555;
+      font-size: 0.88rem;
+    }
+    #btn-play-again {
+      background: #2a2a4a;
+      color: #c9a227;
+      border: 1px solid #c9a227;
+      padding: 0.5rem 1.8rem;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.88rem;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s;
+    }
+    #btn-play-again:hover { background: #c9a227; color: #1a1a2e; }
+
+    /* ── Responsive ────────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .card-img-wrap { width: 100px; }
+      .cards-row { gap: 0.6rem; }
+      .card-value-reveal { max-width: 100px; font-size: 0.68rem; }
+    }
+    @media (max-width: 560px) {
+      .card-img-wrap { width: 72px; }
+      .cards-row { gap: 0.4rem; }
+      .page-header h1 { font-size: 1rem; }
+      .card-value-reveal { max-width: 72px; font-size: 0.62rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Error overlay -->
+  <div id="error-overlay">
+    <div class="error-box">
+      <h2>Odd One Out</h2>
+      <p id="error-msg">Could not load products.json. Run via a local server:<br><code>python -m http.server 8000</code></p>
+    </div>
+  </div>
+
+  <!-- Loading screen -->
+  <div id="loading-screen">Loading products…</div>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <a href="index.html" class="btn-nav">&#8592; Gallery</a>
+    <h1>What Doesn't Belong?</h1>
+    <a href="game.html" class="btn-nav">Chrono Covers</a>
+    <div class="streak-display">
+      <span class="streak-label">Streak</span>
+      <span id="streak-value">0</span>
+    </div>
+  </header>
+
+  <!-- Instructions -->
+  <p class="instructions" id="instructions-bar">Loading…</p>
+
+  <!-- Game area -->
+  <main class="game-area" id="game-area">
+    <div class="cards-row" id="cards-row"></div>
+    <div class="feedback-area" id="feedback-area"></div>
+  </main>
+
+  <script>
+    // ── Constants ───────────────────────────────────────────────────────────
+
+    const STREAK_KEY   = 'tsr_odd_streak';
+    const CARDS_COUNT  = 5;
+    const MAX_VAL_TRIES = 30;   // retries per value to pass disambiguation
+    const MAX_CAT_TRIES = 10;   // outer category/value cycle limit
+
+    const CATEGORIES = [
+      { key: 'year',         label: 'Year' },
+      { key: 'setting',      label: 'Setting' },
+      { key: 'system',       label: 'Rules System' },
+      { key: 'type',         label: 'Product Type' },
+      { key: 'cover_artist', label: 'Cover Artist' },
+      { key: 'authors',      label: 'Author' },
+    ];
+
+    // Exclude these as the "common group" value (too generic / not real identities)
+    const EXCLUDED_COMMON = new Set(['N/A', 'Various']);
+
+    const MIN_POOL = 4;   // minimum products sharing a value to be eligible
+
+    // ── State ───────────────────────────────────────────────────────────────
+
+    let allProducts    = [];
+    let usedProductIds = new Set();
+    let streak         = 0;
+
+    // currentRound shape:
+    // { category: {key, label}, commonValue, oddValue,
+    //   cards: [ {product, isOdd}, ... ] }   (5 entries, shuffled display order)
+    let currentRound   = null;
+    let triesThisRound = 0;
+    let roundOver      = false;
+    let triedIndices   = new Set();   // display indices already clicked wrong
+
+    // ── Helpers ─────────────────────────────────────────────────────────────
+
+    function getVal(product, key) {
+      return product[key];   // returns null as-is; null is a valid value
+    }
+
+    // Partial Fisher-Yates: pick n random items from arr without mutating it
+    function pickRandom(arr, n) {
+      const pool = arr.slice();
+      const result = [];
+      for (let i = 0; i < n && i < pool.length; i++) {
+        const j = i + Math.floor(Math.random() * (pool.length - i));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+        result.push(pool[i]);
+      }
+      return result;
+    }
+
+    function shuffleInPlace(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    // Build a Map of value → [products] for a given category key
+    function buildValueMap(pool, key) {
+      const map = new Map();
+      for (const p of pool) {
+        const v = getVal(p, key);
+        if (!map.has(v)) map.set(v, []);
+        map.get(v).push(p);
+      }
+      return map;
+    }
+
+    // Format a raw value for display under the card
+    function formatValue(key, value) {
+      if (value === null || value === undefined) {
+        if (key === 'setting')      return 'No Setting';
+        if (key === 'cover_artist') return 'Unknown Artist';
+        return '—';
+      }
+      return String(value);
+    }
+
+    // ── Disambiguation check ────────────────────────────────────────────────
+
+    // Returns true if the five products are ambiguous:
+    // i.e., some OTHER category also shows a 4-vs-1 split pointing to a
+    // DIFFERENT product than our intended odd-one-out.
+    function isAmbiguous(fiveProducts, chosenKey, intendedOddId) {
+      for (const cat of CATEGORIES) {
+        if (cat.key === chosenKey) continue;
+
+        const counts = new Map();
+        for (const p of fiveProducts) {
+          const v = getVal(p, cat.key);
+          counts.set(v, (counts.get(v) || 0) + 1);
+        }
+
+        for (const [v, cnt] of counts) {
+          if (cnt === 4) {
+            // There is a majority of 4 — find the 1 outlier
+            const outlier = fiveProducts.find(p => getVal(p, cat.key) !== v);
+            if (outlier && outlier.id !== intendedOddId) {
+              return true;  // another product is the odd-one-out for this other category
+            }
+          }
+        }
+      }
+      return false;
+    }
+
+    // ── Round generation ────────────────────────────────────────────────────
+
+    function pickRound() {
+      const unusedPool = allProducts.filter(p => !usedProductIds.has(p.id));
+
+      // Shuffle categories for random selection each call
+      const cats = shuffleInPlace(CATEGORIES.slice());
+
+      for (let attempt = 0; attempt < MAX_CAT_TRIES; attempt++) {
+        const cat = cats[attempt % cats.length];
+
+        // Build value map from unused pool; fall back to full pool if needed
+        let valueMap = buildValueMap(unusedPool, cat.key);
+
+        // Eligible values: >= MIN_POOL and not excluded as common group
+        let eligible = [...valueMap.entries()].filter(
+          ([v, ps]) => ps.length >= MIN_POOL && !EXCLUDED_COMMON.has(v)
+        );
+
+        // If unused pool is thin, supplement with full pool
+        if (eligible.length === 0) {
+          valueMap = buildValueMap(allProducts, cat.key);
+          eligible = [...valueMap.entries()].filter(
+            ([v, ps]) => ps.length >= MIN_POOL && !EXCLUDED_COMMON.has(v)
+          );
+        }
+        if (eligible.length === 0) continue;
+
+        shuffleInPlace(eligible);
+
+        for (const [commonValue, commonPool] of eligible) {
+          // Build odd pool: products with a DIFFERENT value (prefer unused)
+          let oddPool = unusedPool.filter(p => getVal(p, cat.key) !== commonValue);
+          if (oddPool.length === 0) {
+            oddPool = allProducts.filter(p => getVal(p, cat.key) !== commonValue);
+          }
+          if (oddPool.length === 0) continue;
+
+          for (let retry = 0; retry < MAX_VAL_TRIES; retry++) {
+            const chosen4 = pickRandom(commonPool, 4);
+            if (chosen4.length < 4) break;
+
+            const [oddOne] = pickRandom(oddPool, 1);
+            const five = [...chosen4, oddOne];
+
+            if (!isAmbiguous(five, cat.key, oddOne.id)) {
+              const cards = shuffleInPlace(five.map(p => ({ product: p, isOdd: p.id === oddOne.id })));
+              return {
+                category:    cat,
+                commonValue: commonValue,
+                oddValue:    getVal(oddOne, cat.key),
+                cards:       cards,
+              };
+            }
+          }
+        }
+      }
+
+      return null;
+    }
+
+    // ── localStorage ────────────────────────────────────────────────────────
+
+    function loadStreak() {
+      const n = parseInt(localStorage.getItem(STREAK_KEY), 10);
+      return isNaN(n) ? 0 : n;
+    }
+    function saveStreak() {
+      localStorage.setItem(STREAK_KEY, String(streak));
+    }
+    function renderStreakDisplay() {
+      document.getElementById('streak-value').textContent = streak;
+    }
+
+    // ── DOM building ────────────────────────────────────────────────────────
+
+    function buildCards() {
+      const row = document.getElementById('cards-row');
+      row.innerHTML = '';
+
+      for (let slotIdx = 0; slotIdx < CARDS_COUNT; slotIdx++) {
+        const card = document.createElement('div');
+        card.className = 'cover-card';
+        card.dataset.slot = slotIdx;
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+
+        const wrap = document.createElement('div');
+        wrap.className = 'card-img-wrap';
+
+        const img = document.createElement('img');
+        img.alt = '';
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+          wrap.querySelector('.card-loading').style.display = 'none';
+        });
+        img.addEventListener('error', () => {
+          img.classList.add('loaded');
+          wrap.querySelector('.card-loading').textContent = '—';
+        });
+
+        const loadingEl = document.createElement('div');
+        loadingEl.className = 'card-loading';
+        loadingEl.textContent = 'Loading\u2026';
+
+        const valueEl = document.createElement('a');
+        valueEl.className = 'card-value-reveal';
+        valueEl.target = '_blank';
+        valueEl.rel = 'noopener';
+
+        wrap.appendChild(img);
+        wrap.appendChild(loadingEl);
+        card.appendChild(wrap);
+        card.appendChild(valueEl);
+
+        card.addEventListener('click', e => {
+          if (e.target === valueEl) return;  // let the link through
+          handleCardClick(slotIdx);
+        });
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCardClick(slotIdx); }
+        });
+
+        row.appendChild(card);
+      }
+    }
+
+    // ── Round rendering ─────────────────────────────────────────────────────
+
+    function renderRound() {
+      const cardEls = document.querySelectorAll('.cover-card');
+      cardEls.forEach((card, slotIdx) => {
+        const { product } = currentRound.cards[slotIdx];
+        const img      = card.querySelector('img');
+        const loading  = card.querySelector('.card-loading');
+        const valueEl  = card.querySelector('.card-value-reveal');
+
+        img.classList.remove('loaded');
+        loading.style.display = '';
+        loading.textContent = 'Loading\u2026';
+        img.src = product.cover_url.replace('/full/', '/thumb/');
+        img.alt = product.title;
+
+        valueEl.textContent = '';
+        valueEl.href = 'index.html#id=' + product.id;
+        valueEl.classList.remove('visible', 'odd-value');
+
+        card.classList.remove('wrong', 'tried', 'correct', 'done');
+        card.style.pointerEvents = '';
+        card.setAttribute('aria-label', 'Cover ' + (slotIdx + 1));
+      });
+
+      document.getElementById('feedback-area').innerHTML = '';
+
+      document.getElementById('instructions-bar').textContent =
+        'One of these covers doesn\u2019t belong with the other four. Which one is the odd one out?';
+    }
+
+    // ── Card interaction ────────────────────────────────────────────────────
+
+    function handleCardClick(displayIdx) {
+      if (roundOver) return;
+      if (triedIndices.has(displayIdx)) return;
+
+      triesThisRound++;
+      const { isOdd } = currentRound.cards[displayIdx];
+
+      if (isOdd) {
+        roundOver = true;
+        endRound(triesThisRound);
+      } else {
+        triedIndices.add(displayIdx);
+        const cardEl = document.querySelectorAll('.cover-card')[displayIdx];
+        cardEl.classList.add('wrong');
+        cardEl.addEventListener('animationend', () => {
+          cardEl.classList.remove('wrong');
+          cardEl.classList.add('tried');
+        }, { once: true });
+
+        // Update or show wrong feedback message
+        const feedbackEl = document.getElementById('feedback-area');
+        let msg = feedbackEl.querySelector('.wrong-msg');
+        if (!msg) {
+          msg = document.createElement('p');
+          msg.className = 'wrong-msg';
+          feedbackEl.prepend(msg);
+        }
+        msg.textContent = 'Not quite \u2014 try another!';
+      }
+    }
+
+    // ── End of round ────────────────────────────────────────────────────────
+
+    function endRound(triesCount) {
+      if (triesCount === 1) {
+        streak++;
+      } else {
+        streak = 0;
+      }
+      saveStreak();
+      renderStreakDisplay();
+
+      const cardEls = document.querySelectorAll('.cover-card');
+      currentRound.cards.forEach((cardData, i) => {
+        const cardEl  = cardEls[i];
+        const valueEl = cardEl.querySelector('.card-value-reveal');
+        const val     = cardData.isOdd ? currentRound.oddValue : currentRound.commonValue;
+
+        valueEl.textContent = formatValue(currentRound.category.key, val);
+        valueEl.classList.add('visible');
+        if (cardData.isOdd) {
+          cardEl.classList.remove('tried', 'wrong');
+          cardEl.classList.add('correct');
+          valueEl.classList.add('odd-value');
+        }
+        cardEl.classList.add('done');
+        cardEl.style.pointerEvents = 'none';
+      });
+
+      const feedbackEl = document.getElementById('feedback-area');
+      feedbackEl.innerHTML = '';
+
+      const commonDisplay = formatValue(currentRound.category.key, currentRound.commonValue);
+      const catReveal = document.createElement('p');
+      catReveal.className = 'result-msg';
+      catReveal.innerHTML =
+        'The common <strong class="cat-highlight">' + currentRound.category.label +
+        '</strong> was: <strong class="cat-highlight">' + commonDisplay + '</strong>';
+      feedbackEl.appendChild(catReveal);
+
+      const resultMsg = document.createElement('p');
+      resultMsg.style.cssText = 'font-size:0.82rem; color:#a0a0b0;';
+      if (triesCount === 1) {
+        resultMsg.textContent = 'Found it on the first try!';
+      } else {
+        resultMsg.textContent = 'Got it in ' + triesCount + ' tries.';
+      }
+      feedbackEl.appendChild(resultMsg);
+
+      if (streak > 1) {
+        const streakMsg = document.createElement('p');
+        streakMsg.style.cssText = 'font-size:0.82rem; color:#a0a0b0;';
+        streakMsg.textContent = 'First-try streak: ' + streak + ' in a row!';
+        feedbackEl.appendChild(streakMsg);
+      }
+
+      const btnPlay = document.createElement('button');
+      btnPlay.id = 'btn-play-again';
+      btnPlay.textContent = 'Play Again';
+      btnPlay.addEventListener('click', startNewRound);
+      feedbackEl.appendChild(btnPlay);
+    }
+
+    // ── Round lifecycle ─────────────────────────────────────────────────────
+
+    function startNewRound() {
+      let roundData = pickRound();
+
+      if (!roundData) {
+        // Pool exhausted — reset used IDs and retry
+        usedProductIds.clear();
+        roundData = pickRound();
+      }
+
+      if (!roundData) {
+        document.getElementById('feedback-area').innerHTML =
+          '<p style="color:#cc5555">Unable to generate a round. Please reload.</p>';
+        return;
+      }
+
+      currentRound   = roundData;
+      triesThisRound = 0;
+      roundOver      = false;
+      triedIndices   = new Set();
+
+      // Mark all five products as used
+      for (const { product } of currentRound.cards) {
+        usedProductIds.add(product.id);
+      }
+
+      renderRound();
+    }
+
+    // ── Init ────────────────────────────────────────────────────────────────
+
+    async function init() {
+      streak = loadStreak();
+      renderStreakDisplay();
+
+      try {
+        const resp = await fetch('products.json');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        allProducts = await resp.json();
+      } catch (e) {
+        document.getElementById('error-msg').textContent =
+          'Could not load products.json. Run via a local server: python -m http.server 8000';
+        document.getElementById('error-overlay').classList.add('visible');
+        document.getElementById('loading-screen').classList.add('hidden');
+        return;
+      }
+
+      document.getElementById('loading-screen').classList.add('hidden');
+      buildCards();
+      startNewRound();
+    }
+
+    init();
+  </script>
+</body>
+</html>

@@ -274,6 +274,21 @@
       color: #1a1a2e;
       border-color: #c9a227;
     }
+    .btn-nav {
+      background: #2a2a4a;
+      color: #c9a227;
+      border: 1px solid #3a3a5a;
+      padding: 0.3rem 0.75rem;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.72rem;
+      cursor: pointer;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .btn-nav:hover { background: #c9a227; color: #1a1a2e; border-color: #c9a227; }
 
     /* ── Responsive ────────────────────────────────────────────────────── */
     @media (max-width: 900px) {
@@ -302,7 +317,9 @@
 
   <!-- Page header -->
   <header class="page-header">
+    <a href="index.html" class="btn-nav">&#8592; Gallery</a>
     <h1>Chrono Covers</h1>
+    <a href="odd1out.html" class="btn-nav">Odd One Out</a>
     <div class="difficulty-picker">
       <button class="diff-btn active" data-diff="easy">Easy</button>
       <button class="diff-btn" data-diff="medium">Medium</button>
