@@ -5,10 +5,12 @@ A single-page web application for browsing TSR (Tactical Studies Rules) product 
 spanning publications from 1974 onward (D&D, AD&D, and related products).
 
 ## Architecture
-- **index.html** — Self-contained SPA: all HTML, CSS, and JavaScript in one file (no build step)
-- **search.html** — Self-contained search/filter page: pill toggles for type/system/setting, live text search across title/code/authors/artist/blurb, thumbnail grid; clicking a result opens `index.html#id=<N>`
-- **spread.html** — Self-contained spread viewer: shows front + back covers side by side for a single product; toolbar with Back, Random, and collapsible Details; navigates all products; syncs position with `index.html` via localStorage and `#id=` hash; designed for wide/desktop displays
-- **debug.html** — Self-contained developer tool: shows all 23 fields per product in a 7-product context window (±3 around current); same dark theme; keyboard nav (←/→/Home/End)
+- **index.html** — Main SPA: HTML, CSS, and JavaScript in one file (no build step); links `common.css` and `utils.js`
+- **search.html** — Search/filter page: pill toggles for type/system/setting, live text search across title/code/authors/artist/blurb, thumbnail grid; clicking a result opens `index.html#id=<N>`; links `common.css` and `utils.js`
+- **spread.html** — Spread viewer: shows front + back covers side by side for a single product; toolbar with Back, Random, and collapsible Details; navigates all products; syncs position with `index.html` via localStorage and `#id=` hash; designed for wide/desktop displays; links `common.css` and `utils.js`
+- **debug.html** — Developer tool: shows all 23 fields per product in a 7-product context window (±3 around current); same dark theme; keyboard nav (←/→/Home/End)
+- **common.css** — Shared CSS: design tokens (CSS variables `--bg`, `--bg2`, `--card`, `--border`, `--accent`, `--text`, `--muted`) and error overlay styles; linked by all HTML pages
+- **utils.js** — Shared JS: `FILTERS_KEY`, `MONTH_NAMES`, `TEXT_FIELDS`, `loadActiveFilters()`, `applyFiltersToProducts()`; loaded by index.html, search.html, spread.html
 - **products.json** — Product data consumed by the viewer at runtime via `fetch()`
 - **convert_csv.py** — Python 3 script that regenerates `products.json` from the CSV source
 - **download_covers.py** — Downloads cover images by year into `covers/full/`
@@ -38,10 +40,10 @@ spanning publications from 1974 onward (D&D, AD&D, and related products).
 - `index.html` and `spread.html` read `tsr_active_filters` on load and navigate only within the filtered product set; position is tracked by product id (`tsr_current_id`) rather than array index
 
 ## Key Conventions
-- All app logic lives in `index.html`; keep it self-contained (`spread.html` is a separate self-contained page)
+- Page-specific logic stays in its own HTML file; shared filter logic lives in `utils.js`; shared styles in `common.css`
 - `products.json` is generated — never hand-edit it; run `convert_csv.py` instead
 - `products.json` entries include 23 fields; CSV columns with spaces are normalized to underscores (`product_code`, `module_code`); `cover_url` points to a local path (`covers/full/{id}.jpg`) if the image has been downloaded, otherwise the remote URL from covers.csv
-- Dark theme: background `#1a1a2e`, accent `#c9a227`, text `#e8e8e8`
+- Dark theme colors are defined as CSS variables in `common.css` — edit them there, not in individual HTML files
 - Responsive breakpoint at 900px (3-column → 1-column layout)
 
 ## Data Pipeline
@@ -74,7 +76,7 @@ Output:
 3. `python generate_thumbs.py <start_id> <end_id>` ← generate thumbnails for the new products
 
 ## generate_thumbs.py internals
-- Reads `covers/full/*.jpg` and writes 300px-wide JPEGs to `covers/thumb/`
+- Reads `covers/full/` (`.jpg`/`.jpeg`, case-insensitive) and writes 300px-wide JPEGs to `covers/thumb/`
 - Maintains aspect ratio; JPEG quality 75; uses Pillow (`pip install Pillow`)
 - Idempotent — existing files are skipped
 - Optional ID range: `python generate_thumbs.py <start_id> <end_id>`
