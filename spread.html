@@ -7,12 +7,13 @@
     <title>TSR Cover Spread</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            background: #1a1a2e;
-            color: #e8e8e8;
+            background: var(--bg);
+            color: var(--text);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             height: 100vh;
             display: flex;
@@ -53,7 +54,7 @@
             max-height: 100%;
             width: auto;
             display: block;
-            border: 1px solid #c9a227;
+            border: 1px solid var(--accent);
             box-shadow: 0 0 40px rgba(0,0,0,0.6), 0 0 10px rgba(201,162,39,0.15);
             background: #0d0d1a;
             transition: opacity 0.3s ease;
@@ -67,7 +68,7 @@
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
-            color: #a0a0b0;
+            color: var(--muted);
             letter-spacing: 0.1em;
         }
         .cover-loading.visible { display: flex; }
@@ -96,15 +97,15 @@
             align-items: center;
             gap: 0.75rem;
             padding: 0.5rem 1.5rem;
-            border-top: 1px solid #2a2a4a;
+            border-top: 1px solid var(--card);
             flex-shrink: 0;
             flex-wrap: wrap;
         }
 
         .toolbar button {
-            background: #2a2a4a;
-            color: #c9a227;
-            border: 1px solid #c9a227;
+            background: var(--card);
+            color: var(--accent);
+            border: 1px solid var(--accent);
             padding: 0.35rem 0.8rem;
             font-family: 'Cinzel', Georgia, serif;
             font-size: 0.78rem;
@@ -113,26 +114,26 @@
             border-radius: 3px;
             white-space: nowrap;
         }
-        .toolbar button:hover { background: #c9a227; color: #1a1a2e; }
-        .toolbar button.active { background: #c9a227; color: #1a1a2e; }
+        .toolbar button:hover { background: var(--accent); color: var(--bg); }
+        .toolbar button.active { background: var(--accent); color: var(--bg); }
 
         .tool-sep {
             width: 1px;
             height: 1.2em;
-            background: #3a3a5a;
+            background: var(--border);
             flex-shrink: 0;
         }
 
         .tool-year {
             font-family: 'Cinzel', Georgia, serif;
             font-size: 0.85rem;
-            color: #c9a227;
+            color: var(--accent);
             flex-shrink: 0;
         }
 
         .tool-credits {
             font-size: 0.8rem;
-            color: #a0a0b0;
+            color: var(--muted);
             flex: 1;
             min-width: 0;
             overflow: hidden;
@@ -147,8 +148,8 @@
             flex-direction: column;
             gap: 0.6rem;
             padding: 0.75rem 1.5rem 1rem;
-            border-top: 1px solid #2a2a4a;
-            background: #16213e;
+            border-top: 1px solid var(--card);
+            background: var(--bg2);
             flex-shrink: 0;
             max-height: 40vh;
             overflow-y: auto;
@@ -169,16 +170,16 @@
             font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: #c9a227;
+            color: var(--accent);
             margin-bottom: 0.2rem;
         }
         .meta-value {
             font-size: 0.88rem;
-            color: #e8e8e8;
+            color: var(--text);
             line-height: 1.5;
         }
         .blurb-item .meta-value { white-space: pre-wrap; color: #c8c8d8; }
-        .details-item a { color: #c9a227; text-decoration: none; }
+        .details-item a { color: var(--accent); text-decoration: none; }
         .details-item a:hover { text-decoration: underline; }
 
         /* ── Auto-play indicator ────────────────────────────────── */
@@ -186,7 +187,7 @@
         .autoplay-indicator {
             display: none;
             font-size: 0.72rem;
-            color: #c9a227;
+            color: var(--accent);
             letter-spacing: 0.08em;
             flex-shrink: 0;
             animation: blink 1s step-start infinite;
@@ -194,34 +195,6 @@
         body.autoplay-on .autoplay-indicator { display: inline; }
         @keyframes blink { 50% { opacity: 0.3; } }
 
-        /* ── Error overlay ───────────────────────────────────────── */
-
-        #error-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(26,26,46,0.95);
-            z-index: 200;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-        }
-        #error-overlay.visible { display: flex; }
-        .error-box {
-            max-width: 500px;
-            background: #16213e;
-            border: 1px solid #c9a227;
-            border-radius: 8px;
-            padding: 2rem;
-        }
-        .error-box h2 {
-            font-family: 'Cinzel', Georgia, serif;
-            color: #c9a227;
-            margin-bottom: 1rem;
-        }
-        .error-box p { color: #a0a0b0; font-size: 0.9rem; line-height: 1.6; }
-        .error-box a { color: #c9a227; }
     </style>
 </head>
 <body>
@@ -256,11 +229,11 @@
         <button id="btn-back">&#8592; Back</button>
         <div class="tool-sep"></div>
         <span class="tool-year" id="tool-year"></span>
-        <span id="filter-badge" style="display:none; font-size:0.72rem; color:#c9a227; flex-shrink:0;"></span>
+        <span id="filter-badge" style="display:none; font-size:0.72rem; color:var(--accent); flex-shrink:0;"></span>
         <span class="tool-credits" id="tool-credits"></span>
         <span class="autoplay-indicator">&#9654; AUTO</span>
-        <button id="btn-random">&#9860; Random</button>
-        <button id="btn-details">Details &#9660;</button>
+        <button id="btn-random" aria-label="Random product">&#9860; Random</button>
+        <button id="btn-details" aria-expanded="false">Details &#9660;</button>
     </div>
 
     <div class="details-panel" id="details-panel">
@@ -314,8 +287,8 @@
         </div>
     </div>
 
+    <script src="utils.js"></script>
     <script>
-        const FILTERS_KEY = 'tsr_active_filters';
         let allProducts = [];
         let products = [];
         let currentIndex = 0;
@@ -356,36 +329,6 @@
 
         function toggleAutoPlay() {
             if (autoPlayTimer) stopAutoPlay(); else startAutoPlay();
-        }
-
-        const MONTH_NAMES = ['January','February','March','April','May','June',
-                             'July','August','September','October','November','December'];
-
-        // ── Filter helpers ────────────────────────────────────────
-
-        function loadActiveFilters() {
-            try {
-                const raw = localStorage.getItem(FILTERS_KEY);
-                return raw ? JSON.parse(raw) : null;
-            } catch(e) { return null; }
-        }
-
-        function applyFiltersToProducts(all, filters) {
-            if (!filters) return all;
-            const { type, system, setting, text } = filters;
-            const q = (text || '').toLowerCase();
-            const TEXT_FIELDS = ['title','dtrpg_title','module_code','product_code',
-                                 'authors','cover_artist','blurb'];
-            return all.filter(p => {
-                if (type    && type.length    && !type.includes(p.type))                    return false;
-                if (system  && system.length  && !system.includes(p.system))                return false;
-                if (setting && setting.length && !setting.includes(p.setting ?? '__none__')) return false;
-                if (q) {
-                    const matches = TEXT_FIELDS.some(f => p[f] && p[f].toLowerCase().includes(q));
-                    if (!matches) return false;
-                }
-                return true;
-            });
         }
 
         // ── Hash routing ──────────────────────────────────────────
@@ -520,6 +463,7 @@
             const open = detPanel.classList.toggle('visible');
             btnDetails.classList.toggle('active', open);
             btnDetails.textContent = open ? 'Details \u25B2' : 'Details \u25BC';
+            btnDetails.setAttribute('aria-expanded', open ? 'true' : 'false');
         }
 
         // ── Event listeners ───────────────────────────────────────

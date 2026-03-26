@@ -7,12 +7,13 @@
     <title>TSR Virtual Exhibt — Cover Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            background: #1a1a2e;
-            color: #e8e8e8;
+            background: var(--bg);
+            color: var(--text);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
@@ -24,43 +25,9 @@
             top: 0;
             left: 0;
             height: 3px;
-            background: #c9a227;
+            background: var(--accent);
             transition: width 0.3s ease;
             z-index: 100;
-        }
-
-        /* Error overlay */
-        #error-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(26, 26, 46, 0.95);
-            z-index: 200;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-        }
-        #error-overlay.visible { display: flex; }
-        #error-overlay .error-box {
-            max-width: 500px;
-            background: #16213e;
-            border: 1px solid #c9a227;
-            border-radius: 8px;
-            padding: 2rem;
-        }
-        #error-overlay h2 {
-            font-family: 'Cinzel', Georgia, serif;
-            color: #c9a227;
-            margin-bottom: 1rem;
-        }
-        #error-overlay code {
-            display: block;
-            background: #0d0d1a;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            margin: 0.5rem 0;
-            color: #c9a227;
         }
 
         /* Welcome splash */
@@ -77,8 +44,8 @@
         .splash-box {
             max-width: 520px;
             width: 100%;
-            background: #2a2a4a;
-            border: 1px solid #c9a227;
+            background: var(--card);
+            border: 1px solid var(--accent);
             border-radius: 8px;
             padding: 2rem;
             max-height: 90vh;
@@ -86,12 +53,12 @@
         }
         .splash-box h2 {
             font-family: 'Cinzel', Georgia, serif;
-            color: #c9a227;
+            color: var(--accent);
             margin: 0 0 0.4rem;
             font-size: 1.3rem;
         }
         .splash-sub {
-            color: #a0a0b0;
+            color: var(--muted);
             margin: 0 0 1.4rem;
             font-size: 0.9rem;
         }
@@ -108,17 +75,17 @@
             align-items: baseline;
             gap: 0.6rem;
             font-size: 0.88rem;
-            color: #e8e8e8;
+            color: var(--text);
         }
         .splash-controls .key {
             display: inline-block;
-            background: #16213e;
-            border: 1px solid #c9a227;
+            background: var(--bg2);
+            border: 1px solid var(--accent);
             border-radius: 4px;
             padding: 0.1rem 0.45rem;
             font-family: monospace;
             font-size: 0.82rem;
-            color: #c9a227;
+            color: var(--accent);
             white-space: nowrap;
             flex-shrink: 0;
             min-width: 5.5rem;
@@ -128,8 +95,8 @@
             display: block;
             margin: 0 auto;
             background: transparent;
-            border: 1px solid #c9a227;
-            color: #c9a227;
+            border: 1px solid var(--accent);
+            color: var(--accent);
             font-family: 'Cinzel', Georgia, serif;
             font-size: 0.9rem;
             padding: 0.5rem 1.6rem;
@@ -138,13 +105,13 @@
             transition: background 0.2s, color 0.2s;
         }
         #splash-dismiss:hover {
-            background: #c9a227;
-            color: #1a1a2e;
+            background: var(--accent);
+            color: var(--bg);
         }
         #btn-help {
             background: transparent;
-            border: 1px solid #3a3a5a;
-            color: #a0a0b0;
+            border: 1px solid var(--border);
+            color: var(--muted);
             font-size: 0.75rem;
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
@@ -152,8 +119,8 @@
             transition: border-color 0.2s, color 0.2s;
         }
         #btn-help:hover {
-            border-color: #c9a227;
-            color: #c9a227;
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         /* Main viewer grid */
@@ -194,9 +161,9 @@
             flex-wrap: nowrap;
         }
         .ctrl-nav button {
-            background: #2a2a4a;
-            color: #c9a227;
-            border: 1px solid #c9a227;
+            background: var(--card);
+            color: var(--accent);
+            border: 1px solid var(--accent);
             padding: 0.4rem 0.8rem;
             font-family: 'Cinzel', Georgia, serif;
             font-size: 0.78rem;
@@ -205,11 +172,11 @@
             border-radius: 3px;
             flex-shrink: 0;
         }
-        .ctrl-nav button:hover:not(:disabled) { background: #c9a227; color: #1a1a2e; }
+        .ctrl-nav button:hover:not(:disabled) { background: var(--accent); color: var(--bg); }
         .ctrl-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
         .ctrl-nav #counter {
             font-size: 0.8rem;
-            color: #a0a0b0;
+            color: var(--muted);
             min-width: 60px;
             text-align: center;
         }
@@ -220,9 +187,9 @@
             gap: 0.4rem;
         }
         .ctrl-row button {
-            background: #2a2a4a;
-            color: #c9a227;
-            border: 1px solid #c9a227;
+            background: var(--card);
+            color: var(--accent);
+            border: 1px solid var(--accent);
             padding: 0.4rem 0.8rem;
             font-family: 'Cinzel', Georgia, serif;
             font-size: 0.78rem;
@@ -230,13 +197,13 @@
             transition: background 0.2s, color 0.2s;
             border-radius: 3px;
         }
-        .ctrl-row button:hover:not(:disabled) { background: #c9a227; color: #1a1a2e; }
+        .ctrl-row button:hover:not(:disabled) { background: var(--accent); color: var(--bg); }
         .ctrl-row button:disabled { opacity: 0.3; cursor: not-allowed; }
-        .ctrl-row button.active { background: #c9a227; color: #1a1a2e; }
+        .ctrl-row button.active { background: var(--accent); color: var(--bg); }
         .ctrl-row a.ctrl-game-link {
-            background: #2a2a4a;
-            color: #c9a227;
-            border: 1px solid #c9a227;
+            background: var(--card);
+            color: var(--accent);
+            border: 1px solid var(--accent);
             padding: 0.4rem 0.8rem;
             font-family: 'Cinzel', Georgia, serif;
             font-size: 0.78rem;
@@ -246,11 +213,11 @@
             text-decoration: none;
             text-align: center;
         }
-        .ctrl-row a.ctrl-game-link:hover { background: #c9a227; color: #1a1a2e; }
+        .ctrl-row a.ctrl-game-link:hover { background: var(--accent); color: var(--bg); }
         .ctrl-row select {
-            background: #2a2a4a;
-            color: #e8e8e8;
-            border: 1px solid #3a3a5a;
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
             padding: 0.3rem 0.5rem;
             border-radius: 3px;
             font-size: 0.8rem;
@@ -279,8 +246,8 @@
             position: absolute;
             top: 0;
             font-size: 0.65rem;
-            color: #c9a227;
-            background: #1a1a2e;
+            color: var(--accent);
+            background: var(--bg);
             padding: 0 3px;
             pointer-events: none;
             transform: translateX(-50%);
@@ -296,13 +263,13 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: #c9a227;
+            color: var(--accent);
             margin-bottom: 0.3rem;
         }
         .meta-value {
             display: block;
             font-size: 1.1rem;
-            color: #e8e8e8;
+            color: var(--text);
             line-height: 1.4;
         }
         .meta-item.hidden { display: none; }
@@ -319,7 +286,7 @@
 
         .cover-frame {
             position: relative;
-            border: 1px solid #c9a227;
+            border: 1px solid var(--accent);
             box-shadow: 0 0 40px rgba(0, 0, 0, 0.6), 0 0 10px rgba(201, 162, 39, 0.15);
             background: #0d0d1a;
             line-height: 0;
@@ -371,7 +338,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            color: #a0a0b0;
+            color: var(--muted);
             font-size: 0.9rem;
             min-width: 300px;
             min-height: 400px;
@@ -383,19 +350,19 @@
             font-family: 'Cinzel', Georgia, serif;
             font-size: 1.1rem;
             font-weight: 700;
-            color: #e8e8e8;
+            color: var(--text);
             line-height: 1.3;
             text-align: right;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
-            border-bottom: 1px solid #2a2a4a;
+            border-bottom: 1px solid var(--card);
         }
 
         /* Decorative divider */
         .divider {
             grid-column: 1 / -1;
             height: 1px;
-            background: linear-gradient(to right, transparent, #c9a227, transparent);
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
             margin: 0;
         }
 
@@ -407,7 +374,7 @@
         .details-toggle {
             background: none;
             border: none;
-            color: #a0a0b0;
+            color: var(--muted);
             font-size: 0.75rem;
             cursor: pointer;
             padding: 0.3rem 0;
@@ -416,10 +383,10 @@
             text-align: right;
             font-family: inherit;
         }
-        .details-toggle:hover { color: #c9a227; }
+        .details-toggle:hover { color: var(--accent); }
         .details-body {
             padding: 0.75rem 0 0.5rem;
-            border-top: 1px solid #2a2a4a;
+            border-top: 1px solid var(--card);
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
@@ -430,12 +397,12 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: #c9a227;
+            color: var(--accent);
             margin-bottom: 0.2rem;
         }
         .details-item .meta-value {
             font-size: 0.9rem;
-            color: #e8e8e8;
+            color: var(--text);
             line-height: 1.5;
         }
         .details-item.blurb-item {
@@ -448,7 +415,7 @@
             white-space: pre-wrap;
         }
         .details-item a {
-            color: #c9a227;
+            color: var(--accent);
             text-decoration: none;
         }
         .details-item a:hover { text-decoration: underline; }
@@ -461,25 +428,25 @@
             gap: 0.5rem;
             cursor: pointer;
             font-size: 0.85rem;
-            color: #a0a0b0;
+            color: var(--muted);
             user-select: none;
         }
         .auto-toggle input { display: none; }
         .toggle-slider {
             width: 40px;
             height: 22px;
-            background: #2a2a4a;
+            background: var(--card);
             border-radius: 11px;
             position: relative;
             transition: background 0.3s;
-            border: 1px solid #3a3a5a;
+            border: 1px solid var(--border);
         }
         .toggle-slider::after {
             content: '';
             position: absolute;
             width: 16px;
             height: 16px;
-            background: #a0a0b0;
+            background: var(--muted);
             border-radius: 50%;
             top: 2px;
             left: 2px;
@@ -487,11 +454,11 @@
         }
         .auto-toggle input:checked + .toggle-slider {
             background: rgba(201, 162, 39, 0.3);
-            border-color: #c9a227;
+            border-color: var(--accent);
         }
         .auto-toggle input:checked + .toggle-slider::after {
             transform: translateX(18px);
-            background: #c9a227;
+            background: var(--accent);
         }
 
         /* Timeline scrubber */
@@ -510,27 +477,27 @@
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background: #c9a227;
+            background: var(--accent);
             cursor: pointer;
-            border: 2px solid #1a1a2e;
+            border: 2px solid var(--bg);
             box-shadow: 0 0 4px rgba(201, 162, 39, 0.5);
         }
         #scrubber::-moz-range-thumb {
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background: #c9a227;
+            background: var(--accent);
             cursor: pointer;
-            border: 2px solid #1a1a2e;
+            border: 2px solid var(--bg);
             box-shadow: 0 0 4px rgba(201, 162, 39, 0.5);
         }
         #scrubber::-moz-range-progress {
-            background: #c9a227;
+            background: var(--accent);
             height: 4px;
             border-radius: 2px 0 0 2px;
         }
         #scrubber::-moz-range-track {
-            background: #2a2a4a;
+            background: var(--card);
             height: 4px;
             border-radius: 2px;
         }
@@ -629,7 +596,7 @@
                 <span class="meta-value" id="val-artist"></span>
             </div>
             <div class="details-panel" id="details-panel">
-                <button class="details-toggle" id="details-toggle">Details &#9660;</button>
+                <button class="details-toggle" id="details-toggle" aria-expanded="false">Details &#9660;</button>
                 <div class="details-body collapsed" id="details-body">
                     <div class="details-item" id="det-date" style="display:none">
                         <span class="meta-label">Published</span>
@@ -700,12 +667,12 @@
             </nav>
             <div class="ctrl-row">
                 <button id="btn-random" title="Random (R)">&#9860; Random</button>
-                <button id="btn-search" title="Search &amp; Filter">&#128269;</button>
-                <button id="btn-help" title="Help / Controls">?</button>
+                <button id="btn-search" title="Search &amp; Filter" aria-label="Search and filter">&#128269;</button>
+                <button id="btn-help" title="Help / Controls" aria-label="Help / Controls">?</button>
             </div>
             <div class="ctrl-row">
-                <button id="btn-flip" title="Flip cover (F)" disabled>&#8635; Flip</button>
-                <button id="btn-spread" title="Spread view (B)" disabled>&#9707; Spread</button>
+                <button id="btn-flip" title="Flip cover (F)" aria-label="Flip to back cover" disabled>&#8635; Flip</button>
+                <button id="btn-spread" title="Spread view (B)" aria-label="Open spread view" disabled>&#9707; Spread</button>
                 <button id="btn-size" title="Toggle image size">Big</button>
             </div>
             <div class="ctrl-row">
@@ -731,7 +698,7 @@
                 </select>
             </div>
             <div class="ctrl-row" id="filter-indicator" style="display:none;">
-                <span id="filter-label" style="font-size:0.72rem; color:#c9a227; flex:1; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;"></span>
+                <span id="filter-label" style="font-size:0.72rem; color:var(--accent); flex:1; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;"></span>
                 <button id="btn-clear-filters" title="Clear filters">&#215; Clear</button>
             </div>
             <div class="ctrl-scrubber">
@@ -756,8 +723,8 @@
         </footer>
     </div>
 
+    <script src="utils.js"></script>
     <script>
-        const FILTERS_KEY = 'tsr_active_filters';
         let allProducts = [];
         let products = [];
         let currentIndex = 0;
@@ -795,36 +762,6 @@
         const valArtist = document.getElementById('val-artist');
         const metaAuthors = document.getElementById('meta-authors');
         const metaArtist = document.getElementById('meta-artist');
-
-        const MONTH_NAMES = ['January','February','March','April','May','June',
-                             'July','August','September','October','November','December'];
-
-        // ── Filter helpers ────────────────────────────────────────────────────
-
-        function loadActiveFilters() {
-            try {
-                const raw = localStorage.getItem(FILTERS_KEY);
-                return raw ? JSON.parse(raw) : null;
-            } catch(e) { return null; }
-        }
-
-        function applyFiltersToProducts(all, filters) {
-            if (!filters) return all;
-            const { type, system, setting, text } = filters;
-            const q = (text || '').toLowerCase();
-            const TEXT_FIELDS = ['title','dtrpg_title','module_code','product_code',
-                                 'authors','cover_artist','blurb'];
-            return all.filter(p => {
-                if (type    && type.length    && !type.includes(p.type))                    return false;
-                if (system  && system.length  && !system.includes(p.system))                return false;
-                if (setting && setting.length && !setting.includes(p.setting ?? '__none__')) return false;
-                if (q) {
-                    const matches = TEXT_FIELDS.some(f => p[f] && p[f].toLowerCase().includes(q));
-                    if (!matches) return false;
-                }
-                return true;
-            });
-        }
 
         // ── Filter indicator ──────────────────────────────────────────────────
 
@@ -998,7 +935,7 @@
             // Sync scrubber
             const pct = products.length > 1 ? (currentIndex / (products.length - 1)) * 100 : 0;
             scrubber.value = currentIndex;
-            scrubber.style.background = `linear-gradient(to right, #c9a227 ${pct}%, #2a2a4a ${pct}%)`;
+            scrubber.style.background = `linear-gradient(to right, var(--accent) ${pct}%, var(--card) ${pct}%)`;
             const bubble = document.getElementById('scrubber-year-bubble');
             bubble.textContent = p.year ?? '';
             const thumbR = 7;
@@ -1104,6 +1041,7 @@
             const toggle = document.getElementById('details-toggle');
             body.classList.toggle('collapsed', !detailsOpen);
             toggle.textContent = detailsOpen ? '\u25b2 Details' : '\u25bc Details';
+            toggle.setAttribute('aria-expanded', detailsOpen ? 'true' : 'false');
         }
 
         // ── Navigation ────────────────────────────────────────────────────────
