@@ -5,10 +5,11 @@ behind Dungeons & Dragons from 1974 through the late 1990s.
 
 ## Features
 
-- Navigate hundreds of product covers with keyboard (← →) or on-screen buttons
-- Auto-advance slideshow with configurable intervals (1 s / 3 s / 5 s / 10 s)
-- Metadata display: title, year, authors, cover artist
-- Progress bar and position persistence via `localStorage`
+- **Cover viewer** (`index.html`) — navigate hundreds of product covers with keyboard (← →) or on-screen buttons; auto-advance slideshow; metadata panel; progress bar; position persistence via `localStorage`
+- **Search & filter** (`search.html`) — pill toggles for type, system, and setting; live text search across title, module code, authors, artist, and blurb; thumbnail grid results
+- **Spread viewer** (`spread.html`) — front and back covers side by side; collapsible details panel; syncs position with the main viewer
+- **Mini-games** (`game.html`, `odd1out.html`) — Chrono Covers (sort covers into chronological order) and Odd One Out (spot the cover from a different year)
+- **Filter persistence** — active filters carry across all pages via `localStorage`
 - Responsive layout — works on desktop and mobile
 
 ## Quick Start
@@ -28,23 +29,48 @@ behind Dungeons & Dragons from 1974 through the late 1990s.
 
 ## Data Pipeline
 
-Product data is stored in `products.json`, generated from the master CSV:
+Product data lives in `products.json`, generated from four CSV source files in the
+sister folder `../tsr_products/`.
+
+### Regenerate JSON only
 
 ```bash
 python convert_csv.py
 ```
 
-Edit `../tsr_products/tsr_products.csv` → run the script → commit the updated `products.json`.
+### Add a new year of cover images (full workflow)
+
+```bash
+python download_covers.py <year>   # download front + back covers to covers/full/
+python convert_csv.py              # regenerate products.json (picks up local paths)
+python generate_thumbs.py <start_id> <end_id>  # generate 300px thumbnails to covers/thumb/
+```
+
+Already-downloaded files are skipped at each step (all scripts are idempotent).
 
 ## Project Structure
 
 ```
 tsr_products_visualizer/
-├── index.html                        # SPA — all UI, CSS, and JS
-├── products.json                     # Generated product data (do not hand-edit)
-├── convert_csv.py                    # CSV → JSON data pipeline
-├── ../tsr_products/tsr_products.csv  # Master source data (sister folder)
-├── CLAUDE.md                         # AI assistant instructions
+├── index.html              # Cover viewer SPA
+├── search.html             # Search and filter page
+├── spread.html             # Side-by-side spread viewer
+├── game.html               # Chrono Covers mini-game
+├── odd1out.html            # Odd One Out mini-game
+├── debug.html              # Developer tool (all fields, context window)
+├── products.json           # Generated product data (do not hand-edit)
+├── convert_csv.py          # CSV → JSON data pipeline
+├── download_covers.py      # Downloads cover images by year to covers/full/
+├── generate_thumbs.py      # Generates 300px thumbnails to covers/thumb/
+├── covers/
+│   ├── full/               # Full-size covers: {id}.jpg / {id}-back.jpg
+│   └── thumb/              # 300px-wide JPEG thumbnails
+├── ../tsr_products/
+│   ├── tsr_products.csv    # Master product table (18 cols)
+│   ├── covers.csv          # Cover URLs (front + back)
+│   ├── blurbs.csv          # Product blurb text
+│   └── dtrpg.csv           # DriveThruRPG links
+├── CLAUDE.md               # AI assistant instructions
 └── .gitignore
 ```
 
