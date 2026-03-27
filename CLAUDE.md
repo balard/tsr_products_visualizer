@@ -1,4 +1,4 @@
-# TSR Products Visualizer — Claude Instructions
+# DnD Virtual Exhibit — Claude Instructions
 
 ## Project Overview
 A single-page web application for browsing TSR (Tactical Studies Rules) product cover art,
@@ -110,4 +110,4 @@ python -m http.server 8000
 ```
 
 ## GitHub
-https://github.com/balard/tsr_products_visualizer
+https://github.com/balard/dnd_virtual_exhibit

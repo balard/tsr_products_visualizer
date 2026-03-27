@@ -1,5 +1,5 @@
 /**
- * utils.js — Shared utilities for TSR Products Visualizer
+ * utils.js — Shared utilities for DnD Virtual Exhibit
  * Provides filter helpers and shared constants used across index.html,
  * search.html, and spread.html.
  */

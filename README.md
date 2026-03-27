@@ -1,4 +1,4 @@
-# TSR Products Visualizer
+# DnD Virtual Exhibit
 
 A browser-based cover gallery for TSR (Tactical Studies Rules) products — the publisher
 behind Dungeons & Dragons from 1974 through the late 1990s.
@@ -16,8 +16,8 @@ behind Dungeons & Dragons from 1974 through the late 1990s.
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/balard/tsr_products_visualizer.git
-   cd tsr_products_visualizer
+   git clone https://github.com/balard/dnd_virtual_exhibit.git
+   cd dnd_virtual_exhibit
    ```
 
 2. Serve locally (`fetch()` requires HTTP, not `file://`):
@@ -51,7 +51,7 @@ Already-downloaded files are skipped at each step (all scripts are idempotent).
 ## Project Structure
 
 ```
-tsr_products_visualizer/
+dnd_virtual_exhibit/
 ├── index.html              # Cover viewer SPA
 ├── search.html             # Search and filter page
 ├── spread.html             # Side-by-side spread viewer
