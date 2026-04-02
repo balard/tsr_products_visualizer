@@ -392,21 +392,28 @@
             gap: 0.75rem;
         }
         .details-body.collapsed { display: none; }
+        .details-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
         .details-item .meta-label {
-            display: block;
+            flex: 0 0 auto;
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: var(--accent);
-            margin-bottom: 0.2rem;
+            white-space: nowrap;
         }
         .details-item .meta-value {
+            flex: 1 1 auto;
             font-size: 0.9rem;
             color: var(--text);
             line-height: 1.5;
         }
         .details-item.blurb-item {
-            grid-column: 1 / -1;
+            flex-direction: column;
+            align-items: flex-start;
             font-size: 0.88rem;
             line-height: 1.6;
             color: #c8c8d8;
