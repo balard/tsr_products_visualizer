@@ -117,6 +117,7 @@ with open(MAIN_CSV, newline='', encoding='utf-8') as f:
             'type':          str_or_none(row.get('type', '')),
             'system':        str_or_none(row.get('system', '')),
             'setting':       str_or_none(row.get('setting', '')),
+            'publisher':     str_or_none(row.get('publisher', '')),
             'confidence':    str_or_none(row.get('confidence', '')),
             'edition':       str_or_none(row.get('edition', '')),
             'authors':       row.get('authors', '').strip() or None,

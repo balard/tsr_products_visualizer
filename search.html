@@ -262,6 +262,10 @@
             <span class="filter-label">Setting</span>
             <div class="pill-group" id="pills-setting"></div>
         </div>
+        <div class="filter-row">
+            <span class="filter-label">Publisher</span>
+            <div class="pill-group" id="pills-publisher"></div>
+        </div>
     </div>
 
     <div class="results-area">
@@ -274,9 +278,10 @@
         let products = [];
 
         const activeFilters = {
-            type:    new Set(),
-            system:  new Set(),
-            setting: new Set()
+            type:      new Set(),
+            system:    new Set(),
+            setting:   new Set(),
+            publisher: new Set()
         };
         let searchText = '';
         let debounceTimer = null;
@@ -295,16 +300,18 @@
             const hasFilters = activeFilters.type.size > 0
                 || activeFilters.system.size > 0
                 || activeFilters.setting.size > 0
+                || activeFilters.publisher.size > 0
                 || searchText.length > 0;
             btnClearFilters.style.display = hasFilters ? '' : 'none';
         }
 
         function saveFilters() {
             localStorage.setItem(FILTERS_KEY, JSON.stringify({
-                type:    [...activeFilters.type],
-                system:  [...activeFilters.system],
-                setting: [...activeFilters.setting],
-                text:    searchText
+                type:      [...activeFilters.type],
+                system:    [...activeFilters.system],
+                setting:   [...activeFilters.setting],
+                publisher: [...activeFilters.publisher],
+                text:      searchText
             }));
             updateClearButton();
         }
@@ -313,9 +320,10 @@
             let saved;
             try { saved = JSON.parse(localStorage.getItem(FILTERS_KEY)); } catch(e) {}
             if (!saved) return;
-            for (const val of (saved.type    || [])) activeFilters.type.add(val);
-            for (const val of (saved.system  || [])) activeFilters.system.add(val);
-            for (const val of (saved.setting || [])) activeFilters.setting.add(val);
+            for (const val of (saved.type      || [])) activeFilters.type.add(val);
+            for (const val of (saved.system    || [])) activeFilters.system.add(val);
+            for (const val of (saved.setting   || [])) activeFilters.setting.add(val);
+            for (const val of (saved.publisher || [])) activeFilters.publisher.add(val);
             searchText = saved.text || '';
             searchInput.value = searchText;
         }
@@ -324,6 +332,7 @@
             activeFilters.type.clear();
             activeFilters.system.clear();
             activeFilters.setting.clear();
+            activeFilters.publisher.clear();
             searchText = '';
             searchInput.value = '';
             document.querySelectorAll('.pill.active').forEach(p => {
@@ -349,9 +358,10 @@
             const q = searchText.toLowerCase();
             return products.filter(p =>
                 matchesText(p, q) &&
-                (activeFilters.type.size === 0    || activeFilters.type.has(p.type)) &&
-                (activeFilters.system.size === 0  || activeFilters.system.has(p.system)) &&
-                (activeFilters.setting.size === 0 || activeFilters.setting.has(p.setting ?? '__none__'))
+                (activeFilters.type.size === 0      || activeFilters.type.has(p.type)) &&
+                (activeFilters.system.size === 0    || activeFilters.system.has(p.system)) &&
+                (activeFilters.setting.size === 0   || activeFilters.setting.has(p.setting ?? '__none__')) &&
+                (activeFilters.publisher.size === 0 || activeFilters.publisher.has(p.publisher))
             );
         }
 
@@ -447,14 +457,16 @@
 
         function buildAllPills() {
             // Count occurrences
-            const counts = { type: {}, system: {}, setting: {} };
+            const counts = { type: {}, system: {}, setting: {}, publisher: {} };
             for (const p of products) {
-                const t = p.type    ?? null;
-                const s = p.system  ?? null;
-                const g = p.setting ?? '__none__';
-                if (t) counts.type[t]   = (counts.type[t]   || 0) + 1;
-                if (s) counts.system[s] = (counts.system[s] || 0) + 1;
-                counts.setting[g]       = (counts.setting[g] || 0) + 1;
+                const t = p.type      ?? null;
+                const s = p.system    ?? null;
+                const g = p.setting   ?? '__none__';
+                const u = p.publisher ?? null;
+                if (t) counts.type[t]       = (counts.type[t]       || 0) + 1;
+                if (s) counts.system[s]     = (counts.system[s]     || 0) + 1;
+                counts.setting[g]           = (counts.setting[g]    || 0) + 1;
+                if (u) counts.publisher[u]  = (counts.publisher[u]  || 0) + 1;
             }
 
             // Sort type and system alphabetically; setting by count desc, (none) last
@@ -474,9 +486,14 @@
                 sortedSetting.push({ value: '__none__', count: counts.setting['__none__'] });
             }
 
-            buildPills('pills-type',    'type',    sortedType);
-            buildPills('pills-system',  'system',  sortedSystem);
-            buildPills('pills-setting', 'setting', sortedSetting);
+            const sortedPublisher = Object.entries(counts.publisher)
+                .sort((a, b) => a[0].localeCompare(b[0]))
+                .map(([v, c]) => ({ value: v, count: c }));
+
+            buildPills('pills-type',      'type',      sortedType);
+            buildPills('pills-system',    'system',    sortedSystem);
+            buildPills('pills-setting',   'setting',   sortedSetting);
+            buildPills('pills-publisher', 'publisher', sortedPublisher);
         }
 
         // ── Search input ──────────────────────────────────────────
@@ -522,6 +539,11 @@
             });
             document.querySelectorAll('#pills-setting .pill').forEach(pill => {
                 const active = activeFilters.setting.has(pill.dataset.value);
+                pill.classList.toggle('active', active);
+                pill.setAttribute('aria-pressed', active ? 'true' : 'false');
+            });
+            document.querySelectorAll('#pills-publisher .pill').forEach(pill => {
+                const active = activeFilters.publisher.has(pill.dataset.value);
                 pill.classList.toggle('active', active);
                 pill.setAttribute('aria-pressed', active ? 'true' : 'false');
             });

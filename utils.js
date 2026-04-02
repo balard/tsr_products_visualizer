@@ -31,12 +31,13 @@ function loadActiveFilters() {
  */
 function applyFiltersToProducts(all, filters) {
     if (!filters) return all;
-    const { type, system, setting, text } = filters;
+    const { type, system, setting, publisher, text } = filters;
     const q = (text || '').toLowerCase();
     return all.filter(p => {
         if (type    && type.length    && !type.includes(p.type))                    return false;
         if (system  && system.length  && !system.includes(p.system))                return false;
-        if (setting && setting.length && !setting.includes(p.setting ?? '__none__')) return false;
+        if (setting   && setting.length   && !setting.includes(p.setting ?? '__none__'))   return false;
+        if (publisher && publisher.length && !publisher.includes(p.publisher))            return false;
         if (q) {
             const matches = TEXT_FIELDS.some(f => p[f] && p[f].toLowerCase().includes(q));
             if (!matches) return false;
