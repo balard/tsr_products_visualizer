@@ -166,10 +166,13 @@
         }
 
         .result-card {
-            cursor: pointer;
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
+        }
+
+        .card-link {
+            display: block;
             text-decoration: none;
         }
 
@@ -181,7 +184,7 @@
             border: 1px solid var(--card);
             transition: border-color 0.2s, box-shadow 0.2s;
         }
-        .result-card:hover .card-img-wrap {
+        .card-link:hover .card-img-wrap {
             border-color: var(--accent);
             box-shadow: 0 0 12px rgba(201,162,39,0.3);
         }
@@ -383,10 +386,13 @@
 
             const frag = document.createDocumentFragment();
             for (const p of filtered) {
-                const card = document.createElement('a');
+                const card = document.createElement('div');
                 card.className = 'result-card';
-                card.href = 'index.html#id=' + p.id;
-                card.addEventListener('click', () => {
+
+                const link = document.createElement('a');
+                link.className = 'card-link';
+                link.href = 'index.html#id=' + p.id;
+                link.addEventListener('click', () => {
                     localStorage.setItem('tsr_current_id', p.id);
                 });
 
@@ -401,6 +407,7 @@
                 img.onload  = () => img.classList.remove('loading');
                 img.onerror = () => img.classList.remove('loading');
                 imgWrap.appendChild(img);
+                link.appendChild(imgWrap);
 
                 const titleEl = document.createElement('div');
                 titleEl.className = 'card-title';
@@ -411,7 +418,7 @@
                 const parts = [p.year, p.type].filter(Boolean);
                 metaEl.textContent = parts.join(' · ');
 
-                card.appendChild(imgWrap);
+                card.appendChild(link);
                 card.appendChild(titleEl);
                 card.appendChild(metaEl);
                 frag.appendChild(card);
