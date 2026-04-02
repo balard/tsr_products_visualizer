@@ -92,7 +92,7 @@ Output:
 - Joins 4 CSV files on `id`: tsr_products.csv (main), covers.csv, blurbs.csv, dtrpg.csv
 - Exports 24 fields per product: id, order, year, month, day, product_code, title, module_code, type, system, setting, publisher, confidence, edition, authors, pages, isbn, cover_url, cover_artist, semester, backcover_url, blurb, dtrpg_url, dtrpg_title
 - CSV columns with spaces (`product code`, `module code`) are normalized to underscores
-- `cover_artist` normalization: strips `LIKELY:` prefix; converts `N/A` or empty to `null`
+- `cover_artist` normalization: strips `LIKELY:` prefix; converts empty/blank to `null`; keeps `N/A` as the string `"N/A"` (meaning artist credit is explicitly not applicable, distinct from unknown/missing)
 - `season` field removed (no longer in source data)
 - Always reads local CSV files directly (no remote URL fallback)
 

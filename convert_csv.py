@@ -98,8 +98,10 @@ with open(MAIN_CSV, newline='', encoding='utf-8') as f:
             break
 
         artist = row.get('cover_artist', '').strip()
-        if artist.upper() == 'N/A' or not artist:
+        if not artist:
             artist = None
+        elif artist.upper() == 'N/A':
+            artist = 'N/A'
         elif artist.upper().startswith('LIKELY:'):
             artist = artist[len('LIKELY:'):].strip()
 
