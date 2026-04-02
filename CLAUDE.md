@@ -98,10 +98,11 @@ Output:
 
 ## Image Download Progress
 Years fully downloaded to `covers/full/` (run `download_covers.py` then regenerate JSON):
-- Front covers: 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓, 1982 ✓, 1983 ✓, 1984 ✓, 1985 ✓, 1986 ✓, 1987 ✓, 1988 ✓, 1989 ✓, 1990 ✓, 1991 ✓, 1992 ✓, 1993 ✓, 1994 ✓, 1995 ✓, 1996 ✓, 1997 ✓, 1998 ✓, 1999 ✓, 2013 ✓
-- Back covers: 1974–1999 ✓, 2013 ✓ (id=420 [1992] back added manually)
-- Front/back covers not yet downloaded: 2000–2008 (3rd Ed era, WotC products — using remote URLs)
-- Years with no products (skip): 2009–2012
+- Front covers: 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓, 1982 ✓, 1983 ✓, 1984 ✓, 1985 ✓, 1986 ✓, 1987 ✓, 1988 ✓, 1989 ✓, 1990 ✓, 1991 ✓, 1992 ✓, 1993 ✓, 1994 ✓, 1995 ✓, 1996 ✓, 1997 ✓, 1998 ✓, 1999 ✓, 2008 ✓ (ids 1033–1035), 2012 ✓ (ids 1037–1039), 2013 ✓
+- Back covers: 1974–1999 ✓, 2008 ✓ (ids 1033–1035), 2012 ✓ (ids 1037–1039), 2013 ✓ (id=420 [1992] back added manually)
+- id=868 (The Book of Regency, 2002) has no back cover — intentionally absent, confirmed dead link
+- Front/back covers not yet downloaded: 2000–2007 (3rd Ed era, WotC products — not yet in products.json)
+- Years with no products (skip): 2009–2011
 
 ## Running Locally
 Open `index.html` via a local server (required — `fetch()` won't work over `file://`):
