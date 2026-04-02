@@ -469,25 +469,21 @@
                 if (u) counts.publisher[u]  = (counts.publisher[u]  || 0) + 1;
             }
 
-            // Sort type and system alphabetically; setting by count desc, (none) last
+            // Order by first appearance in products.json; (no setting) stays last
             const sortedType = Object.entries(counts.type)
-                .sort((a, b) => a[0].localeCompare(b[0]))
                 .map(([v, c]) => ({ value: v, count: c }));
 
             const sortedSystem = Object.entries(counts.system)
-                .sort((a, b) => a[0].localeCompare(b[0]))
                 .map(([v, c]) => ({ value: v, count: c }));
 
             const sortedSetting = Object.entries(counts.setting)
                 .filter(([v]) => v !== '__none__')
-                .sort((a, b) => b[1] - a[1])
                 .map(([v, c]) => ({ value: v, count: c }));
             if (counts.setting['__none__']) {
                 sortedSetting.push({ value: '__none__', count: counts.setting['__none__'] });
             }
 
             const sortedPublisher = Object.entries(counts.publisher)
-                .sort((a, b) => a[0].localeCompare(b[0]))
                 .map(([v, c]) => ({ value: v, count: c }));
 
             buildPills('pills-type',      'type',      sortedType);
