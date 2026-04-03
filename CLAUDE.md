@@ -95,13 +95,17 @@ Output:
 - `cover_artist` normalization: strips `LIKELY:` prefix; converts empty/blank to `null`; keeps `N/A` as the string `"N/A"` (meaning artist credit is explicitly not applicable, distinct from unknown/missing)
 - `season` field removed (no longer in source data)
 - Always reads local CSV files directly (no remote URL fallback)
+- Local cover files (`covers/full/{id}.*`) are the primary image source; `cover_url` from covers.csv is a fallback — products with local files are included even without a CSV cover_url
+- Validates month (1–12) and title; invalid months are set to `null` with a warning; missing titles are skipped
+- Exits with a clear error if any source CSV file is missing
 
 ## Image Download Progress
 Years fully downloaded to `covers/full/` (run `download_covers.py` then regenerate JSON):
 - Front covers: 1974 ✓, 1975 ✓, 1976 ✓, 1977 ✓, 1978 ✓, 1979 ✓, 1980 ✓, 1981 ✓, 1982 ✓, 1983 ✓, 1984 ✓, 1985 ✓, 1986 ✓, 1987 ✓, 1988 ✓, 1989 ✓, 1990 ✓, 1991 ✓, 1992 ✓, 1993 ✓, 1994 ✓, 1995 ✓, 1996 ✓, 1997 ✓, 1998 ✓, 1999 ✓, 2008 ✓ (ids 1033–1035), 2012 ✓ (ids 1037–1039), 2013 ✓
 - Back covers: 1974–1999 ✓, 2008 ✓ (ids 1033–1035), 2012 ✓ (ids 1037–1039), 2013 ✓ (id=420 [1992] back added manually)
 - id=868 (The Book of Regency, 2002) has no back cover — intentionally absent, confirmed dead link
-- Front/back covers not yet downloaded: 2000–2007 (3rd Ed era, WotC products — not yet in products.json)
+- ids 1023 & 1028 (2007): local covers only (no cover_url in covers.csv); included via local file detection
+- Front/back covers not yet downloaded: 2000–2007 (3rd Ed era, WotC products — most not yet in products.json)
 - Years with no products (skip): 2009–2011
 
 ## Running Locally

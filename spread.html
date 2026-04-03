@@ -419,7 +419,7 @@
         function renderDetails(p) {
             setField('det-title',        'det-val-title',        p.title);
 
-            const monthStr = p.month ? MONTH_NAMES[p.month - 1] : null;
+            const monthStr = (p.month > 0 && p.month <= 12) ? MONTH_NAMES[p.month - 1] : null;
             const dateStr  = monthStr ? `${monthStr} ${p.year}` : (p.year ? String(p.year) : null);
             setField('det-date',         'det-val-date',         dateStr);
 

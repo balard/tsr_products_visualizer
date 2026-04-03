@@ -1,5 +1,6 @@
 import csv
 import json
+import sys
 from pathlib import Path
 
 MAIN_CSV         = '../tsr_products/tsr_products.csv'
@@ -26,9 +27,17 @@ def int_or_none(val):
         return None
 
 
+def open_csv(path):
+    try:
+        return open(path, newline='', encoding='utf-8')
+    except FileNotFoundError:
+        print(f'ERROR: {path} not found')
+        sys.exit(1)
+
+
 def load_covers():
     mapping = {}
-    with open(COVERS_CSV, newline='', encoding='utf-8') as f:
+    with open_csv(COVERS_CSV) as f:
         for row in csv.DictReader(f):
             rid = row.get('id', '').strip()
             if not rid or rid == 'id':
@@ -42,7 +51,7 @@ def load_covers():
 
 def load_blurbs():
     mapping = {}
-    with open(BLURBS_CSV, newline='', encoding='utf-8') as f:
+    with open_csv(BLURBS_CSV) as f:
         for row in csv.DictReader(f):
             rid = row.get('id', '').strip()
             if not rid or rid == 'id':
@@ -53,7 +62,7 @@ def load_blurbs():
 
 def load_dtrpg():
     mapping = {}
-    with open(DTRPG_CSV, newline='', encoding='utf-8') as f:
+    with open_csv(DTRPG_CSV) as f:
         for row in csv.DictReader(f):
             rid = row.get('id', '').strip()
             if not rid or rid == 'id':
@@ -70,7 +79,8 @@ blurbs = load_blurbs()
 dtrpg  = load_dtrpg()
 
 products = []
-with open(MAIN_CSV, newline='', encoding='utf-8') as f:
+warnings = []
+with open_csv(MAIN_CSV) as f:
     for row in csv.DictReader(f):
         row_id = row.get('id', '').strip()
         if not row_id or row_id == 'id':
@@ -79,8 +89,6 @@ with open(MAIN_CSV, newline='', encoding='utf-8') as f:
 
         cover_data = covers.get(pid, {})
         cover_url  = cover_data.get('cover_url', '')
-        if not cover_url:
-            continue  # skip products with no cover
 
         year_raw = row.get('year', '').strip()
         year = int_or_none(year_raw)
@@ -91,6 +99,9 @@ with open(MAIN_CSV, newline='', encoding='utf-8') as f:
         for f_path in LOCAL_COVERS_DIR.glob(f'{pid}.*'):
             local_path = f'covers/full/{f_path.name}'
             break
+
+        if not cover_url and not local_path:
+            continue  # skip products with no cover
 
         local_back_path = None
         for f_path in LOCAL_COVERS_DIR.glob(f'{pid}-back.*'):
@@ -105,16 +116,26 @@ with open(MAIN_CSV, newline='', encoding='utf-8') as f:
         elif artist.upper().startswith('LIKELY:'):
             artist = artist[len('LIKELY:'):].strip()
 
+        month = int_or_none(row.get('month', ''))
+        if month is not None and (month < 1 or month > 12):
+            warnings.append(f'id={pid}: invalid month={month}')
+            month = None
+
+        title = row.get('title', '').strip()
+        if not title:
+            warnings.append(f'id={pid}: missing title, skipping')
+            continue
+
         dtrpg_data = dtrpg.get(pid)
 
         products.append({
             'id':            pid,
             'order':         int_or_none(row.get('order', '')),
             'year':          year,
-            'month':         int_or_none(row.get('month', '')),
+            'month':         month,
             'day':           int_or_none(row.get('day', '')),
             'product_code':  str_or_none(row.get('product code', '')),
-            'title':         row['title'].strip(),
+            'title':         title,
             'module_code':   str_or_none(row.get('module code', '')),
             'type':          str_or_none(row.get('type', '')),
             'system':        str_or_none(row.get('system', '')),
@@ -138,6 +159,11 @@ with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
     json.dump(products, f, indent=2, ensure_ascii=False)
 
 print(f'Exported {len(products)} products to {OUTPUT_FILE}')
+
+if warnings:
+    print(f'\nVALIDATION WARNINGS ({len(warnings)}):')
+    for w in warnings:
+        print(f'  {w}')
 
 hotlink_front = [(p['id'], p['title'], p['cover_url'])     for p in products if p['cover_url'].startswith('http')]
 hotlink_back  = [(p['id'], p['title'], p['backcover_url']) for p in products if p.get('backcover_url') and p['backcover_url'].startswith('http')]

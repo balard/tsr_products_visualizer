@@ -126,7 +126,7 @@
         /* Main viewer grid */
         .viewer {
             display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-columns: minmax(240px, 1.5fr) 3fr 1fr;
             grid-template-rows: 1fr;
             gap: 0.75rem;
             max-width: 1600px;
@@ -1016,7 +1016,7 @@
                 }
             }
 
-            const monthStr = p.month ? MONTH_NAMES[p.month - 1] : null;
+            const monthStr = (p.month > 0 && p.month <= 12) ? MONTH_NAMES[p.month - 1] : null;
             const dateStr  = monthStr ? `${monthStr} ${p.year}` : (p.year ? String(p.year) : null);
 
             setField('det-date',         'det-val-date',         dateStr);
@@ -1039,7 +1039,7 @@
                 const a = document.createElement('a');
                 a.href = p.dtrpg_url;
                 a.target = '_blank';
-                a.rel = 'noopener';
+                a.rel = 'noopener noreferrer';
                 a.textContent = p.dtrpg_title || 'DriveThruRPG';
                 dtrpgVal.appendChild(a);
                 dtrpgItem.style.display = '';
