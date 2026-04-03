@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="fav_icon.png">
+    <title>By the Numbers — TSR Publishing Statistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* ── Header ──────────────────────────────────────────────── */
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--card);
+            background: var(--bg2);
+        }
+
+        .page-header h1 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            flex: 1;
+        }
+
+        .btn-back {
+            background: var(--card);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.35rem 0.85rem;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 0.75rem;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-back:hover { background: var(--accent); color: var(--bg); }
+
+        /* ── Main content ────────────────────────────────────────── */
+
+        .stats-main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        /* ── Summary cards ───────────────────────────────────────── */
+
+        .summary-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            flex: 1 1 140px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, transform 0.15s;
+        }
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .stat-card .num {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+        .stat-card .label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-top: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* ── Chart sections ──────────────────────────────────────── */
+
+        .chart-section {
+            margin-bottom: 3rem;
+        }
+
+        .chart-section h2 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.3rem;
+        }
+
+        .chart-section .desc {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .chart-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            position: relative;
+        }
+
+        .chart-box canvas {
+            width: 100% !important;
+        }
+
+        /* ── Responsive ──────────────────────────────────────────── */
+
+        @media (max-width: 600px) {
+            .stats-main { padding: 1rem; }
+            .stat-card { flex: 1 1 100px; padding: 0.75rem; }
+            .stat-card .num { font-size: 1.2rem; }
+            .chart-box { padding: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="error-overlay">
+    <div class="error-box">
+        <h2>Cannot Load Data</h2>
+        <p>Make sure you are running a local server:</p>
+        <code>python -m http.server 8000</code>
+        <p>Then open <a href="http://localhost:8000/stats.html">http://localhost:8000/stats.html</a></p>
+    </div>
+</div>
+
+<header class="page-header">
+    <h1>By the Numbers</h1>
+    <a href="index.html" class="btn-back">&#8592; Gallery</a>
+</header>
+
+<main class="stats-main">
+
+    <!-- Summary cards -->
+    <div class="summary-row" id="summary-row"></div>
+
+    <!-- Chart 1: Releases per year -->
+    <section class="chart-section" id="sec-timeline">
+        <h2>Releases Per Year</h2>
+        <p class="desc">The rise and fall of TSR's publishing output — from the first boxed set in 1974 through the WotC transition and the 3rd Edition era.</p>
+        <div class="chart-box">
+            <canvas id="chart-timeline"></canvas>
+        </div>
+    </section>
+
+    <!-- Chart 2: System over time -->
+    <section class="chart-section" id="sec-systems">
+        <h2>Game Systems Over Time</h2>
+        <p class="desc">How each edition dominated its era — OD&amp;D gave way to Basic and AD&amp;D 1e, then AD&amp;D 2e ruled the 90s before 3rd Edition arrived.</p>
+        <div class="chart-box">
+            <canvas id="chart-systems"></canvas>
+        </div>
+    </section>
+
+    <!-- Chart 3: Product types -->
+    <section class="chart-section" id="sec-types">
+        <h2>Product Types</h2>
+        <p class="desc">What kind of products were published? Adventures, sourcebooks, boxed sets, and more.</p>
+        <div class="chart-box" style="max-width: 480px; margin: 0 auto;">
+            <canvas id="chart-types"></canvas>
+        </div>
+    </section>
+
+    <!-- Chart 4: Campaign settings -->
+    <section class="chart-section" id="sec-settings">
+        <h2>Top Campaign Settings</h2>
+        <p class="desc">Which fantasy worlds received the most published support?</p>
+        <div class="chart-box">
+            <canvas id="chart-settings"></canvas>
+        </div>
+    </section>
+
+    <!-- Chart 5: Cover artists -->
+    <section class="chart-section" id="sec-artists">
+        <h2>Top Cover Artists</h2>
+        <p class="desc">The artists who defined the visual identity of Dungeons &amp; Dragons, ranked by number of covers.</p>
+        <div class="chart-box">
+            <canvas id="chart-artists"></canvas>
+        </div>
+    </section>
+
+</main>
+
+<script>
+(function () {
+    'use strict';
+
+    /* ── Color palette ─────────────────────────────────────── */
+
+    const C = [
+        '#c9a227', '#4a9eff', '#e06c75', '#98c379',
+        '#7c5cbf', '#56b6c2', '#d19a66', '#c678dd',
+        '#e8b960', '#a67c00'
+    ];
+
+    /* ── Chart.js global dark-theme defaults ───────────────── */
+
+    Chart.defaults.color = '#e8e8e8';
+    Chart.defaults.borderColor = '#3a3a5a';
+    Chart.defaults.plugins.tooltip.backgroundColor = '#16213e';
+    Chart.defaults.plugins.tooltip.borderColor = '#c9a227';
+    Chart.defaults.plugins.tooltip.borderWidth = 1;
+    Chart.defaults.plugins.tooltip.titleFont = { weight: 'bold' };
+    Chart.defaults.plugins.legend.labels.usePointStyle = true;
+    Chart.defaults.responsive = true;
+    Chart.defaults.maintainAspectRatio = true;
+
+    /* ── Helpers ────────────────────────────────────────────── */
+
+    function countBy(arr, field) {
+        const out = {};
+        arr.forEach(function (p) {
+            var key = p[field] || '(none)';
+            out[key] = (out[key] || 0) + 1;
+        });
+        return out;
+    }
+
+    function sortedEntries(obj, limit) {
+        var entries = Object.entries(obj).sort(function (a, b) { return b[1] - a[1]; });
+        return limit ? entries.slice(0, limit) : entries;
+    }
+
+    /* ── Data load & build ─────────────────────────────────── */
+
+    fetch('products.json')
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (products) { build(products); })
+        .catch(function () { document.getElementById('error-overlay').classList.add('visible'); });
+
+    function build(products) {
+
+        /* ── Summary cards ─────────────────────────────────── */
+
+        var years = products.map(function (p) { return p.year; });
+        var minYear = Math.min.apply(null, years);
+        var maxYear = Math.max.apply(null, years);
+
+        var settingsSet = new Set();
+        var artistsSet = new Set();
+        products.forEach(function (p) {
+            if (p.setting) settingsSet.add(p.setting);
+            if (p.cover_artist && p.cover_artist !== 'N/A') artistsSet.add(p.cover_artist);
+        });
+
+        var adventureCount = products.filter(function (p) { return p.type === 'adventure'; }).length;
+
+        var cards = [
+            { num: products.length, label: 'Products', target: 'sec-timeline' },
+            { num: minYear + '–' + maxYear, label: 'Year Range', target: 'sec-timeline' },
+            { num: adventureCount, label: 'Adventures', target: 'sec-types' },
+            { num: settingsSet.size, label: 'Settings', target: 'sec-settings' },
+            { num: artistsSet.size, label: 'Cover Artists', target: 'sec-artists' }
+        ];
+
+        var row = document.getElementById('summary-row');
+        cards.forEach(function (c) {
+            var el = document.createElement('div');
+            el.className = 'stat-card';
+            el.innerHTML = '<span class="num">' + c.num + '</span><span class="label">' + c.label + '</span>';
+            el.addEventListener('click', function () {
+                document.getElementById(c.target).scrollIntoView({ behavior: 'smooth' });
+            });
+            row.appendChild(el);
+        });
+
+        /* ── Chart 1: Releases per year (line/area) ────────── */
+
+        var yearCounts = {};
+        for (var y = minYear; y <= maxYear; y++) yearCounts[y] = 0;
+        products.forEach(function (p) { yearCounts[p.year]++; });
+
+        var yearLabels = Object.keys(yearCounts).map(Number);
+        var yearValues = yearLabels.map(function (y) { return yearCounts[y]; });
+
+        new Chart(document.getElementById('chart-timeline'), {
+            type: 'line',
+            data: {
+                labels: yearLabels,
+                datasets: [{
+                    label: 'Products released',
+                    data: yearValues,
+                    borderColor: '#c9a227',
+                    backgroundColor: 'rgba(201,162,39,0.15)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 3,
+                    pointHoverRadius: 6,
+                    pointBackgroundColor: '#c9a227'
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { beginAtZero: true, ticks: { precision: 0 } }
+                }
+            }
+        });
+
+        /* ── Chart 2: Systems over time (stacked bar) ──────── */
+
+        var systemOrder = ['OD&D', 'Basic D&D', 'AD&D 1e', 'AD&D 2e', 'D&D 3e', 'D&D 3.5', 'Other'];
+        var majorSystems = new Set(['OD&D', 'Basic D&D', 'AD&D 1e', 'AD&D 2e', 'D&D 3e', 'D&D 3.5']);
+
+        var systemYearData = {};
+        systemOrder.forEach(function (s) { systemYearData[s] = {}; });
+        yearLabels.forEach(function (y) {
+            systemOrder.forEach(function (s) { systemYearData[s][y] = 0; });
+        });
+
+        products.forEach(function (p) {
+            var sys = majorSystems.has(p.system) ? p.system : 'Other';
+            systemYearData[sys][p.year]++;
+        });
+
+        var systemDatasets = systemOrder.map(function (sys, i) {
+            return {
+                label: sys,
+                data: yearLabels.map(function (y) { return systemYearData[sys][y]; }),
+                backgroundColor: C[i],
+                borderWidth: 0
+            };
+        });
+
+        new Chart(document.getElementById('chart-systems'), {
+            type: 'bar',
+            data: { labels: yearLabels, datasets: systemDatasets },
+            options: {
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: {
+                        mode: 'index',
+                        callbacks: {
+                            footer: function (items) {
+                                var sum = items.reduce(function (s, i) { return s + i.raw; }, 0);
+                                return 'Total: ' + sum;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } }
+                }
+            }
+        });
+
+        /* ── Chart 3: Product types (doughnut) ─────────────── */
+
+        var typeCounts = countBy(products, 'type');
+        var typeEntries = sortedEntries(typeCounts);
+
+        // Group small types into "Other"
+        var mainTypes = [];
+        var otherCount = 0;
+        typeEntries.forEach(function (e) {
+            if (e[1] >= 10) mainTypes.push(e);
+            else otherCount += e[1];
+        });
+        if (otherCount > 0) mainTypes.push(['Other', otherCount]);
+
+        new Chart(document.getElementById('chart-types'), {
+            type: 'doughnut',
+            data: {
+                labels: mainTypes.map(function (e) { return e[0]; }),
+                datasets: [{
+                    data: mainTypes.map(function (e) { return e[1]; }),
+                    backgroundColor: C.slice(0, mainTypes.length),
+                    borderColor: '#2a2a4a',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        callbacks: {
+                            label: function (ctx) {
+                                var total = ctx.dataset.data.reduce(function (a, b) { return a + b; }, 0);
+                                var pct = ((ctx.raw / total) * 100).toFixed(1);
+                                return ctx.label + ': ' + ctx.raw + ' (' + pct + '%)';
+                            }
+                        }
+                    }
+                },
+                cutout: '55%'
+            }
+        });
+
+        /* ── Chart 4: Campaign settings (horizontal bar) ───── */
+
+        var settingCounts = countBy(products, 'setting');
+        var noSetting = settingCounts['(none)'] || 0;
+        delete settingCounts['(none)'];
+
+        var settingEntries = sortedEntries(settingCounts, 12);
+        settingEntries.push(['(no setting)', noSetting]);
+
+        new Chart(document.getElementById('chart-settings'), {
+            type: 'bar',
+            data: {
+                labels: settingEntries.map(function (e) { return e[0]; }),
+                datasets: [{
+                    label: 'Products',
+                    data: settingEntries.map(function (e) { return e[1]; }),
+                    backgroundColor: '#c9a227',
+                    borderWidth: 0,
+                    borderRadius: 3
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, ticks: { precision: 0 } },
+                    y: { grid: { display: false } }
+                }
+            }
+        });
+
+        /* ── Chart 5: Cover artists (horizontal bar) ───────── */
+
+        var artistCounts = countBy(products, 'cover_artist');
+        delete artistCounts['N/A'];
+        delete artistCounts['(none)'];
+
+        var artistEntries = sortedEntries(artistCounts, 10);
+
+        new Chart(document.getElementById('chart-artists'), {
+            type: 'bar',
+            data: {
+                labels: artistEntries.map(function (e) { return e[0]; }),
+                datasets: [{
+                    label: 'Covers',
+                    data: artistEntries.map(function (e) { return e[1]; }),
+                    backgroundColor: '#e8b960',
+                    borderWidth: 0,
+                    borderRadius: 3
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { beginAtZero: true, ticks: { precision: 0 } },
+                    y: { grid: { display: false } }
+                }
+            }
+        });
+
+    }
+})();
+</script>
+
+</body>
+</html>
