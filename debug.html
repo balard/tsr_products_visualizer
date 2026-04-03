@@ -144,15 +144,21 @@
     font-weight: bold;
   }
 
+  .card-covers {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
   .card-cover {
-    width: 100%;
+    flex: 1;
     height: 160px;
     background: #111128;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    flex-shrink: 0;
+    flex-direction: column;
   }
 
   .card-cover img {
@@ -237,7 +243,8 @@
     <button class="nav-btn" id="btn-next" title="Next (&#x2192;)">Next &rarr;</button>
     <button class="nav-btn" id="btn-last" title="End">&#x23ED;</button>
     <div id="counter-wrap">
-      <input type="number" id="idx-input" min="1" title="Jump to product #">
+      <span style="color:#888">ID</span>
+      <input type="number" id="idx-input" min="1" title="Jump to product ID">
       <span id="total-label">/ —</span>
     </div>
     <span style="color:#555; font-size:11px; margin-left:4px;">&#x2190;&#x2192; arrow keys &nbsp;|&nbsp; Home / End</span>
@@ -264,23 +271,40 @@
     ['confidence',   'Confidence'],
     ['edition',      'Edition'],
     ['authors',      'Authors'],
-    ['cover_url',    'Cover URL'],
-    ['cover_artist', 'Cover Artist'],
-    ['semester',     'Semester'],
-    ['season',       'Season'],
+    ['cover_url',      'Cover URL'],
+    ['backcover_url',  'Back Cover URL'],
+    ['cover_artist',   'Cover Artist'],
+    ['semester',       'Semester'],
   ];
 
   let products = [];
   let currentIndex = 0;
 
-  function navigate(delta) {
-    currentIndex = Math.max(0, Math.min(products.length - 1, currentIndex + delta));
-    render();
+  function getHashId() {
+    const m = window.location.hash.match(/^#id=(\d+)$/);
+    return m ? parseInt(m[1]) : null;
+  }
+
+  function updateHash() {
+    const p = products[currentIndex];
+    if (p) history.replaceState(null, '', '#id=' + p.id);
   }
 
   function jumpTo(n) {
     currentIndex = Math.max(0, Math.min(products.length - 1, n));
+    const p = products[currentIndex];
+    if (p) localStorage.setItem('tsr_current_id', p.id);
+    updateHash();
     render();
+  }
+
+  function jumpToId(id) {
+    const idx = products.findIndex(p => p.id === id);
+    if (idx !== -1) jumpTo(idx);
+  }
+
+  function navigate(delta) {
+    jumpTo(Math.max(0, Math.min(products.length - 1, currentIndex + delta)));
   }
 
   function buildCard(product, offset) {
@@ -293,21 +317,28 @@
     label.textContent = offset === 0 ? '► CURRENT ◄' : (offset > 0 ? `+${offset}` : `${offset}`);
     card.appendChild(label);
 
-    // cover
-    const coverDiv = document.createElement('div');
-    coverDiv.className = 'card-cover';
-    if (product.cover_url) {
-      const img = document.createElement('img');
-      img.src = product.cover_url;
-      img.alt = product.title || '';
-      img.onerror = () => {
-        coverDiv.innerHTML = '<div class="no-cover">image not found</div>';
-      };
-      coverDiv.appendChild(img);
-    } else {
-      coverDiv.innerHTML = '<div class="no-cover">no cover url</div>';
+    // covers (front + back)
+    const coversWrap = document.createElement('div');
+    coversWrap.className = 'card-covers';
+
+    for (const [urlKey, fallbackText] of [['cover_url', 'no cover'], ['backcover_url', 'no back cover']]) {
+      const coverDiv = document.createElement('div');
+      coverDiv.className = 'card-cover';
+      const url = product[urlKey];
+      if (url) {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = (urlKey === 'cover_url' ? '' : 'back — ') + (product.title || '');
+        img.onerror = () => {
+          coverDiv.innerHTML = `<div class="no-cover">image not found</div>`;
+        };
+        coverDiv.appendChild(img);
+      } else {
+        coverDiv.innerHTML = `<div class="no-cover">${fallbackText}</div>`;
+      }
+      coversWrap.appendChild(coverDiv);
     }
-    card.appendChild(coverDiv);
+    card.appendChild(coversWrap);
 
     // fields
     const list = document.createElement('div');
@@ -325,7 +356,7 @@
       if (val === null || val === undefined) {
         v.className = 'field-val null';
         v.textContent = '—';
-      } else if (key === 'cover_url') {
+      } else if (key === 'cover_url' || key === 'backcover_url') {
         v.className = 'field-val';
         const a = document.createElement('a');
         a.href = val;
@@ -368,7 +399,7 @@
     }
 
     const input = document.getElementById('idx-input');
-    input.value = currentIndex + 1;
+    input.value = products[currentIndex]?.id ?? '';
     document.getElementById('total-label').textContent = `/ ${products.length}`;
   }
 
@@ -379,8 +410,8 @@
   document.getElementById('btn-last').addEventListener('click', () => jumpTo(products.length - 1));
 
   document.getElementById('idx-input').addEventListener('change', e => {
-    const n = parseInt(e.target.value, 10);
-    if (!isNaN(n)) jumpTo(n - 1);
+    const id = parseInt(e.target.value, 10);
+    if (!isNaN(id)) jumpToId(id);
   });
 
   document.addEventListener('keydown', e => {
@@ -389,6 +420,17 @@
     if (e.key === 'ArrowRight') { e.preventDefault(); navigate(1); }
     if (e.key === 'Home')       { e.preventDefault(); jumpTo(0); }
     if (e.key === 'End')        { e.preventDefault(); jumpTo(products.length - 1); }
+  });
+
+  // Sync when another tab navigates
+  window.addEventListener('storage', e => {
+    if (e.key === 'tsr_current_id' && e.newValue) {
+      const id = parseInt(e.newValue);
+      if (!isNaN(id)) {
+        const idx = products.findIndex(p => p.id === id);
+        if (idx !== -1) { currentIndex = idx; render(); updateHash(); }
+      }
+    }
   });
 
   // Load data
@@ -400,7 +442,22 @@
     .then(data => {
       products = data;
       document.getElementById('app').style.display = '';
+
+      // Hash takes priority over localStorage
+      const hashId = getHashId();
+      if (hashId !== null) {
+        const idx = products.findIndex(p => p.id === hashId);
+        if (idx !== -1) currentIndex = idx;
+      } else {
+        const savedId = parseInt(localStorage.getItem('tsr_current_id'));
+        if (!isNaN(savedId)) {
+          const idx = products.findIndex(p => p.id === savedId);
+          if (idx !== -1) currentIndex = idx;
+        }
+      }
+
       render();
+      updateHash();
     })
     .catch(err => {
       const overlay = document.getElementById('error-overlay');
